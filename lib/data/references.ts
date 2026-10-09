@@ -1,0 +1,47 @@
+import { Reference } from '../types';
+import { SEED_REFERENCES } from './seed';
+import { supabase, isSupabaseConfigured } from '../supabase/client';
+
+export async function getReferences(): Promise<Reference[]> {
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const { data, error } = await supabase.from('references').select('*');
+      if (!error && data && data.length > 0) {
+        return data.map((item: any) => ({
+          id: item.id,
+          title: item.title,
+          url: item.url,
+          category: item.category,
+          tags: item.tags || [],
+          shortDesc: item.short_desc || item.title,
+          anatomy: item.anatomy,
+          principle: item.principle,
+          imageUrl: item.image_url,
+          videoUrl: item.video_url || `/videos/${item.id}.webm`,
+          capturedAt: item.created_at,
+        }));
+      }
+    } catch (err) {
+      console.warn('Supabase query failed, using local seed data:', err);
+    }
+  }
+
+  // Fallback to seed references with default videoUrl mapping
+  return SEED_REFERENCES.map((ref) => ({
+    ...ref,
+    videoUrl: ref.videoUrl || `/videos/${ref.id}.webm`,
+  }));
+}
+
+export async function getReferenceById(id: string): Promise<Reference | null> {
+  const references = await getReferences();
+  return references.find((r) => r.id === id) || null;
+}
+
+export function getAllTags(references: Reference[]): string[] {
+  const tagSet = new Set<string>();
+  references.forEach((ref) => {
+    ref.tags.forEach((tag) => tagSet.add(tag));
+  });
+  return ['전체', ...Array.from(tagSet)];
+}

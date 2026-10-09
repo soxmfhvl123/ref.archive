@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#111111"/>
+  <rect x="60" y="60" width="1080" height="680" fill="none" stroke="#333333" stroke-width="2" opacity="0.4"/>
+  <circle cx="100" cy="100" r="10" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="130" cy="100" r="10" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="160" cy="100" r="10" fill="#FFFFFF" opacity="0.3"/>
+  <text x="100" y="360" font-family="-apple-system, sans-serif" font-weight="800" font-size="64" fill="#FFFFFF">Teenage Engineering (teenage.engineering)</text>
+  <text x="100" y="420" font-family="-apple-system, sans-serif" font-weight="400" font-size="28" fill="#AAAAAA">Graphic Design Studio · 빼는 디자인 / 시스템형 아이덴티티</text>
+  <line x1="100" y1="470" x2="400" y2="470" stroke="#FFFFFF" stroke-width="4"/>
+  <text x="100" y="680" font-family="monospace" font-size="20" fill="#AAAAAA">ref. archive capture</text>
+</svg>
