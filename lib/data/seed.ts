@@ -4857,5 +4857,75 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "모션을 가볍게 웹·앱에 넣는 방식",
       "imageUrl": "/captures/lottiefiles.png",
       "videoUrl": "/videos/lottiefiles.webm"
+    },
+    {
+      "id": "uncut",
+      "title": "UNCUT",
+      "url": "https://uncut.wtf",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "무료 컨템포러리 서체 카탈로그",
+      "anatomy": "상업적 사용이 가능한 동시대 서체 160여 종을 모은 무료 서체 카탈로그",
+      "principle": "흔한 서체에서 벗어나고 싶을 때 쓸 개성 있는 무료 서체 탐색",
+      "imageUrl": "/captures/uncut.png",
+      "videoUrl": "/videos/uncut.webm"
+    },
+    {
+      "id": "footer-design",
+      "title": "Footer",
+      "url": "https://footer.design",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "웹사이트 푸터 큐레이션",
+      "anatomy": "웹사이트 푸터(footer) 디자인만 모아 유형·스타일별로 분류한 갤러리",
+      "principle": "웹사이트 마지막 인상을 정리하는 푸터 레이아웃 패턴",
+      "imageUrl": "/captures/footer-design.png",
+      "videoUrl": "/videos/footer-design.webm"
+    },
+    {
+      "id": "website-headlines",
+      "title": "Website Headlines",
+      "url": "https://websiteheadlines.com",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "웹사이트 헤드라인 라이브러리",
+      "anatomy": "SaaS·B2B·DTC 브랜드 웹사이트의 헤드라인 문구를 기법별로 태그해 모은 라이브러리",
+      "principle": "첫 화면 카피를 어떻게 쓸지 막힐 때 참고할 헤드라인 구조",
+      "imageUrl": "/captures/website-headlines.png",
+      "videoUrl": "/videos/website-headlines.webm"
+    },
+    {
+      "id": "maneken",
+      "title": "Maneken",
+      "url": "https://maneken.app",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "브라우저 목업 에디터",
+      "anatomy": "브라우저에서 바로 쓰는 목업 편집 툴 (무료 플랜 + 유료 Pro)",
+      "principle": "완성한 디자인을 실제 매체 위에 빠르게 얹어 보여주는 방식",
+      "imageUrl": "/captures/maneken.png",
+      "videoUrl": "/videos/maneken.webm"
+    },
+    {
+      "id": "mockup-world",
+      "title": "Mockup World",
+      "url": "https://www.mockupworld.co",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "무료 목업 모음",
+      "anatomy": "아이폰·맥북·패키지·포스터 등 무료 PSD 목업을 모은 사이트",
+      "principle": "프레젠테이션용 무료 목업 소스",
+      "imageUrl": "/captures/mockup-world.png",
+      "videoUrl": "/videos/mockup-world.webm"
     }
 ];
