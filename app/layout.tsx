@@ -6,10 +6,10 @@ const siteUrl = 'https://soxmfhvl123.github.io/ref.archive';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'ref. archive',
-  description: '아카이브는 침묵하고, 레퍼런스만 말하게 합니다.',
+  description: '디자이너를 위한 웹·그래픽·인터랙티브 레퍼런스 아카이브',
   openGraph: {
     title: 'ref. archive',
-    description: '아카이브는 침묵하고, 레퍼런스만 말하게 합니다.',
+    description: '디자이너를 위한 웹·그래픽·인터랙티브 레퍼런스 아카이브',
     url: siteUrl,
     siteName: 'ref. archive',
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ref. archive',
-    description: '아카이브는 침묵하고, 레퍼런스만 말하게 합니다.',
+    description: '디자이너를 위한 웹·그래픽·인터랙티브 레퍼런스 아카이브',
     images: [`${siteUrl}/og-image.png`],
   },
 };
