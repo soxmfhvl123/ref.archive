@@ -130,60 +130,63 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
     : initialReferences.filter((ref) => ref.tags.includes(selectedTag));
 
   return (
-    <main className="min-h-screen bg-white text-black p-6 md:p-10 select-none">
-      {/* Line 1: Header + View Toggle */}
-      <header className="mb-8 flex justify-between items-center">
-        <h1
-          onClick={() => setActiveRef(null)}
-          className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
-        >
-          ref. archive
-        </h1>
-
-        {/* View Switcher: Grid / Index */}
-        <div className="flex items-center gap-4 text-[14px]">
-          <button
-            type="button"
-            onClick={() => setViewMode('grid')}
-            className={`bg-transparent p-0 border-0 cursor-pointer ${
-              viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-            }`}
+    <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none">
+      {/* Sticky Top Bar Container: Header + Category Nav */}
+      <div className="sticky top-0 z-40 bg-white pt-6 md:pt-10 pb-4 mb-6">
+        {/* Line 1: Header + View Toggle */}
+        <header className="mb-4 flex justify-between items-center">
+          <h1
+            onClick={() => setActiveRef(null)}
+            className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
           >
-            그리드
-          </button>
-          <button
-            type="button"
-            onClick={() => setViewMode('index')}
-            className={`bg-transparent p-0 border-0 cursor-pointer ${
-              viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-            }`}
-          >
-            인덱스
-          </button>
-        </div>
-      </header>
+            ref. archive
+          </h1>
 
-      {/* Line 2: Tags (Single horizontal line, text only, selected tag underlined) */}
-      <nav className="mb-10 overflow-x-auto whitespace-nowrap scrollbar-none">
-        <ul className="flex items-center gap-6 text-[14px]">
-          {initialTags.map((tag) => {
-            const isSelected = selectedTag === tag;
-            return (
-              <li key={tag} className="inline-block">
-                <button
-                  type="button"
-                  onClick={() => setSelectedTag(tag)}
-                  className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
-                    isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-80'
-                  }`}
-                >
-                  {tag}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+          {/* View Switcher: Grid / Index */}
+          <div className="flex items-center gap-4 text-[14px]">
+            <button
+              type="button"
+              onClick={() => setViewMode('grid')}
+              className={`bg-transparent p-0 border-0 cursor-pointer ${
+                viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+              }`}
+            >
+              그리드
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode('index')}
+              className={`bg-transparent p-0 border-0 cursor-pointer ${
+                viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+              }`}
+            >
+              인덱스
+            </button>
+          </div>
+        </header>
+
+        {/* Line 2: Tags (Flex wrap so all tags are fully visible on mobile & desktop) */}
+        <nav>
+          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[14px]">
+            {initialTags.map((tag) => {
+              const isSelected = selectedTag === tag;
+              return (
+                <li key={tag} className="inline-block">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedTag(tag)}
+                    className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                      isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-70'
+                    }`}
+                  >
+                    {tag}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
 
       {/* Line 3: Content View (Grid or Index) */}
       <section>
