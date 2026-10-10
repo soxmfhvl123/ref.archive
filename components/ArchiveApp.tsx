@@ -9,6 +9,15 @@ interface ArchiveAppProps {
   initialTags: string[];
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+function getFullPath(pathStr: string) {
+  if (!pathStr) return '';
+  if (pathStr.startsWith('http://') || pathStr.startsWith('https://')) return pathStr;
+  const cleanPath = pathStr.startsWith('/') ? pathStr : `/${pathStr}`;
+  return `${basePath}${cleanPath}`;
+}
+
 function SafeImage({
   src,
   alt,
@@ -22,7 +31,9 @@ function SafeImage({
   className?: string;
   objectFit?: 'object-cover' | 'object-contain';
 }) {
-  const [imgSrc, setImgSrc] = useState(src);
+  const fullSrc = getFullPath(src);
+  const fullFallback = getFullPath(fallbackSvg);
+  const [imgSrc, setImgSrc] = useState(fullSrc);
 
   return (
     <Image
@@ -33,8 +44,8 @@ function SafeImage({
       className={`${objectFit} object-top ${className || ''}`}
       unoptimized
       onError={() => {
-        if (imgSrc !== fallbackSvg) {
-          setImgSrc(fallbackSvg);
+        if (imgSrc !== fullFallback) {
+          setImgSrc(fullFallback);
         }
       }}
     />
@@ -75,7 +86,8 @@ function MediaPreviewCard({
     }
   };
 
-  const showVideo = isHovered && videoUrl && !hasVideoError;
+  const fullVideoSrc = videoUrl ? getFullPath(videoUrl) : undefined;
+  const showVideo = isHovered && fullVideoSrc && !hasVideoError;
 
   return (
     <div
@@ -90,10 +102,10 @@ function MediaPreviewCard({
         objectFit="object-cover"
         className={showVideo ? 'opacity-0' : 'opacity-100'}
       />
-      {videoUrl && !hasVideoError && (
+      {fullVideoSrc && !hasVideoError && (
         <video
           ref={videoRef}
-          src={videoUrl}
+          src={fullVideoSrc}
           muted
           loop
           playsInline
@@ -200,7 +212,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             {/* Title */}
             <h2 className="text-[18px] font-normal mb-8">{activeRef.title}</h2>
 
-            {/* Large Capture / Video */}
+            {/* Large Capture */}
             <div className="relative w-full max-w-5xl aspect-[16/10] mb-8 bg-white overflow-hidden">
               <SafeImage
                 src={activeRef.imageUrl}
