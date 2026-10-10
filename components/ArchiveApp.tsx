@@ -123,6 +123,7 @@ function MediaPreviewCard({
 export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAppProps) {
   const [selectedTag, setSelectedTag] = useState<string>('전체');
   const [activeRef, setActiveRef] = useState<Reference | null>(null);
+  const [viewMode, setViewMode] = useState<'grid' | 'index'>('grid');
 
   const filteredReferences = selectedTag === '전체'
     ? initialReferences
@@ -130,14 +131,36 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
 
   return (
     <main className="min-h-screen bg-white text-black p-6 md:p-10 select-none">
-      {/* Line 1: Header */}
-      <header className="mb-8">
+      {/* Line 1: Header + View Toggle */}
+      <header className="mb-8 flex justify-between items-center">
         <h1
           onClick={() => setActiveRef(null)}
           className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
         >
           ref. archive
         </h1>
+
+        {/* View Switcher: Grid / Index */}
+        <div className="flex items-center gap-4 text-[14px]">
+          <button
+            type="button"
+            onClick={() => setViewMode('grid')}
+            className={`bg-transparent p-0 border-0 cursor-pointer ${
+              viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+            }`}
+          >
+            그리드
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('index')}
+            className={`bg-transparent p-0 border-0 cursor-pointer ${
+              viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+            }`}
+          >
+            인덱스
+          </button>
+        </div>
       </header>
 
       {/* Line 2: Tags (Single horizontal line, text only, selected tag underlined) */}
@@ -162,30 +185,77 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
         </ul>
       </nav>
 
-      {/* Line 3: Capture Grid */}
+      {/* Line 3: Content View (Grid or Index) */}
       <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
-          {filteredReferences.map((refItem) => (
-            <article
-              key={refItem.id}
-              onClick={() => setActiveRef(refItem)}
-              className="cursor-pointer block bg-white"
-            >
-              <MediaPreviewCard
-                imageUrl={refItem.imageUrl}
-                videoUrl={refItem.videoUrl}
-                title={refItem.title}
-                id={refItem.id}
-              />
+        {viewMode === 'grid' ? (
+          /* Grid View */
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {filteredReferences.map((refItem) => (
+              <article
+                key={refItem.id}
+                onClick={() => setActiveRef(refItem)}
+                className="cursor-pointer block bg-white"
+              >
+                <MediaPreviewCard
+                  imageUrl={refItem.imageUrl}
+                  videoUrl={refItem.videoUrl}
+                  title={refItem.title}
+                  id={refItem.id}
+                />
 
-              {/* Underneath Thumbnail: Website Title & Short Description */}
-              <div className="text-[14px] leading-tight space-y-1">
-                <div className="font-normal tracking-tight">{refItem.title}</div>
-                <div className="opacity-60">{refItem.shortDesc}</div>
-              </div>
-            </article>
-          ))}
-        </div>
+                {/* Underneath Thumbnail: Website Title & Short Description */}
+                <div className="text-[14px] leading-tight space-y-1">
+                  <div className="font-normal tracking-tight">{refItem.title}</div>
+                  <div className="opacity-60">{refItem.shortDesc}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          /* Index View */
+          <div className="w-full overflow-x-auto">
+            <table className="w-full text-left text-[14px] border-collapse">
+              <thead>
+                <tr className="opacity-40 font-normal pb-4">
+                  <th className="py-2 pr-4 font-normal w-12">#</th>
+                  <th className="py-2 pr-6 font-normal w-1/4">제목</th>
+                  <th className="py-2 pr-6 font-normal w-1/3">설명</th>
+                  <th className="py-2 pr-6 font-normal">태그</th>
+                  <th className="py-2 font-normal text-right">링크</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredReferences.map((refItem, idx) => (
+                  <tr
+                    key={refItem.id}
+                    onClick={() => setActiveRef(refItem)}
+                    className="cursor-pointer hover:underline underline-offset-4"
+                  >
+                    <td className="py-2.5 pr-4 opacity-40 font-normal">
+                      {String(idx + 1).padStart(3, '0')}
+                    </td>
+                    <td className="py-2.5 pr-6 font-normal">{refItem.title}</td>
+                    <td className="py-2.5 pr-6 opacity-60 font-normal">{refItem.shortDesc}</td>
+                    <td className="py-2.5 pr-6 opacity-60 font-normal">
+                      {refItem.tags.join(', ')}
+                    </td>
+                    <td className="py-2.5 text-right">
+                      <a
+                        href={refItem.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="opacity-60 hover:opacity-100 underline underline-offset-4"
+                      >
+                        방문
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </section>
 
       {/* Detail Overlay View */}
