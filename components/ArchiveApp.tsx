@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { Reference } from '@/lib/types';
 import Image from 'next/image';
 
@@ -124,10 +124,21 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   const [selectedTag, setSelectedTag] = useState<string>('전체');
   const [activeRef, setActiveRef] = useState<Reference | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'index'>('grid');
+  const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
 
   const filteredReferences = selectedTag === '전체'
     ? initialReferences
     : initialReferences.filter((ref) => ref.tags.includes(selectedTag));
+
+  const sortedReferences = useMemo(() => {
+    if (sortOrder === 'az') {
+      return [...filteredReferences].sort((a, b) =>
+        a.title.localeCompare(b.title, 'en', { sensitivity: 'base', numeric: true })
+      );
+    }
+    // 'newest': Reverse of insertion order (latest added first)
+    return [...filteredReferences].reverse();
+  }, [filteredReferences, sortOrder]);
 
   return (
     <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none">
@@ -152,26 +163,51 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             </a>
           </div>
 
-          {/* View Switcher: Grid / Index */}
-          <div className="flex items-center gap-4 text-[14px]">
-            <button
-              type="button"
-              onClick={() => setViewMode('grid')}
-              className={`bg-transparent p-0 border-0 cursor-pointer ${
-                viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-              }`}
-            >
-              그리드
-            </button>
-            <button
-              type="button"
-              onClick={() => setViewMode('index')}
-              className={`bg-transparent p-0 border-0 cursor-pointer ${
-                viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-              }`}
-            >
-              인덱스
-            </button>
+          {/* Controls: Sort Filter (Newest / A-Z) + View Switcher (Grid / Index) */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px]">
+            {/* Sort Filter: Newest / A-Z */}
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setSortOrder('newest')}
+                className={`bg-transparent p-0 border-0 cursor-pointer ${
+                  sortOrder === 'newest' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                }`}
+              >
+                Newest
+              </button>
+              <button
+                type="button"
+                onClick={() => setSortOrder('az')}
+                className={`bg-transparent p-0 border-0 cursor-pointer ${
+                  sortOrder === 'az' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                }`}
+              >
+                A-Z
+              </button>
+            </div>
+
+            {/* View Switcher: Grid / Index */}
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setViewMode('grid')}
+                className={`bg-transparent p-0 border-0 cursor-pointer ${
+                  viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                }`}
+              >
+                그리드
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('index')}
+                className={`bg-transparent p-0 border-0 cursor-pointer ${
+                  viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                }`}
+              >
+                인덱스
+              </button>
+            </div>
           </div>
         </header>
 
@@ -203,7 +239,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
         {viewMode === 'grid' ? (
           /* Grid View */
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
-            {filteredReferences.map((refItem) => (
+            {sortedReferences.map((refItem) => (
               <article
                 key={refItem.id}
                 onClick={() => setActiveRef(refItem)}
@@ -237,7 +273,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                 </tr>
               </thead>
               <tbody>
-                {filteredReferences.map((refItem, idx) => (
+                {sortedReferences.map((refItem, idx) => (
                   <tr
                     key={refItem.id}
                     onClick={() => setActiveRef(refItem)}

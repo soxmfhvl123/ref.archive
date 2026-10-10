@@ -53,12 +53,12 @@ async function captureOg() {
 
       const page = await context.newPage();
       await page.goto(`http://localhost:${PORT}/ref.archive/`, {
-        waitUntil: 'networkidle',
-        timeout: 15000,
+        waitUntil: 'domcontentloaded',
+        timeout: 20000,
       });
 
       // Wait a moment for images to settle
-      await page.waitForTimeout(2000);
+      await page.waitForTimeout(3000);
 
       const targetPath = path.join(process.cwd(), 'public', 'og-image.png');
       await page.screenshot({
