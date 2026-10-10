@@ -39,7 +39,7 @@ export async function fastCaptureAll() {
         });
         page = await context.newPage();
         await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(5000);
         await page.screenshot({ path: pngPath, fullPage: false });
         console.log(`✓ [Worker ${workerId}] Saved: ${item.id}.png`);
         await context.close();
