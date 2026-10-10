@@ -221,10 +221,9 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               <thead>
                 <tr className="opacity-40 font-normal pb-4">
                   <th className="py-2 pr-4 font-normal w-12">#</th>
-                  <th className="py-2 pr-6 font-normal w-1/4">제목</th>
+                  <th className="py-2 pr-6 font-normal w-1/3">제목</th>
                   <th className="py-2 pr-6 font-normal w-1/3">설명</th>
                   <th className="py-2 pr-6 font-normal">태그</th>
-                  <th className="py-2 font-normal text-right">링크</th>
                 </tr>
               </thead>
               <tbody>
@@ -232,26 +231,25 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                   <tr
                     key={refItem.id}
                     onClick={() => setActiveRef(refItem)}
-                    className="cursor-pointer hover:underline underline-offset-4"
+                    className="cursor-pointer"
                   >
                     <td className="py-2.5 pr-4 opacity-40 font-normal">
                       {String(idx + 1).padStart(3, '0')}
                     </td>
-                    <td className="py-2.5 pr-6 font-normal">{refItem.title}</td>
-                    <td className="py-2.5 pr-6 opacity-60 font-normal">{refItem.shortDesc}</td>
-                    <td className="py-2.5 pr-6 opacity-60 font-normal">
-                      {refItem.tags.join(', ')}
-                    </td>
-                    <td className="py-2.5 text-right">
+                    <td className="py-2.5 pr-6 font-normal">
                       <a
                         href={refItem.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="opacity-60 hover:opacity-100 underline underline-offset-4"
+                        className="hover:underline underline-offset-4"
                       >
-                        방문
+                        {refItem.title}
                       </a>
+                    </td>
+                    <td className="py-2.5 pr-6 opacity-60 font-normal">{refItem.shortDesc}</td>
+                    <td className="py-2.5 pr-6 opacity-60 font-normal">
+                      {refItem.tags.join(', ')}
                     </td>
                   </tr>
                 ))}
