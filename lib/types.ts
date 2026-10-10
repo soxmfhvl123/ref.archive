@@ -2,7 +2,7 @@ export interface Reference {
   id: string;
   title: string;
   url: string;
-  category: 'Interactive Web' | 'Graphic Design Studio';
+  category: string;
   tags: string[];
   shortDesc: string; // 한 단어/간략 설명 (예: "3D 포트폴리오", "실시간 라디오")
   anatomy: string;   // 요약

@@ -7,13 +7,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://bruno-simon.com",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "Format Break"
+      "3D WebGL"
     ],
-    "anatomy": "3D 미니카를 직접 운전하며 작품을 감상하는 인터랙티브 3D 포트폴리오",
-    "principle": "물리 엔진과 3D 공간을 브라우저 포트폴리오 탐색 과정에 직관적으로 융합",
+    "anatomy": "3D 미니카를 직접 조종하며 포트폴리오 조형물을 탐색하는 WebGL 인터랙션",
+    "principle": "물리 엔진과 3D 공간 연출을 포트폴리오 탐색 과정에 통합",
     "imageUrl": "/captures/bruno-simon.png",
-    "shortDesc": "3D 포트폴리오"
+    "shortDesc": "3D 미니카 포트폴리오"
   },
   {
     "id": "igloo-inc",
@@ -21,14 +20,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://igloo.inc",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "Scroll Trigger",
-      "Sound"
+      "3D WebGL"
     ],
-    "anatomy": "3D 아티팩트, 사운드트랙, 패럴랙스 스크롤이 하나의 씬으로 엮인 인터랙션",
-    "principle": "스크롤 트리거 연출에 감각적인 오디오 믹싱을 더해 경험의 밀도 극대화",
+    "anatomy": "3D 아티팩트, 멀티트랙 사운드, 패럴랙스 스크롤이 하나의 씬으로 엮인 WebGL 연출",
+    "principle": "스크롤 트리거 연출에 감각적 오디오 믹싱을 결합해 몰입감 극대화",
     "imageUrl": "/captures/igloo-inc.png",
-    "shortDesc": "3D 사운드"
+    "shortDesc": "3D 사운드 포트폴리오"
   },
   {
     "id": "messenger-abeto",
@@ -36,13 +33,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://messenger.abeto.co",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "Multiplayer"
+      "3D WebGL"
     ],
-    "anatomy": "작은 3D 행성 구체 위에서 유저들이 실시간으로 만나 소통하는 인터랙션",
-    "principle": "텍스트 메시징 인터페이스를 3D 멀티플레이어 행성 인터랙션으로 재해석",
+    "anatomy": "3D 행성 구체 위에서 유저들이 실시간으로 만나 소통하는 인터랙션",
+    "principle": "텍스트 메시징 UI를 3D 멀티플레이어 행성 인터랙션으로 재해석",
     "imageUrl": "/captures/messenger-abeto.png",
-    "shortDesc": "3D 멀티플레이어"
+    "shortDesc": "3D 멀티플레이어 구체"
   },
   {
     "id": "lusion-co",
@@ -50,12 +46,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://lusion.co",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas"
+      "3D WebGL"
     ],
     "anatomy": "실시간 물리 시뮬레이션과 커서 반응형 3D 그래픽 렌더링",
-    "principle": "기술을 장식이 아닌 감각적 촉감으로 변환하는 실시간 렌더링 퀄리티",
+    "principle": "기술을 장식이 아닌 감각적 촉감으로 변환하는 실시간 WebGL 렌더링",
     "imageUrl": "/captures/lusion-co.png",
-    "shortDesc": "실시간 3D"
+    "shortDesc": "실시간 3D 시뮬레이션"
   },
   {
     "id": "activetheory-net",
@@ -63,34 +59,33 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://activetheory.net",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "실시간 셰이더"
+      "3D WebGL"
     ],
     "anatomy": "WebGL 셰이더와 유기적인 마우스 트래킹 렌더링 시스템",
-    "principle": "실시간 셰이더와 웹 XR을 아우르는 무결점 인터랙션 연출의 기준점",
+    "principle": "실시간 셰이더와 웹 XR을 아우르는 인터랙션 연출의 기준점",
     "imageUrl": "/captures/activetheory-net.png",
-    "shortDesc": "WebGL 벤치마크"
+    "shortDesc": "WebGL 셰이더 포트폴리오"
   },
   {
     "id": "neal-fun",
     "title": "neal.fun",
     "url": "https://neal.fun",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "기발한 비주얼 상상력과 미니 인터랙티브 컨텐츠 모음",
     "principle": "복잡한 웹 기술 대신 확실한 기획 아이디어 하나로 몰입 유발",
     "imageUrl": "/captures/neal-fun.png",
-    "shortDesc": "비주얼 아이디어"
+    "shortDesc": "비주얼 아이디어 모음"
   },
   {
     "id": "poolsuite-net",
     "title": "poolsuite.net",
     "url": "https://poolsuite.net",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "레트로 90년대 OS 윈도우 UI 기반 라디오 및 음악 플레이어",
     "principle": "브랜드 정체성 자체를 인터랙티브 비주얼 OS 플레이어로 구현",
@@ -101,14 +96,14 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "patatap-com",
     "title": "patatap.com",
     "url": "https://patatap.com",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Sound Input"
+      "실험적 웹"
     ],
     "anatomy": "키보드 입력 반응형 2D 그래픽 캔버스 및 사운드 시퀀싱",
     "principle": "키보드 키 입력 단 하나로 시각 반응과 오디오를 1:1 완벽 동기화",
     "imageUrl": "/captures/patatap-com.png",
-    "shortDesc": "키보드 사운드"
+    "shortDesc": "키보드 사운드 캔버스"
   },
   {
     "id": "locomotive-ca",
@@ -116,78 +111,77 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://locomotive.ca",
     "category": "Interactive Web",
     "tags": [
-      "Scroll Trigger"
+      "인터랙티브 모션"
     ],
     "anatomy": "자체 제작 패럴랙스 스크롤 인터랙션과 타이포그래피 모션",
-    "principle": "스크롤 속도 및 시점 연출의 교과서적인 물리적 댐핑 컨트롤",
+    "principle": "스크롤 속도 및 시점 연출의 물리적 댐핑 컨트롤",
     "imageUrl": "/captures/locomotive-ca.png",
-    "shortDesc": "패럴랙스 스크롤"
+    "shortDesc": "패럴랙스 스크롤 모션"
   },
   {
     "id": "darkroom-engineering",
     "title": "darkroom.engineering",
     "url": "https://darkroom.engineering",
-    "category": "Interactive Web",
+    "category": "Typography",
     "tags": [
-      "Typography Motion"
+      "타이포그래피"
     ],
     "anatomy": "대형 모노스페이스 서체 가변 모션과 압도적인 웹 퍼포먼스",
-    "principle": "타이포그래피의 가변 폰트 모션만으로 압도적인 브랜딩 완성",
+    "principle": "타이포그래피의 가변 폰트 모션만으로 브랜딩 완성",
     "imageUrl": "/captures/darkroom-engineering.png",
-    "shortDesc": "타이포 모션"
+    "shortDesc": "가변 타이포 모션"
   },
   {
     "id": "pentagram-com",
     "title": "Pentagram (pentagram.com)",
     "url": "https://www.pentagram.com",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "시스템형 아이덴티티",
-      "에디토리얼"
+      "브랜드 아이덴티티"
     ],
     "anatomy": "엄격한 그리드 시스템 기반 아카이브 레이아웃",
-    "principle": "세계적인 독립 디자인 컨설팅 그룹의 명확한 시스템형 아카이빙 및 에디토리얼 교과서",
+    "principle": "독립 디자인 컨설팅 그룹의 시스템형 아카이빙 교과서",
     "imageUrl": "/captures/pentagram-com.png",
-    "shortDesc": "디자인 컨설팅"
+    "shortDesc": "세계적 브랜드 컨설팅"
   },
   {
     "id": "jetset-nl",
     "title": "Experimental Jetset (jetset.nl)",
     "url": "https://www.jetset.nl",
-    "category": "Graphic Design Studio",
+    "category": "Editorial & Print",
     "tags": [
-      "빼는 디자인"
+      "에디토리얼 & 출판"
     ],
     "anatomy": "단단하고 절제된 흑백 타이포그래피와 구조적 그리드 레이아웃",
-    "principle": "불필요한 모든 장식을 덜어낸 모더니즘 디자인 언어의 압도적 단단함",
+    "principle": "불필요한 장식을 덜어낸 모더니즘 디자인 언어의 단단함",
     "imageUrl": "/captures/jetset-nl.png",
-    "shortDesc": "미니멀 타이포"
+    "shortDesc": "미니멀 타이포 출판"
   },
   {
     "id": "wearecollins-com",
     "title": "Collins (wearecollins.com)",
     "url": "https://www.wearecollins.com",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "전략과 비주얼"
+      "브랜드 아이덴티티"
     ],
     "anatomy": "명확한 브랜드 명제와 스토리를 연결하는 비주얼 에세이",
-    "principle": "기업의 전략적 방향성이 비주얼 디자인 결과물로 명확히 이어지는 서사",
+    "principle": "기업의 전략적 방향성이 비주얼 디자인 결과물로 이어지는 서사",
     "imageUrl": "/captures/wearecollins-com.png",
-    "shortDesc": "브랜드 에세이"
+    "shortDesc": "전략적 비주얼 에세이"
   },
   {
     "id": "studiodumbar-com",
     "title": "Studio Dumbar / DEPT® (studiodumbar.com)",
     "url": "https://studiodumbar.com",
-    "category": "Graphic Design Studio",
+    "category": "Typography",
     "tags": [
-      "움직이는 아이덴티티"
+      "타이포그래피"
     ],
     "anatomy": "실시간 키네틱 타이포그래피와 움직이는 키 비주얼 아카이브",
-    "principle": "정적인 로고를 넘어 끊임없이 유기적으로 반응하는 모션 브랜드 언어",
+    "principle": "정적 로고를 넘어 끊임없이 반응하는 모션 브랜드 언어",
     "imageUrl": "/captures/studiodumbar-com.png",
-    "shortDesc": "키네틱 브랜딩"
+    "shortDesc": "키네틱 타이포 브랜딩"
   },
   {
     "id": "studiofeixen-ch",
@@ -195,38 +189,38 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://studiofeixen.ch",
     "category": "Graphic Design Studio",
     "tags": [
-      "색과 형태"
+      "디자인 스튜디오"
     ],
-    "anatomy": "과감하고 위트 있는 파스텔/원색 그리드 그래픽 인터랙션",
-    "principle": "자유로운 형태와 색상 실습 속에서도 철저하게 계산된 브랜드 미학",
+    "anatomy": "Studio Feixen (studiofeixen.ch) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/studiofeixen-ch.png",
-    "shortDesc": "컬러 그래픽"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "ok-rm-co-uk",
     "title": "OK-RM (ok-rm.co.uk)",
     "url": "https://ok-rm.co.uk",
-    "category": "Graphic Design Studio",
+    "category": "Editorial & Print",
     "tags": [
-      "출판과 아트"
+      "에디토리얼 & 출판"
     ],
     "anatomy": "독립 아트북, 에디토리얼 레이아웃 중심의 정교한 아카이브",
-    "principle": "종이와 인쇄물의 실물 절제미를 디지털 스크린 위로 온전히 전사",
+    "principle": "종이와 인쇄물의 실물 절제미를 디지털 스크린 위로 전사",
     "imageUrl": "/captures/ok-rm-co-uk.png",
-    "shortDesc": "아트북 출판"
+    "shortDesc": "독립 아트북 출판"
   },
   {
     "id": "wearemucho-com",
     "title": "Mucho (wearemucho.com)",
     "url": "https://wearemucho.com",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "위트 있는 브랜드"
+      "브랜드 아이덴티티"
     ],
     "anatomy": "명쾌하고 직관적인 비주얼 기믹과 아이디어 위주의 브랜딩 사례",
-    "principle": "단 한 문장과 아이콘만으로 브랜드를 한눈에 이해시키는 위트 조율",
+    "principle": "단 한 문장과 명확한 그래픽으로 브랜드를 전달하는 직관성",
     "imageUrl": "/captures/wearemucho-com.png",
-    "shortDesc": "위트 브랜딩"
+    "shortDesc": "아이디어 중심 브랜딩"
   },
   {
     "id": "heystudio-es",
@@ -234,25 +228,25 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://heystudio.es",
     "category": "Graphic Design Studio",
     "tags": [
-      "기하학 일러스트"
+      "디자인 스튜디오"
     ],
-    "anatomy": "강렬한 색면 대비와 특유의 기하학 일러스트레이션 시스템",
-    "principle": "최소한의 기하학적 형태 조합을 고유한 디자인 시그니처 언어로 구축",
+    "anatomy": "HEY Studio (heystudio.es) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/heystudio-es.png",
-    "shortDesc": "기하학 일러스트"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "koto-com",
     "title": "Koto (koto.com)",
     "url": "https://koto.com",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "따뜻함"
+      "브랜드 아이덴티티"
     ],
     "anatomy": "기술 기업 브랜드에 친근하고 인간적인 터치를 가미한 디자인",
-    "principle": "차갑고 건조한 테크 브랜딩에 다정하고 따뜻한 그래픽 페르소나 부여",
+    "principle": "차갑고 건조한 테크 브랜딩에 다정한 그래픽 페르소나 부여",
     "imageUrl": "/captures/koto-com.png",
-    "shortDesc": "테크 브랜딩"
+    "shortDesc": "테크 브랜드 아이덴티티"
   },
   {
     "id": "everyday-practice-com",
@@ -260,12 +254,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://everyday-practice.com",
     "category": "Graphic Design Studio",
     "tags": [
-      "사회적 메시지"
+      "디자인 스튜디오"
     ],
-    "anatomy": "사회 이슈, 포스터, 전시 인터랙션을 아우르는 그래픽 아카이브",
-    "principle": "디자인을 단순한 비주얼을 넘어 사회적 발언과 인게이지먼트로 확장",
+    "anatomy": "일상의실천 (everyday-practice.com) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/everyday-practice-com.png",
-    "shortDesc": "사회적 포스터"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "radio-garden",
@@ -273,75 +267,72 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://radio.garden",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "Sound Input"
+      "3D WebGL"
     ],
-    "anatomy": "3D 지구본을 직접 회전시키며 전 세계 실시간 지역 라디오를 탐색하는 웹",
+    "anatomy": "3D 지구본을 회전시키며 전 세계 실시간 지역 라디오를 탐색하는 웹",
     "principle": "지리적 3D 인터랙션과 실시간 오디오 스트리밍의 유기적 결합",
     "imageUrl": "/captures/radio-garden.png",
-    "shortDesc": "실시간 라디오"
+    "shortDesc": "실시간 지구본 라디오"
   },
   {
     "id": "window-swap",
     "title": "Window Swap (window-swap.com)",
     "url": "https://window-swap.com",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "Format Break"
+      "디자인 스튜디오"
     ],
-    "anatomy": "전 세계 누군가의 창밖 풍경과 소리를 무작위 비디오로 감상하는 UI",
-    "principle": "최소한의 인터페이스로 만들어내는 다정하고 감각적인 유저 경험의 환기",
+    "anatomy": "Window Swap (window-swap.com) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/window-swap.png",
-    "shortDesc": "창밖 비디오"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "pointerpointer",
     "title": "Pointer Pointer (pointerpointer.com)",
     "url": "https://pointerpointer.com",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "사용자의 커서 위치 좌표를 가리키는 실제 사람 사진을 매칭",
-    "principle": "단 하나의 농담 같은 위트 기믹 아이디어를 끝까지 고수해 만든 압도적 유머",
+    "principle": "단 하나의 농담 같은 위트 기믹 아이디어를 고수해 만든 유머",
     "imageUrl": "/captures/pointerpointer.png",
-    "shortDesc": "커서 가리키기"
+    "shortDesc": "커서 가리키기 기믹"
   },
   {
     "id": "zoomquilt",
     "title": "Zoomquilt (zoomquilt.org)",
     "url": "https://zoomquilt.org",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "그림 프레임 속으로 무한히 깊이 들어가는 줌인 애니메이션 아트",
-    "principle": "반복적 물리 줌 렌더링만으로 한계 없는 깊이감과 몰입감 창출",
+    "principle": "반복적 물리 줌 렌더링만으로 한계 없는 깊이감 창출",
     "imageUrl": "/captures/zoomquilt.png",
-    "shortDesc": "무한 줌인"
+    "shortDesc": "무한 줌인 아키텍처"
   },
   {
     "id": "quickdraw",
     "title": "Quick, Draw! (quickdraw.withgoogle.com)",
     "url": "https://quickdraw.withgoogle.com",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break",
-      "Sound Input"
+      "실험적 웹"
     ],
     "anatomy": "유저가 그린 낙서를 AI가 20초 안에 맞히는 스케치 게임 인터랙션",
-    "principle": "데이터 수집 프로세스를 놀이와 게이머빌리티 인터랙션으로 완벽 전환",
+    "principle": "데이터 수집 프로세스를 놀이 인터랙션으로 전환",
     "imageUrl": "/captures/quickdraw.png",
-    "shortDesc": "AI 낙서게임"
+    "shortDesc": "AI 낙서 게임"
   },
   {
     "id": "paperplanes",
     "title": "Paper Planes (paperplanes.world)",
     "url": "https://paperplanes.world",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Multiplayer",
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "스마트폰으로 접은 비행기를 날리면 글로벌 화면 속으로 들어가는 웹",
     "principle": "모바일 센서와 WebGL 글로벌 3D 공간을 이어주는 대륙간 인터랙션",
@@ -352,27 +343,27 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "ciechanowski",
     "title": "Ciechanowski (ciechanow.ski)",
     "url": "https://ciechanow.ski",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "기계 및 물리 작동 원리를 실시간 조작 캔버스로 해설하는 아티클",
     "principle": "지식 설명형 웹 인터랙션이 도달할 수 있는 최고 수준의 직관성",
     "imageUrl": "/captures/ciechanowski.png",
-    "shortDesc": "인터랙티브 원리해설"
+    "shortDesc": "인터랙티브 원리 해설"
   },
   {
     "id": "ncase-me",
     "title": "Nicky Case (ncase.me)",
     "url": "https://ncase.me",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
-    "anatomy": "사회적 시스템과 이론(The Evolution of Trust)을 직접 조작하는 시뮬레이션 게임",
-    "principle": "복잡한 개념과 이론을 플레이어의 직관적 선택 게임으로 쉽게 전달",
+    "anatomy": "사회적 시스템과 이론을 직접 조작하는 시뮬레이션 게임",
+    "principle": "복잡한 개념과 이론을 플레이어의 직관적 선택 게임으로 전달",
     "imageUrl": "/captures/ncase-me.png",
-    "shortDesc": "시뮬레이션 게임"
+    "shortDesc": "시스템 시뮬레이션 게임"
   },
   {
     "id": "pudding-cool",
@@ -380,38 +371,38 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://pudding.cool",
     "category": "Interactive Web",
     "tags": [
-      "Scroll Trigger"
+      "인터랙티브 모션"
     ],
-    "anatomy": "데이터 시각화와 에디토리얼 저널리즘이 스크롤과 결합된 비주얼 에세이",
+    "anatomy": "데이터 시각화와 저널리즘이 스크롤과 결합된 비주얼 에세이",
     "principle": "정적 그래프를 넘어 스크롤 기반 데이터 스토리를 전달하는 저널리즘",
     "imageUrl": "/captures/pudding-cool.png",
-    "shortDesc": "데이터 저널리즘"
+    "shortDesc": "데이터 저널리즘 에세이"
   },
   {
     "id": "windows93",
     "title": "Windows 93 (windows93.net)",
     "url": "http://www.windows93.net",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "90년대 가짜 윈도우 OS 패러디와 다양한 미니 프로그램 인터랙션",
     "principle": "B급 서브컬처 패러디와 브라우저 속 OS 가상화의 결합",
     "imageUrl": "/captures/windows93.png",
-    "shortDesc": "패러디 OS"
+    "shortDesc": "패러디 OS 웹스페이스"
   },
   {
     "id": "hellomonday",
     "title": "Hello Monday (hellomonday.com)",
     "url": "https://www.hellomonday.com",
-    "category": "Graphic Design Studio",
+    "category": "Interactive Web",
     "tags": [
-      "움직이는 아이덴티티"
+      "인터랙티브 모션"
     ],
     "anatomy": "감각적인 애니메이션 및 부드러운 마이크로 인터랙션 모음",
     "principle": "유연한 트랜지션과 마이크로 인터랙션으로 완성하는 디테일",
     "imageUrl": "/captures/hellomonday.png",
-    "shortDesc": "마이크로 모션"
+    "shortDesc": "마이크로 모션 포트폴리오"
   },
   {
     "id": "makemepulse",
@@ -419,12 +410,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.makemepulse.com",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas"
+      "3D WebGL"
     ],
     "anatomy": "하이엔드 WebGL 그래픽과 압도적인 모션 인터랙션 브랜드 사이트",
-    "principle": "웹기술을 예술적 인터랙티브 캔버스로 변환하는 몰입감",
+    "principle": "웹 기술을 예술적 인터랙티브 캔버스로 변환하는 몰입감",
     "imageUrl": "/captures/makemepulse.png",
-    "shortDesc": "WebGL 아티팩트"
+    "shortDesc": "WebGL 아티팩트 브랜드"
   },
   {
     "id": "14islands",
@@ -432,10 +423,10 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://14islands.com",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas"
+      "3D WebGL"
     ],
     "anatomy": "유기적인 3D 메쉬 연출과 자연스러운 화면 전환",
-    "principle": "3D 오브젝트와 텍스트 레이아웃의 자연스러운 유기적 융합",
+    "principle": "3D 오브젝트와 텍스트 레이아웃의 유기적 융합",
     "imageUrl": "/captures/14islands.png",
     "shortDesc": "3D 메쉬 인터랙션"
   },
@@ -445,12 +436,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://obys.agency",
     "category": "Graphic Design Studio",
     "tags": [
-      "Typography Motion"
+      "디자인 스튜디오"
     ],
-    "anatomy": "감각적인 타이포그래피 모션과 스무스 트랜지션 포트폴리오",
-    "principle": "타이포그래피의 움직임과 마우스 커서 반응만으로 시각적 리듬 형성",
+    "anatomy": "Obys Agency (obys.agency) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/obys-agency.png",
-    "shortDesc": "타이포 트랜지션"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "cuberto",
@@ -458,12 +449,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://cuberto.com",
     "category": "Interactive Web",
     "tags": [
-      "Scroll Trigger"
+      "인터랙티브 모션"
     ],
     "anatomy": "마우스 커서 팔로우 애니메이션과 역동적인 비디오 트랜지션",
-    "principle": "커서 인터랙션의 표준을 보여주는 유기적인 포인터 피드백",
+    "principle": "커서 인터랙션의 표준을 보여주는 유기적 포인터 피드백",
     "imageUrl": "/captures/cuberto.png",
-    "shortDesc": "커서 인터랙션"
+    "shortDesc": "커서 모션 인터랙션"
   },
   {
     "id": "dogstudio",
@@ -471,13 +462,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://dogstudio.co",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "Sound"
+      "3D WebGL"
     ],
     "anatomy": "대형 3D 동물/마스크 렌더링과 사운드트랙 결합 브랜딩",
-    "principle": "시각적 3D 오브젝트와 사운드를 통합한 압도적 서사 연출",
+    "principle": "시각적 3D 오브젝트와 사운드를 통합한 서사 연출",
     "imageUrl": "/captures/dogstudio.png",
-    "shortDesc": "3D 스토리텔링"
+    "shortDesc": "3D 브랜딩 서사"
   },
   {
     "id": "immersive-garden",
@@ -485,12 +475,12 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://immersive-g.com",
     "category": "Interactive Web",
     "tags": [
-      "Scroll Trigger"
+      "인터랙티브 모션"
     ],
     "anatomy": "마이크로 인터랙션과 고화질 에디토리얼 텍스처 레이어링",
-    "principle": "미세한 모션 지연과 여백 연출로 완성하는 최고급 감각",
+    "principle": "미세한 모션 지연과 여백 연출로 완성하는 하이엔드 감각",
     "imageUrl": "/captures/immersive-garden.png",
-    "shortDesc": "감각적 비주얼"
+    "shortDesc": "에디토리얼 비주얼 모션"
   },
   {
     "id": "basement-studio",
@@ -498,66 +488,64 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://basement.studio",
     "category": "Graphic Design Studio",
     "tags": [
-      "빼는 디자인",
-      "Typography Motion"
+      "디자인 스튜디오"
     ],
-    "anatomy": "모더니즘 모노스페이스 서체와 위트 있는 웹 비주얼 언어",
-    "principle": "개발자적 위트와 디자인 스튜디오의 단단한 흑백 타이포 결합",
+    "anatomy": "Basement Studio (basement.studio) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/basement-studio.png",
-    "shortDesc": "에지 모노스페이스"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "mschf",
     "title": "MSCHF (mschf.com)",
     "url": "https://mschf.com",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "격주 드롭 형식의 기발한 사물과 가짜 브랜딩 인터랙션",
     "principle": "브랜드 사이트 자체가 하나의 유쾌한 장난이자 예술 실험인 형태",
     "imageUrl": "/captures/mschf.png",
-    "shortDesc": "브랜드 실험실"
+    "shortDesc": "브랜드 아이디어 실험실"
   },
   {
     "id": "teenage-engineering",
     "title": "Teenage Engineering (teenage.engineering)",
     "url": "https://teenage.engineering",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "빼는 디자인",
-      "시스템형 아이덴티티"
+      "디지털 제품 & UI"
     ],
     "anatomy": "제품 사이트를 기계 매뉴얼 및 도면 스타일로 구현한 인터페이스",
-    "principle": "하드웨어 매뉴얼의 조형미를 웹 아카이브 인터페이스로 직관적 치환",
+    "principle": "하드웨어 매뉴얼의 조형미를 웹 아카이브 인터페이스로 치환",
     "imageUrl": "/captures/teenage-engineering.png",
-    "shortDesc": "매뉴얼 인터페이스"
+    "shortDesc": "하드웨어 매뉴얼 UI"
   },
   {
     "id": "experiments-with-google",
     "title": "Chrome Experiments (experiments.withgoogle.com)",
     "url": "https://experiments.withgoogle.com",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "세계적인 웹 익스페리언스 및 기술 실습 프로젝트 아카이브",
     "principle": "기술과 예술의 경계를 넘나드는 커뮤니티형 웹 실험 데이터베이스",
     "imageUrl": "/captures/experiments-with-google.png",
-    "shortDesc": "크롬 웹실험"
+    "shortDesc": "크롬 웹실험 아카이브"
   },
   {
     "id": "codrops",
     "title": "Codrops (tympanus.net/codrops)",
     "url": "https://tympanus.net/codrops",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "최신 웹 애니메이션, 셰이더, UI 인터랙션 데모 교과서",
     "principle": "웹 프론트엔드 모션 인터랙션의 표준 기술과 소스 아카이빙",
     "imageUrl": "/captures/codrops.png",
-    "shortDesc": "인터랙션 데모"
+    "shortDesc": "웹 애니메이션 데모"
   },
   {
     "id": "shadertoy",
@@ -565,25 +553,23 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.shadertoy.com",
     "category": "Interactive Web",
     "tags": [
-      "실시간 셰이더",
-      "3D Canvas"
+      "3D WebGL"
     ],
     "anatomy": "픽셀 셰이더 코드 라이브 렌더링 및 글로벌 커뮤니티",
     "principle": "코드 몇 줄로 완성하는 실시간 셰이더 수학과 미학의 상극",
     "imageUrl": "/captures/shadertoy.png",
-    "shortDesc": "실시간 셰이더"
+    "shortDesc": "실시간 셰이더 커뮤니티"
   },
   {
     "id": "hydra-livecoding",
     "title": "Hydra (hydra.ojack.xyz)",
     "url": "https://hydra.ojack.xyz",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break",
-      "Sound Input"
+      "실험적 웹"
     ],
     "anatomy": "브라우저 라이브 코딩 비주얼 렌더링 및 비디오 믹싱 툴",
-    "principle": "실시간 코드 입력을 아날로그 질감의 실시간 그래픽으로 연결",
+    "principle": "실시간 코드 입력을 아날로그 질감의 그래픽으로 연결",
     "imageUrl": "/captures/hydra-livecoding.png",
     "shortDesc": "라이브 코딩 비주얼"
   },
@@ -591,53 +577,53 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "lynn-and-tonic",
     "title": "Lynn Fisher (lynnandtonic.com)",
     "url": "https://lynnandtonic.com",
-    "category": "Interactive Web",
+    "category": "Experimental Web",
     "tags": [
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "해마다 완전히 새로운 컨셉과 레이아웃으로 개편되는 포트폴리오",
     "principle": "단일 웹사이트가 가질 수 있는 컨셉 변경의 무한한 자유도",
     "imageUrl": "/captures/lynn-and-tonic.png",
-    "shortDesc": "컨셉 포트폴리오"
+    "shortDesc": "컨셉 파격 포트폴리오"
   },
   {
     "id": "arena",
     "title": "Are.na (are.na)",
     "url": "https://www.are.na",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "시스템형 아이덴티티"
+      "디자인 아카이브"
     ],
     "anatomy": "마인드맵과 블록 연결형 아카이빙 지식 탐색 플랫폼",
-    "principle": "텍스트와 이미지를 하이퍼링크 블록 체계로 잇는 아카이빙의 정석",
+    "principle": "텍스트와 이미지를 하이퍼링크 블록 체계로 잇는 아카이빙",
     "imageUrl": "/captures/arena.png",
-    "shortDesc": "블록 아카이빙"
+    "shortDesc": "블록 연결형 지식 아카이브"
   },
   {
     "id": "cosmos-so",
     "title": "Cosmos (cosmos.so)",
     "url": "https://www.cosmos.so",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "빼는 디자인"
+      "디자인 아카이브"
     ],
     "anatomy": "여백 중심의 시각 레퍼런스 무드보드 아카이브 인터페이스",
     "principle": "이미지 자체만 말하게 하는 극제된 아카이빙 그리드 레이아웃",
     "imageUrl": "/captures/cosmos-so.png",
-    "shortDesc": "무드보드 아카이브"
+    "shortDesc": "무드보드 비주얼 아카이브"
   },
   {
     "id": "savee-it",
     "title": "Savee (savee.it)",
     "url": "https://savee.it",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "시스템형 아이덴티티"
+      "디자인 아카이브"
     ],
     "anatomy": "디자이너를 위한 고화질 비주얼 스피드 아카이빙 그리드",
     "principle": "최소한의 UI 억제와 완벽한 이미지 정렬 비율",
     "imageUrl": "/captures/savee-it.png",
-    "shortDesc": "비주얼 아카이브"
+    "shortDesc": "디자이너 비주얼 아카이브"
   },
   {
     "id": "godly-website",
@@ -645,25 +631,25 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://godly.website",
     "category": "Interactive Web",
     "tags": [
-      "Scroll Trigger"
+      "인터랙티브 모션"
     ],
     "anatomy": "엄선된 최고 수준의 웹 디자인 비디오 & 이미지 아카이브",
-    "principle": "웹사이트의 비디오 비주얼과 스크롤 모션을 완벽 큐레이션",
+    "principle": "웹사이트의 비디오 비주얼과 스크롤 모션을 큐레이션",
     "imageUrl": "/captures/godly-website.png",
-    "shortDesc": "웹 디자인 큐레이션"
+    "shortDesc": "웹 모션 큐레이션"
   },
   {
     "id": "siteinspire",
     "title": "Siteinspire (siteinspire.com)",
     "url": "https://www.siteinspire.com",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "시스템형 아이덴티티"
+      "디자인 아카이브"
     ],
     "anatomy": "정갈한 그리드 필터링 아카이브의 클래식 표준",
     "principle": "태그와 태그 검색만으로 탐색하는 텍스트 중심 아카이브 구조",
     "imageUrl": "/captures/siteinspire.png",
-    "shortDesc": "그리드 웹 아카이브"
+    "shortDesc": "웹 디자인 필터 아카이브"
   },
   {
     "id": "resn-co-nz",
@@ -671,53 +657,51 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://resn.co.nz",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas",
-      "실시간 셰이더"
+      "3D WebGL"
     ],
     "anatomy": "몰입형 3D 인터랙션과 초현실적 비주얼 모션 포트폴리오",
-    "principle": "웹 브라우저에서 표현 가능한 3D 몰입감의 끝판왕",
+    "principle": "웹 브라우저에서 표현 가능한 3D 몰입감과 비주얼 스토리텔링의 결합",
     "imageUrl": "/captures/resn-co-nz.png",
-    "shortDesc": "몰입형 3D"
+    "shortDesc": "몰입형 3D 인터랙션"
   },
   {
     "id": "jam3",
     "title": "Jam3 (jam3.com)",
     "url": "https://www.jam3.com",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "Scroll Trigger"
+      "디자인 스튜디오"
     ],
-    "anatomy": "스토리텔링 중심의 디지털 브랜드 경험 포트폴리오",
-    "principle": "내러티브 스토리텔링을 웹 브랜딩 인터랙션으로 가공",
+    "anatomy": "Jam3 (jam3.com) - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/jam3.png",
-    "shortDesc": "디지털 스토리텔링"
+    "shortDesc": "디자인 스튜디오"
   },
   {
     "id": "instrument-com",
     "title": "Instrument (instrument.com)",
     "url": "https://www.instrument.com",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "전략과 비주얼"
+      "브랜드 아이덴티티"
     ],
     "anatomy": "구조적 안정감과 타이포 중심의 브랜드 에이전시 웹사이트",
     "principle": "대형 테크 브랜드 사이트의 정교한 시스템적 완성도",
     "imageUrl": "/captures/instrument-com.png",
-    "shortDesc": "브랜드 시스템"
+    "shortDesc": "대형 테크 브랜드 시스템"
   },
   {
     "id": "bureau-oberhaeuser",
     "title": "Bureau Oberhaeuser (bureau-oberhaeuser.com)",
     "url": "https://bureau-oberhaeuser.com",
-    "category": "Graphic Design Studio",
+    "category": "Editorial & Print",
     "tags": [
-      "빼는 디자인",
-      "에디토리얼"
+      "에디토리얼 & 출판"
     ],
     "anatomy": "정교한 그리드와 모노스페이스 타이포의 미니멀리즘 아카이브",
     "principle": "그리드 시스템과 타이포그래피의 엄격한 정교함",
     "imageUrl": "/captures/bureau-oberhaeuser.png",
-    "shortDesc": "그리드 타이포"
+    "shortDesc": "그리드 타이포 아카이브"
   },
   {
     "id": "random-studio",
@@ -725,65 +709,63 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://random.studio",
     "category": "Interactive Web",
     "tags": [
-      "3D Canvas"
+      "3D WebGL"
     ],
     "anatomy": "디지털과 공간 인터랙션을 연결하는 3D 경험 사이트",
     "principle": "공간감과 건축적 라이팅을 웹 인터페이스로 확장",
     "imageUrl": "/captures/random-studio.png",
-    "shortDesc": "공간 인터랙션"
+    "shortDesc": "공간 경험 디자인"
   },
   {
     "id": "monopo-london",
     "title": "Monopo (monopo.london)",
     "url": "https://monopo.london",
-    "category": "Graphic Design Studio",
+    "category": "Typography",
     "tags": [
-      "Typography Motion"
+      "타이포그래피"
     ],
     "anatomy": "대담한 레이아웃과 감각적인 시각 리듬의 에이전시 포트폴리오",
-    "principle": "불규칙한 대각선 및 파격적인 비주얼 리듬감",
+    "principle": "불규칙한 대각선 및 파격적인 비주얼 타이포 리듬감",
     "imageUrl": "/captures/monopo-london.png",
-    "shortDesc": "비주얼 리듬"
+    "shortDesc": "실험적 타이포 모션"
   },
   {
     "id": "cursor-com",
     "title": "Cursor (cursor.com)",
     "url": "https://www.cursor.com",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "시스템형 아이덴티티",
-      "빼는 디자인"
+      "디지털 제품 & UI"
     ],
     "anatomy": "개발 툴 UI의 실용성과 현대적 다크/라이트 브랜딩의 결합",
     "principle": "실용적 개발자 툴 인터페이스와 세련된 웹 브랜딩 결합",
     "imageUrl": "/captures/cursor-com.png",
-    "shortDesc": "개발 툴 브랜딩"
+    "shortDesc": "AI 코드 에디터 브랜딩"
   },
   {
     "id": "superflux",
     "title": "Superflux (superflux.in)",
     "url": "https://superflux.in",
-    "category": "Graphic Design Studio",
+    "category": "Experimental Web",
     "tags": [
-      "사회적 메시지",
-      "Format Break"
+      "실험적 웹"
     ],
     "anatomy": "비선형적 서사와 미래 시나리오 기반의 아카이브 탐색",
     "principle": "디자인을 고찰과 내러티브 탐구의 도구로 다루는 비선형 웹",
     "imageUrl": "/captures/superflux.png",
-    "shortDesc": "비선형 내러티브"
+    "shortDesc": "비선형 미래 서사"
   },
   {
     "id": "sainturbain-com",
     "title": "NYC x LA - Branding and Creative Design Agency - Saint Urbain",
     "url": "https://www.sainturbain.com/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "NYC x LA - Branding and Creative Design Agency - Saint Urbain - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 디자인 스튜디오",
+    "anatomy": "NYC와 LA를 기반으로 한 독창적 브랜드 비주얼 아이덴티티 포트폴리오",
+    "principle": "대담한 색상과 타이포그래피 조합으로 명확한 브랜드 성격 구축",
     "imageUrl": "/captures/sainturbain-com.png",
     "videoUrl": "/videos/sainturbain-com.webm"
   },
@@ -791,13 +773,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "inspirationfeed-com",
     "title": "60 Examples of Japanese Graphic Design | Inspirationfeed",
     "url": "https://inspirationfeed.com/japanese-graphic-design/",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "그래픽"
+      "디자인 아카이브"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "60 Examples of Japanese Graphic Design | Inspirationfeed - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "일본 그래픽 디자인 컬렉션",
+    "anatomy": "60가지 뛰어난 일본 그래픽 디자인 사례 및 비주얼 컬렉션",
+    "principle": "동양적 타이포그래피와 여백 활용 디자인 레퍼런스 큐레이션",
     "imageUrl": "/captures/inspirationfeed-com.png",
     "videoUrl": "/videos/inspirationfeed-com.webm"
   },
@@ -805,13 +787,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "gonzalorodriguez-studio",
     "title": "GALLERY | Gonzalo Rodriguez Studio",
     "url": "https://gonzalorodriguez.studio/gallery/",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "그래픽"
+      "디자인 아카이브"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "GALLERY | Gonzalo Rodriguez Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "GALLERY | Gonzalo Rodriguez Studio - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/gonzalorodriguez-studio.png",
     "videoUrl": "/videos/gonzalorodriguez-studio.webm"
   },
@@ -819,13 +801,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "vaultartspace-gucci-com",
     "title": "Vault Art Space",
     "url": "https://vaultartspace.gucci.com/gallery/grid",
-    "category": "Interactive Web",
+    "category": "Archive & Curation",
     "tags": [
-      "미디어 아트"
+      "디자인 아카이브"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Vault Art Space - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "Vault Art Space - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/vaultartspace-gucci-com.png",
     "videoUrl": "/videos/vaultartspace-gucci-com.webm"
   },
@@ -833,13 +815,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "visualjournal-it",
     "title": "Visual Journal – Branding, Editorial and Graphic Design",
     "url": "https://visualjournal.it/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Visual Journal – Branding, Editorial and Graphic Design - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Visual Journal – Branding, Editorial and Graphic Design - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/visualjournal-it.png",
     "videoUrl": "/videos/visualjournal-it.webm"
   },
@@ -847,13 +829,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "kamponggelamorous-com",
     "title": "Kampong Gelamorous",
     "url": "https://kamponggelamorous.com/abouttheproject/",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Kampong Gelamorous - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Kampong Gelamorous - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/kamponggelamorous-com.png",
     "videoUrl": "/videos/kamponggelamorous-com.webm"
   },
@@ -863,11 +845,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://vosk.design/work/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "vosk design studio — work - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "vosk design studio — work - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/vosk-design.png",
     "videoUrl": "/videos/vosk-design.webm"
   },
@@ -875,13 +857,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "homelesspenthouse-com",
     "title": "Artist Products – HOMELESS PENTHOUSE",
     "url": "https://www.homelesspenthouse.com/collections/artist-products",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Artist Products – HOMELESS PENTHOUSE - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "Artist Products – HOMELESS PENTHOUSE - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/homelesspenthouse-com.png",
     "videoUrl": "/videos/homelesspenthouse-com.webm"
   },
@@ -891,11 +873,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://fuckyou.design/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "FUCKYOU.DESIGN - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "FUCKYOU.DESIGN - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/fuckyou-design.png",
     "videoUrl": "/videos/fuckyou-design.webm"
   },
@@ -903,13 +885,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "brandarchive-xyz",
     "title": "Brand Archive",
     "url": "https://brandarchive.xyz/?ref=bpando",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Brand Archive - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Brand Archive - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/brandarchive-xyz.png",
     "videoUrl": "/videos/brandarchive-xyz.webm"
   },
@@ -917,13 +899,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "ls-graphics",
     "title": "Download Free Mockups [PSD, Sketch, Figma] | Huge Collection at ls.graphics",
     "url": "https://www.ls.graphics/free-mockups",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Download Free Mockups [PSD, Sketch, Figma] | Huge Collection at ls.graphics - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Download Free Mockups [PSD, Sketch, Figma] | Huge Collection at ls.graphics - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/ls-graphics.png",
     "videoUrl": "/videos/ls-graphics.webm"
   },
@@ -933,11 +915,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://werkgraphic.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Studio Werk - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Studio Werk - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/werkgraphic-com.png",
     "videoUrl": "/videos/werkgraphic-com.webm"
   },
@@ -945,13 +927,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "anothergraphic-org",
     "title": "Cihan Tamti | Another Graphic - graphic design & typography archive and inspiration",
     "url": "https://anothergraphic.org/cihan-tamti-4/",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "타이포그래피"
+      "디자인 아카이브"
     ],
-    "shortDesc": "타이포그래피 & 폰트 파운드리",
-    "anatomy": "Cihan Tamti | Another Graphic - graphic design & typography archive and inspiration - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "Cihan Tamti | Another Graphic - graphic design & typography archive and inspiration - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/anothergraphic-org.png",
     "videoUrl": "/videos/anothergraphic-org.webm"
   },
@@ -961,11 +943,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://gdbot.tumblr.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Graphic Design Bot - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Graphic Design Bot - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/gdbot-tumblr-com.png",
     "videoUrl": "/videos/gdbot-tumblr-com.webm"
   },
@@ -973,13 +955,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "iframefonts-gumroad-com",
     "title": "Kica Display Font Family",
     "url": "https://iframefonts.gumroad.com/l/kica-display-font",
-    "category": "Graphic Design Studio",
+    "category": "Typography",
     "tags": [
       "타이포그래피"
     ],
-    "shortDesc": "타이포그래피 & 폰트 파운드리",
-    "anatomy": "Kica Display Font Family - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "타이포그래피 리소스",
+    "anatomy": "Kica Display Font Family - 서체 디자인 및 타이포그래피 탐색 레퍼런스",
+    "principle": "폰트 형태와 타이포 그래픽 배치의 기술적/예술적 사례",
     "imageUrl": "/captures/iframefonts-gumroad-com.png",
     "videoUrl": "/videos/iframefonts-gumroad-com.webm"
   },
@@ -989,11 +971,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://mouthwash.studio/work",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Work — Mouthwash Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Work — Mouthwash Studio - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/mouthwash-studio.png",
     "videoUrl": "/videos/mouthwash-studio.webm"
   },
@@ -1001,13 +983,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "artworld-agency",
     "title": "ARTWORLD",
     "url": "https://artworld.agency/",
-    "category": "Graphic Design Studio",
+    "category": "Media Art & Gallery",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "ARTWORLD - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "ARTWORLD - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/artworld-agency.png",
     "videoUrl": "/videos/artworld-agency.webm"
   },
@@ -1015,13 +997,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "the-brandidentity-com",
     "title": "The Brand Identity",
     "url": "https://the-brandidentity.com/",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "The Brand Identity - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "The Brand Identity - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/the-brandidentity-com.png",
     "videoUrl": "/videos/the-brandidentity-com.webm"
   },
@@ -1031,11 +1013,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.thedistrict.co.uk/?src=tbi",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "The District are a design practice - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "The District are a design practice - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/thedistrict-co-uk.png",
     "videoUrl": "/videos/thedistrict-co-uk.webm"
   },
@@ -1043,13 +1025,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "jvg-es",
     "title": "Brio: Aqua Flux - JVG™",
     "url": "https://jvg.es/work/brio-aqua-flux",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Brio: Aqua Flux - JVG™ - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Brio: Aqua Flux - JVG™ - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/jvg-es.png",
     "videoUrl": "/videos/jvg-es.webm"
   },
@@ -1057,13 +1039,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "the-museum-visitor-com",
     "title": "THE MUSEUM VISITOR",
     "url": "https://www.the--museum--visitor.com/",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "THE MUSEUM VISITOR - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "THE MUSEUM VISITOR - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/the-museum-visitor-com.png",
     "videoUrl": "/videos/the-museum-visitor-com.webm"
   },
@@ -1071,13 +1053,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "spacetypegenerator-com",
     "title": "STG _v.Pow",
     "url": "https://spacetypegenerator.com//pow",
-    "category": "Graphic Design Studio",
+    "category": "Typography",
     "tags": [
       "타이포그래피"
     ],
-    "shortDesc": "타이포그래피 & 폰트 파운드리",
-    "anatomy": "STG _v.Pow - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "타이포그래피 리소스",
+    "anatomy": "STG _v.Pow - 서체 디자인 및 타이포그래피 탐색 레퍼런스",
+    "principle": "폰트 형태와 타이포 그래픽 배치의 기술적/예술적 사례",
     "imageUrl": "/captures/spacetypegenerator-com.png",
     "videoUrl": "/videos/spacetypegenerator-com.webm"
   },
@@ -1087,11 +1069,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://wax-studios.com/projects",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Wax Studios » Showcase - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Wax Studios » Showcase - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/wax-studios-com.png",
     "videoUrl": "/videos/wax-studios-com.webm"
   },
@@ -1099,13 +1081,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "kr-etudes-studio-com",
     "title": "Etudes - What's new",
     "url": "https://kr.etudes-studio.com/collections/new-arrivals?utm_source=google&utm_medium=paid&utm_campaign=%7B%7Bcampaign.name%7D%7D&gclid=CjwKCAjwvrOpBhBdEiwAR58-3DivG-YBtVYd0mIFc9XmZyJFh6q96E_hRzETg4POsImAv-Y5MvppURoCyv4QAvD_BwE&shpxid=083bc930-0f47-40dc-99bb-f8ed6f31fd06",
-    "category": "Graphic Design Studio",
+    "category": "Motion & 3D Studio",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Etudes - What's new - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "3D 모션 그래픽",
+    "anatomy": "Etudes - What's new - 3D 애니메이션 및 모션 그래픽 프로젝트",
+    "principle": "역동적인 3D 비주얼과 모션 기술의 결합",
     "imageUrl": "/captures/kr-etudes-studio-com.png",
     "videoUrl": "/videos/kr-etudes-studio-com.webm"
   },
@@ -1113,13 +1095,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "booooooom-com",
     "title": "BOOOOOOOM - CREATE * INSPIRE * COMMUNITY * ART * DESIGN * MUSIC * FILM * PHOTO * PROJECTS",
     "url": "https://www.booooooom.com/",
-    "category": "Graphic Design Studio",
+    "category": "Media Art & Gallery",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "BOOOOOOOM - CREATE * INSPIRE * COMMUNITY * ART * DESIGN * MUSIC * FILM * PHOTO * PROJECTS - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "BOOOOOOOM - CREATE * INSPIRE * COMMUNITY * ART * DESIGN * MUSIC * FILM * PHOTO * PROJECTS - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/booooooom-com.png",
     "videoUrl": "/videos/booooooom-com.webm"
   },
@@ -1129,11 +1111,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "http://mdesign.designhouse.co.kr/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "월간 디자인 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "월간 디자인 - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/mdesign-designhouse-co-kr.png",
     "videoUrl": "/videos/mdesign-designhouse-co-kr.webm"
   },
@@ -1143,11 +1125,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.designdb.com/?menuno=668",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "디자인DB > 디자인DB - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "디자인DB > 디자인DB - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/designdb-com.png",
     "videoUrl": "/videos/designdb-com.webm"
   },
@@ -1155,13 +1137,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "materialdistrict-com",
     "title": "MaterialDistrict - New materials for Architecture, Interior, Apparel, Products, Packaging",
     "url": "https://materialdistrict.com/",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "CMF"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "CMF & 공간/소재 아카이브",
-    "anatomy": "MaterialDistrict - New materials for Architecture, Interior, Apparel, Products, Packaging - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디지털 제품 & UI",
+    "anatomy": "MaterialDistrict - New materials for Architecture, Interior, Apparel, Products, Packaging - UI/UX 디자인 시스템 및 제품 인터페이스",
+    "principle": "사용자 경험 중심의 기능적 인터페이스 디자인",
     "imageUrl": "/captures/materialdistrict-com.png",
     "videoUrl": "/videos/materialdistrict-com.webm"
   },
@@ -1169,13 +1151,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "thedieline-com",
     "title": "Dieline - Design, Branding & Packaging Inspiration",
     "url": "https://thedieline.com/?",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Dieline - Design, Branding & Packaging Inspiration - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Dieline - Design, Branding & Packaging Inspiration - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/thedieline-com.png",
     "videoUrl": "/videos/thedieline-com.webm"
   },
@@ -1185,11 +1167,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://playgroundparis.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Playground Paris - Graphic Design Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Playground Paris - Graphic Design Studio - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/playgroundparis-com.png",
     "videoUrl": "/videos/playgroundparis-com.webm"
   },
@@ -1199,11 +1181,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.handsomefrank.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Handsome Frank Illustration Agency - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Handsome Frank Illustration Agency - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/handsomefrank-com.png",
     "videoUrl": "/videos/handsomefrank-com.webm"
   },
@@ -1213,11 +1195,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://graphicmama.com/blog/illustration-companies-studios-agencies/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Top 30 Illustration Companies: Studios & Agencies for Visual Solutions - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Top 30 Illustration Companies: Studios & Agencies for Visual Solutions - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/graphicmama-com.png",
     "videoUrl": "/videos/graphicmama-com.webm"
   },
@@ -1227,11 +1209,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://designer-story.tistory.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "연정's Figma - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "연정's Figma - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/designer-story-tistory-com.png",
     "videoUrl": "/videos/designer-story-tistory-com.webm"
   },
@@ -1239,13 +1221,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "posterfortomorrow-org",
     "title": "Poster for tomorrow",
     "url": "https://www.posterfortomorrow.org/en/gallery/?project=we-stand-with-iranians&sort=recent",
-    "category": "Interactive Web",
+    "category": "Archive & Curation",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 아카이브"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Poster for tomorrow - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "Poster for tomorrow - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/posterfortomorrow-org.png",
     "videoUrl": "/videos/posterfortomorrow-org.webm"
   },
@@ -1255,11 +1237,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.ndc.co.jp/hara/en/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "HARA DESIGN INSTITUTE - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "HARA DESIGN INSTITUTE - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/ndc-co-jp.png",
     "videoUrl": "/videos/ndc-co-jp.webm"
   },
@@ -1267,13 +1249,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "open-foundry-com",
     "title": "Open Foundry / Fonts / Tex Gyre Heros Condensed Regular",
     "url": "https://open-foundry.com/fonts/tex_gyre_heros_condensed_regular",
-    "category": "Graphic Design Studio",
+    "category": "Typography",
     "tags": [
       "타이포그래피"
     ],
-    "shortDesc": "타이포그래피 & 폰트 파운드리",
-    "anatomy": "Open Foundry / Fonts / Tex Gyre Heros Condensed Regular - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "오픈소스 폰트 파운드리",
+    "anatomy": "무료 오픈소스 폰트 시각적 테스트 및 파운드리 플랫폼",
+    "principle": "브라우저에서 직접 서체 무게와 인터페이스 반응성을 테스트",
     "imageUrl": "/captures/open-foundry-com.png",
     "videoUrl": "/videos/open-foundry-com.webm"
   },
@@ -1281,13 +1263,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "bookcoverarchive-com",
     "title": "Book Cover Archive",
     "url": "http://bookcoverarchive.com/",
-    "category": "Interactive Web",
+    "category": "Editorial & Print",
     "tags": [
-      "기타 웹 레퍼런스"
+      "에디토리얼 & 출판"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Book Cover Archive - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "북 커버 디자인 아카이브",
+    "anatomy": "세계적인 도서 표지 디자인 및 타이포그래피 아카이브",
+    "principle": "도서 인쇄물의 지면 디자인과 서체 배치를 아카이빙",
     "imageUrl": "/captures/bookcoverarchive-com.png",
     "videoUrl": "/videos/bookcoverarchive-com.webm"
   },
@@ -1295,13 +1277,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "casualoptimist-com",
     "title": "Books, Design and Culture",
     "url": "http://www.casualoptimist.com/",
-    "category": "Graphic Design Studio",
+    "category": "Editorial & Print",
     "tags": [
-      "그래픽"
+      "에디토리얼 & 출판"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Books, Design and Culture - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "도서 출판 디자인 아티클",
+    "anatomy": "출판 문화, 도서 디자인, 그래픽 아트를 다루는 에디토리얼 블로그",
+    "principle": "책 표지와 출판 그래픽 비평 중심의 에디토리얼 모음",
     "imageUrl": "/captures/casualoptimist-com.png",
     "videoUrl": "/videos/casualoptimist-com.webm"
   },
@@ -1311,11 +1293,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.alvinlustig.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Alvin Lustig, Modern American Design Pioneer 1915-1955 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Alvin Lustig, Modern American Design Pioneer 1915-1955 - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/alvinlustig-com.png",
     "videoUrl": "/videos/alvinlustig-com.webm"
   },
@@ -1325,11 +1307,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.johngalldesign.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "johngall - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "johngall - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/johngalldesign-com.png",
     "videoUrl": "/videos/johngalldesign-com.webm"
   },
@@ -1337,13 +1319,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "underconsideration-com",
     "title": "Brand New",
     "url": "https://www.underconsideration.com/brandnew/",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Brand New - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Brand New - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/underconsideration-com.png",
     "videoUrl": "/videos/underconsideration-com.webm"
   },
@@ -1351,13 +1333,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "identitydesigned-com",
     "title": "Identity Designed - a brand identity showcase",
     "url": "https://identitydesigned.com/",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "그래픽"
+      "디자인 아카이브"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Identity Designed - a brand identity showcase - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티 쇼케이스",
+    "anatomy": "전 세계 우수 브랜드 아이덴티티 케이스 스터디 아카이브",
+    "principle": "브랜드의 탄생 과정과 결과물을 깊이 있게 기록하는 저널",
     "imageUrl": "/captures/identitydesigned-com.png",
     "videoUrl": "/videos/identitydesigned-com.webm"
   },
@@ -1365,13 +1347,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "misa-art",
     "title": "Global Gallery – misa.art",
     "url": "https://misa.art/pages/global-gallery",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Global Gallery – misa.art - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "글로벌 아트 갤러리",
+    "anatomy": "디지털 아트, NFT, 동시대 미술품을 아우르는 글로벌 아트 플랫폼",
+    "principle": "전통 미술과 디지털 미디어 아트를 연결하는 전시 큐레이션",
     "imageUrl": "/captures/misa-art.png",
     "videoUrl": "/videos/misa-art.webm"
   },
@@ -1381,11 +1363,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://unblast.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Unblast - Selective Free Design Resources to Download - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Unblast - Selective Free Design Resources to Download - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/unblast-com.png",
     "videoUrl": "/videos/unblast-com.webm"
   },
@@ -1393,13 +1375,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "chiselandmouse-com",
     "title": "Chisel & Mouse - Architecture sculptures: 3d citymaps and model buildings",
     "url": "https://www.chiselandmouse.com/index.html",
-    "category": "Graphic Design Studio",
+    "category": "Motion & 3D Studio",
     "tags": [
-      "CMF"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "CMF & 공간/소재 아카이브",
-    "anatomy": "Chisel & Mouse - Architecture sculptures: 3d citymaps and model buildings - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "3D 모션 그래픽",
+    "anatomy": "Chisel & Mouse - Architecture sculptures: 3d citymaps and model buildings - 3D 애니메이션 및 모션 그래픽 프로젝트",
+    "principle": "역동적인 3D 비주얼과 모션 기술의 결합",
     "imageUrl": "/captures/chiselandmouse-com.png",
     "videoUrl": "/videos/chiselandmouse-com.webm"
   },
@@ -1407,13 +1389,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "virgilabloh-com",
     "title": "FREE-GAME",
     "url": "https://virgilabloh.com/free-game/#num1",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "FREE-GAME - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "FREE-GAME - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/virgilabloh-com.png",
     "videoUrl": "/videos/virgilabloh-com.webm"
   },
@@ -1421,13 +1403,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "rodrigocorral-com",
     "title": "Rodrigo Corral // Art + Design",
     "url": "http://rodrigocorral.com/",
-    "category": "Graphic Design Studio",
+    "category": "Media Art & Gallery",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Rodrigo Corral // Art + Design - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "Rodrigo Corral // Art + Design - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/rodrigocorral-com.png",
     "videoUrl": "/videos/rodrigocorral-com.webm"
   },
@@ -1435,13 +1417,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "ordinarypeople-info",
     "title": "Work — Ordinary People",
     "url": "https://ordinarypeople.info/work",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Work — Ordinary People - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Work — Ordinary People - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/ordinarypeople-info.png",
     "videoUrl": "/videos/ordinarypeople-info.webm"
   },
@@ -1449,13 +1431,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "daeki-and-jun-com",
     "title": "DAEKI and JUN - Graphic design studio in Seoul, South-Korea",
     "url": "https://daeki-and-jun.com/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "DAEKI and JUN - Graphic design studio in Seoul, South-Korea - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "DAEKI and JUN - Graphic design studio in Seoul, South-Korea - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/daeki-and-jun-com.png",
     "videoUrl": "/videos/daeki-and-jun-com.webm"
   },
@@ -1463,13 +1445,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "p-kim-info",
     "title": "P - K — ARCHIVE",
     "url": "http://www.p-kim.info/archive/",
-    "category": "Interactive Web",
+    "category": "Archive & Curation",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 아카이브"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "P - K — ARCHIVE - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "P - K — ARCHIVE - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/p-kim-info.png",
     "videoUrl": "/videos/p-kim-info.webm"
   },
@@ -1477,13 +1459,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "brandingstyleguides-com",
     "title": "The branding style guidelines documents archive",
     "url": "https://brandingstyleguides.com/",
-    "category": "Interactive Web",
+    "category": "Archive & Curation",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 아카이브"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "The branding style guidelines documents archive - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 가이드라인 아카이브",
+    "anatomy": "글로벌 기업들의 공식 브랜드 스타일 가이드 PDF 아카이브",
+    "principle": "브랜드 규정집과 가이드라인 시스템을 정교하게 수집",
     "imageUrl": "/captures/brandingstyleguides-com.png",
     "videoUrl": "/videos/brandingstyleguides-com.webm"
   },
@@ -1491,13 +1473,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "naranjoetxeberria-com",
     "title": "Work © 2024 N-E",
     "url": "https://naranjoetxeberria.com/",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Work © 2024 N-E - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Work © 2024 N-E - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/naranjoetxeberria-com.png",
     "videoUrl": "/videos/naranjoetxeberria-com.webm"
   },
@@ -1505,13 +1487,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "order-design",
     "title": "Order - Design",
     "url": "https://order.design/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Order - Design - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Order - Design - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/order-design.png",
     "videoUrl": "/videos/order-design.webm"
   },
@@ -1519,13 +1501,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "jkrglobal-com",
     "title": "Jones Knowles Ritchie | A Design-Led Creative Company - JKRGlobal",
     "url": "https://jkrglobal.com/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Jones Knowles Ritchie | A Design-Led Creative Company - JKRGlobal - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Jones Knowles Ritchie | A Design-Led Creative Company - JKRGlobal - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/jkrglobal-com.png",
     "videoUrl": "/videos/jkrglobal-com.webm"
   },
@@ -1533,13 +1515,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "creativeboom-com",
     "title": "Art & Design Magazine for the Creative Industries | Creative Boom",
     "url": "https://www.creativeboom.com/",
-    "category": "Graphic Design Studio",
+    "category": "Media Art & Gallery",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Art & Design Magazine for the Creative Industries | Creative Boom - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "Art & Design Magazine for the Creative Industries | Creative Boom - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/creativeboom-com.png",
     "videoUrl": "/videos/creativeboom-com.webm"
   },
@@ -1547,13 +1529,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "creativeapplications-net",
     "title": "CreativeApplications.Net – Technology, Society, and Critical Making (Since 2008)",
     "url": "https://www.creativeapplications.net/",
-    "category": "Interactive Web",
+    "category": "Product & Tech UI",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "CreativeApplications.Net – Technology, Society, and Critical Making (Since 2008) - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디지털 제품 & UI",
+    "anatomy": "CreativeApplications.Net – Technology, Society, and Critical Making (Since 2008) - UI/UX 디자인 시스템 및 제품 인터페이스",
+    "principle": "사용자 경험 중심의 기능적 인터페이스 디자인",
     "imageUrl": "/captures/creativeapplications-net.png",
     "videoUrl": "/videos/creativeapplications-net.webm"
   },
@@ -1561,13 +1543,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "wolffolins-com",
     "title": "Global Brand Consultancy — Wolff Olins",
     "url": "https://wolffolins.com/",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Global Brand Consultancy — Wolff Olins - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "글로벌 브랜드 컨설턴시",
+    "anatomy": "세계적인 브랜드 아이덴티티 컨설팅 그룹 Wolff Olins 포트폴리오",
+    "principle": "변혁적 브랜드 전략과 파격적 아이덴티티 구축",
     "imageUrl": "/captures/wolffolins-com.png",
     "videoUrl": "/videos/wolffolins-com.webm"
   },
@@ -1577,11 +1559,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.studio-remote.kr/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "REMOTE - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "REMOTE - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/studio-remote-kr.png",
     "videoUrl": "/videos/studio-remote-kr.webm"
   },
@@ -1589,13 +1571,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "vivienscreative-com-au",
     "title": "Vivien’s Creative | Creative Artist Management | Sydney, Perth",
     "url": "https://vivienscreative.com.au/",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Vivien’s Creative | Creative Artist Management | Sydney, Perth - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "Vivien’s Creative | Creative Artist Management | Sydney, Perth - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/vivienscreative-com-au.png",
     "videoUrl": "/videos/vivienscreative-com-au.webm"
   },
@@ -1603,13 +1585,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "olssonbarbieri-com",
     "title": "Olssøn Barbieri",
     "url": "https://olssonbarbieri.com/?ref=brandarchive.xyz",
-    "category": "Interactive Web",
+    "category": "Brand Identity",
     "tags": [
-      "기타 웹 레퍼런스"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Olssøn Barbieri - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "Olssøn Barbieri - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/olssonbarbieri-com.png",
     "videoUrl": "/videos/olssonbarbieri-com.webm"
   },
@@ -1617,13 +1599,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "teamblackcat-ch",
     "title": "Team Black Cat - International Creative Collective",
     "url": "https://www.teamblackcat.ch/",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Team Black Cat - International Creative Collective - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Team Black Cat - International Creative Collective - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/teamblackcat-ch.png",
     "videoUrl": "/videos/teamblackcat-ch.webm"
   },
@@ -1633,11 +1615,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.forma.co/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Forma — Graphic design and Illustration Barcelona - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Forma — Graphic design and Illustration Barcelona - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/forma-co.png",
     "videoUrl": "/videos/forma-co.webm"
   },
@@ -1647,11 +1629,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://studio-funday.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "스튜디오 펀데이 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "스튜디오 펀데이 - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/studio-funday-com.png",
     "videoUrl": "/videos/studio-funday-com.webm"
   },
@@ -1659,13 +1641,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "houseofgul-com",
     "title": "House of Gul",
     "url": "https://www.houseofgul.com/#section-work",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "House of Gul - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "House of Gul - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/houseofgul-com.png",
     "videoUrl": "/videos/houseofgul-com.webm"
   },
@@ -1673,13 +1655,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "fire-work-fr",
     "title": "studio Fire Work, graphisme et branding",
     "url": "https://fire-work.fr/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "studio Fire Work, graphisme et branding - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 아이덴티티",
+    "anatomy": "studio Fire Work, graphisme et branding - 브랜드 비주얼 아이덴티티 및 브랜딩 케이스 스터디",
+    "principle": "브랜드 전략과 비주얼 시스템을 명확하게 표현하는 아카이브",
     "imageUrl": "/captures/fire-work-fr.png",
     "videoUrl": "/videos/fire-work-fr.webm"
   },
@@ -1689,11 +1671,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.aline.studio/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Further The Future: San Francisco. London. Nashville - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Further The Future: San Francisco. London. Nashville - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/aline-studio.png",
     "videoUrl": "/videos/aline-studio.webm"
   },
@@ -1703,11 +1685,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://28k.studio/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "28k — Digital Design Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "28k — Digital Design Studio - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/28k-studio.png",
     "videoUrl": "/videos/28k-studio.webm"
   },
@@ -1715,13 +1697,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "25ah-se",
     "title": "25AH - Twenty-Five Art House",
     "url": "https://www.25ah.se/",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "25AH - Twenty-Five Art House - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "25AH - Twenty-Five Art House - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/25ah-se.png",
     "videoUrl": "/videos/25ah-se.webm"
   },
@@ -1729,13 +1711,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "doberman-co",
     "title": "DOBERMAN®",
     "url": "https://doberman.co/work",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "DOBERMAN® - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "DOBERMAN® - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/doberman-co.png",
     "videoUrl": "/videos/doberman-co.webm"
   },
@@ -1743,13 +1725,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "fold7-com",
     "title": "Creative Advertising Campaigns | Fold7",
     "url": "https://fold7.com/work",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Creative Advertising Campaigns | Fold7 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Creative Advertising Campaigns | Fold7 - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/fold7-com.png",
     "videoUrl": "/videos/fold7-com.webm"
   },
@@ -1757,13 +1739,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "formist-co",
     "title": "Formist",
     "url": "https://www.formist.co/",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "미디어 아트"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Formist - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Formist - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/formist-co.png",
     "videoUrl": "/videos/formist-co.webm"
   },
@@ -1773,11 +1755,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://acre.studio/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "ACRE | Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "ACRE | Studio - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/acre-studio.png",
     "videoUrl": "/videos/acre-studio.webm"
   },
@@ -1785,13 +1767,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "arauna-studio",
     "title": "Selected Archives - Arauna",
     "url": "https://arauna.studio/filter/selected/",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "그래픽"
+      "디자인 아카이브"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Selected Archives - Arauna - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "Selected Archives - Arauna - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/arauna-studio.png",
     "videoUrl": "/videos/arauna-studio.webm"
   },
@@ -1801,11 +1783,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://alphamark.design/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Alphamark™ ▪ Leave your mark - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Alphamark™ ▪ Leave your mark - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/alphamark-design.png",
     "videoUrl": "/videos/alphamark-design.webm"
   },
@@ -1813,13 +1795,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "apracticeforeverydaylife-com",
     "title": "Projects → A Practice for Everyday Life",
     "url": "https://apracticeforeverydaylife.com/projects/",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Projects → A Practice for Everyday Life - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Projects → A Practice for Everyday Life - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/apracticeforeverydaylife-com.png",
     "videoUrl": "/videos/apracticeforeverydaylife-com.webm"
   },
@@ -1829,11 +1811,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.5-5.paris/en/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "studio 5.5 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "studio 5.5 - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/5-5-paris.png",
     "videoUrl": "/videos/5-5-paris.webm"
   },
@@ -1841,13 +1823,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "trabuc-co",
     "title": "Work by A.A. Trabucco Campos",
     "url": "https://trabuc.co/",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Work by A.A. Trabucco Campos - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Work by A.A. Trabucco Campos - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/trabuc-co.png",
     "videoUrl": "/videos/trabuc-co.webm"
   },
@@ -1855,13 +1837,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "afom-com-au",
     "title": "Work | A Friend of Mine",
     "url": "https://afom.com.au/work",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Work | A Friend of Mine - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Work | A Friend of Mine - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/afom-com-au.png",
     "videoUrl": "/videos/afom-com-au.webm"
   },
@@ -1869,13 +1851,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "hayonstudio-com",
     "title": "https://hayonstudio.com/art/",
     "url": "https://hayonstudio.com/art/",
-    "category": "Graphic Design Studio",
+    "category": "Media Art & Gallery",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "https://hayonstudio.com/art/ - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "https://hayonstudio.com/art/ - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/hayonstudio-com.png",
     "videoUrl": "/videos/hayonstudio-com.webm"
   },
@@ -1883,13 +1865,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "gallery-canary-yellow-com",
     "title": "Virgil Abloh™ GALLERY – Canary Yellow",
     "url": "https://gallery.canary---yellow.com/",
-    "category": "Interactive Web",
+    "category": "Archive & Curation",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 아카이브"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Virgil Abloh™ GALLERY – Canary Yellow - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "Virgil Abloh™ GALLERY – Canary Yellow - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/gallery-canary-yellow-com.png",
     "videoUrl": "/videos/gallery-canary-yellow-com.webm"
   },
@@ -1899,11 +1881,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://21-87.co.uk/#about",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "21-87 is an office for design. - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "21-87 is an office for design. - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/21-87-co-uk.png",
     "videoUrl": "/videos/21-87-co-uk.webm"
   },
@@ -1911,13 +1893,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "forzonistudios-com",
     "title": "Louis Vuitton Savoir Faire — Forzoni Studios",
     "url": "https://www.forzonistudios.com/work/louis-vuitton",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "그래픽"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Louis Vuitton Savoir Faire — Forzoni Studios - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디지털 제품 & UI",
+    "anatomy": "Louis Vuitton Savoir Faire — Forzoni Studios - UI/UX 디자인 시스템 및 제품 인터페이스",
+    "principle": "사용자 경험 중심의 기능적 인터페이스 디자인",
     "imageUrl": "/captures/forzonistudios-com.png",
     "videoUrl": "/videos/forzonistudios-com.webm"
   },
@@ -1927,11 +1909,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://public---domain.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "CMF"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "CMF & 공간/소재 아카이브",
-    "anatomy": "ARCHITECTURE - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "ARCHITECTURE - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/public-domain-com.png",
     "videoUrl": "/videos/public-domain-com.webm"
   },
@@ -1939,13 +1921,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "jacksachs-tumblr-com",
     "title": "JACK SACHS - PERSONAL WORK",
     "url": "https://jacksachs.tumblr.com/",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "JACK SACHS - PERSONAL WORK - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "JACK SACHS - PERSONAL WORK - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/jacksachs-tumblr-com.png",
     "videoUrl": "/videos/jacksachs-tumblr-com.webm"
   },
@@ -1953,13 +1935,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "ryokoloves-art",
     "title": "WORK - Ryoko Kondo",
     "url": "https://www.ryokoloves.art/",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "WORK - Ryoko Kondo - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "WORK - Ryoko Kondo - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/ryokoloves-art.png",
     "videoUrl": "/videos/ryokoloves-art.webm"
   },
@@ -1967,13 +1949,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "sneakerfreaker-com",
     "title": "Virgil Abloh Teases New Off-White x Nike Colabs via Interactive ‘PUBLIC DOMAIN’ Internet Archive - Sneaker Freaker",
     "url": "https://www.sneakerfreaker.com/news/virgil-abloh-teases-new-off-white-x-nike-colabs-via-interactive-public-domain-internet-archive?page=0",
-    "category": "Interactive Web",
+    "category": "Archive & Curation",
     "tags": [
-      "인터랙티브 웹"
+      "디자인 아카이브"
     ],
-    "shortDesc": "인터랙티브 웹 & UI 라이브러리",
-    "anatomy": "Virgil Abloh Teases New Off-White x Nike Colabs via Interactive ‘PUBLIC DOMAIN’ Internet Archive - Sneaker Freaker - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 아카이브",
+    "anatomy": "Virgil Abloh Teases New Off-White x Nike Colabs via Interactive ‘PUBLIC DOMAIN’ Internet Archive - Sneaker Freaker - 그래픽 및 웹 디자인 큐레이션 모음",
+    "principle": "엄선된 시각 자료와 아카이빙 체계를 제공",
     "imageUrl": "/captures/sneakerfreaker-com.png",
     "videoUrl": "/videos/sneakerfreaker-com.webm"
   },
@@ -1983,11 +1965,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "http://seunghoi.com/lollapaloozaxpaypallovechicago/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Seunghoi An - Designer*:･ﾟ — Work 05 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Seunghoi An - Designer*:･ﾟ — Work 05 - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/seunghoi-com.png",
     "videoUrl": "/videos/seunghoi-com.webm"
   },
@@ -1995,13 +1977,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "whitney-org",
     "title": "Exhibitions | Whitney Museum of American Art",
     "url": "https://whitney.org/exhibitions",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Exhibitions | Whitney Museum of American Art - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "현대 미술관 전시",
+    "anatomy": "휘트니 미술관의 현대 미술 전시 및 미디어 아카이브",
+    "principle": "미술관 전시 콘텐츠의 에디토리얼 웹 인터페이스",
     "imageUrl": "/captures/whitney-org.png",
     "videoUrl": "/videos/whitney-org.webm"
   },
@@ -2009,13 +1991,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "chipkidd-com",
     "title": "Chip Kidd – Penguin Random House Graphic Designer",
     "url": "http://chipkidd.com/home/",
-    "category": "Graphic Design Studio",
+    "category": "Editorial & Print",
     "tags": [
-      "그래픽"
+      "에디토리얼 & 출판"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Chip Kidd – Penguin Random House Graphic Designer - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "북 커버 디자이너 포트폴리오",
+    "anatomy": "세계적 북 커버 디자이너 칩 키드의 대표작 아카이브",
+    "principle": "책의 내용과 은유를 시각적 아이디어 하나로 변환하는 표현력",
     "imageUrl": "/captures/chipkidd-com.png",
     "videoUrl": "/videos/chipkidd-com.webm"
   },
@@ -2023,13 +2005,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "uijar-com",
     "title": "UIJar | Handpicked design inspiration for your real life projects",
     "url": "https://uijar.com/",
-    "category": "Graphic Design Studio",
+    "category": "Archive & Curation",
     "tags": [
-      "그래픽"
+      "디자인 아카이브"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "UIJar | Handpicked design inspiration for your real life projects - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "UI 디자인 인스피레이션",
+    "anatomy": "실무 프로젝트를 위한 엄선된 UI/UX 디자인 레퍼런스 모음",
+    "principle": "실용적인 화면 레이아웃과 UI 디자인 인스피레이션 큐레이션",
     "imageUrl": "/captures/uijar-com.png",
     "videoUrl": "/videos/uijar-com.webm"
   },
@@ -2037,13 +2019,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "blvr-com",
     "title": "BLVR | Belief-Led Creative Agency - Certified B Corporation",
     "url": "https://blvr.com/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "BLVR | Belief-Led Creative Agency - Certified B Corporation - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "신념 중심 브랜드 에이전시",
+    "anatomy": "기업의 신념과 핵심 가치를 디자인으로 전환하는 브랜딩 포트폴리오",
+    "principle": "브랜드 철학을 명확한 비주얼 톤앤매너로 변환",
     "imageUrl": "/captures/blvr-com.png",
     "videoUrl": "/videos/blvr-com.webm"
   },
@@ -2051,13 +2033,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "clay-global",
     "title": "Work | Clay",
     "url": "https://clay.global/work",
-    "category": "Interactive Web",
+    "category": "Graphic Design Studio",
     "tags": [
-      "기타 웹 레퍼런스"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "기타 웹 레퍼런스",
-    "anatomy": "Work | Clay - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Work | Clay - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/clay-global.png",
     "videoUrl": "/videos/clay-global.webm"
   },
@@ -2065,13 +2047,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "gryun-notion-site",
     "title": "Motion Graphic Design Link by Gryun Kim",
     "url": "https://gryun.notion.site/Motion-Graphic-Design-Link-by-Gryun-Kim-7d3c04cf04764f0a9f19f1075a12fc87",
-    "category": "Graphic Design Studio",
+    "category": "Motion & 3D Studio",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Motion Graphic Design Link by Gryun Kim - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "3D 모션 그래픽",
+    "anatomy": "Motion Graphic Design Link by Gryun Kim - 3D 애니메이션 및 모션 그래픽 프로젝트",
+    "principle": "역동적인 3D 비주얼과 모션 기술의 결합",
     "imageUrl": "/captures/gryun-notion-site.png",
     "videoUrl": "/videos/gryun-notion-site.webm"
   },
@@ -2079,13 +2061,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "bluedotstudio-tv",
     "title": "Blue Dot : 3D Animation and Motion Studio",
     "url": "https://bluedotstudio.tv/",
-    "category": "Graphic Design Studio",
+    "category": "Motion & 3D Studio",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Blue Dot : 3D Animation and Motion Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "3D 애니메이션 스튜디오",
+    "anatomy": "고품질 3D 애니메이션 및 캐릭터 모션 그래픽 포트폴리오",
+    "principle": "3D 캐릭터 렌더링과 사운드 디렉팅의 완성도",
     "imageUrl": "/captures/bluedotstudio-tv.png",
     "videoUrl": "/videos/bluedotstudio-tv.webm"
   },
@@ -2093,13 +2075,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "vixen-studios-com",
     "title": "VIXEN",
     "url": "http://vixen-studios.com/en/",
-    "category": "Graphic Design Studio",
+    "category": "Motion & 3D Studio",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "VIXEN - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "VFX & 3D 크리에이티브",
+    "anatomy": "3D 비주얼 효과, VFX, 상업 모션 그래픽 아카이브",
+    "principle": "상업 브랜딩을 위한 CGI 비주얼 연출",
     "imageUrl": "/captures/vixen-studios-com.png",
     "videoUrl": "/videos/vixen-studios-com.webm"
   },
@@ -2107,13 +2089,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "tendril-studio",
     "title": "Work | Tendril",
     "url": "https://tendril.studio/work",
-    "category": "Graphic Design Studio",
+    "category": "Motion & 3D Studio",
     "tags": [
-      "그래픽"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Work | Tendril - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "하이엔드 CGI & 모션",
+    "anatomy": "글로벌 테크/패션 브랜드를 위한 하이엔드 3D CGI 애니메이션 포트폴리오",
+    "principle": "유기적인 텍스처 렌더링과 시네마틱 모션의 결합",
     "imageUrl": "/captures/tendril-studio.png",
     "videoUrl": "/videos/tendril-studio.webm"
   },
@@ -2123,11 +2105,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.ideo.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "IDEO is a global design and innovation company | ideo.com - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "IDEO is a global design and innovation company | ideo.com - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/ideo-com.png",
     "videoUrl": "/videos/ideo-com.webm"
   },
@@ -2135,13 +2117,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "artstation-com",
     "title": "ArtStation - All Channels",
     "url": "https://www.artstation.com/?sort_by=community&dimension=all",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "ArtStation - All Channels - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "미디어 아트 & 전시",
+    "anatomy": "ArtStation - All Channels - 미디어 아트 및 디지털 전시 프로젝트",
+    "principle": "예술적 시도와 미디어 기술의 결합을 보여주는 전시기획",
     "imageUrl": "/captures/artstation-com.png",
     "videoUrl": "/videos/artstation-com.webm"
   },
@@ -2149,13 +2131,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "motherdesign-com",
     "title": "Mother Design | Homepage",
     "url": "https://www.motherdesign.com/?ref=brandarchive.xyz",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Mother Design | Homepage - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "글로벌 브랜드 컨설팅",
+    "anatomy": "글로벌 크리에이티브 에이전시 Mother의 브랜드 디자인 부문 아카이브",
+    "principle": "문화적 맥락과 브랜드 스토리를 연결하는 비주얼 시스템",
     "imageUrl": "/captures/motherdesign-com.png",
     "videoUrl": "/videos/motherdesign-com.webm"
   },
@@ -2163,13 +2145,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "cmf-designdb-com",
     "title": "CMF HOW'S",
     "url": "https://cmf.designdb.com/",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "그래픽"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "CMF HOW'S - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "CMF 디자인 DB",
+    "anatomy": "소재, 가공, 마감(Color, Material, Finish) 산업 디자인 데이터베이스",
+    "principle": "제품 디자인의 질감과 소재 데이터를 체계적으로 아카이빙",
     "imageUrl": "/captures/cmf-designdb-com.png",
     "videoUrl": "/videos/cmf-designdb-com.webm"
   },
@@ -2177,13 +2159,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "canva-com",
     "title": "Amazingly Simple Graphic Design Software – Canva",
     "url": "https://www.canva.com/design/DAFoajkW1Tg/mGUtoer8KUGtS1KkBmSMtw/edit?amp=&amp=&amp=&utm_source=integration_slack&utm_medium=referral&utm_content=T032NJCTE3Y&utm_campaign=unfurl_document-url_open-in-canva_hyperlink&utm_term=c636a2f6-99f6-47a0-bdf0-855260459519",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "그래픽"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Amazingly Simple Graphic Design Software – Canva - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "웹 기반 그래픽 툴",
+    "anatomy": "누구나 쉽게 사용할 수 있는 웹 기반 그래픽 디자인 플랫폼",
+    "principle": "복잡한 그래픽 툴을 웹 브라우저 UI로 단순화",
     "imageUrl": "/captures/canva-com.png",
     "videoUrl": "/videos/canva-com.webm"
   },
@@ -2193,11 +2175,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://prism-springtail-3rk4.squarespace.com/config/design/custom-css",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "NARO - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "NARO - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/prism-springtail-3rk4-squarespace-com.png",
     "videoUrl": "/videos/prism-springtail-3rk4-squarespace-com.webm"
   },
@@ -2205,13 +2187,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "material-io",
     "title": "Homepage - Material Design",
     "url": "https://material.io/",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "그래픽"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Homepage - Material Design - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "구글 디자인 시스템",
+    "anatomy": "구글의 오픈소스 머티리얼 디자인 가이드라인 및 컴포넌트",
+    "principle": "글로벌 모바일/웹 UI 표준을 디자인 시스템으로 정립",
     "imageUrl": "/captures/material-io.png",
     "videoUrl": "/videos/material-io.webm"
   },
@@ -2221,11 +2203,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://designbby.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "DESIGNBBY STUDIO - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "DESIGNBBY STUDIO - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/designbby-com.png",
     "videoUrl": "/videos/designbby-com.webm"
   },
@@ -2233,13 +2215,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "getty-edu",
     "title": "Understanding Formal Analysis",
     "url": "http://www.getty.edu/education/teachers/building_lessons/formal_analysis.html",
-    "category": "Interactive Web",
+    "category": "Product & Tech UI",
     "tags": [
-      "미디어 아트"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Understanding Formal Analysis - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디지털 제품 & UI",
+    "anatomy": "Understanding Formal Analysis - UI/UX 디자인 시스템 및 제품 인터페이스",
+    "principle": "사용자 경험 중심의 기능적 인터페이스 디자인",
     "imageUrl": "/captures/getty-edu.png",
     "videoUrl": "/videos/getty-edu.webm"
   },
@@ -2247,13 +2229,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "refikanadol-com",
     "title": "Works - Refik Anadol",
     "url": "https://refikanadol.com/works/",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Works - Refik Anadol - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "AI 파라메트릭 미디어 아트",
+    "anatomy": "데이터 알고리즘과 AI를 활용한 세계적 미디어 아티스트 레픽 아나돌 아카이브",
+    "principle": "방대한 데이터 입자를 3D 조각과 미디어 캔버스로 변환",
     "imageUrl": "/captures/refikanadol-com.png",
     "videoUrl": "/videos/refikanadol-com.webm"
   },
@@ -2261,13 +2243,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "fontmeme-com",
     "title": "Font Meme: 폰트 및 타이포그래피 리소스",
     "url": "https://fontmeme.com/ko/",
-    "category": "Graphic Design Studio",
+    "category": "Typography",
     "tags": [
       "타이포그래피"
     ],
-    "shortDesc": "타이포그래피 & 폰트 파운드리",
-    "anatomy": "Font Meme: 폰트 및 타이포그래피 리소스 - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "폰트 & 타이포 리소스",
+    "anatomy": "영화, 게임, 브랜드 폰트 정보 및 타이포그래피 리소스 데이터베이스",
+    "principle": "상용 및 대중문화 폰트 스타일을 검색 가능한 아카이브로 구축",
     "imageUrl": "/captures/fontmeme-com.png",
     "videoUrl": "/videos/fontmeme-com.webm"
   },
@@ -2275,13 +2257,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "fellowstudio-com",
     "title": "Graphic Designs Impact on Brand Identity | Fellow Studio",
     "url": "https://fellowstudio.com/services/design/insight/graphic-designs-impact-on-brand-identity/",
-    "category": "Graphic Design Studio",
+    "category": "Brand Identity",
     "tags": [
-      "그래픽"
+      "브랜드 아이덴티티"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Graphic Designs Impact on Brand Identity | Fellow Studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "브랜드 전략 컨설팅",
+    "anatomy": "그래픽 디자인과 브랜드 전략이 사업 성장에 미치는 영향 분석",
+    "principle": "디자인 자산이 브랜드 가치로 전환되는 과정 전달",
     "imageUrl": "/captures/fellowstudio-com.png",
     "videoUrl": "/videos/fellowstudio-com.webm"
   },
@@ -2289,13 +2271,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "impossibleforms-org",
     "title": "Museum of Impossible Forms",
     "url": "https://www.impossibleforms.org/",
-    "category": "Interactive Web",
+    "category": "Media Art & Gallery",
     "tags": [
-      "미디어 아트"
+      "미디어 아트 & 3D"
     ],
-    "shortDesc": "미디어 아트 & 디지털 에디토리얼",
-    "anatomy": "Museum of Impossible Forms - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "실험적 미디어 아트 플랫폼",
+    "anatomy": "대안적 예술 표현과 문화적 담론을 담은 미디어 프로젝트 아카이브",
+    "principle": "비판적 예술 탐구와 미디어 아트를 결합한 디지털 스페이스",
     "imageUrl": "/captures/impossibleforms-org.png",
     "videoUrl": "/videos/impossibleforms-org.webm"
   },
@@ -2303,13 +2285,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "grabcad-com",
     "title": "GrabCAD Community Members | Engineers & Designers",
     "url": "https://grabcad.com/dashboard",
-    "category": "Graphic Design Studio",
+    "category": "Product & Tech UI",
     "tags": [
-      "그래픽"
+      "디지털 제품 & UI"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "GrabCAD Community Members | Engineers & Designers - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "3D 엔지니어링 커뮤니티",
+    "anatomy": "엔지니어와 디자이너를 위한 3D CAD 모델 라이브러리",
+    "principle": "기계 공학 3D 도면 및 모델링 데이터 아카이빙",
     "imageUrl": "/captures/grabcad-com.png",
     "videoUrl": "/videos/grabcad-com.webm"
   },
@@ -2319,11 +2301,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://www.jongkimdesign.com/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "Jongkim design studio - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "Jongkim design studio - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/jongkimdesign-com.png",
     "videoUrl": "/videos/jongkimdesign-com.webm"
   },
@@ -2331,13 +2313,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "originkit-dev",
     "title": "Originkit — Free Animated component library for modern websites",
     "url": "https://www.originkit.dev/",
-    "category": "Interactive Web",
+    "category": "Product & Tech UI",
     "tags": [
-      "인터랙티브 웹"
+      "인터랙티브 모션"
     ],
-    "shortDesc": "인터랙티브 웹 & UI 라이브러리",
-    "anatomy": "Originkit — Free Animated component library for modern websites - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "모션 UI 컴포넌트",
+    "anatomy": "현대적 웹사이트를 위한 라이브 애니메이션 컴포넌트 라이브러리",
+    "principle": "모션 UI 인터랙션을 모듈형 코드 컴포넌트로 제공",
     "imageUrl": "/captures/originkit-dev.png",
     "videoUrl": "/videos/originkit-dev.webm"
   },
@@ -2347,11 +2329,11 @@ export const SEED_REFERENCES: Reference[] = [
     "url": "https://designrangers.co.kr/",
     "category": "Graphic Design Studio",
     "tags": [
-      "그래픽"
+      "디자인 스튜디오"
     ],
-    "shortDesc": "그래픽 & 브랜드 디자인 스튜디오",
-    "anatomy": "디자인방위대 | 디자인방위대 공식 홈페이지 | DBWD - 즐겨찾기 레퍼런스 아카이빙",
-    "principle": "디자인 및 인터랙션 탐색을 위한 시각적/구조적 레퍼런스",
+    "shortDesc": "디자인 스튜디오",
+    "anatomy": "디자인방위대 | 디자인방위대 공식 홈페이지 | DBWD - 그래픽 디자인 및 크리에이티브 포트폴리오",
+    "principle": "독창적인 비주얼 언어와 프로젝트 아카이빙",
     "imageUrl": "/captures/designrangers-co-kr.png",
     "videoUrl": "/videos/designrangers-co-kr.webm"
   }

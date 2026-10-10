@@ -39,9 +39,16 @@ export async function getReferenceById(id: string): Promise<Reference | null> {
 }
 
 export function getAllTags(references: Reference[]): string[] {
-  const tagSet = new Set<string>();
+  const tagCount = new Map<string, number>();
   references.forEach((ref) => {
-    ref.tags.forEach((tag) => tagSet.add(tag));
+    ref.tags.forEach((tag) => {
+      tagCount.set(tag, (tagCount.get(tag) || 0) + 1);
+    });
   });
-  return ['전체', ...Array.from(tagSet)];
+
+  const sortedTags = Array.from(tagCount.keys()).sort((a, b) => {
+    return (tagCount.get(b) || 0) - (tagCount.get(a) || 0);
+  });
+
+  return ['전체', ...sortedTags];
 }
