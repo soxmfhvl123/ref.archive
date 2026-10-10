@@ -134,13 +134,23 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
       {/* Sticky Top Bar Container: Header + Category Nav */}
       <div className="sticky top-0 z-40 bg-white pt-6 md:pt-10 pb-4 mb-6">
         {/* Line 1: Header + View Toggle */}
-        <header className="mb-4 flex justify-between items-center">
-          <h1
-            onClick={() => setActiveRef(null)}
-            className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
-          >
-            ref. archive
-          </h1>
+        <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h1
+              onClick={() => setActiveRef(null)}
+              className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
+            >
+              ref. archive
+            </h1>
+            <a
+              href="https://cdj.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
+            >
+              arranged by studiofluxus™
+            </a>
+          </div>
 
           {/* View Switcher: Grid / Index */}
           <div className="flex items-center gap-4 text-[14px]">
@@ -264,13 +274,23 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
         <div className="fixed inset-0 z-50 bg-white p-6 md:p-12 overflow-y-auto flex flex-col justify-between">
           <div>
             {/* Top Bar inside Detail */}
-            <div className="flex justify-between items-center mb-8">
-              <span
-                onClick={() => setActiveRef(null)}
-                className="text-[14px] cursor-pointer"
-              >
-                ref. archive
-              </span>
+            <div className="flex justify-between items-baseline mb-8">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span
+                  onClick={() => setActiveRef(null)}
+                  className="text-[14px] cursor-pointer"
+                >
+                  ref. archive
+                </span>
+                <a
+                  href="https://cdj.kr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
+                >
+                  arranged by studiofluxus™
+                </a>
+              </div>
               <button
                 type="button"
                 onClick={() => setActiveRef(null)}

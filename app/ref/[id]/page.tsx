@@ -26,10 +26,20 @@ export default async function ReferenceDetailPage({
     <main className="min-h-screen bg-white text-black p-6 md:p-12 flex flex-col justify-between select-none">
       <div>
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
-          <Link href="/" className="text-[14px] no-underline">
-            ref. archive
-          </Link>
+        <div className="flex justify-between items-baseline mb-8">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <Link href="/" className="text-[14px] no-underline">
+              ref. archive
+            </Link>
+            <a
+              href="https://cdj.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
+            >
+              arranged by studiofluxus™
+            </a>
+          </div>
           <Link href="/" className="text-[14px] no-underline">
             목록
           </Link>
