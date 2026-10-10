@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#0F172A"/>
+  <rect x="40" y="40" width="1120" height="670" fill="none" stroke="#0284C7" stroke-width="2" opacity="0.5"/>
+  <circle cx="80" cy="80" r="8" fill="#38BDF8" opacity="0.4"/>
+  <circle cx="104" cy="80" r="8" fill="#38BDF8" opacity="0.4"/>
+  <circle cx="128" cy="80" r="8" fill="#38BDF8" opacity="0.4"/>
+  <text x="80" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="56" fill="#38BDF8">messenger.abeto.co</text>
+  <text x="80" y="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" font-size="26" fill="#94A3B8">Interactive Web · 3D Canvas / Multiplayer</text>
+  <line x1="80" y1="450" x2="380" y2="450" stroke="#38BDF8" stroke-width="4"/>
+  <text x="80" y="650" font-family="monospace" font-size="18" fill="#94A3B8">ref. archive capture</text>
+</svg>
