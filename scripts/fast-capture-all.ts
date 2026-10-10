@@ -4,7 +4,7 @@ import * as path from 'path';
 import { SEED_REFERENCES } from '../lib/data/seed';
 
 const CAPTURE_DIR = path.join(process.cwd(), 'public', 'captures');
-const CONCURRENCY = 4;
+const CONCURRENCY = 6;
 
 export async function fastCaptureAll() {
   if (!fs.existsSync(CAPTURE_DIR)) {

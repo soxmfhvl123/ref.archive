@@ -3443,5 +3443,1419 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "설치·전시 인터랙션 제작의 표준 툴",
       "imageUrl": "/captures/touchdesigner.png",
       "videoUrl": "/videos/touchdesigner.webm"
+    },
+    {
+      "id": "snarkitecture",
+      "title": "Snarkitecture",
+      "url": "https://www.snarkitecture.com",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "건축·아트 경계의 공간",
+      "anatomy": "단색 소재로 만든 설치·리테일·전시 공간",
+      "principle": "익숙한 재료를 낯설게 만드는 공간 개념",
+      "imageUrl": "/captures/snarkitecture.png",
+      "videoUrl": "/videos/snarkitecture.webm"
+    },
+    {
+      "id": "studio-toogood",
+      "title": "Studio Toogood",
+      "url": "https://www.t-o-o-g-o-o-d.com",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "조각적 가구·공간",
+      "anatomy": "덩어리감 있는 가구와 소재 중심의 공간 작업",
+      "principle": "조형과 기능 사이의 촉각적 디자인",
+      "imageUrl": "/captures/studio-toogood.png",
+      "videoUrl": "/videos/studio-toogood.webm"
+    },
+    {
+      "id": "dimore-studio",
+      "title": "Dimore Studio",
+      "url": "https://dimorestudio.eu",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "밀라노 인테리어 스튜디오",
+      "anatomy": "짙은 색과 빈티지 무드의 공간·전시 연출",
+      "principle": "색과 조명으로 만드는 극적인 실내 분위기",
+      "imageUrl": "/captures/dimore-studio.png",
+      "videoUrl": "/videos/dimore-studio.webm"
+    },
+    {
+      "id": "note-design",
+      "title": "Note Design Studio",
+      "url": "https://notedesignstudio.se",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "스톡홀름 공간·제품 디자인",
+      "anatomy": "부드러운 색감의 리테일·오피스·가구 디자인",
+      "principle": "북유럽식 색 운용과 절제된 공간",
+      "imageUrl": "/captures/note-design.png",
+      "videoUrl": "/videos/note-design.webm"
+    },
+    {
+      "id": "universal-design-studio",
+      "title": "Universal Design Studio",
+      "url": "https://www.universaldesignstudio.com",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "런던 공간 디자인",
+      "anatomy": "리테일·호스피탈리티·전시 공간 프로젝트",
+      "principle": "브랜드를 공간 경험으로 번역하는 방식",
+      "imageUrl": "/captures/universal-design-studio.png",
+      "videoUrl": "/videos/universal-design-studio.webm"
+    },
+    {
+      "id": "schemata",
+      "title": "Schemata Architects",
+      "url": "https://schemata.jp",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "도쿄 건축·리테일",
+      "anatomy": "나가사카 조의 리테일·카페·전시 공간",
+      "principle": "거친 소재와 미니멀 구성의 일본식 공간",
+      "imageUrl": "/captures/schemata.png",
+      "videoUrl": "/videos/schemata.webm"
+    },
+    {
+      "id": "studio-swine",
+      "title": "Studio Swine",
+      "url": "https://www.studioswine.com",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "몰입형 설치·소재 실험",
+      "anatomy": "소재 연구에서 출발한 몰입형 설치 작업",
+      "principle": "재료 실험을 공간 경험으로 확장",
+      "imageUrl": "/captures/studio-swine.png",
+      "videoUrl": "/videos/studio-swine.webm"
+    },
+    {
+      "id": "ralph-appelbaum",
+      "title": "Ralph Appelbaum Associates",
+      "url": "https://www.raai.com",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "뮤지엄 전시 디자인",
+      "anatomy": "세계 주요 박물관의 전시 기획·디자인",
+      "principle": "내러티브 중심의 대형 전시 설계",
+      "imageUrl": "/captures/ralph-appelbaum.png",
+      "videoUrl": "/videos/ralph-appelbaum.webm"
+    },
+    {
+      "id": "kossmanndejong",
+      "title": "Kossmanndejong",
+      "url": "https://www.kossmanndejong.nl",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "암스테르담 전시 디자인",
+      "anatomy": "스토리텔링 기반 박물관·전시 공간",
+      "principle": "콘텐츠를 동선과 공간으로 풀어내는 구성",
+      "imageUrl": "/captures/kossmanndejong.png",
+      "videoUrl": "/videos/kossmanndejong.webm"
+    },
+    {
+      "id": "atelier-bruckner",
+      "title": "Atelier Brückner",
+      "url": "https://www.atelier-brueckner.com",
+      "category": "Spatial & Exhibition",
+      "tags": [
+        "공간 & 전시 디자인"
+      ],
+      "shortDesc": "슈투트가르트 전시 건축",
+      "anatomy": "브랜드 파빌리온과 뮤지엄 전시 공간",
+      "principle": "전시를 건축적 스케일로 설계",
+      "imageUrl": "/captures/atelier-bruckner.png",
+      "videoUrl": "/videos/atelier-bruckner.webm"
+    },
+    {
+      "id": "kidrobot",
+      "title": "Kidrobot",
+      "url": "https://www.kidrobot.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "디자이너 토이 브랜드",
+      "anatomy": "플랫폼 토이(Dunny·Munny)와 아티스트 협업 피규어",
+      "principle": "하나의 플랫폼 형태에 아티스트 해석을 입히는 구조",
+      "imageUrl": "/captures/kidrobot.png",
+      "videoUrl": "/videos/kidrobot.webm"
+    },
+    {
+      "id": "medicom-toy",
+      "title": "Medicom Toy (BE@RBRICK)",
+      "url": "https://www.medicomtoy.co.jp",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "베어브릭 제조사",
+      "anatomy": "베어브릭 등 협업 피규어 라인업",
+      "principle": "고정 실루엣 위에 브랜드·아티스트를 얹는 협업 모델",
+      "imageUrl": "/captures/medicom-toy.png",
+      "videoUrl": "/videos/medicom-toy.webm"
+    },
+    {
+      "id": "kaws",
+      "title": "KAWS",
+      "url": "https://kawsone.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "아트토이·조각 아티스트",
+      "anatomy": "캐릭터 기반 조각·토이·회화 작업",
+      "principle": "캐릭터를 순수미술과 상품 양쪽으로 확장",
+      "imageUrl": "/captures/kaws.png",
+      "videoUrl": "/videos/kaws.webm"
+    },
+    {
+      "id": "superplastic",
+      "title": "Superplastic",
+      "url": "https://superplastic.co",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "비닐 토이·캐릭터 IP",
+      "anatomy": "디지털 캐릭터 IP와 한정판 비닐 토이",
+      "principle": "온라인 캐릭터를 실물 토이로 연결하는 방식",
+      "imageUrl": "/captures/superplastic.png",
+      "videoUrl": "/videos/superplastic.webm"
+    },
+    {
+      "id": "pop-mart",
+      "title": "Pop Mart",
+      "url": "https://www.popmart.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "블라인드박스 아트토이",
+      "anatomy": "아티스트 캐릭터 기반 블라인드박스 피규어",
+      "principle": "시리즈·수집 구조로 만드는 캐릭터 비즈니스",
+      "imageUrl": "/captures/pop-mart.png",
+      "videoUrl": "/videos/pop-mart.webm"
+    },
+    {
+      "id": "mighty-jaxx",
+      "title": "Mighty Jaxx",
+      "url": "https://mightyjaxx.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "컬렉터블 아트토이",
+      "anatomy": "아티스트 협업 컬렉터블 피규어",
+      "principle": "해부학·변형 콘셉트의 아트토이 조형",
+      "imageUrl": "/captures/mighty-jaxx.png",
+      "videoUrl": "/videos/mighty-jaxx.webm"
+    },
+    {
+      "id": "nendo",
+      "title": "nendo",
+      "url": "https://www.nendo.jp",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "사토 오키 디자인 오피스",
+      "anatomy": "작은 아이디어를 담은 제품·가구·공간",
+      "principle": "\"작은 놀라움\"을 형태로 만드는 개념적 디자인",
+      "imageUrl": "/captures/nendo.png",
+      "videoUrl": "/videos/nendo.webm"
+    },
+    {
+      "id": "bouroullec",
+      "title": "Ronan & Erwan Bouroullec",
+      "url": "https://www.bouroullec.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "프랑스 제품·가구 디자인",
+      "anatomy": "가구·조명·오브제 디자인 아카이브",
+      "principle": "반복 모듈과 유기적 형태의 오브제",
+      "imageUrl": "/captures/bouroullec.png",
+      "videoUrl": "/videos/bouroullec.webm"
+    },
+    {
+      "id": "jasper-morrison",
+      "title": "Jasper Morrison",
+      "url": "https://jaspermorrison.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "슈퍼 노멀 제품 디자인",
+      "anatomy": "평범함을 극대화한 제품·가구 디자인",
+      "principle": "장식을 덜어낸 일상 오브제의 완성도",
+      "imageUrl": "/captures/jasper-morrison.png",
+      "videoUrl": "/videos/jasper-morrison.webm"
+    },
+    {
+      "id": "naoto-fukasawa",
+      "title": "Naoto Fukasawa",
+      "url": "https://naotofukasawa.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "미니멀 제품 디자인",
+      "anatomy": "MUJI·±0 등 무의식적 사용성을 담은 제품 디자인",
+      "principle": "행동에서 출발하는 극단적 미니멀리즘",
+      "imageUrl": "/captures/naoto-fukasawa.png",
+      "videoUrl": "/videos/naoto-fukasawa.webm"
+    },
+    {
+      "id": "groovisions",
+      "title": "groovisions",
+      "url": "https://www.groovisions.com",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "도쿄 그래픽 디자인 그룹",
+      "anatomy": "캐릭터 Chappie와 미니멀 그래픽·영상 작업",
+      "principle": "단순화된 그래픽 시스템과 캐릭터 운용",
+      "imageUrl": "/captures/groovisions.png",
+      "videoUrl": "/videos/groovisions.webm"
+    },
+    {
+      "id": "artless",
+      "title": "artless (Shun Kawakami)",
+      "url": "https://www.artless.co.jp",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "도쿄 미니멀 브랜딩",
+      "anatomy": "여백과 절제의 브랜딩·공간 아이덴티티",
+      "principle": "일본식 미니멀리즘의 브랜드 적용",
+      "imageUrl": "/captures/artless.png",
+      "videoUrl": "/videos/artless.webm"
+    },
+    {
+      "id": "kashiwa-sato",
+      "title": "Kashiwa Sato (SAMURAI)",
+      "url": "https://kashiwasato.com",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "유니클로 아트디렉터",
+      "anatomy": "유니클로·세븐일레븐 등 대형 브랜드 아트디렉션",
+      "principle": "대중 브랜드를 단순하고 강하게 정리하는 방식",
+      "imageUrl": "/captures/kashiwa-sato.png",
+      "videoUrl": "/videos/kashiwa-sato.webm"
+    },
+    {
+      "id": "norm",
+      "title": "Norm",
+      "url": "https://www.norm.to",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "취리히 타이포 스튜디오",
+      "anatomy": "이론과 시스템 기반의 타이포·그래픽 작업",
+      "principle": "규칙에서 출발하는 개념적 타이포그래피",
+      "imageUrl": "/captures/norm.png",
+      "videoUrl": "/videos/norm.webm"
+    },
+    {
+      "id": "l2m3",
+      "title": "L2M3",
+      "url": "https://www.l2m3.com",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "슈투트가르트 그래픽 스튜디오",
+      "anatomy": "사인 시스템·전시·출판의 정교한 그리드 작업",
+      "principle": "공간과 그래픽을 잇는 정보 디자인",
+      "imageUrl": "/captures/l2m3.png",
+      "videoUrl": "/videos/l2m3.webm"
+    },
+    {
+      "id": "studio-lin",
+      "title": "Studio Lin",
+      "url": "https://studiolin.org",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "뉴욕 그래픽 스튜디오",
+      "anatomy": "문화기관을 위한 아이덴티티·출판 디자인",
+      "principle": "절제된 타이포로 만드는 기관 아이덴티티",
+      "imageUrl": "/captures/studio-lin.png",
+      "videoUrl": "/videos/studio-lin.webm"
+    },
+    {
+      "id": "kurppa-hosk",
+      "title": "Kurppa Hosk",
+      "url": "https://kurppahosk.com",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "스톡홀름 브랜드 에이전시",
+      "anatomy": "스톡홀름·오슬로·뉴욕·시카고 기반 브랜드 에이전시. Scania, Zalando, Bungie 등",
+      "principle": "프리미엄 브랜드 포지셔닝과 브랜드 시스템 설계",
+      "imageUrl": "/captures/kurppa-hosk.png",
+      "videoUrl": "/videos/kurppa-hosk.webm"
+    },
+    {
+      "id": "bibliotheque",
+      "title": "Bibliothèque",
+      "url": "https://www.bibliothequedesign.com",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "런던 브랜드·전시 디자인",
+      "anatomy": "아카이브·전시·럭셔리 브랜드 아이덴티티",
+      "principle": "모더니즘 기반의 체계적 브랜드 설계",
+      "imageUrl": "/captures/bibliotheque.png",
+      "videoUrl": "/videos/bibliotheque.webm"
+    },
+    {
+      "id": "construct",
+      "title": "Construct",
+      "url": "https://www.constructlondon.com",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "호스피탈리티 브랜딩",
+      "anatomy": "호텔·레스토랑·부동산 브랜드 아이덴티티",
+      "principle": "공간과 경험을 중심으로 한 브랜딩",
+      "imageUrl": "/captures/construct.png",
+      "videoUrl": "/videos/construct.webm"
+    },
+    {
+      "id": "pearlfisher",
+      "title": "Pearlfisher",
+      "url": "https://www.pearlfisher.com",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "패키징 브랜드 디자인",
+      "anatomy": "식음료·뷰티 브랜드 패키징과 아이덴티티",
+      "principle": "패키지를 브랜드의 얼굴로 만드는 방식",
+      "imageUrl": "/captures/pearlfisher.png",
+      "videoUrl": "/videos/pearlfisher.webm"
+    },
+    {
+      "id": "anagrama",
+      "title": "Anagrama",
+      "url": "https://www.anagrama.com",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "멕시코 브랜딩 스튜디오",
+      "anatomy": "리테일·F&B 브랜드 아이덴티티와 공간",
+      "principle": "브랜드·패키징·인테리어의 일관성",
+      "imageUrl": "/captures/anagrama.png",
+      "videoUrl": "/videos/anagrama.webm"
+    },
+    {
+      "id": "landor",
+      "title": "Landor",
+      "url": "https://landor.com",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "글로벌 브랜드 컨설팅",
+      "anatomy": "글로벌 기업 리브랜딩 케이스 스터디",
+      "principle": "대규모 브랜드 시스템의 전략과 실행",
+      "imageUrl": "/captures/landor.png",
+      "videoUrl": "/videos/landor.webm"
+    },
+    {
+      "id": "pangram-pangram",
+      "title": "Pangram Pangram",
+      "url": "https://pangrampangram.com",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "인디 타입 파운드리",
+      "anatomy": "트렌디한 디스플레이·텍스트 서체와 스페시먼",
+      "principle": "서체 판매 사이트 자체의 브랜딩",
+      "imageUrl": "/captures/pangram-pangram.png",
+      "videoUrl": "/videos/pangram-pangram.webm"
+    },
+    {
+      "id": "future-fonts",
+      "title": "Future Fonts",
+      "url": "https://www.futurefonts.xyz",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "개발 중 서체 마켓",
+      "anatomy": "작업 중인 서체를 미리 구매하는 플랫폼",
+      "principle": "실험적 서체를 일찍 발견하는 창구",
+      "imageUrl": "/captures/future-fonts.png",
+      "videoUrl": "/videos/future-fonts.webm"
+    },
+    {
+      "id": "production-type",
+      "title": "Production Type",
+      "url": "https://www.productiontype.com",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "파리 타입 파운드리",
+      "anatomy": "브랜드 커스텀 서체와 리테일 서체",
+      "principle": "브랜드 전용 서체 개발 사례",
+      "imageUrl": "/captures/production-type.png",
+      "videoUrl": "/videos/production-type.webm"
+    },
+    {
+      "id": "typotheque",
+      "title": "Typotheque",
+      "url": "https://www.typotheque.com",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "다국어 타입 파운드리",
+      "anatomy": "다양한 문자권을 지원하는 서체와 에세이",
+      "principle": "다국어 타이포그래피 설계 기준",
+      "imageUrl": "/captures/typotheque.png",
+      "videoUrl": "/videos/typotheque.webm"
+    },
+    {
+      "id": "sandoll",
+      "title": "산돌 (Sandoll)",
+      "url": "https://www.sandoll.co.kr",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "한글 폰트 회사",
+      "anatomy": "한글 폰트와 커스텀 서체 프로젝트",
+      "principle": "한글 서체 개발과 브랜드 서체 사례",
+      "imageUrl": "/captures/sandoll.png",
+      "videoUrl": "/videos/sandoll.webm"
+    },
+    {
+      "id": "google-fonts-knowledge",
+      "title": "Google Fonts Knowledge",
+      "url": "https://fonts.google.com/knowledge",
+      "category": "Typography",
+      "tags": [
+        "타이포그래피"
+      ],
+      "shortDesc": "타이포 학습 자료",
+      "anatomy": "타이포그래피 기초부터 가변 서체까지 정리한 교육 콘텐츠",
+      "principle": "타이포 원리를 체계적으로 학습",
+      "imageUrl": "/captures/google-fonts-knowledge.png",
+      "videoUrl": "/videos/google-fonts-knowledge.webm"
+    },
+    {
+      "id": "unit-editions",
+      "title": "Unit Editions",
+      "url": "https://uniteditions.com",
+      "category": "Editorial & Print",
+      "tags": [
+        "에디토리얼 & 출판"
+      ],
+      "shortDesc": "그래픽 디자인 전문 출판",
+      "anatomy": "디자이너 모노그래프와 디자인사 서적",
+      "principle": "디자인 아카이브를 책으로 남기는 방식",
+      "imageUrl": "/captures/unit-editions.png",
+      "videoUrl": "/videos/unit-editions.webm"
+    },
+    {
+      "id": "magculture",
+      "title": "magCulture",
+      "url": "https://magculture.com",
+      "category": "Editorial & Print",
+      "tags": [
+        "에디토리얼 & 출판"
+      ],
+      "shortDesc": "독립 잡지 큐레이션",
+      "anatomy": "전 세계 독립 잡지 리뷰와 숍",
+      "principle": "잡지 편집 디자인 트렌드 파악",
+      "imageUrl": "/captures/magculture.png",
+      "videoUrl": "/videos/magculture.webm"
+    },
+    {
+      "id": "stack-magazines",
+      "title": "Stack",
+      "url": "https://www.stackmagazines.com",
+      "category": "Editorial & Print",
+      "tags": [
+        "에디토리얼 & 출판"
+      ],
+      "shortDesc": "독립 잡지 구독",
+      "anatomy": "매달 독립 잡지를 소개하는 구독 서비스",
+      "principle": "다양한 독립 잡지의 편집 사례",
+      "imageUrl": "/captures/stack-magazines.png",
+      "videoUrl": "/videos/stack-magazines.webm"
+    },
+    {
+      "id": "kinfolk",
+      "title": "Kinfolk",
+      "url": "https://www.kinfolk.com",
+      "category": "Editorial & Print",
+      "tags": [
+        "에디토리얼 & 출판"
+      ],
+      "shortDesc": "라이프스타일 매거진",
+      "anatomy": "여백과 자연광 사진의 라이프스타일 잡지",
+      "principle": "차분한 톤의 에디토리얼 아트디렉션",
+      "imageUrl": "/captures/kinfolk.png",
+      "videoUrl": "/videos/kinfolk.webm"
+    },
+    {
+      "id": "mousse",
+      "title": "Mousse Magazine",
+      "url": "https://www.moussemagazine.it",
+      "category": "Editorial & Print",
+      "tags": [
+        "에디토리얼 & 출판"
+      ],
+      "shortDesc": "현대미술 잡지·출판",
+      "anatomy": "현대미술 비평 잡지와 아트북",
+      "principle": "미술 출판의 편집 형식",
+      "imageUrl": "/captures/mousse.png",
+      "videoUrl": "/videos/mousse.webm"
+    },
+    {
+      "id": "typeroom",
+      "title": "Typeroom",
+      "url": "https://www.typeroom.eu",
+      "category": "Magazine & Blog",
+      "tags": [
+        "매거진 & 블로그"
+      ],
+      "shortDesc": "타이포그래피 매거진",
+      "anatomy": "타이포·레터링 프로젝트와 인터뷰",
+      "principle": "타이포 중심 디자인 뉴스",
+      "imageUrl": "/captures/typeroom.png",
+      "videoUrl": "/videos/typeroom.webm"
+    },
+    {
+      "id": "wallpaper",
+      "title": "Wallpaper*",
+      "url": "https://www.wallpaper.com",
+      "category": "Magazine & Blog",
+      "tags": [
+        "매거진 & 블로그"
+      ],
+      "shortDesc": "디자인·라이프스타일 매거진",
+      "anatomy": "건축·인테리어·패션·디자인 뉴스",
+      "principle": "하이엔드 라이프스타일 디자인 흐름",
+      "imageUrl": "/captures/wallpaper.png",
+      "videoUrl": "/videos/wallpaper.webm"
+    },
+    {
+      "id": "design-week",
+      "title": "Design Week",
+      "url": "https://www.designweek.co.uk",
+      "category": "Magazine & Blog",
+      "tags": [
+        "매거진 & 블로그"
+      ],
+      "shortDesc": "영국 디자인 업계 뉴스",
+      "anatomy": "브랜딩·디자인 업계 뉴스와 프로젝트",
+      "principle": "업계 동향과 리브랜딩 사례",
+      "imageUrl": "/captures/design-week.png",
+      "videoUrl": "/videos/design-week.webm"
+    },
+    {
+      "id": "print-mag",
+      "title": "PRINT",
+      "url": "https://www.printmag.com",
+      "category": "Magazine & Blog",
+      "tags": [
+        "매거진 & 블로그"
+      ],
+      "shortDesc": "그래픽 디자인 매거진",
+      "anatomy": "그래픽 디자인 역사·비평·뉴스",
+      "principle": "디자인사와 현재를 잇는 비평",
+      "imageUrl": "/captures/print-mag.png",
+      "videoUrl": "/videos/print-mag.webm"
+    },
+    {
+      "id": "commarts",
+      "title": "Communication Arts",
+      "url": "https://www.commarts.com",
+      "category": "Magazine & Blog",
+      "tags": [
+        "매거진 & 블로그"
+      ],
+      "shortDesc": "광고·디자인 어워드 매거진",
+      "anatomy": "광고·디자인·일러스트 수상작 아카이브",
+      "principle": "업계 수준의 기준점 확인",
+      "imageUrl": "/captures/commarts.png",
+      "videoUrl": "/videos/commarts.webm"
+    },
+    {
+      "id": "land-book",
+      "title": "Land-book",
+      "url": "https://land-book.com",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "랜딩 페이지 아카이브",
+      "anatomy": "랜딩·포트폴리오 웹사이트 갤러리",
+      "principle": "웹 레이아웃 패턴 비교",
+      "imageUrl": "/captures/land-book.png",
+      "videoUrl": "/videos/land-book.webm"
+    },
+    {
+      "id": "httpster",
+      "title": "Httpster",
+      "url": "https://httpster.net",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "웹사이트 큐레이션",
+      "anatomy": "개성 있는 웹사이트 큐레이션",
+      "principle": "트렌디한 웹 타이포·레이아웃",
+      "imageUrl": "/captures/httpster.png",
+      "videoUrl": "/videos/httpster.webm"
+    },
+    {
+      "id": "visuelle",
+      "title": "Visuelle",
+      "url": "https://visuelle.co.uk",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "그래픽 디자인 블로그 아카이브",
+      "anatomy": "절제된 그래픽·타이포 작업 큐레이션",
+      "principle": "미니멀 그래픽 레퍼런스",
+      "imageUrl": "/captures/visuelle.png",
+      "videoUrl": "/videos/visuelle.webm"
+    },
+    {
+      "id": "paul-rand",
+      "title": "Paul Rand",
+      "url": "https://www.paulrand.design",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "폴 랜드 아카이브",
+      "anatomy": "IBM·ABC 등 폴 랜드 작업 아카이브",
+      "principle": "로고 디자인의 고전적 원리",
+      "imageUrl": "/captures/paul-rand.png",
+      "videoUrl": "/videos/paul-rand.webm"
+    },
+    {
+      "id": "poster-house",
+      "title": "Poster House",
+      "url": "https://posterhouse.org",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브"
+      ],
+      "shortDesc": "포스터 전문 뮤지엄",
+      "anatomy": "뉴욕 포스터 뮤지엄의 전시와 컬렉션",
+      "principle": "포스터 디자인사 레퍼런스",
+      "imageUrl": "/captures/poster-house.png",
+      "videoUrl": "/videos/poster-house.webm"
+    },
+    {
+      "id": "akaru",
+      "title": "Akaru",
+      "url": "https://akaru.fr",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "리옹 WebGL 스튜디오",
+      "anatomy": "3D 인터랙션 중심의 캠페인 사이트",
+      "principle": "브랜드 캠페인의 WebGL 연출",
+      "imageUrl": "/captures/akaru.png",
+      "videoUrl": "/videos/akaru.webm"
+    },
+    {
+      "id": "little-workshop",
+      "title": "Little Workshop",
+      "url": "https://www.littleworkshop.fr",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "실시간 3D 웹 스튜디오",
+      "anatomy": "실시간 3D 웹사이트·가상 공간·게임·AR/VR 제작 스튜디오",
+      "principle": "3D 렌더링 품질의 웹 구현",
+      "imageUrl": "/captures/little-workshop.png",
+      "videoUrl": "/videos/little-workshop.webm"
+    },
+    {
+      "id": "jesse-zhou",
+      "title": "Jesse's Ramen (Jesse Zhou)",
+      "url": "https://jesse-zhou.com",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "3D 라멘 가게 포트폴리오",
+      "anatomy": "3D 라멘 가게를 탐색하는 개인 포트폴리오",
+      "principle": "일상 공간 메타포를 포트폴리오에 적용",
+      "imageUrl": "/captures/jesse-zhou.png",
+      "videoUrl": "/videos/jesse-zhou.webm"
+    },
+    {
+      "id": "noomo",
+      "title": "Noomo Agency",
+      "url": "https://noomoagency.com",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "LA 3D 스토리텔링 에이전시",
+      "anatomy": "3D 스토리텔링 웹사이트와 몰입형 디지털 경험을 만드는 LA 에이전시",
+      "principle": "서사에 맞춰 WebGL·영상·인터랙션을 고르는 방식",
+      "imageUrl": "/captures/noomo.png",
+      "videoUrl": "/videos/noomo.webm"
+    },
+    {
+      "id": "rogier-de-boeve",
+      "title": "Rogier de Boevé",
+      "url": "https://www.rogierdeboeve.com",
+      "category": "Interactive Web",
+      "tags": [
+        "인터랙티브 모션"
+      ],
+      "shortDesc": "벨기에 크리에이티브 개발자",
+      "anatomy": "WebGL 전환이 돋보이는 크리에이티브 개발자 포트폴리오",
+      "principle": "전환 모션의 디테일",
+      "imageUrl": "/captures/rogier-de-boeve.png",
+      "videoUrl": "/videos/rogier-de-boeve.webm"
+    },
+    {
+      "id": "dennis-snellenberg",
+      "title": "Dennis Snellenberg",
+      "url": "https://dennissnellenberg.com",
+      "category": "Interactive Web",
+      "tags": [
+        "인터랙티브 모션"
+      ],
+      "shortDesc": "프리랜스 웹 디자이너",
+      "anatomy": "마그네틱 버튼과 스크롤 모션의 포트폴리오",
+      "principle": "작은 인터랙션으로 완성도를 높이는 방식",
+      "imageUrl": "/captures/dennis-snellenberg.png",
+      "videoUrl": "/videos/dennis-snellenberg.webm"
+    },
+    {
+      "id": "studio-freight",
+      "title": "Studio Freight",
+      "url": "https://studiofreight.com",
+      "category": "Interactive Web",
+      "tags": [
+        "인터랙티브 모션"
+      ],
+      "shortDesc": "브랜드·디지털 스튜디오",
+      "anatomy": "브랜드·디지털 경험·캠페인을 만드는 스튜디오",
+      "principle": "모션 중심의 브랜드 웹 경험",
+      "imageUrl": "/captures/studio-freight.png",
+      "videoUrl": "/videos/studio-freight.webm"
+    },
+    {
+      "id": "useless-web",
+      "title": "The Useless Web",
+      "url": "https://theuselessweb.com",
+      "category": "Experimental Web",
+      "tags": [
+        "실험적 웹"
+      ],
+      "shortDesc": "쓸모없는 웹 모음",
+      "anatomy": "버튼 하나로 기묘한 웹사이트로 이동",
+      "principle": "목적 없는 웹의 즐거움",
+      "imageUrl": "/captures/useless-web.png",
+      "videoUrl": "/videos/useless-web.webm"
+    },
+    {
+      "id": "jodi",
+      "title": "JODI",
+      "url": "https://jodi.org",
+      "category": "Experimental Web",
+      "tags": [
+        "실험적 웹"
+      ],
+      "shortDesc": "넷아트 원조",
+      "anatomy": "브라우저를 깨뜨리는 초기 넷아트",
+      "principle": "웹의 오류 자체를 미학으로",
+      "imageUrl": "/captures/jodi.png",
+      "videoUrl": "/videos/jodi.webm"
+    },
+    {
+      "id": "universal-paperclips",
+      "title": "Universal Paperclips",
+      "url": "https://www.decisionproblem.com/paperclips/",
+      "category": "Experimental Web",
+      "tags": [
+        "실험적 웹"
+      ],
+      "shortDesc": "텍스트 기반 클리커 게임",
+      "anatomy": "숫자와 버튼만으로 서사를 만드는 웹 게임",
+      "principle": "최소 UI로 만드는 몰입",
+      "imageUrl": "/captures/universal-paperclips.png",
+      "videoUrl": "/videos/universal-paperclips.webm"
+    },
+    {
+      "id": "typatone",
+      "title": "Typatone",
+      "url": "https://typatone.com",
+      "category": "Experimental Web",
+      "tags": [
+        "실험적 웹"
+      ],
+      "shortDesc": "타이핑 사운드 툴",
+      "anatomy": "글자를 입력하면 음악이 되는 인터랙션",
+      "principle": "타이포와 사운드의 결합",
+      "imageUrl": "/captures/typatone.png",
+      "videoUrl": "/videos/typatone.webm"
+    },
+    {
+      "id": "every-noise",
+      "title": "Every Noise at Once",
+      "url": "https://everynoise.com",
+      "category": "Experimental Web",
+      "tags": [
+        "실험적 웹"
+      ],
+      "shortDesc": "음악 장르 지도",
+      "anatomy": "수천 개 음악 장르를 배치한 데이터 지도",
+      "principle": "데이터 시각화를 탐색 경험으로",
+      "imageUrl": "/captures/every-noise.png",
+      "videoUrl": "/videos/every-noise.webm"
+    },
+    {
+      "id": "motionographer",
+      "title": "Motionographer",
+      "url": "https://motionographer.com",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "모션 디자인 매거진",
+      "anatomy": "모션그래픽·애니메이션 신작과 인터뷰",
+      "principle": "모션 업계 트렌드 파악",
+      "imageUrl": "/captures/motionographer.png",
+      "videoUrl": "/videos/motionographer.webm"
+    },
+    {
+      "id": "art-of-the-title",
+      "title": "Art of the Title",
+      "url": "https://www.artofthetitle.com",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "타이틀 시퀀스 아카이브",
+      "anatomy": "영화·드라마 오프닝 타이틀 아카이브와 인터뷰",
+      "principle": "타이포와 모션으로 여는 서사",
+      "imageUrl": "/captures/art-of-the-title.png",
+      "videoUrl": "/videos/art-of-the-title.webm"
+    },
+    {
+      "id": "imaginary-forces",
+      "title": "Imaginary Forces",
+      "url": "https://www.imaginaryforces.com",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "타이틀·브랜드 모션",
+      "anatomy": "영화 타이틀과 브랜드 모션 작업",
+      "principle": "시네마틱 타이포그래피",
+      "imageUrl": "/captures/imaginary-forces.png",
+      "videoUrl": "/videos/imaginary-forces.webm"
+    },
+    {
+      "id": "elastic",
+      "title": "Elastic",
+      "url": "https://elastic.tv",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "타이틀 시퀀스 스튜디오",
+      "anatomy": "드라마 오프닝 타이틀과 광고 작업",
+      "principle": "분위기를 압축하는 오프닝 연출",
+      "imageUrl": "/captures/elastic.png",
+      "videoUrl": "/videos/elastic.webm"
+    },
+    {
+      "id": "gmunk",
+      "title": "GMUNK",
+      "url": "https://gmunk.com",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "라이트·모션 아티스트",
+      "anatomy": "빛과 기하학을 활용한 모션·설치 작업",
+      "principle": "빛을 그래픽 요소로 쓰는 연출",
+      "imageUrl": "/captures/gmunk.png",
+      "videoUrl": "/videos/gmunk.webm"
+    },
+    {
+      "id": "six-n-five",
+      "title": "Six N. Five",
+      "url": "https://sixnfive.com",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "초현실 3D 아트",
+      "anatomy": "초현실적 3D 공간과 오브젝트 렌더",
+      "principle": "소재와 빛으로 만드는 초현실 풍경",
+      "imageUrl": "/captures/six-n-five.png",
+      "videoUrl": "/videos/six-n-five.webm"
+    },
+    {
+      "id": "giant-ant",
+      "title": "Giant Ant",
+      "url": "https://www.giantant.ca",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "애니메이션 스튜디오",
+      "anatomy": "따뜻한 일러스트 기반 애니메이션",
+      "principle": "감성적인 2D 모션 스토리텔링",
+      "imageUrl": "/captures/giant-ant.png",
+      "videoUrl": "/videos/giant-ant.webm"
+    },
+    {
+      "id": "random-international",
+      "title": "Random International",
+      "url": "https://www.random-international.com",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "인터랙티브 설치 아트",
+      "anatomy": "Rain Room 등 관객 반응형 설치 작업",
+      "principle": "관객의 움직임이 작품을 완성하는 구조",
+      "imageUrl": "/captures/random-international.png",
+      "videoUrl": "/videos/random-international.webm"
+    },
+    {
+      "id": "marshmallow-laser-feast",
+      "title": "Marshmallow Laser Feast",
+      "url": "https://www.marshmallowlaserfeast.com",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "몰입형 VR·설치",
+      "anatomy": "자연을 감각적으로 체험하는 몰입형 작업",
+      "principle": "감각 확장으로서의 미디어 아트",
+      "imageUrl": "/captures/marshmallow-laser-feast.png",
+      "videoUrl": "/videos/marshmallow-laser-feast.webm"
+    },
+    {
+      "id": "lozano-hemmer",
+      "title": "Rafael Lozano-Hemmer",
+      "url": "https://www.lozano-hemmer.com",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "공공 인터랙티브 아트",
+      "anatomy": "생체신호·빛을 활용한 공공 설치 작업",
+      "principle": "관객 참여형 공공 미디어 아트",
+      "imageUrl": "/captures/lozano-hemmer.png",
+      "videoUrl": "/videos/lozano-hemmer.webm"
+    },
+    {
+      "id": "ars-electronica",
+      "title": "Ars Electronica",
+      "url": "https://ars.electronica.art",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "미디어 아트 페스티벌",
+      "anatomy": "세계 최대 미디어 아트 페스티벌과 수상작",
+      "principle": "아트·테크 융합 흐름의 기준점",
+      "imageUrl": "/captures/ars-electronica.png",
+      "videoUrl": "/videos/ars-electronica.webm"
+    },
+    {
+      "id": "kimchi-and-chips",
+      "title": "Kimchi and Chips",
+      "url": "https://www.kimchiandchips.com",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "서울 미디어 아트 스튜디오",
+      "anatomy": "빛과 공간을 다루는 대형 설치 작업",
+      "principle": "물리 공간에 그리는 빛의 조형",
+      "imageUrl": "/captures/kimchi-and-chips.png",
+      "videoUrl": "/videos/kimchi-and-chips.webm"
+    },
+    {
+      "id": "nonotak",
+      "title": "NONOTAK",
+      "url": "https://www.nonotak.com",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "빛·사운드 설치",
+      "anatomy": "빛과 사운드로 만든 오디오비주얼 설치",
+      "principle": "미니멀한 빛 구조의 리듬",
+      "imageUrl": "/captures/nonotak.png",
+      "videoUrl": "/videos/nonotak.webm"
+    },
+    {
+      "id": "leeum",
+      "title": "리움미술관 (Leeum)",
+      "url": "https://www.leeum.org",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "서울 미술관",
+      "anatomy": "현대미술·고미술 전시와 건축",
+      "principle": "국내 주요 전시 기획 참고",
+      "imageUrl": "/captures/leeum.png",
+      "videoUrl": "/videos/leeum.webm"
+    },
+    {
+      "id": "folio-art",
+      "title": "Folio Art",
+      "url": "https://www.folioart.co.uk",
+      "category": "Illustration & Artist",
+      "tags": [
+        "일러스트 & 아티스트"
+      ],
+      "shortDesc": "일러스트 에이전시",
+      "anatomy": "다양한 스타일의 일러스트레이터 로스터",
+      "principle": "프로젝트별 일러스트 스타일 탐색",
+      "imageUrl": "/captures/folio-art.png",
+      "videoUrl": "/videos/folio-art.webm"
+    },
+    {
+      "id": "pocko",
+      "title": "Pocko",
+      "url": "https://www.pocko.com",
+      "category": "Illustration & Artist",
+      "tags": [
+        "일러스트 & 아티스트"
+      ],
+      "shortDesc": "크리에이티브 에이전시",
+      "anatomy": "일러스트·애니메이션 아티스트 매니지먼트",
+      "principle": "아티스트 협업 캠페인 사례",
+      "imageUrl": "/captures/pocko.png",
+      "videoUrl": "/videos/pocko.webm"
+    },
+    {
+      "id": "jelly-london",
+      "title": "Jelly London",
+      "url": "https://www.jellylondon.com",
+      "category": "Illustration & Artist",
+      "tags": [
+        "일러스트 & 아티스트"
+      ],
+      "shortDesc": "일러스트·모션 에이전시",
+      "anatomy": "일러스트레이터·애니메이터 에이전시",
+      "principle": "광고용 일러스트 스타일 레퍼런스",
+      "imageUrl": "/captures/jelly-london.png",
+      "videoUrl": "/videos/jelly-london.webm"
+    },
+    {
+      "id": "yuko-shimizu",
+      "title": "Yuko Shimizu",
+      "url": "https://yukoart.com",
+      "category": "Illustration & Artist",
+      "tags": [
+        "일러스트 & 아티스트"
+      ],
+      "shortDesc": "잉크 일러스트",
+      "anatomy": "붓·잉크 기반의 에디토리얼 일러스트",
+      "principle": "동양적 선과 현대적 색의 결합",
+      "imageUrl": "/captures/yuko-shimizu.png",
+      "videoUrl": "/videos/yuko-shimizu.webm"
+    },
+    {
+      "id": "hypebeast",
+      "title": "Hypebeast",
+      "url": "https://hypebeast.com",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처"
+      ],
+      "shortDesc": "스트리트 컬처 미디어",
+      "anatomy": "스트리트웨어·스니커·아트토이 뉴스",
+      "principle": "협업·드롭 문화 트렌드 파악",
+      "imageUrl": "/captures/hypebeast.png",
+      "videoUrl": "/videos/hypebeast.webm"
+    },
+    {
+      "id": "highsnobiety",
+      "title": "Highsnobiety",
+      "url": "https://www.highsnobiety.com",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처"
+      ],
+      "shortDesc": "패션·컬처 매거진",
+      "anatomy": "패션·라이프스타일 매거진이자 브랜드",
+      "principle": "미디어가 브랜드 협업을 만드는 구조",
+      "imageUrl": "/captures/highsnobiety.png",
+      "videoUrl": "/videos/highsnobiety.webm"
+    },
+    {
+      "id": "the-gentlewoman",
+      "title": "The Gentlewoman",
+      "url": "https://thegentlewoman.co.uk",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처"
+      ],
+      "shortDesc": "여성 패션 매거진",
+      "anatomy": "절제된 타이포와 사진의 패션 매거진",
+      "principle": "패션 매거진의 미니멀 편집 기준",
+      "imageUrl": "/captures/the-gentlewoman.png",
+      "videoUrl": "/videos/the-gentlewoman.webm"
+    },
+    {
+      "id": "lemaire",
+      "title": "LEMAIRE",
+      "url": "https://www.lemaire.fr",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처"
+      ],
+      "shortDesc": "미니멀 패션 브랜드",
+      "anatomy": "절제된 실루엣과 차분한 캠페인 이미지",
+      "principle": "조용한 럭셔리의 비주얼 톤",
+      "imageUrl": "/captures/lemaire.png",
+      "videoUrl": "/videos/lemaire.webm"
+    },
+    {
+      "id": "our-legacy",
+      "title": "Our Legacy",
+      "url": "https://www.ourlegacy.com",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처"
+      ],
+      "shortDesc": "스톡홀름 패션 브랜드",
+      "anatomy": "실험적 소재와 무드의 패션 캠페인",
+      "principle": "브랜드 사이트의 에디토리얼 구성",
+      "imageUrl": "/captures/our-legacy.png",
+      "videoUrl": "/videos/our-legacy.webm"
+    },
+    {
+      "id": "byredo",
+      "title": "BYREDO",
+      "url": "https://www.byredo.com",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처"
+      ],
+      "shortDesc": "럭셔리 향수 브랜드",
+      "anatomy": "흑백 타이포 중심의 미니멀 패키징·사이트",
+      "principle": "극단적 미니멀 럭셔리 브랜딩",
+      "imageUrl": "/captures/byredo.png",
+      "videoUrl": "/videos/byredo.webm"
+    },
+    {
+      "id": "raycast",
+      "title": "Raycast",
+      "url": "https://www.raycast.com",
+      "category": "Product & Tech UI",
+      "tags": [
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "런처 앱 제품 사이트",
+      "anatomy": "다크 3D 그래픽과 정교한 제품 소개",
+      "principle": "툴 제품의 고급스러운 웹 표현",
+      "imageUrl": "/captures/raycast.png",
+      "videoUrl": "/videos/raycast.webm"
+    },
+    {
+      "id": "family-app",
+      "title": "Family",
+      "url": "https://family.co",
+      "category": "Product & Tech UI",
+      "tags": [
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "모션 중심 지갑 앱",
+      "anatomy": "유동적인 전환 모션의 앱 UI",
+      "principle": "모션으로 정보 구조를 설명하는 UI",
+      "imageUrl": "/captures/family-app.png",
+      "videoUrl": "/videos/family-app.webm"
+    },
+    {
+      "id": "framer",
+      "title": "Framer",
+      "url": "https://www.framer.com",
+      "category": "Product & Tech UI",
+      "tags": [
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "웹 디자인 툴",
+      "anatomy": "노코드 웹 제작 툴과 템플릿 갤러리",
+      "principle": "모션 포함 웹을 디자이너가 직접 배포",
+      "imageUrl": "/captures/framer.png",
+      "videoUrl": "/videos/framer.webm"
+    },
+    {
+      "id": "apple-hig",
+      "title": "Apple Human Interface Guidelines",
+      "url": "https://developer.apple.com/design/human-interface-guidelines",
+      "category": "Product & Tech UI",
+      "tags": [
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "애플 디자인 가이드",
+      "anatomy": "애플 플랫폼 UI 원칙과 컴포넌트 가이드",
+      "principle": "UI 설계의 기본 원칙",
+      "imageUrl": "/captures/apple-hig.png",
+      "videoUrl": "/videos/apple-hig.webm"
+    },
+    {
+      "id": "things",
+      "title": "Things (Cultured Code)",
+      "url": "https://culturedcode.com/things/",
+      "category": "Product & Tech UI",
+      "tags": [
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "미니멀 할일 앱",
+      "anatomy": "여백과 디테일이 정교한 할일 앱",
+      "principle": "단순함 속 디테일의 완성도",
+      "imageUrl": "/captures/things.png",
+      "videoUrl": "/videos/things.webm"
+    },
+    {
+      "id": "playdate",
+      "title": "Playdate",
+      "url": "https://play.date",
+      "category": "Product & Tech UI",
+      "tags": [
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "휴대용 게임기 (Panic)",
+      "anatomy": "크랭크가 달린 1비트 게임기와 제품 사이트",
+      "principle": "하드웨어·UI·브랜드의 유희적 일관성",
+      "imageUrl": "/captures/playdate.png",
+      "videoUrl": "/videos/playdate.webm"
+    },
+    {
+      "id": "runway",
+      "title": "Runway",
+      "url": "https://runwayml.com",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "AI 영상 생성 툴",
+      "anatomy": "AI 기반 영상 생성·편집 툴",
+      "principle": "AI 영상 제작 워크플로",
+      "imageUrl": "/captures/runway.png",
+      "videoUrl": "/videos/runway.webm"
+    },
+    {
+      "id": "krea",
+      "title": "Krea",
+      "url": "https://www.krea.ai",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "AI 이미지·영상 툴",
+      "anatomy": "실시간 AI 이미지 생성과 업스케일",
+      "principle": "실시간 피드백 기반 AI 비주얼 제작",
+      "imageUrl": "/captures/krea.png",
+      "videoUrl": "/videos/krea.webm"
+    },
+    {
+      "id": "p5js",
+      "title": "p5.js",
+      "url": "https://p5js.org",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "크리에이티브 코딩 라이브러리",
+      "anatomy": "브라우저 기반 크리에이티브 코딩 툴과 예제",
+      "principle": "코드로 그리는 제너러티브 그래픽",
+      "imageUrl": "/captures/p5js.png",
+      "videoUrl": "/videos/p5js.webm"
+    },
+    {
+      "id": "processing",
+      "title": "Processing",
+      "url": "https://processing.org",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "크리에이티브 코딩 환경",
+      "anatomy": "디자이너를 위한 코딩 환경과 예제",
+      "principle": "제너러티브 디자인의 출발점",
+      "imageUrl": "/captures/processing.png",
+      "videoUrl": "/videos/processing.webm"
+    },
+    {
+      "id": "cables-gl",
+      "title": "cables.gl",
+      "url": "https://cables.gl",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "노드 기반 WebGL 툴",
+      "anatomy": "브라우저에서 노드로 만드는 실시간 비주얼",
+      "principle": "코딩 없이 만드는 인터랙티브 비주얼",
+      "imageUrl": "/captures/cables-gl.png",
+      "videoUrl": "/videos/cables-gl.webm"
+    },
+    {
+      "id": "lottiefiles",
+      "title": "LottieFiles",
+      "url": "https://lottiefiles.com",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "웹 애니메이션 포맷",
+      "anatomy": "Lottie 애니메이션 라이브러리와 툴",
+      "principle": "모션을 가볍게 웹·앱에 넣는 방식",
+      "imageUrl": "/captures/lottiefiles.png",
+      "videoUrl": "/videos/lottiefiles.webm"
     }
 ];

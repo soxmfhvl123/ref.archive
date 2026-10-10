@@ -5,6 +5,7 @@ import { SEED_REFERENCES } from '../lib/data/seed';
 
 const VIDEO_DIR = path.join(process.cwd(), 'public', 'videos');
 const TEMP_DIR = path.join(process.cwd(), 'public', 'temp_rec');
+const CONCURRENCY = 6;
 
 export async function recordVideos() {
   if (!fs.existsSync(VIDEO_DIR)) {
@@ -14,61 +15,85 @@ export async function recordVideos() {
     fs.mkdirSync(TEMP_DIR, { recursive: true });
   }
 
-  console.log('Starting Playwright Video Recording Worker (8-second clips per reference)...');
+  console.log(`Starting Parallel Playwright Video Recording (${CONCURRENCY} workers, 5-second hover clips)...`);
 
   const browser = await chromium.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
-  for (const item of SEED_REFERENCES) {
-    const targetVideoPath = path.join(VIDEO_DIR, `${item.id}.webm`);
-    
-    // Skip if video already exists and is non-empty
-    if (fs.existsSync(targetVideoPath) && fs.statSync(targetVideoPath).size > 50000) {
-      console.log(`Video already exists for ${item.id}, skipping.`);
-      continue;
+  const queue = [...SEED_REFERENCES];
+
+  async function worker(workerId: number) {
+    const workerTemp = path.join(TEMP_DIR, `worker_${workerId}`);
+    if (!fs.existsSync(workerTemp)) {
+      fs.mkdirSync(workerTemp, { recursive: true });
     }
 
-    console.log(`[RECORDING VIDEO] ${item.title} (${item.url}) ...`);
-    const context = await browser.newContext({
-      viewport: { width: 1280, height: 800 },
-      recordVideo: {
-        dir: TEMP_DIR,
-        size: { width: 1280, height: 800 },
-      },
-    });
+    while (queue.length > 0) {
+      const item = queue.shift();
+      if (!item) break;
 
-    const page = await context.newPage();
-    try {
-      await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
-      
-      // Wait and simulate gentle mouse movement and scroll for dynamic video capture
-      await page.waitForTimeout(2000);
-      await page.mouse.move(640, 400);
-      await page.waitForTimeout(1000);
-      await page.mouse.move(800, 500);
-      await page.evaluate(() => window.scrollBy(0, 100));
-      await page.waitForTimeout(3000);
-      await page.evaluate(() => window.scrollBy(0, -100));
-      await page.waitForTimeout(2000);
-    } catch (err) {
-      console.error(`Failed to record video for ${item.url}:`, err);
-    } finally {
-      const video = page.video();
-      await page.close();
-      await context.close();
+      const targetVideoPath = path.join(VIDEO_DIR, `${item.id}.webm`);
 
-      if (video) {
-        const savedPath = await video.path();
-        if (fs.existsSync(savedPath)) {
-          fs.copyFileSync(savedPath, targetVideoPath);
-          fs.unlinkSync(savedPath);
-          console.log(`✓ Saved video: ${targetVideoPath}`);
+      // Skip if video already exists and is non-empty
+      if (fs.existsSync(targetVideoPath) && fs.statSync(targetVideoPath).size > 50000) {
+        continue;
+      }
+
+      console.log(`[Worker ${workerId}] Recording video: ${item.id} (${item.url})...`);
+      let context;
+      let page;
+      try {
+        context = await browser.newContext({
+          viewport: { width: 1280, height: 800 },
+          recordVideo: {
+            dir: workerTemp,
+            size: { width: 1280, height: 800 },
+          },
+        });
+
+        page = await context.newPage();
+        await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
+
+        // Dynamic motion & scroll simulation for rich preview
+        await page.waitForTimeout(1500);
+        await page.mouse.move(640, 400);
+        await page.evaluate(() => window.scrollBy(0, 80));
+        await page.waitForTimeout(2000);
+        await page.evaluate(() => window.scrollBy(0, -80));
+        await page.waitForTimeout(1500);
+      } catch (err) {
+        console.error(`[Worker ${workerId}] Error recording ${item.url}:`, err);
+      } finally {
+        if (page) {
+          const video = page.video();
+          await page.close().catch(() => {});
+          if (context) await context.close().catch(() => {});
+
+          if (video) {
+            try {
+              const savedPath = await video.path();
+              if (fs.existsSync(savedPath) && fs.statSync(savedPath).size > 10000) {
+                fs.copyFileSync(savedPath, targetVideoPath);
+                fs.unlinkSync(savedPath);
+                console.log(`✓ [Worker ${workerId}] Saved video: ${item.id}.webm`);
+              }
+            } catch (e) {
+              // Ignore video path error on timeout/close
+            }
+          }
         }
       }
     }
+
+    if (fs.existsSync(workerTemp)) {
+      fs.rmSync(workerTemp, { recursive: true, force: true });
+    }
   }
+
+  const workers = Array.from({ length: CONCURRENCY }, (_, i) => worker(i + 1));
+  await Promise.all(workers);
 
   await browser.close();
   if (fs.existsSync(TEMP_DIR)) {
