@@ -1,17 +1,17 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
-const repo = "ref.archive";
+const basePath = "/ref.archive";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isGithubActions ? `/${repo}` : "",
+  basePath: basePath,
+  assetPrefix: `${basePath}/`,
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
   env: {
-    NEXT_PUBLIC_BASE_PATH: isGithubActions ? `/${repo}` : "",
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 
