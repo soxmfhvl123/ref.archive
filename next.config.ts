@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   basePath: basePath,
   images: {
     unoptimized: true,
+    dangerouslyAllowSVG: true,
   },
   trailingSlash: true,
   env: {

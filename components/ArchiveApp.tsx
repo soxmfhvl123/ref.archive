@@ -36,17 +36,36 @@ const SafeImage = memo(function SafeImage({
 }: {
   src: string;
   alt: string;
-  fallbackSvg: string;
+  fallbackSvg?: string;
   className?: string;
   objectFit?: 'object-cover' | 'object-contain';
 }) {
   const fullSrc = getFullPath(src);
-  const fullFallback = getFullPath(fallbackSvg);
+  const fullFallback = fallbackSvg ? getFullPath(fallbackSvg) : fullSrc;
   const [imgSrc, setImgSrc] = useState(fullSrc);
 
   useEffect(() => {
     setImgSrc(fullSrc);
   }, [fullSrc]);
+
+  const isSvg = imgSrc.toLowerCase().endsWith('.svg');
+
+  if (isSvg) {
+    return (
+      <img
+        src={imgSrc}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() => {
+          if (imgSrc !== fullFallback) {
+            setImgSrc(fullFallback);
+          }
+        }}
+        className={`absolute inset-0 w-full h-full ${objectFit} object-top ${className || ''}`}
+      />
+    );
+  }
 
   return (
     <Image
@@ -73,6 +92,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   id,
   isMobile = false,
   aspectRatio = 'aspect-[16/10]',
+  isPoster = false,
 }: {
   imageUrl: string;
   videoUrl?: string;
@@ -80,6 +100,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   id: string;
   isMobile?: boolean;
   aspectRatio?: string;
+  isPoster?: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -113,17 +134,19 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
 
   const fullVideoSrc = !isMobile && videoUrl ? getFullPath(videoUrl) : undefined;
   const shouldMountVideo = !isMobile && isHovered && fullVideoSrc && !hasVideoError;
+  const fallbackPath = isPoster || imageUrl.includes('/posters/') ? imageUrl : `/captures/${id}.svg`;
 
   return (
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      style={{ aspectRatio: isPoster ? '3 / 4' : '16 / 10' }}
       className={`relative w-full ${aspectRatio} bg-white overflow-hidden mb-3 border border-black/5`}
     >
       <SafeImage
         src={imageUrl}
         alt={title}
-        fallbackSvg={`/captures/${id}.svg`}
+        fallbackSvg={fallbackPath}
         objectFit="object-cover"
         className={`transition-opacity duration-300 ${isVideoReady ? 'opacity-0' : 'opacity-100'}`}
       />
@@ -176,6 +199,7 @@ const GridReferenceCard = memo(function GridReferenceCard({
           id={refItem.id}
           isMobile={isMobile}
           aspectRatio={cardAspectRatio}
+          isPoster={isPoster}
         />
         <div className="text-[14px] leading-tight space-y-1">
           <div className="flex items-baseline justify-between gap-2">
@@ -261,9 +285,27 @@ export default function ArchiveApp({
       if (cat === 'POSTERS' && viewMode === 'canvas') {
         setViewMode('grid');
       }
+      if (typeof window !== 'undefined') {
+        const newHash = cat === 'POSTERS' ? '#posters' : '#web';
+        if (window.location.hash !== newHash) {
+          window.history.replaceState(null, '', newHash);
+        }
+      }
     },
     [viewMode]
   );
+
+  // Sync URL hash or param on initial mount so direct link / reload preserves view
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get('tab') || params.get('category');
+      if (hash === '#posters' || hash === '#poster' || tab === 'posters' || tab === 'poster') {
+        setMajorCategory('POSTERS');
+      }
+    }
+  }, []);
 
   const currentPosterTags = useMemo(() => {
     let pool = posterList;
@@ -381,29 +423,34 @@ export default function ArchiveApp({
             </h1>
 
             {/* Major Category Switcher: WEB / POSTERS */}
-            <div className="flex items-center gap-2.5 text-[14px] pl-2 border-l border-black/15">
+            <div className="inline-flex items-center p-0.5 bg-black/[0.05] rounded-full border border-black/10 ml-1">
               <button
                 type="button"
                 onClick={() => handleSwitchMajorCategory('WEB')}
-                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                className={`px-3 py-1 rounded-full text-[13px] font-medium transition-all cursor-pointer ${
                   majorCategory === 'WEB'
-                    ? 'font-medium underline underline-offset-4 text-black'
-                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                    ? 'bg-black text-white shadow-xs'
+                    : 'text-black/60 hover:text-black bg-transparent'
                 }`}
               >
-                WEB <span className="text-[12px] opacity-60">[{webList.length}]</span>
+                WEB{' '}
+                <span className={`text-[11px] ml-0.5 ${majorCategory === 'WEB' ? 'text-white/70' : 'text-black/40'}`}>
+                  [{webList.length}]
+                </span>
               </button>
-              <span className="opacity-20 text-[12px]">/</span>
               <button
                 type="button"
                 onClick={() => handleSwitchMajorCategory('POSTERS')}
-                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                className={`px-3 py-1 rounded-full text-[13px] font-medium transition-all cursor-pointer ${
                   majorCategory === 'POSTERS'
-                    ? 'font-medium underline underline-offset-4 text-black'
-                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                    ? 'bg-black text-white shadow-xs'
+                    : 'text-black/60 hover:text-black bg-transparent'
                 }`}
               >
-                POSTERS <span className="text-[12px] opacity-60">[{posterList.length}]</span>
+                POSTERS{' '}
+                <span className={`text-[11px] ml-0.5 ${majorCategory === 'POSTERS' ? 'text-white/70' : 'text-black/40'}`}>
+                  [{posterList.length}]
+                </span>
               </button>
             </div>
 
@@ -702,6 +749,7 @@ export default function ArchiveApp({
 
             {/* Large Capture */}
             <div
+              style={{ aspectRatio: activeRef.majorCategory === 'POSTERS' ? '3 / 4' : '16 / 10' }}
               className={`relative w-full ${
                 activeRef.majorCategory === 'POSTERS' ? 'max-w-xl aspect-[3/4]' : 'max-w-5xl aspect-[16/10]'
               } mb-8 bg-white overflow-hidden border border-black/5`}
@@ -709,7 +757,11 @@ export default function ArchiveApp({
               <SafeImage
                 src={activeRef.imageUrl}
                 alt={activeRef.title}
-                fallbackSvg={`/captures/${activeRef.id}.svg`}
+                fallbackSvg={
+                  activeRef.majorCategory === 'POSTERS' || activeRef.imageUrl.includes('/posters/')
+                    ? activeRef.imageUrl
+                    : `/captures/${activeRef.id}.svg`
+                }
                 objectFit="object-contain"
               />
             </div>
