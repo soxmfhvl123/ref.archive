@@ -5,19 +5,19 @@ const siteUrl = 'https://ref-archive.site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'ref. archive',
+  title: 'ref-archive',
   description: '디자이너를 위한 웹·그래픽·인터랙티브 레퍼런스 아카이브',
   openGraph: {
-    title: 'ref. archive',
+    title: 'ref-archive',
     description: '디자이너를 위한 웹·그래픽·인터랙티브 레퍼런스 아카이브',
     url: siteUrl,
-    siteName: 'ref. archive',
+    siteName: 'ref-archive',
     images: [
       {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'ref. archive — arranged by studiofluxus™',
+        alt: 'ref-archive — arranged by studiofluxus™',
       },
     ],
     locale: 'ko_KR',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ref. archive',
+    title: 'ref-archive',
     description: '디자이너를 위한 웹·그래픽·인터랙티브 레퍼런스 아카이브',
     images: [`${siteUrl}/og-image.png`],
   },

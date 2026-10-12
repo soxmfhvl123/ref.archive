@@ -260,7 +260,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               }}
               className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
             >
-              ref. archive
+              ref-archive
             </h1>
             <a
               href="https://cdj.kr"
@@ -459,7 +459,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                   onClick={handleCloseRef}
                   className="text-[14px] cursor-pointer"
                 >
-                  ref. archive
+                  ref-archive
                 </span>
                 <a
                   href="https://cdj.kr"

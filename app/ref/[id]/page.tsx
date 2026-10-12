@@ -29,7 +29,7 @@ export default async function ReferenceDetailPage({
         <div className="flex justify-between items-baseline mb-8">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <Link href="/" className="text-[14px] no-underline">
-              ref. archive
+              ref-archive
             </Link>
             <a
               href="https://cdj.kr"
