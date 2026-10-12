@@ -45,6 +45,7 @@ const SafeImage = memo(function SafeImage({
       src={imgSrc}
       alt={alt}
       fill
+      loading="lazy"
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
       className={`${objectFit} object-top ${className || ''}`}
       unoptimized
@@ -62,11 +63,13 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   videoUrl,
   title,
   id,
+  isMobile = false,
 }: {
   imageUrl: string;
   videoUrl?: string;
   title: string;
   id: string;
+  isMobile?: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
@@ -74,6 +77,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   const playPromiseRef = useRef<Promise<void> | null>(null);
 
   const handleMouseEnter = () => {
+    if (isMobile) return;
     setIsHovered(true);
     if (videoRef.current && !hasVideoError) {
       playPromiseRef.current = videoRef.current.play();
@@ -84,6 +88,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   };
 
   const handleMouseLeave = () => {
+    if (isMobile) return;
     setIsHovered(false);
     if (videoRef.current) {
       if (playPromiseRef.current) {
@@ -101,8 +106,8 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
     }
   };
 
-  const fullVideoSrc = videoUrl ? getFullPath(videoUrl) : undefined;
-  const showVideo = isHovered && fullVideoSrc && !hasVideoError;
+  const fullVideoSrc = !isMobile && videoUrl ? getFullPath(videoUrl) : undefined;
+  const showVideo = !isMobile && isHovered && fullVideoSrc && !hasVideoError;
 
   return (
     <div
@@ -117,7 +122,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
         objectFit="object-cover"
         className={showVideo ? 'opacity-0' : 'opacity-100'}
       />
-      {fullVideoSrc && !hasVideoError && (
+      {!isMobile && fullVideoSrc && !hasVideoError && (
         <video
           ref={videoRef}
           src={fullVideoSrc}
@@ -138,16 +143,22 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
 const GridReferenceCard = memo(function GridReferenceCard({
   refItem,
   onSelect,
+  isMobile = false,
 }: {
   refItem: Reference;
   onSelect: (ref: Reference) => void;
+  isMobile?: boolean;
 }) {
   return (
     <article className="block bg-transparent">
       <TiltCard
         onClick={() => onSelect(refItem)}
-        onMouseEnter={() => hoverStore.setHovered(refItem)}
-        onMouseLeave={() => hoverStore.setHovered(null)}
+        onMouseEnter={() => {
+          if (!isMobile) hoverStore.setHovered(refItem);
+        }}
+        onMouseLeave={() => {
+          if (!isMobile) hoverStore.setHovered(null);
+        }}
         maxTilt={8}
       >
         <MediaPreviewCard
@@ -155,6 +166,7 @@ const GridReferenceCard = memo(function GridReferenceCard({
           videoUrl={refItem.videoUrl}
           title={refItem.title}
           id={refItem.id}
+          isMobile={isMobile}
         />
         <div className="text-[14px] leading-tight space-y-1">
           <div className="font-normal tracking-tight">{refItem.title}</div>
@@ -212,10 +224,24 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
   const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
   const [soundMuted, setSoundMuted] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     setSoundMuted(sound.isMuted());
   }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = typeof window !== 'undefined' && (window.innerWidth < 768 || window.matchMedia('(hover: none)').matches);
+      setIsMobile(mobile);
+      if (mobile && viewMode === 'canvas') {
+        setViewMode('grid');
+      }
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [viewMode]);
 
   const handleSelectRef = useCallback((refItem: Reference) => {
     sound.playModalOpen();
@@ -341,31 +367,33 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               >
                 인덱스
               </button>
-              <button
-                type="button"
-                onClick={() => {
-                  sound.playClick();
-                  setViewMode('canvas');
-                }}
-                className={`bg-transparent p-0 border-0 cursor-pointer ${
-                  viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-                }`}
-              >
-                캔버스
-              </button>
-              {viewMode === 'canvas' && (
+              <span className="hidden md:inline-flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => {
-                    sound.playShuffle();
-                    window.dispatchEvent(new CustomEvent('refarchive-shuffle'));
+                    sound.playClick();
+                    setViewMode('canvas');
                   }}
-                  className="bg-black text-white px-2 py-0.5 text-[12px] cursor-pointer hover:bg-neutral-800 transition-colors ml-1 border-0"
-                  title="모든 카드를 사방으로 흩뿌리기"
+                  className={`bg-transparent p-0 border-0 cursor-pointer ${
+                    viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                  }`}
                 >
-                  셔플 ✦
+                  캔버스
                 </button>
-              )}
+                {viewMode === 'canvas' && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      sound.playShuffle();
+                      window.dispatchEvent(new CustomEvent('refarchive-shuffle'));
+                    }}
+                    className="bg-black text-white px-2 py-0.5 text-[12px] cursor-pointer hover:bg-neutral-800 transition-colors ml-1 border-0"
+                    title="모든 카드를 사방으로 흩뿌리기"
+                  >
+                    셔플 ✦
+                  </button>
+                )}
+              </span>
             </div>
           </div>
         </header>
@@ -406,6 +434,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                 key={refItem.id}
                 refItem={refItem}
                 onSelect={handleSelectRef}
+                isMobile={isMobile}
               />
             ))}
           </div>
@@ -437,7 +466,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
           </div>
         )}
 
-        {viewMode === 'canvas' && (
+        {!isMobile && viewMode === 'canvas' && (
           /* Free-Canvas Mode (Matter/Physics-style Draggable Canvas) */
           <CanvasView
             references={sortedReferences}

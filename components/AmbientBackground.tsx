@@ -20,7 +20,12 @@ export default function AmbientBackground({ selectedTag }: AmbientBackgroundProp
   const [hoverData, setHoverData] = useState<HoverData>({ ref: null, colors: null });
   const [activeImgUrl, setActiveImgUrl] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    setIsMobile(typeof window !== 'undefined' && (window.innerWidth < 768 || window.matchMedia('(hover: none)').matches));
+  }, []);
 
   // Subscribe directly to decoupled hoverStore
   useEffect(() => {
@@ -53,8 +58,8 @@ export default function AmbientBackground({ selectedTag }: AmbientBackgroundProp
       className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none"
       style={{ contain: 'strict' }}
     >
-      {/* Heavy Gaussian Blurred Website Main Screen as Dynamic Ambient Gradient */}
-      {activeImgUrl && (
+      {/* Heavy Gaussian Blurred Website Main Screen as Dynamic Ambient Gradient (Desktop only to prevent mobile fill-rate lag) */}
+      {!isMobile && activeImgUrl && (
         <div
           className="absolute inset-0 transition-opacity duration-600 ease-out"
           style={{

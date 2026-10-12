@@ -26,6 +26,7 @@ const TiltCard = memo(function TiltCard({
   const isHoveredRef = useRef<boolean>(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
     const card = cardRef.current;
     if (!card) return;
 
@@ -58,6 +59,7 @@ const TiltCard = memo(function TiltCard({
   };
 
   const handleMouseEnter = () => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
     isHoveredRef.current = true;
     const card = cardRef.current;
     if (card) {
