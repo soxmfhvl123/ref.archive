@@ -353,6 +353,19 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               >
                 캔버스
               </button>
+              {viewMode === 'canvas' && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playShuffle();
+                    window.dispatchEvent(new CustomEvent('refarchive-shuffle'));
+                  }}
+                  className="bg-black text-white px-2 py-0.5 text-[12px] cursor-pointer hover:bg-neutral-800 transition-colors ml-1 border-0"
+                  title="모든 카드를 사방으로 흩뿌리기"
+                >
+                  셔플 ✦
+                </button>
+              )}
             </div>
           </div>
         </header>
