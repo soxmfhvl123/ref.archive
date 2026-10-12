@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-const siteUrl = 'https://soxmfhvl123.github.io/ref.archive';
+const siteUrl = 'https://ref-archive.site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

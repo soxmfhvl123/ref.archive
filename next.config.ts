@@ -1,11 +1,10 @@
 import type { NextConfig } from "next";
 
-const basePath = "/ref.archive";
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",
   basePath: basePath,
-  assetPrefix: `${basePath}/`,
   images: {
     unoptimized: true,
   },
