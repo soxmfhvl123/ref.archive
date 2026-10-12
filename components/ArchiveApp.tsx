@@ -130,6 +130,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
   const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
   const [soundMuted, setSoundMuted] = useState<boolean>(false);
+  const [hoveredRef, setHoveredRef] = useState<Reference | null>(null);
 
   useEffect(() => {
     setSoundMuted(sound.isMuted());
@@ -151,8 +152,8 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
 
   return (
     <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none relative">
-      {/* Category-reactive ambient background aura & cursor tracking */}
-      <AmbientBackground selectedTag={selectedTag} />
+      {/* Category & Site-hover reactive dynamic ambient gradient background */}
+      <AmbientBackground selectedTag={selectedTag} hoveredRef={activeRef || hoveredRef} />
 
       {/* Sticky Top Bar Container: Header + Category Nav */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm pt-6 md:pt-10 pb-4 mb-6 border-b border-black/5">
@@ -301,6 +302,8 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                     sound.playModalOpen();
                     setActiveRef(refItem);
                   }}
+                  onMouseEnter={() => setHoveredRef(refItem)}
+                  onMouseLeave={() => setHoveredRef(null)}
                   maxTilt={8}
                 >
                   <MediaPreviewCard
@@ -341,7 +344,11 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                       sound.playModalOpen();
                       setActiveRef(refItem);
                     }}
-                    onMouseEnter={() => sound.playTick()}
+                    onMouseEnter={() => {
+                      sound.playTick();
+                      setHoveredRef(refItem);
+                    }}
+                    onMouseLeave={() => setHoveredRef(null)}
                     className="cursor-pointer hover:bg-black/[0.02] transition-colors"
                   >
                     <td className="py-2.5 pr-4 opacity-40 font-normal">
@@ -377,6 +384,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               sound.playModalOpen();
               setActiveRef(refItem);
             }}
+            onHoverRef={(refItem) => setHoveredRef(refItem)}
             basePath={basePath}
           />
         )}

@@ -7,6 +7,8 @@ interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
   maxTilt?: number;
 }
 
@@ -14,6 +16,8 @@ export default function TiltCard({
   children,
   className = '',
   onClick,
+  onMouseEnter,
+  onMouseLeave,
   maxTilt = 8,
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -58,6 +62,7 @@ export default function TiltCard({
   const handleMouseEnter = () => {
     setIsHovered(true);
     sound.playTick();
+    onMouseEnter?.();
   };
 
   const handleMouseLeave = () => {
@@ -65,6 +70,7 @@ export default function TiltCard({
     setTransformStyle('perspective(900px) rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0) scale3d(1, 1, 1)');
     setGlarePos({ x: 50, y: 50, opacity: 0 });
     setChromaticOffset({ x: 0, y: 0 });
+    onMouseLeave?.();
   };
 
   return (

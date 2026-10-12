@@ -8,6 +8,7 @@ import Image from 'next/image';
 interface CanvasViewProps {
   references: Reference[];
   onSelectRef: (ref: Reference) => void;
+  onHoverRef?: (ref: Reference | null) => void;
   basePath?: string;
 }
 
@@ -24,7 +25,7 @@ interface PhysicsCard {
   zIndex: number;
 }
 
-export default function CanvasView({ references, onSelectRef, basePath = '' }: CanvasViewProps) {
+export default function CanvasView({ references, onSelectRef, onHoverRef, basePath = '' }: CanvasViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [cards, setCards] = useState<PhysicsCard[]>([]);
   const cardsRef = useRef<PhysicsCard[]>([]);
@@ -348,8 +349,12 @@ export default function CanvasView({ references, onSelectRef, basePath = '' }: C
               onMouseEnter={() => {
                 setActiveHoverId(card.refItem.id);
                 sound.playTick();
+                onHoverRef?.(card.refItem);
               }}
-              onMouseLeave={() => setActiveHoverId(null)}
+              onMouseLeave={() => {
+                setActiveHoverId(null);
+                onHoverRef?.(null);
+              }}
               className="absolute select-none bg-white border border-black/15 shadow-sm transition-shadow cursor-grab active:cursor-grabbing group overflow-hidden"
               style={{
                 width: `${card.width}px`,
