@@ -244,12 +244,12 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   }, [filteredReferences, sortOrder]);
 
   return (
-    <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none relative">
+    <main className="min-h-screen bg-transparent text-black px-6 md:px-10 pb-10 select-none relative">
       {/* Category & Site-hover reactive dynamic ambient gradient background (Subscribed to decoupled hoverStore) */}
       <AmbientBackground selectedTag={selectedTag} />
 
-      {/* Sticky Top Bar Container: Header + Category Nav */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm pt-6 md:pt-10 pb-4 mb-6 border-b border-black/5">
+      {/* Sticky Top Bar Container: Header + Category Nav (Transparent to immerse in ambient gradient) */}
+      <div className="sticky top-0 z-40 bg-transparent backdrop-blur-md pt-6 md:pt-10 pb-4 mb-6">
         {/* Line 1: Header + Controls */}
         <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
