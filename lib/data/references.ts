@@ -1,8 +1,11 @@
 import { Reference } from '../types';
 import { SEED_REFERENCES } from './seed';
+import { POSTER_REFERENCES, getAllPosterTags } from './posters';
 import { supabase, isSupabaseConfigured } from '../supabase/client';
 
-export async function getReferences(): Promise<Reference[]> {
+export { getAllPosterTags };
+
+export async function getWebReferences(): Promise<Reference[]> {
   if (isSupabaseConfigured && supabase) {
     try {
       const { data, error } = await supabase.from('references').select('*');
@@ -19,6 +22,8 @@ export async function getReferences(): Promise<Reference[]> {
           imageUrl: item.image_url,
           videoUrl: item.video_url || `/videos/${item.id}.webm`,
           capturedAt: item.created_at,
+          majorCategory: 'WEB' as const,
+          aspectRatio: 'landscape' as const,
         }));
       }
     } catch (err) {
@@ -29,8 +34,19 @@ export async function getReferences(): Promise<Reference[]> {
   // Fallback to seed references with default videoUrl mapping
   return SEED_REFERENCES.map((ref) => ({
     ...ref,
+    majorCategory: 'WEB' as const,
+    aspectRatio: 'landscape' as const,
     videoUrl: ref.videoUrl || `/videos/${ref.id}.webm`,
   }));
+}
+
+export async function getPosterReferences(): Promise<Reference[]> {
+  return POSTER_REFERENCES;
+}
+
+export async function getReferences(): Promise<Reference[]> {
+  const [web, posters] = await Promise.all([getWebReferences(), getPosterReferences()]);
+  return [...web, ...posters];
 }
 
 export async function getReferenceById(id: string): Promise<Reference | null> {
@@ -52,3 +68,4 @@ export function getAllTags(references: Reference[]): string[] {
 
   return ['전체', ...sortedTags];
 }
+

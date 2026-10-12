@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600">
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#FEF08A"/>
+
+  <!-- Outer Swiss Margin Guide -->
+  <rect x="80" y="80" width="1040" height="1440" fill="none" stroke="#000000" stroke-width="1" opacity="0.15"/>
+
+  <!-- Top Metadata Bar -->
+  <g transform="translate(100, 140)">
+    <text class="font-mono" x="0" y="0" font-size="16" fill="#000000" opacity="0.5" letter-spacing="3">REF.ARCHIVE / POSTER SERIE</text>
+    <text class="font-mono" x="1000" y="0" font-size="16" fill="#000000" text-anchor="end" font-weight="700" letter-spacing="2">NO. 021 / 070</text>
+    <line x1="0" y1="24" x2="1000" y2="24" stroke="#000000" stroke-width="1" opacity="0.2"/>
+  </g>
+
+  <!-- Group Badge & Subcategory -->
+  <g transform="translate(100, 220)">
+    <rect x="0" y="0" width="160" height="32" fill="#000000" rx="2"/>
+    <text class="font-sans" x="80" y="21" font-size="13" font-weight="700" fill="#FEF08A" text-anchor="middle" letter-spacing="1.5">TYPOGRAPHY</text>
+    <text class="font-mono" x="180" y="21" font-size="14" fill="#000000" opacity="0.6" letter-spacing="1">CURATION · 2026 REF-ARCHIVE</text>
+  </g>
+
+  <!-- Main Hero Graphic Container -->
+  <g id="hero-graphic">
+    
+        <!-- Brutalist solid boxes with hard shadows -->
+        <rect x="250" y="480" width="450" height="300" fill="#000000"/>
+        <rect x="235" y="465" width="450" height="300" fill="#000000" stroke="#000000" stroke-width="6"/>
+        <text x="270" y="550" font-family="sans-serif" font-weight="900" font-size="48" fill="#000000">STRUCTURAL</text>
+        <text x="270" y="620" font-family="sans-serif" font-weight="900" font-size="48" fill="#000000">SYSTEM.01</text>
+        <circle cx="780" cy="750" r="120" fill="#000000"/>
+        <circle cx="770" cy="740" r="120" fill="#F43F5E" stroke="#000000" stroke-width="6"/>
+      
+  </g>
+
+  <!-- Title & Typographic Composition -->
+  <g transform="translate(100, 1180)">
+    <text class="font-sans" x="0" y="70" font-size="82" font-weight="800" fill="#000000" letter-spacing="-1.5">Neo Brutalism</text>
+    <text class="font-sans" x="0" y="125" font-size="28" font-weight="400" fill="#000000" opacity="0.95">고대비 블랙 프레임 & 날것의 타이포</text>
+    <line x1="0" y1="160" x2="1000" y2="160" stroke="#000000" stroke-width="2" opacity="0.25"/>
+  </g>
+
+  <!-- Editorial Analysis / Principle Block -->
+  <g transform="translate(100, 1380)">
+    <!-- Column 1: Anatomy -->
+    <g transform="translate(0, 0)">
+      <text class="font-mono" x="0" y="0" font-size="13" fill="#000000" opacity="0.45" letter-spacing="2">01 / VISUAL ANATOMY</text>
+      <text class="font-sans" x="0" y="28" font-size="16" fill="#000000" opacity="0.85" width="460">
+        두꺼운 솔리드 블랙 스트로크(4px), 드롭 섀도우(No Blu...
+      </text>
+    </g>
+
+    <!-- Column 2: Principle -->
+    <g transform="translate(520, 0)">
+      <text class="font-mono" x="0" y="0" font-size="13" fill="#000000" letter-spacing="2">02 / CORE PRINCIPLE</text>
+      <text class="font-sans" x="0" y="28" font-size="16" fill="#000000" opacity="0.85">
+        불필요한 장식을 배제하고 날것의 기능과 구조적 뼈대를 충격적으로...
+      </text>
+    </g>
+  </g>
+
+  <!-- Footer Technical Grid & Barcode -->
+  <g transform="translate(100, 1490)">
+    <text class="font-mono" x="0" y="0" font-size="12" fill="#000000" opacity="0.35" letter-spacing="3">DIMENSION: 1200 x 1600 · RATIO: 3:4 · ARCHIVE.SITE</text>
+    
+    <!-- Minimalist Barcode Lines -->
+    <g transform="translate(860, -18)">
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#000000" stroke-width="2" opacity="0.5"/>
+      <line x1="5" y1="0" x2="5" y2="24" stroke="#000000" stroke-width="4" opacity="0.5"/>
+      <line x1="12" y1="0" x2="12" y2="24" stroke="#000000" stroke-width="1" opacity="0.5"/>
+      <line x1="18" y1="0" x2="18" y2="24" stroke="#000000" stroke-width="3" opacity="0.5"/>
+      <line x1="26" y1="0" x2="26" y2="24" stroke="#000000" stroke-width="1" opacity="0.5"/>
+      <line x1="32" y1="0" x2="32" y2="24" stroke="#000000" stroke-width="5" opacity="0.5"/>
+      <line x1="42" y1="0" x2="42" y2="24" stroke="#000000" stroke-width="2" opacity="0.5"/>
+      <line x1="48" y1="0" x2="48" y2="24" stroke="#000000" stroke-width="4" opacity="0.5"/>
+      <line x1="58" y1="0" x2="58" y2="24" stroke="#000000" stroke-width="1" opacity="0.5"/>
+      <line x1="64" y1="0" x2="64" y2="24" stroke="#000000" stroke-width="3" opacity="0.5"/>
+      <line x1="72" y1="0" x2="72" y2="24" stroke="#000000" stroke-width="2" opacity="0.5"/>
+      <line x1="80" y1="0" x2="80" y2="24" stroke="#000000" stroke-width="4" opacity="0.5"/>
+      <line x1="90" y1="0" x2="90" y2="24" stroke="#000000" stroke-width="2" opacity="0.5"/>
+      <line x1="100" y1="0" x2="100" y2="24" stroke="#000000" stroke-width="6" opacity="0.5"/>
+      <line x1="112" y1="0" x2="112" y2="24" stroke="#000000" stroke-width="1" opacity="0.5"/>
+      <line x1="120" y1="0" x2="120" y2="24" stroke="#000000" stroke-width="3" opacity="0.5"/>
+      <line x1="130" y1="0" x2="130" y2="24" stroke="#000000" stroke-width="2" opacity="0.5"/>
+      <line x1="140" y1="0" x2="140" y2="24" stroke="#000000" stroke-width="5" opacity="0.5"/>
+    </g>
+  </g>
+</svg>

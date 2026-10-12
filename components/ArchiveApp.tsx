@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
-import { Reference } from '@/lib/types';
+import { Reference, MajorCategory } from '@/lib/types';
+import { POSTER_GROUPS } from '@/lib/data/posters';
 import Image from 'next/image';
 import { sound } from '@/lib/sound';
 import TiltCard from '@/components/TiltCard';
@@ -10,8 +11,11 @@ import AmbientBackground from '@/components/AmbientBackground';
 import { hoverStore } from '@/lib/hoverStore';
 
 interface ArchiveAppProps {
-  initialReferences: Reference[];
-  initialTags: string[];
+  initialWebReferences?: Reference[];
+  initialPosterReferences?: Reference[];
+  initialReferences?: Reference[];
+  initialTags?: string[];
+  initialPosterTags?: string[];
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -68,12 +72,14 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   title,
   id,
   isMobile = false,
+  aspectRatio = 'aspect-[16/10]',
 }: {
   imageUrl: string;
   videoUrl?: string;
   title: string;
   id: string;
   isMobile?: boolean;
+  aspectRatio?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -112,7 +118,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full aspect-[16/10] bg-white overflow-hidden mb-3 border border-black/5"
+      className={`relative w-full ${aspectRatio} bg-white overflow-hidden mb-3 border border-black/5`}
     >
       <SafeImage
         src={imageUrl}
@@ -148,6 +154,9 @@ const GridReferenceCard = memo(function GridReferenceCard({
   onSelect: (ref: Reference) => void;
   isMobile?: boolean;
 }) {
+  const isPoster = refItem.majorCategory === 'POSTERS';
+  const cardAspectRatio = isPoster ? 'aspect-[3/4]' : 'aspect-[16/10]';
+
   return (
     <article className="block bg-transparent">
       <TiltCard
@@ -158,7 +167,7 @@ const GridReferenceCard = memo(function GridReferenceCard({
         onMouseLeave={() => {
           if (!isMobile) hoverStore.setHovered(null);
         }}
-        maxTilt={8}
+        maxTilt={isPoster ? 5 : 8}
       >
         <MediaPreviewCard
           imageUrl={refItem.imageUrl}
@@ -166,10 +175,16 @@ const GridReferenceCard = memo(function GridReferenceCard({
           title={refItem.title}
           id={refItem.id}
           isMobile={isMobile}
+          aspectRatio={cardAspectRatio}
         />
         <div className="text-[14px] leading-tight space-y-1">
-          <div className="font-normal tracking-tight">{refItem.title}</div>
-          <div className="opacity-60">{refItem.shortDesc}</div>
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="font-normal tracking-tight">{refItem.title}</span>
+            {isPoster && refItem.group && (
+              <span className="text-[11px] opacity-40 uppercase tracking-wider">{refItem.group}</span>
+            )}
+          </div>
+          <div className="opacity-60 text-[13px]">{refItem.shortDesc}</div>
         </div>
       </TiltCard>
     </article>
@@ -217,13 +232,48 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
   );
 });
 
-export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAppProps) {
+export default function ArchiveApp({
+  initialWebReferences = [],
+  initialPosterReferences = [],
+  initialReferences = [],
+  initialTags = [],
+  initialPosterTags = [],
+}: ArchiveAppProps) {
+  const [majorCategory, setMajorCategory] = useState<MajorCategory>('WEB');
+  const [selectedGroup, setSelectedGroup] = useState<string>('All');
   const [selectedTag, setSelectedTag] = useState<string>('전체');
   const [activeRef, setActiveRef] = useState<Reference | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
   const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
   const [soundMuted, setSoundMuted] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const webList = initialWebReferences.length > 0 ? initialWebReferences : initialReferences;
+  const posterList = initialPosterReferences;
+  const currentDataset = majorCategory === 'WEB' ? webList : posterList;
+
+  const handleSwitchMajorCategory = useCallback(
+    (cat: MajorCategory) => {
+      sound.playClick();
+      setMajorCategory(cat);
+      setSelectedGroup('All');
+      setSelectedTag('전체');
+      if (cat === 'POSTERS' && viewMode === 'canvas') {
+        setViewMode('grid');
+      }
+    },
+    [viewMode]
+  );
+
+  const currentPosterTags = useMemo(() => {
+    let pool = posterList;
+    if (selectedGroup !== 'All') {
+      pool = pool.filter((p) => p.group === selectedGroup);
+    }
+    const tagsSet = new Set<string>();
+    pool.forEach((p) => p.tags.forEach((t) => tagsSet.add(t)));
+    return ['전체', ...Array.from(tagsSet)];
+  }, [posterList, selectedGroup]);
 
   useEffect(() => {
     setSoundMuted(sound.isMuted());
@@ -254,9 +304,16 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
     setActiveRef(null);
   }, []);
 
-  const filteredReferences = selectedTag === '전체'
-    ? initialReferences
-    : initialReferences.filter((ref) => ref.tags.includes(selectedTag));
+  const filteredReferences = useMemo(() => {
+    let list = currentDataset;
+    if (majorCategory === 'POSTERS' && selectedGroup !== 'All') {
+      list = list.filter((ref) => ref.group === selectedGroup);
+    }
+    if (selectedTag !== '전체') {
+      list = list.filter((ref) => ref.tags.includes(selectedTag));
+    }
+    return list;
+  }, [currentDataset, majorCategory, selectedGroup, selectedTag]);
 
   const sortedReferences = useMemo(() => {
     if (sortOrder === 'az') {
@@ -272,10 +329,10 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  // Reset visible count when filtering or sorting
+  // Reset visible count when switching category, filtering or sorting
   useEffect(() => {
     setVisibleCount(BATCH_SIZE);
-  }, [selectedTag, sortOrder]);
+  }, [majorCategory, selectedGroup, selectedTag, sortOrder]);
 
   const displayedReferences = useMemo(() => {
     return sortedReferences.slice(0, visibleCount);
@@ -310,9 +367,9 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
 
       {/* Sticky Top Bar Container: Header + Category Nav (Transparent to immerse in ambient gradient) */}
       <div className="sticky top-0 z-40 bg-transparent backdrop-blur-md pt-6 md:pt-10 pb-4 mb-6">
-        {/* Line 1: Header + Controls */}
-        <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        {/* Line 1: Header + Major Category Switcher + Controls */}
+        <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-3">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
             <h1
               onClick={() => {
                 sound.playClick();
@@ -322,6 +379,34 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             >
               ref-archive
             </h1>
+
+            {/* Major Category Switcher: WEB / POSTERS */}
+            <div className="flex items-center gap-2.5 text-[14px] pl-2 border-l border-black/15">
+              <button
+                type="button"
+                onClick={() => handleSwitchMajorCategory('WEB')}
+                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                  majorCategory === 'WEB'
+                    ? 'font-medium underline underline-offset-4 text-black'
+                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                }`}
+              >
+                WEB <span className="text-[12px] opacity-60">[{webList.length}]</span>
+              </button>
+              <span className="opacity-20 text-[12px]">/</span>
+              <button
+                type="button"
+                onClick={() => handleSwitchMajorCategory('POSTERS')}
+                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                  majorCategory === 'POSTERS'
+                    ? 'font-medium underline underline-offset-4 text-black'
+                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                }`}
+              >
+                POSTERS <span className="text-[12px] opacity-60">[{posterList.length}]</span>
+              </button>
+            </div>
+
             <a
               href="https://cdj.kr"
               target="_blank"
@@ -432,38 +517,103 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
           </div>
         </header>
 
-        {/* Line 2: Tags */}
-        <nav>
-          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[14px]">
-            {initialTags.map((tag) => {
-              const isSelected = selectedTag === tag;
-              return (
-                <li key={tag} className="inline-block">
+        {/* Line 2: Tags & Groups Navigation */}
+        {majorCategory === 'WEB' ? (
+          /* Web Category Tags */
+          <nav>
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[14px]">
+              {initialTags.map((tag) => {
+                const isSelected = selectedTag === tag;
+                return (
+                  <li key={tag} className="inline-block">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        sound.playClick();
+                        setSelectedTag(tag);
+                      }}
+                      className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                        isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-70'
+                      }`}
+                    >
+                      {tag}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        ) : (
+          /* Posters Groups & Styles Navigation */
+          <div className="space-y-3">
+            {/* Style Group Switcher */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[13px] border-b border-black/10 pb-2.5">
+              {POSTER_GROUPS.map((grp) => {
+                const isSelected = selectedGroup === grp;
+                const count = grp === 'All' ? posterList.length : posterList.filter((p) => p.group === grp).length;
+                return (
                   <button
+                    key={grp}
                     type="button"
                     onClick={() => {
                       sound.playClick();
-                      setSelectedTag(tag);
+                      setSelectedGroup(grp);
+                      setSelectedTag('전체');
                     }}
-                    className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
-                      isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-70'
+                    className={`bg-transparent p-0 border-0 cursor-pointer transition-colors ${
+                      isSelected
+                        ? 'font-medium text-black underline underline-offset-4'
+                        : 'opacity-40 hover:opacity-100 no-underline'
                     }`}
                   >
-                    {tag}
+                    {grp} <span className="text-[11px] opacity-60">[{count}]</span>
                   </button>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                );
+              })}
+            </div>
+
+            {/* Style Tags within Selected Group */}
+            <nav>
+              <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px]">
+                {currentPosterTags.map((tag) => {
+                  const isSelected = selectedTag === tag;
+                  return (
+                    <li key={tag} className="inline-block">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          sound.playClick();
+                          setSelectedTag(tag);
+                        }}
+                        className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                          isSelected
+                            ? 'underline underline-offset-4 font-normal text-black'
+                            : 'no-underline opacity-60 hover:opacity-100'
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
 
       {/* Line 3: Content View (Grid, Index, or Canvas) */}
       <section className="relative z-10">
         {viewMode === 'grid' && (
           <>
-            {/* Grid View with Optimized 3D Tilt Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {/* Grid View with Responsive Columns (Web vs Poster) */}
+            <div
+              className={
+                majorCategory === 'POSTERS'
+                  ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-10'
+                  : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10'
+              }
+            >
               {displayedReferences.map((refItem) => (
                 <GridReferenceCard
                   key={refItem.id}
@@ -551,7 +701,11 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             <h2 className="text-[18px] font-normal mb-8">{activeRef.title}</h2>
 
             {/* Large Capture */}
-            <div className="relative w-full max-w-5xl aspect-[16/10] mb-8 bg-white overflow-hidden border border-black/5">
+            <div
+              className={`relative w-full ${
+                activeRef.majorCategory === 'POSTERS' ? 'max-w-xl aspect-[3/4]' : 'max-w-5xl aspect-[16/10]'
+              } mb-8 bg-white overflow-hidden border border-black/5`}
+            >
               <SafeImage
                 src={activeRef.imageUrl}
                 alt={activeRef.title}
@@ -578,7 +732,9 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                   rel="noopener noreferrer"
                   className="underline underline-offset-4"
                 >
-                  {activeRef.url}
+                  {activeRef.majorCategory === 'POSTERS'
+                    ? '핀터레스트 레퍼런스 탐색 ↗'
+                    : activeRef.url}
                 </a>
               </p>
             </div>

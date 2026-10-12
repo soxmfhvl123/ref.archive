@@ -1,3 +1,5 @@
+export type MajorCategory = 'WEB' | 'POSTERS';
+
 export interface Reference {
   id: string;
   title: string;
@@ -8,8 +10,11 @@ export interface Reference {
   anatomy: string;   // 요약
   principle: string; // 참고
   imageUrl: string;
-  videoUrl?: string; // 호버 시 재생될 10초 비디오 경로
+  videoUrl?: string; // 호버 시 재생될 비디오 경로
   capturedAt?: string;
+  majorCategory?: MajorCategory; // 대카테고리: 'WEB' | 'POSTERS'
+  group?: string;                // 하위 그룹: 'Trending', 'Typography', etc.
+  aspectRatio?: 'landscape' | 'portrait';
 }
 
 export type TagOption = 'ALL' | string;
