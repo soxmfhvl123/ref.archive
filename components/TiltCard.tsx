@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef, memo } from 'react';
-import { sound } from '@/lib/sound';
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -65,7 +64,6 @@ const TiltCard = memo(function TiltCard({
     if (card) {
       card.style.transition = 'transform 90ms ease-out';
     }
-    sound.playTick();
     onMouseEnter?.();
   };
 

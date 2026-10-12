@@ -4,7 +4,6 @@ import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
 import { Reference, MajorCategory } from '@/lib/types';
 import { POSTER_GROUPS } from '@/lib/data/posters';
 import Image from 'next/image';
-import { sound } from '@/lib/sound';
 import TiltCard from '@/components/TiltCard';
 import CanvasView from '@/components/CanvasView';
 import AmbientBackground from '@/components/AmbientBackground';
@@ -228,7 +227,6 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
     <tr
       onClick={() => onSelect(refItem)}
       onMouseEnter={() => {
-        sound.playTick();
         hoverStore.setHovered(refItem);
       }}
       onMouseLeave={() => hoverStore.setHovered(null)}
@@ -268,8 +266,6 @@ export default function ArchiveApp({
   const [selectedTag, setSelectedTag] = useState<string>('전체');
   const [activeRef, setActiveRef] = useState<Reference | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
-  const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
-  const [soundMuted, setSoundMuted] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const webList = initialWebReferences.length > 0 ? initialWebReferences : initialReferences;
@@ -278,7 +274,6 @@ export default function ArchiveApp({
 
   const handleSwitchMajorCategory = useCallback(
     (cat: MajorCategory) => {
-      sound.playClick();
       setMajorCategory(cat);
       setSelectedGroup('All');
       setSelectedTag('전체');
@@ -318,10 +313,6 @@ export default function ArchiveApp({
   }, [posterList, selectedGroup]);
 
   useEffect(() => {
-    setSoundMuted(sound.isMuted());
-  }, []);
-
-  useEffect(() => {
     const checkMobile = () => {
       const mobile = typeof window !== 'undefined' && (window.innerWidth < 768 || window.matchMedia('(hover: none)').matches);
       setIsMobile(mobile);
@@ -335,13 +326,11 @@ export default function ArchiveApp({
   }, [viewMode]);
 
   const handleSelectRef = useCallback((refItem: Reference) => {
-    sound.playModalOpen();
     hoverStore.setHovered(refItem);
     setActiveRef(refItem);
   }, []);
 
   const handleCloseRef = useCallback(() => {
-    sound.playModalClose();
     hoverStore.setHovered(null);
     setActiveRef(null);
   }, []);
@@ -357,24 +346,19 @@ export default function ArchiveApp({
     return list;
   }, [currentDataset, majorCategory, selectedGroup, selectedTag]);
 
+  // 'newest' is the default sorting (latest added first)
   const sortedReferences = useMemo(() => {
-    if (sortOrder === 'az') {
-      return [...filteredReferences].sort((a, b) =>
-        a.title.localeCompare(b.title, 'en', { sensitivity: 'base', numeric: true })
-      );
-    }
-    // 'newest': Reverse of insertion order (latest added first)
     return [...filteredReferences].reverse();
-  }, [filteredReferences, sortOrder]);
+  }, [filteredReferences]);
 
   const BATCH_SIZE = 24;
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  // Reset visible count when switching category, filtering or sorting
+  // Reset visible count when switching category or filtering
   useEffect(() => {
     setVisibleCount(BATCH_SIZE);
-  }, [majorCategory, selectedGroup, selectedTag, sortOrder]);
+  }, [majorCategory, selectedGroup, selectedTag]);
 
   const displayedReferences = useMemo(() => {
     return sortedReferences.slice(0, visibleCount);
@@ -413,44 +397,36 @@ export default function ArchiveApp({
         <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-3">
           <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
             <h1
-              onClick={() => {
-                sound.playClick();
-                handleCloseRef();
-              }}
+              onClick={handleCloseRef}
               className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
             >
               ref-archive
             </h1>
 
-            {/* Major Category Switcher: WEB / POSTERS */}
-            <div className="inline-flex items-center p-0.5 bg-black/[0.05] rounded-full border border-black/10 ml-1">
+            {/* Major Category Switcher: WEB / POSTERS (Typographic switcher, no boxes/borders) */}
+            <div className="flex items-baseline gap-2.5 text-[14px]">
               <button
                 type="button"
                 onClick={() => handleSwitchMajorCategory('WEB')}
-                className={`px-3 py-1 rounded-full text-[13px] font-medium transition-all cursor-pointer ${
+                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
                   majorCategory === 'WEB'
-                    ? 'bg-black text-white shadow-xs'
-                    : 'text-black/60 hover:text-black bg-transparent'
+                    ? 'font-medium underline underline-offset-4 text-black'
+                    : 'opacity-40 hover:opacity-100 no-underline text-black'
                 }`}
               >
-                WEB{' '}
-                <span className={`text-[11px] ml-0.5 ${majorCategory === 'WEB' ? 'text-white/70' : 'text-black/40'}`}>
-                  [{webList.length}]
-                </span>
+                WEB <span className="text-[12px] opacity-60">[{webList.length}]</span>
               </button>
+              <span className="opacity-20 text-[12px] select-none">/</span>
               <button
                 type="button"
                 onClick={() => handleSwitchMajorCategory('POSTERS')}
-                className={`px-3 py-1 rounded-full text-[13px] font-medium transition-all cursor-pointer ${
+                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
                   majorCategory === 'POSTERS'
-                    ? 'bg-black text-white shadow-xs'
-                    : 'text-black/60 hover:text-black bg-transparent'
+                    ? 'font-medium underline underline-offset-4 text-black'
+                    : 'opacity-40 hover:opacity-100 no-underline text-black'
                 }`}
               >
-                POSTERS{' '}
-                <span className={`text-[11px] ml-0.5 ${majorCategory === 'POSTERS' ? 'text-white/70' : 'text-black/40'}`}>
-                  [{posterList.length}]
-                </span>
+                POSTERS <span className="text-[12px] opacity-60">[{posterList.length}]</span>
               </button>
             </div>
 
@@ -464,103 +440,49 @@ export default function ArchiveApp({
             </a>
           </div>
 
-          {/* Controls: SFX Toggle + Sort Filter + View Switcher */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px]">
-            {/* SFX Sound Feedback Toggle */}
+          {/* Controls: View Switcher only */}
+          <div className="flex items-center gap-3 text-[14px]">
             <button
               type="button"
-              onClick={() => {
-                const nextMuted = sound.toggleMute();
-                setSoundMuted(nextMuted);
-              }}
-              className="bg-transparent p-0 border-0 cursor-pointer opacity-50 hover:opacity-100 transition-opacity text-[13px]"
-              title="UI Audio Feedback Toggle"
+              onClick={() => setViewMode('grid')}
+              className={`bg-transparent p-0 border-0 cursor-pointer ${
+                viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+              }`}
             >
-              SFX {soundMuted ? '[OFF]' : '[ON]'}
+              그리드
             </button>
-
-            {/* Sort Filter: Newest / A-Z */}
-            <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setViewMode('index')}
+              className={`bg-transparent p-0 border-0 cursor-pointer ${
+                viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+              }`}
+            >
+              인덱스
+            </button>
+            <span className="hidden md:inline-flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => {
-                  sound.playClick();
-                  setSortOrder('newest');
-                }}
+                onClick={() => setViewMode('canvas')}
                 className={`bg-transparent p-0 border-0 cursor-pointer ${
-                  sortOrder === 'newest' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                  viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
                 }`}
               >
-                Newest
+                캔버스
               </button>
-              <button
-                type="button"
-                onClick={() => {
-                  sound.playClick();
-                  setSortOrder('az');
-                }}
-                className={`bg-transparent p-0 border-0 cursor-pointer ${
-                  sortOrder === 'az' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-                }`}
-              >
-                A-Z
-              </button>
-            </div>
-
-            {/* View Switcher: Grid / Index / Canvas */}
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => {
-                  sound.playClick();
-                  setViewMode('grid');
-                }}
-                className={`bg-transparent p-0 border-0 cursor-pointer ${
-                  viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-                }`}
-              >
-                그리드
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  sound.playClick();
-                  setViewMode('index');
-                }}
-                className={`bg-transparent p-0 border-0 cursor-pointer ${
-                  viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-                }`}
-              >
-                인덱스
-              </button>
-              <span className="hidden md:inline-flex items-center gap-2">
+              {viewMode === 'canvas' && (
                 <button
                   type="button"
                   onClick={() => {
-                    sound.playClick();
-                    setViewMode('canvas');
+                    window.dispatchEvent(new CustomEvent('refarchive-shuffle'));
                   }}
-                  className={`bg-transparent p-0 border-0 cursor-pointer ${
-                    viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
-                  }`}
+                  className="bg-black text-white px-2 py-0.5 text-[12px] cursor-pointer hover:bg-neutral-800 transition-colors ml-1 border-0"
+                  title="모든 카드를 사방으로 흩뿌리기"
                 >
-                  캔버스
+                  셔플 ✦
                 </button>
-                {viewMode === 'canvas' && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      sound.playShuffle();
-                      window.dispatchEvent(new CustomEvent('refarchive-shuffle'));
-                    }}
-                    className="bg-black text-white px-2 py-0.5 text-[12px] cursor-pointer hover:bg-neutral-800 transition-colors ml-1 border-0"
-                    title="모든 카드를 사방으로 흩뿌리기"
-                  >
-                    셔플 ✦
-                  </button>
-                )}
-              </span>
-            </div>
+              )}
+            </span>
           </div>
         </header>
 
@@ -575,10 +497,7 @@ export default function ArchiveApp({
                   <li key={tag} className="inline-block">
                     <button
                       type="button"
-                      onClick={() => {
-                        sound.playClick();
-                        setSelectedTag(tag);
-                      }}
+                      onClick={() => setSelectedTag(tag)}
                       className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
                         isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-70'
                       }`}
@@ -603,7 +522,6 @@ export default function ArchiveApp({
                     key={grp}
                     type="button"
                     onClick={() => {
-                      sound.playClick();
                       setSelectedGroup(grp);
                       setSelectedTag('전체');
                     }}
@@ -628,10 +546,7 @@ export default function ArchiveApp({
                     <li key={tag} className="inline-block">
                       <button
                         type="button"
-                        onClick={() => {
-                          sound.playClick();
-                          setSelectedTag(tag);
-                        }}
+                        onClick={() => setSelectedTag(tag)}
                         className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                           isSelected
                             ? 'underline underline-offset-4 font-normal text-black'

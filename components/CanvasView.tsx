@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Reference } from '@/lib/types';
-import { sound } from '@/lib/sound';
 import Image from 'next/image';
 
 interface CanvasViewProps {
@@ -149,7 +148,6 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
 
   // Explosive random scatter impulse across whole screen
   const handleShuffle = useCallback(() => {
-    sound.playShuffle();
     const w = typeof window !== 'undefined' ? window.innerWidth : 1440;
     const h = typeof window !== 'undefined' ? window.innerHeight : 900;
     const centerX = w / 2;
@@ -193,8 +191,6 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
       y: e.clientY,
       time: performance.now(),
     };
-
-    sound.playTick();
   };
 
   // Global mousemove and mouseup listeners for dragging
@@ -273,7 +269,6 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
             onMouseDown={(e) => handleCardMouseDown(e, card)}
             onMouseEnter={() => {
               setActiveHoverId(card.refItem.id);
-              sound.playTick();
               onHoverRef?.(card.refItem);
             }}
             onMouseLeave={() => {
