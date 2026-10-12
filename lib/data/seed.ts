@@ -5011,5 +5011,19 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "CGI와 모션 디자인을 결합해 시각적 밀도가 높은 현대적 디지털 비주얼 연출",
       "imageUrl": "/captures/formundrausch-de.png",
       "videoUrl": "/videos/formundrausch-de.webm"
+    },
+    {
+      "id": "2nd-universe-co-kr",
+      "title": "2nd Universe (2UC)",
+      "url": "https://www.2nd-universe.co.kr/index.html",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "공간 분위기를 채우는 디자인 가구 & 오브제",
+      "anatomy": "스틸 콘솔, 우드 엣지 소파테이블, 빈티지 퍼니처 등 감각적인 조형미와 실용성을 아우르는 국내 디자인 가구 브랜드 2UC (2nd Universe)",
+      "principle": "미니멀한 직선 구조와 원목·스틸 소재의 대비를 통해 공간에 분위기를 불어넣는 조형성",
+      "imageUrl": "/captures/2nd-universe-co-kr.png",
+      "videoUrl": "/videos/2nd-universe-co-kr.webm"
     }
 ];
