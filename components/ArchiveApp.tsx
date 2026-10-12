@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useRef, useMemo, useEffect } from 'react';
+import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
 import { Reference } from '@/lib/types';
 import Image from 'next/image';
 import { sound } from '@/lib/sound';
 import TiltCard from '@/components/TiltCard';
 import CanvasView from '@/components/CanvasView';
 import AmbientBackground from '@/components/AmbientBackground';
+import { hoverStore } from '@/lib/hoverStore';
 
 interface ArchiveAppProps {
   initialReferences: Reference[];
@@ -22,7 +23,7 @@ function getFullPath(pathStr: string) {
   return `${basePath}${cleanPath}`;
 }
 
-function SafeImage({
+const SafeImage = memo(function SafeImage({
   src,
   alt,
   fallbackSvg,
@@ -54,9 +55,9 @@ function SafeImage({
       }}
     />
   );
-}
+});
 
-function MediaPreviewCard({
+const MediaPreviewCard = memo(function MediaPreviewCard({
   imageUrl,
   videoUrl,
   title,
@@ -70,11 +71,13 @@ function MediaPreviewCard({
   const [isHovered, setIsHovered] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const playPromiseRef = useRef<Promise<void> | null>(null);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
     if (videoRef.current && !hasVideoError) {
-      videoRef.current.play().catch(() => {
+      playPromiseRef.current = videoRef.current.play();
+      playPromiseRef.current?.catch(() => {
         setHasVideoError(true);
       });
     }
@@ -83,10 +86,18 @@ function MediaPreviewCard({
   const handleMouseLeave = () => {
     setIsHovered(false);
     if (videoRef.current) {
-      videoRef.current.pause();
-      try {
-        videoRef.current.currentTime = 0;
-      } catch (e) {}
+      if (playPromiseRef.current) {
+        playPromiseRef.current
+          .then(() => {
+            videoRef.current?.pause();
+            try {
+              if (videoRef.current) videoRef.current.currentTime = 0;
+            } catch (e) {}
+          })
+          .catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
     }
   };
 
@@ -122,7 +133,78 @@ function MediaPreviewCard({
       )}
     </div>
   );
-}
+});
+
+const GridReferenceCard = memo(function GridReferenceCard({
+  refItem,
+  onSelect,
+}: {
+  refItem: Reference;
+  onSelect: (ref: Reference) => void;
+}) {
+  return (
+    <article className="block bg-transparent">
+      <TiltCard
+        onClick={() => onSelect(refItem)}
+        onMouseEnter={() => hoverStore.setHovered(refItem)}
+        onMouseLeave={() => hoverStore.setHovered(null)}
+        maxTilt={8}
+      >
+        <MediaPreviewCard
+          imageUrl={refItem.imageUrl}
+          videoUrl={refItem.videoUrl}
+          title={refItem.title}
+          id={refItem.id}
+        />
+        <div className="text-[14px] leading-tight space-y-1">
+          <div className="font-normal tracking-tight">{refItem.title}</div>
+          <div className="opacity-60">{refItem.shortDesc}</div>
+        </div>
+      </TiltCard>
+    </article>
+  );
+});
+
+const IndexReferenceRow = memo(function IndexReferenceRow({
+  refItem,
+  idx,
+  onSelect,
+}: {
+  refItem: Reference;
+  idx: number;
+  onSelect: (ref: Reference) => void;
+}) {
+  return (
+    <tr
+      onClick={() => onSelect(refItem)}
+      onMouseEnter={() => {
+        sound.playTick();
+        hoverStore.setHovered(refItem);
+      }}
+      onMouseLeave={() => hoverStore.setHovered(null)}
+      className="cursor-pointer hover:bg-black/[0.02] transition-colors"
+    >
+      <td className="py-2.5 pr-4 opacity-40 font-normal">
+        {String(idx + 1).padStart(3, '0')}
+      </td>
+      <td className="py-2.5 pr-6 font-normal">
+        <a
+          href={refItem.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="hover:underline underline-offset-4"
+        >
+          {refItem.title}
+        </a>
+      </td>
+      <td className="py-2.5 pr-6 opacity-60 font-normal">{refItem.shortDesc}</td>
+      <td className="py-2.5 pr-6 opacity-60 font-normal">
+        {refItem.tags.join(', ')}
+      </td>
+    </tr>
+  );
+});
 
 export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAppProps) {
   const [selectedTag, setSelectedTag] = useState<string>('전체');
@@ -130,10 +212,21 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
   const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
   const [soundMuted, setSoundMuted] = useState<boolean>(false);
-  const [hoveredRef, setHoveredRef] = useState<Reference | null>(null);
 
   useEffect(() => {
     setSoundMuted(sound.isMuted());
+  }, []);
+
+  const handleSelectRef = useCallback((refItem: Reference) => {
+    sound.playModalOpen();
+    hoverStore.setHovered(refItem);
+    setActiveRef(refItem);
+  }, []);
+
+  const handleCloseRef = useCallback(() => {
+    sound.playModalClose();
+    hoverStore.setHovered(null);
+    setActiveRef(null);
   }, []);
 
   const filteredReferences = selectedTag === '전체'
@@ -152,8 +245,8 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
 
   return (
     <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none relative">
-      {/* Category & Site-hover reactive dynamic ambient gradient background */}
-      <AmbientBackground selectedTag={selectedTag} hoveredRef={activeRef || hoveredRef} />
+      {/* Category & Site-hover reactive dynamic ambient gradient background (Subscribed to decoupled hoverStore) */}
+      <AmbientBackground selectedTag={selectedTag} />
 
       {/* Sticky Top Bar Container: Header + Category Nav */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm pt-6 md:pt-10 pb-4 mb-6 border-b border-black/5">
@@ -163,7 +256,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             <h1
               onClick={() => {
                 sound.playClick();
-                setActiveRef(null);
+                handleCloseRef();
               }}
               className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
             >
@@ -293,33 +386,14 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
       {/* Line 3: Content View (Grid, Index, or Canvas) */}
       <section className="relative z-10">
         {viewMode === 'grid' && (
-          /* Grid View with 3D Tilt Cards */
+          /* Grid View with Optimized 3D Tilt Cards */
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
             {sortedReferences.map((refItem) => (
-              <article key={refItem.id} className="block bg-transparent">
-                <TiltCard
-                  onClick={() => {
-                    sound.playModalOpen();
-                    setActiveRef(refItem);
-                  }}
-                  onMouseEnter={() => setHoveredRef(refItem)}
-                  onMouseLeave={() => setHoveredRef(null)}
-                  maxTilt={8}
-                >
-                  <MediaPreviewCard
-                    imageUrl={refItem.imageUrl}
-                    videoUrl={refItem.videoUrl}
-                    title={refItem.title}
-                    id={refItem.id}
-                  />
-
-                  {/* Underneath Thumbnail: Website Title & Short Description */}
-                  <div className="text-[14px] leading-tight space-y-1">
-                    <div className="font-normal tracking-tight">{refItem.title}</div>
-                    <div className="opacity-60">{refItem.shortDesc}</div>
-                  </div>
-                </TiltCard>
-              </article>
+              <GridReferenceCard
+                key={refItem.id}
+                refItem={refItem}
+                onSelect={handleSelectRef}
+              />
             ))}
           </div>
         )}
@@ -338,38 +412,12 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               </thead>
               <tbody>
                 {sortedReferences.map((refItem, idx) => (
-                  <tr
+                  <IndexReferenceRow
                     key={refItem.id}
-                    onClick={() => {
-                      sound.playModalOpen();
-                      setActiveRef(refItem);
-                    }}
-                    onMouseEnter={() => {
-                      sound.playTick();
-                      setHoveredRef(refItem);
-                    }}
-                    onMouseLeave={() => setHoveredRef(null)}
-                    className="cursor-pointer hover:bg-black/[0.02] transition-colors"
-                  >
-                    <td className="py-2.5 pr-4 opacity-40 font-normal">
-                      {String(idx + 1).padStart(3, '0')}
-                    </td>
-                    <td className="py-2.5 pr-6 font-normal">
-                      <a
-                        href={refItem.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="hover:underline underline-offset-4"
-                      >
-                        {refItem.title}
-                      </a>
-                    </td>
-                    <td className="py-2.5 pr-6 opacity-60 font-normal">{refItem.shortDesc}</td>
-                    <td className="py-2.5 pr-6 opacity-60 font-normal">
-                      {refItem.tags.join(', ')}
-                    </td>
-                  </tr>
+                    refItem={refItem}
+                    idx={idx}
+                    onSelect={handleSelectRef}
+                  />
                 ))}
               </tbody>
             </table>
@@ -380,11 +428,8 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
           /* Free-Canvas Mode (Matter/Physics-style Draggable Canvas) */
           <CanvasView
             references={sortedReferences}
-            onSelectRef={(refItem) => {
-              sound.playModalOpen();
-              setActiveRef(refItem);
-            }}
-            onHoverRef={(refItem) => setHoveredRef(refItem)}
+            onSelectRef={handleSelectRef}
+            onHoverRef={(refItem) => hoverStore.setHovered(refItem)}
             basePath={basePath}
           />
         )}
@@ -398,10 +443,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             <div className="flex justify-between items-baseline mb-8">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span
-                  onClick={() => {
-                    sound.playModalClose();
-                    setActiveRef(null);
-                  }}
+                  onClick={handleCloseRef}
                   className="text-[14px] cursor-pointer"
                 >
                   ref. archive
@@ -417,10 +459,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               </div>
               <button
                 type="button"
-                onClick={() => {
-                  sound.playModalClose();
-                  setActiveRef(null);
-                }}
+                onClick={handleCloseRef}
                 className="text-[14px] bg-transparent border-0 cursor-pointer p-0"
               >
                 닫기
@@ -467,10 +506,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
           <div className="mt-12 pt-6">
             <button
               type="button"
-              onClick={() => {
-                sound.playModalClose();
-                setActiveRef(null);
-              }}
+              onClick={handleCloseRef}
               className="text-[14px] bg-transparent border-0 cursor-pointer p-0 underline underline-offset-4"
             >
               목록으로 돌아가기

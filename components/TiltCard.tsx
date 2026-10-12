@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useRef, memo } from 'react';
 import { sound } from '@/lib/sound';
 
 interface TiltCardProps {
@@ -12,7 +12,7 @@ interface TiltCardProps {
   maxTilt?: number;
 }
 
-export default function TiltCard({
+const TiltCard = memo(function TiltCard({
   children,
   className = '',
   onClick,
@@ -21,55 +21,67 @@ export default function TiltCard({
   maxTilt = 8,
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [transformStyle, setTransformStyle] = useState<string>('');
-  const [isHovered, setIsHovered] = useState(false);
-  const [glarePos, setGlarePos] = useState({ x: 50, y: 50, opacity: 0 });
-  const [chromaticOffset, setChromaticOffset] = useState({ x: 0, y: 0 });
+  const glareRef = useRef<HTMLDivElement>(null);
+  const chromaticRef = useRef<HTMLDivElement>(null);
+  const isHoveredRef = useRef<boolean>(false);
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!cardRef.current) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
 
-      const normX = (x / rect.width - 0.5) * 2; // -1 to 1
-      const normY = (y / rect.height - 0.5) * 2; // -1 to 1
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-      const rotX = -normY * maxTilt;
-      const rotY = normX * maxTilt;
-      const transX = normX * 3;
-      const transY = normY * 3;
+    const normX = (x / rect.width - 0.5) * 2; // -1 to 1
+    const normY = (y / rect.height - 0.5) * 2; // -1 to 1
 
-      setTransformStyle(
-        `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translate3d(${transX.toFixed(1)}px, ${transY.toFixed(1)}px, 10px) scale3d(1.015, 1.015, 1.015)`
-      );
+    const rotX = -normY * maxTilt;
+    const rotY = normX * maxTilt;
+    const transX = normX * 3;
+    const transY = normY * 3;
 
-      setGlarePos({
-        x: (x / rect.width) * 100,
-        y: (y / rect.height) * 100,
-        opacity: 0.18,
-      });
+    // Direct DOM manipulation - ZERO React setState re-renders during mouse move!
+    card.style.transform = `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translate3d(${transX.toFixed(1)}px, ${transY.toFixed(1)}px, 8px) scale3d(1.015, 1.015, 1.015)`;
 
-      setChromaticOffset({
-        x: normX * 1.5,
-        y: normY * 1.5,
-      });
-    },
-    [maxTilt]
-  );
+    if (glareRef.current) {
+      const gx = ((x / rect.width) * 100).toFixed(1);
+      const gy = ((y / rect.height) * 100).toFixed(1);
+      glareRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0) 65%)`;
+      glareRef.current.style.opacity = '0.18';
+    }
+
+    if (chromaticRef.current) {
+      chromaticRef.current.style.transform = `translate(${(normX * 1.5).toFixed(1)}px, ${(normY * 1.5).toFixed(1)}px)`;
+      chromaticRef.current.style.opacity = '0.35';
+    }
+  };
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    isHoveredRef.current = true;
+    const card = cardRef.current;
+    if (card) {
+      card.style.transition = 'transform 90ms ease-out';
+    }
     sound.playTick();
     onMouseEnter?.();
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-    setTransformStyle('perspective(900px) rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0) scale3d(1, 1, 1)');
-    setGlarePos({ x: 50, y: 50, opacity: 0 });
-    setChromaticOffset({ x: 0, y: 0 });
+    isHoveredRef.current = false;
+    const card = cardRef.current;
+    if (card) {
+      card.style.transition = 'transform 400ms cubic-bezier(0.25, 1, 0.5, 1)';
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0) scale3d(1, 1, 1)';
+    }
+
+    if (glareRef.current) {
+      glareRef.current.style.opacity = '0';
+    }
+    if (chromaticRef.current) {
+      chromaticRef.current.style.opacity = '0';
+    }
+
     onMouseLeave?.();
   };
 
@@ -82,34 +94,23 @@ export default function TiltCard({
       onMouseLeave={handleMouseLeave}
       className={`relative select-none cursor-pointer group ${className}`}
       style={{
-        transform: transformStyle,
-        transition: isHovered
-          ? 'transform 90ms ease-out'
-          : 'transform 450ms cubic-bezier(0.25, 1, 0.5, 1)',
         transformStyle: 'preserve-3d',
         willChange: 'transform',
       }}
     >
       {/* Chromatic fringe sheen on hover */}
-      {isHovered && (
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none z-20 border border-black/10 mix-blend-difference"
-          style={{
-            transform: `translate(${chromaticOffset.x}px, ${chromaticOffset.y}px)`,
-            opacity: 0.4,
-            transition: 'transform 70ms linear',
-          }}
-        />
-      )}
+      <div
+        ref={chromaticRef}
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none z-20 border border-black/10 mix-blend-difference opacity-0 transition-opacity duration-200"
+      />
 
       {/* Dynamic specular glare overlay */}
       <div
+        ref={glareRef}
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none z-30 transition-opacity duration-300"
+        className="absolute inset-0 pointer-events-none z-30 opacity-0 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(circle at ${glarePos.x}% ${glarePos.y}%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 65%)`,
-          opacity: glarePos.opacity,
           mixBlendMode: 'overlay',
         }}
       />
@@ -117,4 +118,6 @@ export default function TiltCard({
       {children}
     </div>
   );
-}
+});
+
+export default TiltCard;

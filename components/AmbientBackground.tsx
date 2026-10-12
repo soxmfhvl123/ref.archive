@@ -1,12 +1,10 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { Reference } from '@/lib/types';
-import { getKeyColors } from '@/lib/colors';
+import { hoverStore, HoverData } from '@/lib/hoverStore';
 
 interface AmbientBackgroundProps {
   selectedTag: string;
-  hoveredRef: Reference | null;
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -30,95 +28,108 @@ const CATEGORY_COLORS: Record<string, string> = {
   '오브제 & 아트토이': '#eab308',
 };
 
-export default function AmbientBackground({ selectedTag, hoveredRef }: AmbientBackgroundProps) {
-  const [mousePos, setMousePos] = useState({ x: -500, y: -500 });
-  const [targetPos, setTargetPos] = useState({ x: -500, y: -500 });
+export default function AmbientBackground({ selectedTag }: AmbientBackgroundProps) {
+  const [hoverData, setHoverData] = useState<HoverData>({ ref: null, colors: null });
+  const cursorOrbRef = useRef<HTMLDivElement>(null);
+  const targetPos = useRef({ x: -500, y: -500 });
+  const currentPos = useRef({ x: -500, y: -500 });
   const animFrameRef = useRef<number | null>(null);
 
   const defaultColor = CATEGORY_COLORS[selectedTag] || '#a1a1aa';
-  const siteKeyColors = getKeyColors(hoveredRef);
+  const isHovered = Boolean(hoverData.ref && hoverData.colors);
+  const primaryColor = hoverData.colors ? hoverData.colors[0] : defaultColor;
+  const secondaryColor = hoverData.colors ? hoverData.colors[1] : defaultColor;
 
-  const isHovered = Boolean(hoveredRef && siteKeyColors);
-  const primaryColor = siteKeyColors ? siteKeyColors[0] : defaultColor;
-  const secondaryColor = siteKeyColors ? siteKeyColors[1] : defaultColor;
+  // Subscribe directly to decoupled hoverStore (No ArchiveApp re-renders!)
+  useEffect(() => {
+    const unsubscribe = hoverStore.subscribe((data) => {
+      setHoverData(data);
+    });
+    return unsubscribe;
+  }, []);
 
-  // Smooth mouse follower
+  // High-performance DOM-based cursor tracking (Zero React setState on mousemove!)
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setTargetPos({ x: e.clientX, y: e.clientY });
+      targetPos.current.x = e.clientX;
+      targetPos.current.y = e.clientY;
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
-  useEffect(() => {
-    const updatePosition = () => {
-      setMousePos((prev) => {
-        const dx = targetPos.x - prev.x;
-        const dy = targetPos.y - prev.y;
-        if (Math.abs(dx) < 0.2 && Math.abs(dy) < 0.2) return prev;
-        return {
-          x: prev.x + dx * 0.14,
-          y: prev.y + dy * 0.14,
-        };
-      });
-      animFrameRef.current = requestAnimationFrame(updatePosition);
+    const updateOrb = () => {
+      const dx = targetPos.current.x - currentPos.current.x;
+      const dy = targetPos.current.y - currentPos.current.y;
+
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        currentPos.current.x += dx * 0.15;
+        currentPos.current.y += dy * 0.15;
+
+        if (cursorOrbRef.current) {
+          cursorOrbRef.current.style.transform = `translate3d(${currentPos.current.x - 340}px, ${currentPos.current.y - 340}px, 0)`;
+        }
+      }
+
+      animFrameRef.current = requestAnimationFrame(updateOrb);
     };
 
-    animFrameRef.current = requestAnimationFrame(updatePosition);
+    animFrameRef.current = requestAnimationFrame(updateOrb);
+
     return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
-  }, [targetPos]);
+  }, []);
 
   return (
     <div
       aria-hidden="true"
       className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none"
+      style={{ contain: 'strict' }}
     >
       {/* 1. Fullscreen Multi-Stop Dynamic Gradient (Site Key Colors on Hover) */}
       <div
-        className="absolute inset-0 transition-opacity duration-700 ease-out"
+        className="absolute inset-0 transition-opacity duration-500 ease-out"
         style={{
-          opacity: isHovered ? 0.22 : 0,
+          opacity: isHovered ? 0.20 : 0,
           background: isHovered
-            ? `radial-gradient(circle at ${mousePos.x > 0 ? mousePos.x : 500}px ${mousePos.y > 0 ? mousePos.y : 300}px, ${primaryColor} 0%, ${secondaryColor} 45%, transparent 75%)`
+            ? `radial-gradient(circle 800px at 50% 35%, ${primaryColor} 0%, ${secondaryColor} 50%, transparent 80%)`
             : 'none',
-          willChange: 'background, opacity',
+          willChange: 'opacity',
         }}
       />
 
-      {/* 2. Cursor Follower Luminous Orb (Primary Key Color) */}
-      {mousePos.x > -100 && (
-        <div
-          className="absolute w-[680px] h-[680px] rounded-full blur-[140px] pointer-events-none transition-colors duration-500 ease-out"
-          style={{
-            transform: `translate3d(${mousePos.x - 340}px, ${mousePos.y - 340}px, 0)`,
-            backgroundColor: primaryColor,
-            opacity: isHovered ? 0.20 : 0.06,
-            willChange: 'transform, opacity, background-color',
-          }}
-        />
-      )}
-
-      {/* 3. Secondary Key Color Atmospheric Orb (Top-Right / Opposite Corner) */}
+      {/* 2. Cursor Follower Luminous Orb (Direct DOM update, Zero re-renders) */}
       <div
-        className="absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full blur-[160px] transition-all duration-700 ease-out"
+        ref={cursorOrbRef}
+        className="absolute w-[680px] h-[680px] rounded-full blur-[140px] pointer-events-none transition-colors duration-400 ease-out"
+        style={{
+          transform: `translate3d(-500px, -500px, 0)`,
+          backgroundColor: primaryColor,
+          opacity: isHovered ? 0.18 : 0.05,
+          willChange: 'transform, background-color',
+        }}
+      />
+
+      {/* 3. Secondary Key Color Atmospheric Orb (Top-Right) */}
+      <div
+        className="absolute -top-32 -right-32 w-[700px] h-[700px] rounded-full blur-[160px] transition-all duration-600 ease-out"
         style={{
           backgroundColor: secondaryColor,
-          opacity: isHovered ? 0.18 : selectedTag === '전체' ? 0.04 : 0.08,
-          transform: isHovered ? 'scale(1.15)' : 'scale(1)',
+          opacity: isHovered ? 0.16 : selectedTag === '전체' ? 0.04 : 0.07,
+          transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+          willChange: 'background-color, opacity, transform',
         }}
       />
 
-      {/* 4. Bottom-Left Ambient Floor Light */}
+      {/* 4. Bottom-Left Floor Light */}
       <div
-        className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full blur-[150px] transition-all duration-700 ease-out"
+        className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full blur-[150px] transition-all duration-600 ease-out"
         style={{
           backgroundColor: isHovered ? primaryColor : defaultColor,
-          opacity: isHovered ? 0.16 : selectedTag === '전체' ? 0.03 : 0.06,
-          transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+          opacity: isHovered ? 0.14 : selectedTag === '전체' ? 0.03 : 0.06,
+          transform: isHovered ? 'scale(1.08)' : 'scale(1)',
+          willChange: 'background-color, opacity, transform',
         }}
       />
     </div>
