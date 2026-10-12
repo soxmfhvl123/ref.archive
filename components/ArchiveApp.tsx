@@ -1,8 +1,12 @@
 'use client';
 
-import { useState, useRef, useMemo } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import { Reference } from '@/lib/types';
 import Image from 'next/image';
+import { sound } from '@/lib/sound';
+import TiltCard from '@/components/TiltCard';
+import CanvasView from '@/components/CanvasView';
+import AmbientBackground from '@/components/AmbientBackground';
 
 interface ArchiveAppProps {
   initialReferences: Reference[];
@@ -93,7 +97,7 @@ function MediaPreviewCard({
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full aspect-[16/10] bg-white overflow-hidden mb-3"
+      className="relative w-full aspect-[16/10] bg-white overflow-hidden mb-3 border border-black/5"
     >
       <SafeImage
         src={imageUrl}
@@ -123,8 +127,13 @@ function MediaPreviewCard({
 export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAppProps) {
   const [selectedTag, setSelectedTag] = useState<string>('전체');
   const [activeRef, setActiveRef] = useState<Reference | null>(null);
-  const [viewMode, setViewMode] = useState<'grid' | 'index'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
   const [sortOrder, setSortOrder] = useState<'newest' | 'az'>('newest');
+  const [soundMuted, setSoundMuted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setSoundMuted(sound.isMuted());
+  }, []);
 
   const filteredReferences = selectedTag === '전체'
     ? initialReferences
@@ -141,14 +150,20 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
   }, [filteredReferences, sortOrder]);
 
   return (
-    <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none">
+    <main className="min-h-screen bg-white text-black px-6 md:px-10 pb-10 select-none relative">
+      {/* Category-reactive ambient background aura & cursor tracking */}
+      <AmbientBackground selectedTag={selectedTag} />
+
       {/* Sticky Top Bar Container: Header + Category Nav */}
-      <div className="sticky top-0 z-40 bg-white pt-6 md:pt-10 pb-4 mb-6">
-        {/* Line 1: Header + View Toggle */}
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm pt-6 md:pt-10 pb-4 mb-6 border-b border-black/5">
+        {/* Line 1: Header + Controls */}
         <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <h1
-              onClick={() => setActiveRef(null)}
+              onClick={() => {
+                sound.playClick();
+                setActiveRef(null);
+              }}
               className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
             >
               ref. archive
@@ -163,13 +178,29 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             </a>
           </div>
 
-          {/* Controls: Sort Filter (Newest / A-Z) + View Switcher (Grid / Index) */}
+          {/* Controls: SFX Toggle + Sort Filter + View Switcher */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px]">
+            {/* SFX Sound Feedback Toggle */}
+            <button
+              type="button"
+              onClick={() => {
+                const nextMuted = sound.toggleMute();
+                setSoundMuted(nextMuted);
+              }}
+              className="bg-transparent p-0 border-0 cursor-pointer opacity-50 hover:opacity-100 transition-opacity text-[13px]"
+              title="UI Audio Feedback Toggle"
+            >
+              SFX {soundMuted ? '[OFF]' : '[ON]'}
+            </button>
+
             {/* Sort Filter: Newest / A-Z */}
             <div className="flex items-center gap-3">
               <button
                 type="button"
-                onClick={() => setSortOrder('newest')}
+                onClick={() => {
+                  sound.playClick();
+                  setSortOrder('newest');
+                }}
                 className={`bg-transparent p-0 border-0 cursor-pointer ${
                   sortOrder === 'newest' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
                 }`}
@@ -178,7 +209,10 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               </button>
               <button
                 type="button"
-                onClick={() => setSortOrder('az')}
+                onClick={() => {
+                  sound.playClick();
+                  setSortOrder('az');
+                }}
                 className={`bg-transparent p-0 border-0 cursor-pointer ${
                   sortOrder === 'az' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
                 }`}
@@ -187,11 +221,14 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               </button>
             </div>
 
-            {/* View Switcher: Grid / Index */}
+            {/* View Switcher: Grid / Index / Canvas */}
             <div className="flex items-center gap-3">
               <button
                 type="button"
-                onClick={() => setViewMode('grid')}
+                onClick={() => {
+                  sound.playClick();
+                  setViewMode('grid');
+                }}
                 className={`bg-transparent p-0 border-0 cursor-pointer ${
                   viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
                 }`}
@@ -200,18 +237,33 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               </button>
               <button
                 type="button"
-                onClick={() => setViewMode('index')}
+                onClick={() => {
+                  sound.playClick();
+                  setViewMode('index');
+                }}
                 className={`bg-transparent p-0 border-0 cursor-pointer ${
                   viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
                 }`}
               >
                 인덱스
               </button>
+              <button
+                type="button"
+                onClick={() => {
+                  sound.playClick();
+                  setViewMode('canvas');
+                }}
+                className={`bg-transparent p-0 border-0 cursor-pointer ${
+                  viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                }`}
+              >
+                캔버스
+              </button>
             </div>
           </div>
         </header>
 
-        {/* Line 2: Tags (Flex wrap so all tags are fully visible on mobile & desktop) */}
+        {/* Line 2: Tags */}
         <nav>
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[14px]">
             {initialTags.map((tag) => {
@@ -220,7 +272,10 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                 <li key={tag} className="inline-block">
                   <button
                     type="button"
-                    onClick={() => setSelectedTag(tag)}
+                    onClick={() => {
+                      sound.playClick();
+                      setSelectedTag(tag);
+                    }}
                     className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
                       isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-70'
                     }`}
@@ -234,33 +289,39 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
         </nav>
       </div>
 
-      {/* Line 3: Content View (Grid or Index) */}
-      <section>
-        {viewMode === 'grid' ? (
-          /* Grid View */
+      {/* Line 3: Content View (Grid, Index, or Canvas) */}
+      <section className="relative z-10">
+        {viewMode === 'grid' && (
+          /* Grid View with 3D Tilt Cards */
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
             {sortedReferences.map((refItem) => (
-              <article
-                key={refItem.id}
-                onClick={() => setActiveRef(refItem)}
-                className="cursor-pointer block bg-white"
-              >
-                <MediaPreviewCard
-                  imageUrl={refItem.imageUrl}
-                  videoUrl={refItem.videoUrl}
-                  title={refItem.title}
-                  id={refItem.id}
-                />
+              <article key={refItem.id} className="block bg-transparent">
+                <TiltCard
+                  onClick={() => {
+                    sound.playModalOpen();
+                    setActiveRef(refItem);
+                  }}
+                  maxTilt={8}
+                >
+                  <MediaPreviewCard
+                    imageUrl={refItem.imageUrl}
+                    videoUrl={refItem.videoUrl}
+                    title={refItem.title}
+                    id={refItem.id}
+                  />
 
-                {/* Underneath Thumbnail: Website Title & Short Description */}
-                <div className="text-[14px] leading-tight space-y-1">
-                  <div className="font-normal tracking-tight">{refItem.title}</div>
-                  <div className="opacity-60">{refItem.shortDesc}</div>
-                </div>
+                  {/* Underneath Thumbnail: Website Title & Short Description */}
+                  <div className="text-[14px] leading-tight space-y-1">
+                    <div className="font-normal tracking-tight">{refItem.title}</div>
+                    <div className="opacity-60">{refItem.shortDesc}</div>
+                  </div>
+                </TiltCard>
               </article>
             ))}
           </div>
-        ) : (
+        )}
+
+        {viewMode === 'index' && (
           /* Index View */
           <div className="w-full overflow-x-auto">
             <table className="w-full text-left text-[14px] border-collapse">
@@ -276,8 +337,12 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
                 {sortedReferences.map((refItem, idx) => (
                   <tr
                     key={refItem.id}
-                    onClick={() => setActiveRef(refItem)}
-                    className="cursor-pointer"
+                    onClick={() => {
+                      sound.playModalOpen();
+                      setActiveRef(refItem);
+                    }}
+                    onMouseEnter={() => sound.playTick()}
+                    className="cursor-pointer hover:bg-black/[0.02] transition-colors"
                   >
                     <td className="py-2.5 pr-4 opacity-40 font-normal">
                       {String(idx + 1).padStart(3, '0')}
@@ -303,6 +368,18 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             </table>
           </div>
         )}
+
+        {viewMode === 'canvas' && (
+          /* Free-Canvas Mode (Matter/Physics-style Draggable Canvas) */
+          <CanvasView
+            references={sortedReferences}
+            onSelectRef={(refItem) => {
+              sound.playModalOpen();
+              setActiveRef(refItem);
+            }}
+            basePath={basePath}
+          />
+        )}
       </section>
 
       {/* Detail Overlay View */}
@@ -313,7 +390,10 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             <div className="flex justify-between items-baseline mb-8">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span
-                  onClick={() => setActiveRef(null)}
+                  onClick={() => {
+                    sound.playModalClose();
+                    setActiveRef(null);
+                  }}
                   className="text-[14px] cursor-pointer"
                 >
                   ref. archive
@@ -329,7 +409,10 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
               </div>
               <button
                 type="button"
-                onClick={() => setActiveRef(null)}
+                onClick={() => {
+                  sound.playModalClose();
+                  setActiveRef(null);
+                }}
                 className="text-[14px] bg-transparent border-0 cursor-pointer p-0"
               >
                 닫기
@@ -340,7 +423,7 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
             <h2 className="text-[18px] font-normal mb-8">{activeRef.title}</h2>
 
             {/* Large Capture */}
-            <div className="relative w-full max-w-5xl aspect-[16/10] mb-8 bg-white overflow-hidden">
+            <div className="relative w-full max-w-5xl aspect-[16/10] mb-8 bg-white overflow-hidden border border-black/5">
               <SafeImage
                 src={activeRef.imageUrl}
                 alt={activeRef.title}
@@ -376,7 +459,10 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
           <div className="mt-12 pt-6">
             <button
               type="button"
-              onClick={() => setActiveRef(null)}
+              onClick={() => {
+                sound.playModalClose();
+                setActiveRef(null);
+              }}
               className="text-[14px] bg-transparent border-0 cursor-pointer p-0 underline underline-offset-4"
             >
               목록으로 돌아가기
