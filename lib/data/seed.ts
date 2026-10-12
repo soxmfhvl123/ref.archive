@@ -4927,5 +4927,75 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "프레젠테이션용 무료 목업 소스",
       "imageUrl": "/captures/mockup-world.png",
       "videoUrl": "/videos/mockup-world.webm"
+    },
+    {
+      "id": "ilithya-rocks",
+      "title": "Ilithya",
+      "url": "https://ilithya.rocks",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "GLSL 셰이더 아카이브",
+      "anatomy": "GLSL 프래그먼트 셰이더·레이마칭 기반의 실험적 웹 그래픽 아카이브",
+      "principle": "브라우저 GPU 셰이더만으로 구현하는 절차적 비주얼과 수학적 그래픽",
+      "imageUrl": "/captures/ilithya-rocks.png",
+      "videoUrl": "/videos/ilithya-rocks.webm"
+    },
+    {
+      "id": "david-li",
+      "title": "David Li Experiments",
+      "url": "https://david.li",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "WebGL 유체 시뮬레이션",
+      "anatomy": "유체 시뮬레이션·연기·젤리 물리 엔진 중심의 WebGL 실험실",
+      "principle": "실시간 물리 연산과 유체 역학을 웹 브라우저에서 매끄럽게 구동하는 기술력",
+      "imageUrl": "/captures/david-li.png",
+      "videoUrl": "/videos/david-li.webm"
+    },
+    {
+      "id": "paper-design",
+      "title": "Paper (Studio Lumio)",
+      "url": "https://paper.design",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "인터랙티브 캔버스 툴",
+      "anatomy": "캔버스 기반 인터랙티브 드로잉 툴 겸 크리에이티브 랩 인터페이스",
+      "principle": "드로잉 도구의 조작감과 미니멀한 UI의 유기적 결합",
+      "imageUrl": "/captures/paper-design.png",
+      "videoUrl": "/videos/paper-design.webm"
+    },
+    {
+      "id": "stink-studios",
+      "title": "Stink Studios",
+      "url": "https://stinkstudios.com",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "글로벌 디지털 에이전시",
+      "anatomy": "글로벌 크리에이티브 에이전시의 브랜드 캠페인 및 디지털 경험 케이스 스터디",
+      "principle": "데이터 시각화와 영상, 인터랙티브 웹을 하나의 브랜드 서사로 결합",
+      "imageUrl": "/captures/stink-studios.png",
+      "videoUrl": "/videos/stink-studios.webm"
+    },
+    {
+      "id": "adult-swim-music",
+      "title": "Adult Swim Singles",
+      "url": "https://www.adultswim.com/music",
+      "category": "Experimental Web",
+      "tags": [
+        "실험적 웹"
+      ],
+      "shortDesc": "사이키델릭 넷아트 음악 웹",
+      "anatomy": "어덜트 스윔의 파괴적이고 사이키델릭한 넷아트형 음악 릴리즈 웹",
+      "principle": "주류 웹 디자인 규칙을 해체하고 독자적인 서브컬처 미학을 구현",
+      "imageUrl": "/captures/adult-swim-music.png",
+      "videoUrl": "/videos/adult-swim-music.webm"
     }
 ];
