@@ -40,6 +40,10 @@ const SafeImage = memo(function SafeImage({
   const fullFallback = getFullPath(fallbackSvg);
   const [imgSrc, setImgSrc] = useState(fullSrc);
 
+  useEffect(() => {
+    setImgSrc(fullSrc);
+  }, [fullSrc]);
+
   return (
     <Image
       src={imgSrc}
@@ -72,42 +76,37 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
   isMobile?: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
   const [hasVideoError, setHasVideoError] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const playPromiseRef = useRef<Promise<void> | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
     if (isMobile) return;
-    setIsHovered(true);
-    if (videoRef.current && !hasVideoError) {
-      playPromiseRef.current = videoRef.current.play();
-      playPromiseRef.current?.catch(() => {
-        setHasVideoError(true);
-      });
-    }
+    // 80ms debounce to prevent firing video requests on rapid cursor sweeps
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsHovered(true);
+    }, 80);
   };
 
   const handleMouseLeave = () => {
-    if (isMobile) return;
-    setIsHovered(false);
-    if (videoRef.current) {
-      if (playPromiseRef.current) {
-        playPromiseRef.current
-          .then(() => {
-            videoRef.current?.pause();
-            try {
-              if (videoRef.current) videoRef.current.currentTime = 0;
-            } catch (e) {}
-          })
-          .catch(() => {});
-      } else {
-        videoRef.current.pause();
-      }
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
     }
+    setIsHovered(false);
+    setIsVideoReady(false);
   };
 
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const fullVideoSrc = !isMobile && videoUrl ? getFullPath(videoUrl) : undefined;
-  const showVideo = !isMobile && isHovered && fullVideoSrc && !hasVideoError;
+  const shouldMountVideo = !isMobile && isHovered && fullVideoSrc && !hasVideoError;
 
   return (
     <div
@@ -120,19 +119,19 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
         alt={title}
         fallbackSvg={`/captures/${id}.svg`}
         objectFit="object-cover"
-        className={showVideo ? 'opacity-0' : 'opacity-100'}
+        className={`transition-opacity duration-300 ${isVideoReady ? 'opacity-0' : 'opacity-100'}`}
       />
-      {!isMobile && fullVideoSrc && !hasVideoError && (
+      {shouldMountVideo && (
         <video
-          ref={videoRef}
           src={fullVideoSrc}
+          autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          onLoadedData={() => setIsVideoReady(true)}
           onError={() => setHasVideoError(true)}
-          className={`absolute inset-0 w-full h-full object-cover object-top ${
-            showVideo ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-300 ${
+            isVideoReady ? 'opacity-100' : 'opacity-0'
           }`}
         />
       )}
@@ -268,6 +267,41 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
     // 'newest': Reverse of insertion order (latest added first)
     return [...filteredReferences].reverse();
   }, [filteredReferences, sortOrder]);
+
+  const BATCH_SIZE = 24;
+  const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
+
+  // Reset visible count when filtering or sorting
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [selectedTag, sortOrder]);
+
+  const displayedReferences = useMemo(() => {
+    return sortedReferences.slice(0, visibleCount);
+  }, [sortedReferences, visibleCount]);
+
+  // Infinite scroll: smoothly load next batch 800px before reaching page bottom
+  useEffect(() => {
+    if (viewMode !== 'grid') return;
+    if (visibleCount >= sortedReferences.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, sortedReferences.length));
+        }
+      },
+      { rootMargin: '800px' }
+    );
+
+    const el = loadMoreRef.current;
+    if (el) observer.observe(el);
+
+    return () => {
+      if (el) observer.unobserve(el);
+    };
+  }, [viewMode, visibleCount, sortedReferences.length]);
 
   return (
     <main className="min-h-screen bg-transparent text-black px-6 md:px-10 pb-10 select-none relative">
@@ -427,17 +461,22 @@ export default function ArchiveApp({ initialReferences, initialTags }: ArchiveAp
       {/* Line 3: Content View (Grid, Index, or Canvas) */}
       <section className="relative z-10">
         {viewMode === 'grid' && (
-          /* Grid View with Optimized 3D Tilt Cards */
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
-            {sortedReferences.map((refItem) => (
-              <GridReferenceCard
-                key={refItem.id}
-                refItem={refItem}
-                onSelect={handleSelectRef}
-                isMobile={isMobile}
-              />
-            ))}
-          </div>
+          <>
+            {/* Grid View with Optimized 3D Tilt Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+              {displayedReferences.map((refItem) => (
+                <GridReferenceCard
+                  key={refItem.id}
+                  refItem={refItem}
+                  onSelect={handleSelectRef}
+                  isMobile={isMobile}
+                />
+              ))}
+            </div>
+            {visibleCount < sortedReferences.length && (
+              <div ref={loadMoreRef} className="w-full h-24 pointer-events-none" />
+            )}
+          </>
         )}
 
         {viewMode === 'index' && (
