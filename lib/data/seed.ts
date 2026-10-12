@@ -4997,5 +4997,19 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "주류 웹 디자인 규칙을 해체하고 독자적인 서브컬처 미학을 구현",
       "imageUrl": "/captures/adult-swim-music.png",
       "videoUrl": "/videos/adult-swim-music.webm"
+    },
+    {
+      "id": "formundrausch-de",
+      "title": "FORMUNDRAUSCH",
+      "url": "https://formundrausch.de/",
+      "category": "Motion & 3D Studio",
+      "tags": [
+        "모션 & 3D"
+      ],
+      "shortDesc": "베를린 CGI & 3D 비주얼 스튜디오",
+      "anatomy": "베를린 기반의 현대적인 CGI·3D·모션 디자인 스튜디오. 정교한 3D 시각화와 건축·이벤트 디지털 비주얼 아카이브",
+      "principle": "CGI와 모션 디자인을 결합해 시각적 밀도가 높은 현대적 디지털 비주얼 연출",
+      "imageUrl": "/captures/formundrausch-de.png",
+      "videoUrl": "/videos/formundrausch-de.webm"
     }
 ];
