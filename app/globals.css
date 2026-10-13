@@ -19,6 +19,9 @@ html, body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* Remove focus rings/outlines with rounded styles, keep minimal black outline if needed or clean text underline */

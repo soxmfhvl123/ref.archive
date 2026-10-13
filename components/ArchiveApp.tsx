@@ -140,7 +140,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ aspectRatio: isPoster ? '3 / 4' : '16 / 10' }}
-      className={`relative w-full ${aspectRatio} bg-white overflow-hidden mb-3 border border-black/5`}
+      className={`relative w-full ${aspectRatio} bg-neutral-100 overflow-hidden mb-2 sm:mb-3 border border-black/5`}
     >
       <SafeImage
         src={imageUrl}
@@ -200,15 +200,15 @@ const GridReferenceCard = memo(function GridReferenceCard({
           aspectRatio={cardAspectRatio}
           isPoster={isPoster}
         />
-        <div className="text-[14px] leading-tight space-y-1">
-          <div className="flex items-baseline justify-between gap-2">
-            <span className="font-normal tracking-tight">{refItem.title}</span>
+        <div className="text-[13px] sm:text-[14px] leading-tight space-y-0.5 sm:space-y-1">
+          <div className="flex items-baseline justify-between gap-1.5 sm:gap-2">
+            <span className="font-normal tracking-tight truncate">{refItem.title}</span>
             {isPoster && refItem.group && (
-              <span className="text-[11px] opacity-40 uppercase tracking-wider">{refItem.group}</span>
+              <span className="hidden sm:inline-block text-[11px] opacity-40 uppercase tracking-wider shrink-0">{refItem.group}</span>
             )}
           </div>
           {!isPoster && refItem.shortDesc && (
-            <div className="opacity-60 text-[13px]">{refItem.shortDesc}</div>
+            <div className="opacity-60 text-[12px] sm:text-[13px] line-clamp-1">{refItem.shortDesc}</div>
           )}
         </div>
       </TiltCard>
@@ -347,12 +347,30 @@ export default function ArchiveApp({
   const handleSelectRef = useCallback((refItem: Reference) => {
     hoverStore.setHovered(refItem);
     setActiveRef(refItem);
+    if (typeof window !== 'undefined') {
+      window.history.pushState({ refDetail: refItem.id }, '', `#ref-${refItem.id}`);
+    }
   }, []);
 
   const handleCloseRef = useCallback(() => {
     hoverStore.setHovered(null);
     setActiveRef(null);
-  }, []);
+    if (typeof window !== 'undefined' && window.location.hash.startsWith('#ref-')) {
+      window.history.replaceState(null, '', window.location.pathname + (majorCategory === 'POSTERS' ? '#posters' : '#web'));
+    }
+  }, [majorCategory]);
+
+  // Mobile back gesture & browser back button support to close detail view
+  useEffect(() => {
+    const handlePopState = () => {
+      if (activeRef) {
+        hoverStore.setHovered(null);
+        setActiveRef(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [activeRef]);
 
   const filteredReferences = useMemo(() => {
     let list = currentDataset;
@@ -613,8 +631,8 @@ export default function ArchiveApp({
             <div
               className={
                 majorCategory === 'POSTERS'
-                  ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-10'
-                  : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10'
+                  ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-3.5 gap-y-7 sm:gap-x-6 sm:gap-y-10'
+                  : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10'
               }
             >
               {displayedReferences.map((refItem) => (
@@ -676,10 +694,10 @@ export default function ArchiveApp({
 
       {/* Detail Overlay View */}
       {activeRef && (
-        <div className="fixed inset-0 z-50 bg-white p-6 md:p-12 overflow-y-auto flex flex-col justify-between">
+        <div className="fixed inset-0 z-50 bg-white px-4 py-5 sm:p-8 md:p-12 overflow-y-auto flex flex-col justify-between pt-[calc(1.25rem+env(safe-area-inset-top))] pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
           <div>
             {/* Top Bar inside Detail */}
-            <div className="flex justify-between items-baseline mb-8">
+            <div className="flex justify-between items-baseline mb-6 sm:mb-8">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span
                   onClick={handleCloseRef}
@@ -691,7 +709,7 @@ export default function ArchiveApp({
                   href="https://cdj.kr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
+                  className="hidden sm:inline-block text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
                 >
                   arranged by studiofluxus™
                 </a>
@@ -699,7 +717,7 @@ export default function ArchiveApp({
               <button
                 type="button"
                 onClick={handleCloseRef}
-                className="text-[14px] bg-transparent border-0 cursor-pointer p-0"
+                className="text-[14px] bg-transparent border-0 cursor-pointer py-1.5 px-3 -mr-2"
               >
                 닫기
               </button>
@@ -776,7 +794,7 @@ export default function ArchiveApp({
           onClick={() => setIsCategoryDrawerOpen(false)}
         >
           <div
-            className="w-full sm:max-w-xl max-h-[85vh] bg-white text-black border-t sm:border border-black/20 flex flex-col overflow-hidden shadow-2xl"
+            className="w-full sm:max-w-xl max-h-[85vh] bg-white text-black border-t sm:border border-black/20 flex flex-col overflow-hidden shadow-2xl pb-[calc(0.75rem+env(safe-area-inset-bottom))]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
