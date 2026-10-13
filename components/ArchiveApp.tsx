@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
 import { Reference, MajorCategory } from '@/lib/types';
-import { POSTER_GROUPS } from '@/lib/data/posters';
+import { POSTER_GROUPS, POSTER_BASE_STYLES } from '@/lib/data/posters';
 import Image from 'next/image';
 import TiltCard from '@/components/TiltCard';
 import CanvasView from '@/components/CanvasView';
@@ -275,6 +275,20 @@ export default function ArchiveApp({
   const [activeRef, setActiveRef] = useState<Reference | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'index' | 'canvas'>('grid');
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isCategoryDrawerOpen, setIsCategoryDrawerOpen] = useState<boolean>(false);
+  const [categorySearchQuery, setCategorySearchQuery] = useState<string>('');
+  const activeTagRef = useRef<HTMLButtonElement | null>(null);
+
+  // Auto-scroll selected tag into view horizontally on mobile
+  useEffect(() => {
+    if (activeTagRef.current) {
+      activeTagRef.current.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [selectedTag, selectedGroup]);
 
   const webList = initialWebReferences.length > 0 ? initialWebReferences : initialReferences;
   const posterList = initialPosterReferences;
@@ -400,11 +414,11 @@ export default function ArchiveApp({
         majorCategory={majorCategory}
       />
 
-      {/* Sticky Top Bar Container: Header + Category Nav (Semi-translucent on mobile for 60fps, backdrop-blur on desktop) */}
-      <div className="sticky top-0 z-40 bg-white/95 md:bg-transparent md:backdrop-blur-md pt-4 md:pt-10 pb-3 md:pb-4 mb-4 md:mb-6">
+      {/* Sticky Top Bar Container: Header + Category Nav */}
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-md pt-3 md:pt-8 pb-2.5 md:pb-4 mb-3 md:mb-6 border-b border-black/[0.06] md:border-b-0">
         {/* Line 1: Header + Major Category Switcher + Controls */}
-        <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-3">
-          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+        <header className="mb-2.5 md:mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
+          <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4 gap-y-1">
             <h1
               onClick={handleCloseRef}
               className="text-[14px] font-normal tracking-tight cursor-pointer inline-block"
@@ -413,7 +427,7 @@ export default function ArchiveApp({
             </h1>
 
             {/* Major Category Switcher: WEB / POSTERS (Typographic switcher, no boxes/borders) */}
-            <div className="flex items-baseline gap-2.5 text-[14px]">
+            <div className="flex items-baseline gap-2 text-[14px]">
               <button
                 type="button"
                 onClick={() => handleSwitchMajorCategory('WEB')}
@@ -443,7 +457,7 @@ export default function ArchiveApp({
               href="https://cdj.kr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
+              className="hidden sm:inline-block text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
             >
               arranged by studiofluxus™
             </a>
@@ -497,17 +511,18 @@ export default function ArchiveApp({
 
         {/* Line 2: Tags & Groups Navigation */}
         {majorCategory === 'WEB' ? (
-          /* Web Category Tags */
-          <nav>
-            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2.5 text-[14px]">
+          /* Web Category Tags: Clean horizontal swipe on mobile, wrapped on desktop */
+          <nav className="overflow-x-auto md:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+            <ul className="flex items-center gap-x-4 md:gap-x-5 whitespace-nowrap md:whitespace-normal md:flex-wrap text-[13px] md:text-[14px] py-0.5">
               {initialTags.map((tag) => {
                 const isSelected = selectedTag === tag;
                 return (
-                  <li key={tag} className="inline-block">
+                  <li key={tag} className="inline-block shrink-0">
                     <button
                       type="button"
+                      ref={isSelected ? activeTagRef : null}
                       onClick={() => setSelectedTag(tag)}
-                      className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] ${
+                      className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] md:text-[14px] ${
                         isSelected ? 'underline underline-offset-4 font-normal' : 'no-underline opacity-70'
                       }`}
                     >
@@ -519,10 +534,10 @@ export default function ArchiveApp({
             </ul>
           </nav>
         ) : (
-          /* Posters Groups & Styles Navigation */
-          <div className="space-y-3">
+          /* Posters Groups & Styles Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
+          <div className="space-y-2">
             {/* Style Group Switcher */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[13px] border-b border-black/10 pb-2.5">
+            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-black/10 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
               {POSTER_GROUPS.map((grp) => {
                 const isSelected = selectedGroup === grp;
                 const count = grp === 'All' ? posterList.length : posterList.filter((p) => p.group === grp).length;
@@ -534,7 +549,7 @@ export default function ArchiveApp({
                       setSelectedGroup(grp);
                       setSelectedTag('전체');
                     }}
-                    className={`bg-transparent p-0 border-0 cursor-pointer transition-colors ${
+                    className={`bg-transparent p-0 border-0 cursor-pointer shrink-0 transition-colors ${
                       isSelected
                         ? 'font-medium text-black underline underline-offset-4'
                         : 'opacity-40 hover:opacity-100 no-underline'
@@ -547,28 +562,45 @@ export default function ArchiveApp({
             </div>
 
             {/* Style Tags within Selected Group */}
-            <nav>
-              <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px]">
-                {currentPosterTags.map((tag) => {
-                  const isSelected = selectedTag === tag;
-                  return (
-                    <li key={tag} className="inline-block">
-                      <button
-                        type="button"
-                        onClick={() => setSelectedTag(tag)}
-                        className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
-                          isSelected
-                            ? 'underline underline-offset-4 font-normal text-black'
-                            : 'no-underline opacity-60 hover:opacity-100'
-                        }`}
-                      >
-                        {tag}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
+            <div className="flex items-center justify-between gap-2 pt-0.5">
+              <nav className="flex-1 overflow-x-auto md:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+                <ul className="flex items-center gap-x-3.5 md:gap-x-4 whitespace-nowrap md:whitespace-normal md:flex-wrap text-[13px]">
+                  {currentPosterTags.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+
+              {/* Mobile Category Drawer Trigger Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setCategorySearchQuery('');
+                  setIsCategoryDrawerOpen(true);
+                }}
+                className="shrink-0 text-[11px] tracking-tight px-2 py-0.5 border border-black/20 hover:border-black/50 transition-colors bg-white select-none flex items-center gap-1 md:hidden"
+                title="전체 70개 스타일 목록 보기"
+              >
+                <span>전체 목록</span>
+                <span className="text-[9px] opacity-60">⊞</span>
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -733,6 +765,123 @@ export default function ArchiveApp({
             >
               목록으로 돌아가기
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Category Explorer Modal / Bottom Sheet */}
+      {isCategoryDrawerOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 select-none"
+          onClick={() => setIsCategoryDrawerOpen(false)}
+        >
+          <div
+            className="w-full sm:max-w-xl max-h-[85vh] bg-white text-black border-t sm:border border-black/20 flex flex-col overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="px-5 py-3.5 border-b border-black/10 flex items-center justify-between bg-white">
+              <div className="flex items-baseline gap-2">
+                <span className="text-[14px] font-medium">스타일 카테고리 (70)</span>
+                <span className="text-[12px] opacity-40">총 {posterList.length}개</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsCategoryDrawerOpen(false)}
+                className="text-[13px] opacity-60 hover:opacity-100 px-2 py-1 border-0 bg-transparent cursor-pointer font-sans"
+              >
+                닫기 ✕
+              </button>
+            </div>
+
+            {/* Live Search Input */}
+            <div className="px-5 py-2.5 border-b border-black/10 bg-neutral-50/50">
+              <input
+                type="text"
+                value={categorySearchQuery}
+                onChange={(e) => setCategorySearchQuery(e.target.value)}
+                placeholder="스타일 검색 (예: Y2K, Bauhaus, Cyberpunk)..."
+                className="w-full text-[13px] bg-transparent outline-none border-b border-black/20 focus:border-black py-1 placeholder:opacity-40"
+              />
+            </div>
+
+            {/* Modal Body: Groups and Styles */}
+            <div className="p-5 overflow-y-auto space-y-6 flex-1 overscroll-contain">
+              {/* Option to select All */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedGroup('All');
+                    setSelectedTag('전체');
+                    setIsCategoryDrawerOpen(false);
+                  }}
+                  className={`text-[13px] px-3 py-1.5 border transition-colors cursor-pointer ${
+                    selectedGroup === 'All' && selectedTag === '전체'
+                      ? 'bg-black text-white border-black font-medium'
+                      : 'border-black/20 hover:border-black bg-transparent'
+                  }`}
+                >
+                  전체 포스터 보기 ({posterList.length})
+                </button>
+              </div>
+
+              {/* Group list */}
+              {POSTER_GROUPS.filter((g) => g !== 'All').map((grp) => {
+                const stylesInGroup = POSTER_BASE_STYLES.filter((s) => s.group === grp);
+                const filteredStyles = categorySearchQuery.trim()
+                  ? stylesInGroup.filter(
+                      (s) =>
+                        s.title.toLowerCase().includes(categorySearchQuery.toLowerCase()) ||
+                        s.shortDesc.toLowerCase().includes(categorySearchQuery.toLowerCase())
+                    )
+                  : stylesInGroup;
+
+                if (filteredStyles.length === 0) return null;
+
+                return (
+                  <div key={grp} className="space-y-2">
+                    <div className="flex items-baseline justify-between border-b border-black/10 pb-1">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedGroup(grp);
+                          setSelectedTag('전체');
+                          setIsCategoryDrawerOpen(false);
+                        }}
+                        className="text-[13px] font-medium hover:underline text-left bg-transparent border-0 p-0 cursor-pointer"
+                      >
+                        {grp} <span className="text-[11px] opacity-60">[{stylesInGroup.length * 30}]</span>
+                      </button>
+                      <span className="text-[11px] opacity-40">{filteredStyles.length}개 스타일</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {filteredStyles.map((style) => {
+                        const isCurrent = selectedTag === style.title;
+                        return (
+                          <button
+                            key={style.id}
+                            type="button"
+                            onClick={() => {
+                              setSelectedGroup(grp);
+                              setSelectedTag(style.title);
+                              setIsCategoryDrawerOpen(false);
+                            }}
+                            className={`text-[12px] px-2.5 py-1 transition-colors border cursor-pointer ${
+                              isCurrent
+                                ? 'bg-black text-white border-black font-medium'
+                                : 'bg-black/[0.02] border-black/10 hover:border-black/40 text-black'
+                            }`}
+                          >
+                            {style.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
