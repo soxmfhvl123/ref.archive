@@ -68,6 +68,7 @@ const TiltCard = memo(function TiltCard({
   };
 
   const handleMouseLeave = () => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
     isHoveredRef.current = false;
     const card = cardRef.current;
     if (card) {
@@ -92,24 +93,20 @@ const TiltCard = memo(function TiltCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative select-none cursor-pointer group ${className}`}
-      style={{
-        transformStyle: 'preserve-3d',
-        willChange: 'transform',
-      }}
+      className={`relative select-none cursor-pointer group md:[transform-style:preserve-3d] ${className}`}
     >
-      {/* Chromatic fringe sheen on hover */}
+      {/* Chromatic fringe sheen on hover - Desktop only */}
       <div
         ref={chromaticRef}
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none z-20 border border-black/10 mix-blend-difference opacity-0 transition-opacity duration-200"
+        className="hidden md:block absolute inset-0 pointer-events-none z-20 border border-black/10 mix-blend-difference opacity-0 transition-opacity duration-200"
       />
 
-      {/* Dynamic specular glare overlay */}
+      {/* Dynamic specular glare overlay - Desktop only */}
       <div
         ref={glareRef}
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none z-30 opacity-0 transition-opacity duration-300"
+        className="hidden md:block absolute inset-0 pointer-events-none z-30 opacity-0 transition-opacity duration-300"
         style={{
           mixBlendMode: 'overlay',
         }}

@@ -5,7 +5,7 @@
   <circle cx="130" cy="100" r="10" fill="#FFFFFF" opacity="0.3"/>
   <circle cx="160" cy="100" r="10" fill="#FFFFFF" opacity="0.3"/>
   <text x="100" y="360" font-family="-apple-system, sans-serif" font-weight="800" font-size="64" fill="#FFFFFF">Snarkitecture</text>
-  <text x="100" y="420" font-family="-apple-system, sans-serif" font-weight="400" font-size="28" fill="#AAAAAA">Spatial & Exhibition · 공간 & 전시 디자인</text>
+  <text x="100" y="420" font-family="-apple-system, sans-serif" font-weight="400" font-size="28" fill="#AAAAAA">Spatial &amp; Exhibition · 공간 &amp; 전시 디자인</text>
   <line x1="100" y1="470" x2="400" y2="470" stroke="#FFFFFF" stroke-width="4"/>
   <text x="100" y="680" font-family="monospace" font-size="20" fill="#AAAAAA">ref. archive capture</text>
 </svg>

@@ -18,10 +18,10 @@
     <line x1="0" y1="24" x2="1000" y2="24" stroke="#FFEDD5" stroke-width="1" opacity="0.2"/>
   </g>
 
-  <!-- Group Badge & Subcategory -->
+  <!-- Group Badge &amp; Subcategory -->
   <g transform="translate(100, 220)">
     <rect x="0" y="0" width="160" height="32" fill="#FB923C" rx="2"/>
-    <text class="font-sans" x="80" y="21" font-size="13" font-weight="700" fill="#0F172A" text-anchor="middle" letter-spacing="1.5">PRINT & ANALOG</text>
+    <text class="font-sans" x="80" y="21" font-size="13" font-weight="700" fill="#0F172A" text-anchor="middle" letter-spacing="1.5">PRINT &amp; ANALOG</text>
     <text class="font-mono" x="180" y="21" font-size="14" fill="#FFEDD5" opacity="0.6" letter-spacing="1">CURATION · 2026 REF-ARCHIVE</text>
   </g>
 
@@ -41,7 +41,7 @@
       
   </g>
 
-  <!-- Title & Typographic Composition -->
+  <!-- Title &amp; Typographic Composition -->
   <g transform="translate(100, 1180)">
     <text class="font-sans" x="0" y="70" font-size="82" font-weight="800" fill="#FFEDD5" letter-spacing="-1.5">Duotone</text>
     <text class="font-sans" x="0" y="125" font-size="28" font-weight="400" fill="#FB923C" opacity="0.95">상반된 2가지 팬톤 컬러 배색</text>
@@ -54,7 +54,7 @@
     <g transform="translate(0, 0)">
       <text class="font-mono" x="0" y="0" font-size="13" fill="#FFEDD5" opacity="0.45" letter-spacing="2">01 / VISUAL ANATOMY</text>
       <text class="font-sans" x="0" y="28" font-size="16" fill="#FFEDD5" opacity="0.85" width="460">
-        암부와 명부를 두 가지 단색(예: 딥 블루 & 네온 오렌지)으로...
+        암부와 명부를 두 가지 단색(예: 딥 블루 &amp; 네온 오렌지)으로...
       </text>
     </g>
 
@@ -67,7 +67,7 @@
     </g>
   </g>
 
-  <!-- Footer Technical Grid & Barcode -->
+  <!-- Footer Technical Grid &amp; Barcode -->
   <g transform="translate(100, 1490)">
     <text class="font-mono" x="0" y="0" font-size="12" fill="#FFEDD5" opacity="0.35" letter-spacing="3">DIMENSION: 1200 x 1600 · RATIO: 3:4 · ARCHIVE.SITE</text>
     

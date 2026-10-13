@@ -351,7 +351,7 @@ export default function ArchiveApp({
     return [...filteredReferences].reverse();
   }, [filteredReferences]);
 
-  const BATCH_SIZE = 24;
+  const BATCH_SIZE = 12;
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
@@ -364,7 +364,7 @@ export default function ArchiveApp({
     return sortedReferences.slice(0, visibleCount);
   }, [sortedReferences, visibleCount]);
 
-  // Infinite scroll: smoothly load next batch 800px before reaching page bottom
+  // Infinite scroll: smoothly load next batch 300px before reaching page bottom
   useEffect(() => {
     if (viewMode !== 'grid') return;
     if (visibleCount >= sortedReferences.length) return;
@@ -375,7 +375,7 @@ export default function ArchiveApp({
           setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, sortedReferences.length));
         }
       },
-      { rootMargin: '800px' }
+      { rootMargin: '300px' }
     );
 
     const el = loadMoreRef.current;
@@ -387,12 +387,12 @@ export default function ArchiveApp({
   }, [viewMode, visibleCount, sortedReferences.length]);
 
   return (
-    <main className="min-h-screen bg-transparent text-black px-6 md:px-10 pb-10 select-none relative">
-      {/* Category & Site-hover reactive dynamic ambient gradient background (Subscribed to decoupled hoverStore) */}
+    <main className="min-h-screen bg-transparent text-black px-4 sm:px-6 md:px-10 pb-10 select-none relative">
+      {/* Category & Site-hover reactive dynamic ambient gradient background (Desktop only) */}
       <AmbientBackground selectedTag={selectedTag} />
 
-      {/* Sticky Top Bar Container: Header + Category Nav (Transparent to immerse in ambient gradient) */}
-      <div className="sticky top-0 z-40 bg-transparent backdrop-blur-md pt-6 md:pt-10 pb-4 mb-6">
+      {/* Sticky Top Bar Container: Header + Category Nav (Semi-translucent on mobile for 60fps, backdrop-blur on desktop) */}
+      <div className="sticky top-0 z-40 bg-white/95 md:bg-transparent md:backdrop-blur-md pt-4 md:pt-10 pb-3 md:pb-4 mb-4 md:mb-6">
         {/* Line 1: Header + Major Category Switcher + Controls */}
         <header className="mb-4 flex flex-wrap justify-between items-baseline gap-y-3">
           <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">

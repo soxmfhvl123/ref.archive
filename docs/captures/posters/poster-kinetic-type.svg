@@ -18,7 +18,7 @@
     <line x1="0" y1="24" x2="1000" y2="24" stroke="#EDE9FE" stroke-width="1" opacity="0.2"/>
   </g>
 
-  <!-- Group Badge & Subcategory -->
+  <!-- Group Badge &amp; Subcategory -->
   <g transform="translate(100, 220)">
     <rect x="0" y="0" width="160" height="32" fill="#8B5CF6" rx="2"/>
     <text class="font-sans" x="80" y="21" font-size="13" font-weight="700" fill="#0B0914" text-anchor="middle" letter-spacing="1.5">TYPOGRAPHY</text>
@@ -41,7 +41,7 @@
       
   </g>
 
-  <!-- Title & Typographic Composition -->
+  <!-- Title &amp; Typographic Composition -->
   <g transform="translate(100, 1180)">
     <text class="font-sans" x="0" y="70" font-size="82" font-weight="800" fill="#EDE9FE" letter-spacing="-1.5">Kinetic Type</text>
     <text class="font-sans" x="0" y="125" font-size="28" font-weight="400" fill="#8B5CF6" opacity="0.95">잔상과 속도감의 모션 타이포</text>
@@ -67,7 +67,7 @@
     </g>
   </g>
 
-  <!-- Footer Technical Grid & Barcode -->
+  <!-- Footer Technical Grid &amp; Barcode -->
   <g transform="translate(100, 1490)">
     <text class="font-mono" x="0" y="0" font-size="12" fill="#EDE9FE" opacity="0.35" letter-spacing="3">DIMENSION: 1200 x 1600 · RATIO: 3:4 · ARCHIVE.SITE</text>
     

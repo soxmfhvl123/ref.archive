@@ -55,7 +55,7 @@ export default function AmbientBackground({ selectedTag }: AmbientBackgroundProp
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none"
+      className="hidden md:block fixed inset-0 pointer-events-none overflow-hidden z-0 select-none"
       style={{ contain: 'strict' }}
     >
       {/* Heavy Gaussian Blurred Website Main Screen as Dynamic Ambient Gradient (Desktop only to prevent mobile fill-rate lag) */}
