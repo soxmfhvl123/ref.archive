@@ -869,7 +869,7 @@ export default function ArchiveApp({
                         }}
                         className="text-[13px] font-medium hover:underline text-left bg-transparent border-0 p-0 cursor-pointer"
                       >
-                        {grp} <span className="text-[11px] opacity-60">[{stylesInGroup.length * 30}]</span>
+                        {grp} <span className="text-[11px] opacity-60">[{posterList.filter((p) => p.group === grp).length}]</span>
                       </button>
                       <span className="text-[11px] opacity-40">{filteredStyles.length}개 스타일</span>
                     </div>

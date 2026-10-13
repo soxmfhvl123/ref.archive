@@ -864,29 +864,105 @@ export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
   }
 ];
 
+export const POSTER_STYLE_COUNTS: Record<string, number> = {
+  "poster-heat-map": 31,
+  "poster-biomorphism": 32,
+  "poster-3d-surrealism": 35,
+  "poster-frutiger-aero": 33,
+  "poster-halftone": 30,
+  "poster-hyper-bloom": 31,
+  "poster-vaporwave": 32,
+  "poster-ascii": 31,
+  "poster-maximalism": 31,
+  "poster-neo-swiss": 32,
+  "poster-micro-industrial": 30,
+  "poster-acid-wave": 30,
+  "poster-retro-futurism": 28,
+  "poster-pop-illustration": 29,
+  "poster-computer-vision": 32,
+  "poster-dreamscape": 29,
+  "poster-future-medieval": 32,
+  "poster-trinket-design": 36,
+  "poster-vector-surrealism": 28,
+  "poster-y2k": 25,
+  "poster-neo-brutalism": 26,
+  "poster-anti-design": 24,
+  "poster-swiss-punk": 32,
+  "poster-experimental-type": 30,
+  "poster-liquid-type": 31,
+  "poster-blackletter-revival": 30,
+  "poster-stretched-type": 27,
+  "poster-monospace-terminal": 27,
+  "poster-hand-scribble": 35,
+  "poster-kinetic-type": 28,
+  "poster-risograph": 37,
+  "poster-screen-print": 25,
+  "poster-xerox-punk": 30,
+  "poster-cut-paste-collage": 31,
+  "poster-diy-zine": 34,
+  "poster-duotone": 29,
+  "poster-gradient-grain": 35,
+  "poster-scanography": 29,
+  "poster-sticker-bomb": 34,
+  "poster-grunge": 25,
+  "poster-bauhaus": 30,
+  "poster-constructivism": 32,
+  "poster-mid-century-modern": 28,
+  "poster-psychedelic-60s": 35,
+  "poster-memphis": 28,
+  "poster-op-art": 38,
+  "poster-art-nouveau-revival": 35,
+  "poster-showa-retro": 31,
+  "poster-newtro": 30,
+  "poster-archival": 26,
+  "poster-liquid-chrome": 24,
+  "poster-glassmorphism": 29,
+  "poster-inflatable-3d": 32,
+  "poster-claymorphism": 39,
+  "poster-ps1-low-poly": 32,
+  "poster-holographic": 26,
+  "poster-glitch-datamosh": 23,
+  "poster-dithering": 27,
+  "poster-pixel-art": 25,
+  "poster-generative-code-art": 22,
+  "poster-cyberpunk": 24,
+  "poster-solarpunk": 33,
+  "poster-neon-noir": 23,
+  "poster-webcore": 26,
+  "poster-liminal-space": 30,
+  "poster-kawaii-maximal": 17,
+  "poster-anime-graphic": 37,
+  "poster-gothic-romance": 21,
+  "poster-sci-fi-hud": 19,
+  "poster-blueprint-wireframe": 28
+};
+
 export const POSTER_REFERENCES: Reference[] = (() => {
   const list: Reference[] = [];
-  // 60 curated high-resolution graphic posters per style = 4,200 total posters
-  for (let round = 0; round < 60; round++) {
+  const maxRound = Math.max(...POSTER_BASE_STYLES.map((s) => POSTER_STYLE_COUNTS[s.id] || 0));
+  for (let round = 0; round < maxRound; round++) {
     for (const style of POSTER_BASE_STYLES) {
-      const num = round + 1;
-      const id = num === 1 ? style.id : `${style.id}-${num}`;
-      const imageUrl = num === 1 ? `/captures/posters/${style.id}.jpg` : `/captures/posters/${style.id}-${num}.jpg`;
-      const title = `${style.title} #${String(num).padStart(2, '0')}`;
-      list.push({
-        id,
-        title,
-        url: `https://www.pinterest.com/search/pins/?q=${encodeURIComponent(style.title + " graphic design poster")}`,
-        category: style.category,
-        tags: [style.title],
-        shortDesc: '',
-        anatomy: '',
-        principle: '',
-        imageUrl,
-        majorCategory: 'POSTERS',
-        group: style.group,
-        aspectRatio: 'portrait',
-      });
+      const count = POSTER_STYLE_COUNTS[style.id] || 0;
+      if (round < count) {
+        const num = round + 1;
+        const id = num === 1 ? style.id : `${style.id}-${num}`;
+        const imageUrl = num === 1 ? `/captures/posters/${style.id}.jpg` : `/captures/posters/${style.id}-${num}.jpg`;
+        const title = `${style.title} #${String(num).padStart(2, '0')}`;
+        list.push({
+          id,
+          title,
+          url: `https://www.pinterest.com/search/pins/?q=${encodeURIComponent(style.title + " graphic design poster")}`,
+          category: style.category,
+          tags: [style.title],
+          shortDesc: '',
+          anatomy: '',
+          principle: '',
+          imageUrl,
+          majorCategory: 'POSTERS',
+          group: style.group,
+          aspectRatio: 'portrait',
+        });
+      }
     }
   }
   return list;
