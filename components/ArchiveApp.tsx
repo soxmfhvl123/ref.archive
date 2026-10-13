@@ -414,8 +414,8 @@ export default function ArchiveApp({
         majorCategory={majorCategory}
       />
 
-      {/* Sticky Top Bar Container: Header + Category Nav */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-md pt-3 md:pt-8 pb-2.5 md:pb-4 mb-3 md:mb-6 border-b border-black/[0.06] md:border-b-0">
+      {/* Sticky Top Bar Container: Header + Category Nav (Transparent background with backdrop blur) */}
+      <div className="sticky top-0 z-40 bg-transparent backdrop-blur-md pt-3 md:pt-10 pb-2.5 md:pb-4 mb-3 md:mb-6">
         {/* Line 1: Header + Major Category Switcher + Controls */}
         <header className="mb-2.5 md:mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
           <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4 gap-y-1">
@@ -594,7 +594,7 @@ export default function ArchiveApp({
                   setCategorySearchQuery('');
                   setIsCategoryDrawerOpen(true);
                 }}
-                className="shrink-0 text-[11px] tracking-tight px-2 py-0.5 border border-black/20 hover:border-black/50 transition-colors bg-white select-none flex items-center gap-1 md:hidden"
+                className="shrink-0 text-[11px] tracking-tight px-2 py-0.5 border border-black/20 hover:border-black/50 transition-colors bg-transparent select-none flex items-center gap-1 md:hidden"
                 title="전체 70개 스타일 목록 보기"
               >
                 <span>전체 목록</span>
