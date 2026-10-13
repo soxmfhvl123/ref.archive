@@ -69,27 +69,36 @@ export default async function ReferenceDetailPage({
         })()}
 
         {/* Summary, Reference, Link */}
-        <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
-          <p>
-            <span className="opacity-60">요약: </span>
-            {refItem.anatomy}
-          </p>
-          <p>
-            <span className="opacity-60">참고: </span>
-            {refItem.principle}
-          </p>
-          <p>
-            <span className="opacity-60">링크: </span>
-            <a
-              href={refItem.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4"
-            >
-              {refItem.url}
-            </a>
-          </p>
-        </div>
+        {(() => {
+          const isPoster = refItem.majorCategory === 'POSTERS' || refItem.aspectRatio === 'portrait';
+          return (
+            <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
+              {!isPoster && (
+                <>
+                  <p>
+                    <span className="opacity-60">요약: </span>
+                    {refItem.anatomy}
+                  </p>
+                  <p>
+                    <span className="opacity-60">참고: </span>
+                    {refItem.principle}
+                  </p>
+                </>
+              )}
+              <p>
+                <span className="opacity-60">링크: </span>
+                <a
+                  href={refItem.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4"
+                >
+                  {isPoster ? '핀터레스트 레퍼런스 탐색 ↗' : refItem.url}
+                </a>
+              </p>
+            </div>
+          );
+        })()}
       </div>
 
       <div className="mt-12 pt-6">

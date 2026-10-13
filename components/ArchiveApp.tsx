@@ -207,7 +207,9 @@ const GridReferenceCard = memo(function GridReferenceCard({
               <span className="text-[11px] opacity-40 uppercase tracking-wider">{refItem.group}</span>
             )}
           </div>
-          <div className="opacity-60 text-[13px]">{refItem.shortDesc}</div>
+          {!isPoster && refItem.shortDesc && (
+            <div className="opacity-60 text-[13px]">{refItem.shortDesc}</div>
+          )}
         </div>
       </TiltCard>
     </article>
@@ -246,7 +248,9 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
           {refItem.title}
         </a>
       </td>
-      <td className="py-2.5 pr-6 opacity-60 font-normal">{refItem.shortDesc}</td>
+      <td className="py-2.5 pr-6 opacity-60 font-normal">
+        {refItem.majorCategory === 'POSTERS' ? '' : refItem.shortDesc}
+      </td>
       <td className="py-2.5 pr-6 opacity-60 font-normal">
         {refItem.tags.join(', ')}
       </td>
@@ -277,9 +281,6 @@ export default function ArchiveApp({
       setMajorCategory(cat);
       setSelectedGroup('All');
       setSelectedTag('전체');
-      if (cat === 'POSTERS' && viewMode === 'canvas') {
-        setViewMode('grid');
-      }
       if (typeof window !== 'undefined') {
         const newHash = cat === 'POSTERS' ? '#posters' : '#web';
         if (window.location.hash !== newHash) {
@@ -683,14 +684,18 @@ export default function ArchiveApp({
 
             {/* Detail Details: Summary, Reference, Link */}
             <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
-              <p>
-                <span className="opacity-60">요약: </span>
-                {activeRef.anatomy}
-              </p>
-              <p>
-                <span className="opacity-60">참고: </span>
-                {activeRef.principle}
-              </p>
+              {activeRef.majorCategory !== 'POSTERS' && (
+                <>
+                  <p>
+                    <span className="opacity-60">요약: </span>
+                    {activeRef.anatomy}
+                  </p>
+                  <p>
+                    <span className="opacity-60">참고: </span>
+                    {activeRef.principle}
+                  </p>
+                </>
+              )}
               <p>
                 <span className="opacity-60">링크: </span>
                 <a

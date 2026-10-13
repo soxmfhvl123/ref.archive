@@ -47,12 +47,14 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
     const w = typeof window !== 'undefined' ? window.innerWidth : 1440;
     const h = typeof window !== 'undefined' ? window.innerHeight : 900;
 
-    const cardWidth = 230;
-    const cardHeight = 175;
-
-    const cols = Math.max(2, Math.floor((w - 60) / (cardWidth + 40)));
+    const defaultCardWidth = 230;
+    const cols = Math.max(2, Math.floor((w - 60) / (defaultCardWidth + 40)));
 
     const initialCards: PhysicsCard[] = displayItems.map((item, idx) => {
+      const isPoster = item.majorCategory === 'POSTERS' || item.aspectRatio === 'portrait';
+      const cardWidth = isPoster ? 175 : 230;
+      const cardHeight = isPoster ? 250 : 175;
+
       const col = idx % cols;
       const row = Math.floor(idx / cols);
 
@@ -289,38 +291,50 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
             }}
           >
             {/* Card Media Preview */}
-            <div className="relative w-full aspect-[16/10] bg-neutral-100 overflow-hidden pointer-events-none">
-              <Image
-                src={imageSrc}
-                alt={card.refItem.title}
-                fill
-                sizes="240px"
-                className={`object-cover object-top transition-opacity ${
-                  isHovered && videoSrc ? 'opacity-0' : 'opacity-100'
-                }`}
-                unoptimized
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  if (target.src !== fallbackSrc) target.src = fallbackSrc;
-                }}
-              />
-              {videoSrc && isHovered && (
-                <video
-                  src={videoSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
-              )}
-            </div>
+            {(() => {
+              const isPoster = card.refItem.majorCategory === 'POSTERS' || card.refItem.aspectRatio === 'portrait';
+              return (
+                <>
+                  <div
+                    style={{ aspectRatio: isPoster ? '3 / 4' : '16 / 10' }}
+                    className={`relative w-full ${isPoster ? 'aspect-[3/4]' : 'aspect-[16/10]'} bg-neutral-100 overflow-hidden pointer-events-none`}
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt={card.refItem.title}
+                      fill
+                      sizes="240px"
+                      className={`${isPoster ? 'object-contain' : 'object-cover'} object-top transition-opacity ${
+                        isHovered && videoSrc ? 'opacity-0' : 'opacity-100'
+                      }`}
+                      unoptimized
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        if (target.src !== fallbackSrc) target.src = fallbackSrc;
+                      }}
+                    />
+                    {videoSrc && isHovered && (
+                      <video
+                        src={videoSrc}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover object-top"
+                      />
+                    )}
+                  </div>
 
-            {/* Card Label */}
-            <div className="p-2 text-[12px] leading-tight space-y-0.5 pointer-events-none">
-              <div className="font-normal truncate tracking-tight">{card.refItem.title}</div>
-              <div className="opacity-50 text-[11px] truncate">{card.refItem.tags[0]}</div>
-            </div>
+                  {/* Card Label */}
+                  <div className="p-2 text-[12px] leading-tight space-y-0.5 pointer-events-none">
+                    <div className="font-normal truncate tracking-tight">{card.refItem.title}</div>
+                    {!isPoster && (
+                      <div className="opacity-50 text-[11px] truncate">{card.refItem.tags[0]}</div>
+                    )}
+                  </div>
+                </>
+              );
+            })()}
           </div>
         );
       })}

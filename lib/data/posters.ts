@@ -866,8 +866,8 @@ export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
 
 export const POSTER_REFERENCES: Reference[] = (() => {
   const list: Reference[] = [];
-  // 8 curated high-resolution graphic posters per style = 560 total posters
-  for (let round = 0; round < 8; round++) {
+  // 30 curated high-resolution graphic posters per style = 2,100 total posters
+  for (let round = 0; round < 30; round++) {
     for (const style of POSTER_BASE_STYLES) {
       const num = round + 1;
       const id = num === 1 ? style.id : `${style.id}-${num}`;
