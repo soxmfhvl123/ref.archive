@@ -220,10 +220,12 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
   refItem,
   idx,
   onSelect,
+  isPostersView,
 }: {
   refItem: Reference;
   idx: number;
   onSelect: (ref: Reference) => void;
+  isPostersView?: boolean;
 }) {
   return (
     <tr
@@ -232,12 +234,12 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
         hoverStore.setHovered(refItem);
       }}
       onMouseLeave={() => hoverStore.setHovered(null)}
-      className="cursor-pointer hover:bg-black/[0.02] transition-colors"
+      className="cursor-pointer hover:bg-black/[0.03] transition-colors"
     >
       <td className="py-2.5 pr-4 opacity-40 font-normal">
         {String(idx + 1).padStart(3, '0')}
       </td>
-      <td className="py-2.5 pr-6 font-normal">
+      <td className={`py-2.5 pr-6 font-normal ${isPostersView ? 'w-1/2' : 'w-1/3'}`}>
         <a
           href={refItem.url}
           target="_blank"
@@ -248,9 +250,11 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
           {refItem.title}
         </a>
       </td>
-      <td className="py-2.5 pr-6 opacity-60 font-normal">
-        {refItem.majorCategory === 'POSTERS' ? '' : refItem.shortDesc}
-      </td>
+      {!isPostersView && (
+        <td className="py-2.5 pr-6 opacity-60 font-normal w-1/3">
+          {refItem.shortDesc}
+        </td>
+      )}
       <td className="py-2.5 pr-6 opacity-60 font-normal">
         {refItem.tags.join(', ')}
       </td>
@@ -390,7 +394,11 @@ export default function ArchiveApp({
   return (
     <main className="min-h-screen bg-transparent text-black px-4 sm:px-6 md:px-10 pb-10 select-none relative">
       {/* Category & Site-hover reactive dynamic ambient gradient background (Desktop only) */}
-      <AmbientBackground selectedTag={selectedTag} />
+      <AmbientBackground
+        selectedTag={selectedTag}
+        viewMode={viewMode}
+        majorCategory={majorCategory}
+      />
 
       {/* Sticky Top Bar Container: Header + Category Nav (Semi-translucent on mobile for 60fps, backdrop-blur on desktop) */}
       <div className="sticky top-0 z-40 bg-white/95 md:bg-transparent md:backdrop-blur-md pt-4 md:pt-10 pb-3 md:pb-4 mb-4 md:mb-6">
@@ -599,8 +607,12 @@ export default function ArchiveApp({
               <thead>
                 <tr className="opacity-40 font-normal pb-4">
                   <th className="py-2 pr-4 font-normal w-12">#</th>
-                  <th className="py-2 pr-6 font-normal w-1/3">제목</th>
-                  <th className="py-2 pr-6 font-normal w-1/3">설명</th>
+                  <th className={`py-2 pr-6 font-normal ${majorCategory === 'POSTERS' ? 'w-1/2' : 'w-1/3'}`}>
+                    제목
+                  </th>
+                  {majorCategory !== 'POSTERS' && (
+                    <th className="py-2 pr-6 font-normal w-1/3">설명</th>
+                  )}
                   <th className="py-2 pr-6 font-normal">태그</th>
                 </tr>
               </thead>
@@ -611,6 +623,7 @@ export default function ArchiveApp({
                     refItem={refItem}
                     idx={idx}
                     onSelect={handleSelectRef}
+                    isPostersView={majorCategory === 'POSTERS'}
                   />
                 ))}
               </tbody>
