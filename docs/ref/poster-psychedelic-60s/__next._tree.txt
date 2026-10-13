@@ -1,5 +1,5 @@
-:HL["/_next/static/css/4d9273ab48f1e7fe.css","style"]
+:HL["/_next/static/css/1feb40893c55c1a2.css","style"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"id","t":"d","k":"poster-psychedelic-60s","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"ref","h":96,"c":"$Q2"}]]
-0:{"b":"VU9oT1E8zEF7T44pNvCnU","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"EuYDj-8n5V2bY7wS5yocA","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

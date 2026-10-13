@@ -133,7 +133,7 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
 
   const fullVideoSrc = !isMobile && videoUrl ? getFullPath(videoUrl) : undefined;
   const shouldMountVideo = !isMobile && isHovered && fullVideoSrc && !hasVideoError;
-  const fallbackPath = isPoster || imageUrl.includes('/posters/') ? imageUrl : `/captures/${id}.svg`;
+  const fallbackPath = isPoster || imageUrl.includes('/posters/') ? imageUrl.replace('.jpg', '.svg') : `/captures/${id}.svg`;
 
   return (
     <div
@@ -674,7 +674,7 @@ export default function ArchiveApp({
                 alt={activeRef.title}
                 fallbackSvg={
                   activeRef.majorCategory === 'POSTERS' || activeRef.imageUrl.includes('/posters/')
-                    ? activeRef.imageUrl
+                    ? activeRef.imageUrl.replace('.jpg', '.svg')
                     : `/captures/${activeRef.id}.svg`
                 }
                 objectFit="object-contain"

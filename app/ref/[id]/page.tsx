@@ -49,16 +49,24 @@ export default async function ReferenceDetailPage({
         <h1 className="text-[18px] font-normal mb-8">{refItem.title}</h1>
 
         {/* Large Capture */}
-        <div className="relative w-full max-w-5xl aspect-[16/10] mb-8 bg-white overflow-hidden">
-          <Image
-            src={refItem.imageUrl}
-            alt={refItem.title}
-            fill
-            sizes="100vw"
-            className="object-contain object-top"
-            unoptimized
-          />
-        </div>
+        {(() => {
+          const isPoster = refItem.majorCategory === 'POSTERS' || refItem.aspectRatio === 'portrait';
+          return (
+            <div
+              style={{ aspectRatio: isPoster ? '3 / 4' : '16 / 10' }}
+              className={`relative w-full ${isPoster ? 'max-w-xl aspect-[3/4]' : 'max-w-5xl aspect-[16/10]'} mb-8 bg-white overflow-hidden`}
+            >
+              <Image
+                src={refItem.imageUrl}
+                alt={refItem.title}
+                fill
+                sizes="100vw"
+                className="object-contain object-top"
+                unoptimized
+              />
+            </div>
+          );
+        })()}
 
         {/* Summary, Reference, Link */}
         <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
