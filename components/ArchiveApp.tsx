@@ -346,10 +346,10 @@ export default function ArchiveApp({
     return list;
   }, [currentDataset, majorCategory, selectedGroup, selectedTag]);
 
-  // 'newest' is the default sorting (latest added first)
+  // 'newest' is the default sorting for WEB (latest added first). For POSTERS, preserve curated series order.
   const sortedReferences = useMemo(() => {
-    return [...filteredReferences].reverse();
-  }, [filteredReferences]);
+    return majorCategory === 'WEB' ? [...filteredReferences].reverse() : [...filteredReferences];
+  }, [filteredReferences, majorCategory]);
 
   const BATCH_SIZE = 12;
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
