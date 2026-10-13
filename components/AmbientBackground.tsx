@@ -2,11 +2,12 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { hoverStore, HoverData } from '@/lib/hoverStore';
+import { MajorCategory } from '@/lib/types';
 
 interface AmbientBackgroundProps {
   selectedTag: string;
   viewMode?: 'grid' | 'index' | 'canvas';
-  majorCategory?: 'WEB' | 'POSTERS';
+  majorCategory?: MajorCategory;
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';

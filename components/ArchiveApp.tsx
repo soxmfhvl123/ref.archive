@@ -3,6 +3,7 @@
 import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
 import { Reference, MajorCategory } from '@/lib/types';
 import { POSTER_GROUPS, POSTER_BASE_STYLES } from '@/lib/data/posters';
+import { FURNITURE_GROUPS } from '@/lib/data/furniture';
 import Image from 'next/image';
 import TiltCard from '@/components/TiltCard';
 import CanvasView from '@/components/CanvasView';
@@ -12,9 +13,11 @@ import { hoverStore } from '@/lib/hoverStore';
 interface ArchiveAppProps {
   initialWebReferences?: Reference[];
   initialPosterReferences?: Reference[];
+  initialFurnitureReferences?: Reference[];
   initialReferences?: Reference[];
   initialTags?: string[];
   initialPosterTags?: string[];
+  initialFurnitureTags?: string[];
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -177,7 +180,8 @@ const GridReferenceCard = memo(function GridReferenceCard({
   isMobile?: boolean;
 }) {
   const isPoster = refItem.majorCategory === 'POSTERS';
-  const cardAspectRatio = isPoster ? 'aspect-[3/4]' : 'aspect-[16/10]';
+  const isFurniture = refItem.majorCategory === 'FURNITURE';
+  const cardAspectRatio = isPoster ? 'aspect-[3/4]' : isFurniture ? 'aspect-[4/3]' : 'aspect-[16/10]';
 
   return (
     <article className="block bg-transparent">
@@ -203,11 +207,11 @@ const GridReferenceCard = memo(function GridReferenceCard({
         <div className="text-[13px] sm:text-[14px] leading-tight space-y-0.5 sm:space-y-1">
           <div className="flex items-baseline justify-between gap-1.5 sm:gap-2">
             <span className="font-normal tracking-tight truncate">{refItem.title}</span>
-            {isPoster && refItem.group && (
+            {refItem.group && (isPoster || isFurniture) && (
               <span className="hidden sm:inline-block text-[11px] opacity-40 uppercase tracking-wider shrink-0">{refItem.group}</span>
             )}
           </div>
-          {!isPoster && refItem.shortDesc && (
+          {refItem.shortDesc && (
             <div className="opacity-60 text-[12px] sm:text-[13px] line-clamp-1">{refItem.shortDesc}</div>
           )}
         </div>
@@ -221,11 +225,13 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
   idx,
   onSelect,
   isPostersView,
+  isFurnitureView,
 }: {
   refItem: Reference;
   idx: number;
   onSelect: (ref: Reference) => void;
   isPostersView?: boolean;
+  isFurnitureView?: boolean;
 }) {
   return (
     <tr
@@ -239,7 +245,7 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
       <td className="py-2.5 pr-4 opacity-40 font-normal">
         {String(idx + 1).padStart(3, '0')}
       </td>
-      <td className={`py-2.5 pr-6 font-normal ${isPostersView ? 'w-1/2' : 'w-1/3'}`}>
+      <td className={`py-2.5 pr-6 font-normal ${isPostersView ? 'w-1/2' : isFurnitureView ? 'w-1/4' : 'w-1/3'}`}>
         <a
           href={refItem.url}
           target="_blank"
@@ -250,11 +256,20 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
           {refItem.title}
         </a>
       </td>
-      {!isPostersView && (
+      {isFurnitureView ? (
+        <>
+          <td className="py-2.5 pr-6 opacity-60 font-normal w-1/4">
+            {refItem.shortDesc}
+          </td>
+          <td className="py-2.5 pr-6 opacity-60 font-normal w-1/3">
+            {refItem.anatomy}
+          </td>
+        </>
+      ) : !isPostersView ? (
         <td className="py-2.5 pr-6 opacity-60 font-normal w-1/3">
           {refItem.shortDesc}
         </td>
-      )}
+      ) : null}
       <td className="py-2.5 pr-6 opacity-60 font-normal">
         {refItem.tags.join(', ')}
       </td>
@@ -265,9 +280,11 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
 export default function ArchiveApp({
   initialWebReferences = [],
   initialPosterReferences = [],
+  initialFurnitureReferences = [],
   initialReferences = [],
   initialTags = [],
   initialPosterTags = [],
+  initialFurnitureTags = [],
 }: ArchiveAppProps) {
   const [majorCategory, setMajorCategory] = useState<MajorCategory>('WEB');
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
@@ -292,7 +309,13 @@ export default function ArchiveApp({
 
   const webList = initialWebReferences.length > 0 ? initialWebReferences : initialReferences;
   const posterList = initialPosterReferences;
-  const currentDataset = majorCategory === 'WEB' ? webList : posterList;
+  const furnitureList = initialFurnitureReferences;
+  const currentDataset =
+    majorCategory === 'WEB'
+      ? webList
+      : majorCategory === 'POSTERS'
+      ? posterList
+      : furnitureList;
 
   const handleSwitchMajorCategory = useCallback(
     (cat: MajorCategory) => {
@@ -300,7 +323,7 @@ export default function ArchiveApp({
       setSelectedGroup('All');
       setSelectedTag('전체');
       if (typeof window !== 'undefined') {
-        const newHash = cat === 'POSTERS' ? '#posters' : '#web';
+        const newHash = cat === 'POSTERS' ? '#posters' : cat === 'FURNITURE' ? '#furniture' : '#web';
         if (window.location.hash !== newHash) {
           window.history.replaceState(null, '', newHash);
         }
@@ -317,6 +340,8 @@ export default function ArchiveApp({
       const tab = params.get('tab') || params.get('category');
       if (hash === '#posters' || hash === '#poster' || tab === 'posters' || tab === 'poster') {
         setMajorCategory('POSTERS');
+      } else if (hash === '#furniture' || hash === '#furn' || tab === 'furniture' || tab === 'furn') {
+        setMajorCategory('FURNITURE');
       }
     }
   }, []);
@@ -330,6 +355,16 @@ export default function ArchiveApp({
     pool.forEach((p) => p.tags.forEach((t) => tagsSet.add(t)));
     return ['전체', ...Array.from(tagsSet)];
   }, [posterList, selectedGroup]);
+
+  const currentFurnitureTags = useMemo(() => {
+    let pool = furnitureList;
+    if (selectedGroup !== 'All') {
+      pool = pool.filter((f) => f.group === selectedGroup);
+    }
+    const tagsSet = new Set<string>();
+    pool.forEach((f) => f.tags.forEach((t) => tagsSet.add(t)));
+    return ['전체', ...Array.from(tagsSet)];
+  }, [furnitureList, selectedGroup]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -356,7 +391,16 @@ export default function ArchiveApp({
     hoverStore.setHovered(null);
     setActiveRef(null);
     if (typeof window !== 'undefined' && window.location.hash.startsWith('#ref-')) {
-      window.history.replaceState(null, '', window.location.pathname + (majorCategory === 'POSTERS' ? '#posters' : '#web'));
+      window.history.replaceState(
+        null,
+        '',
+        window.location.pathname +
+          (majorCategory === 'POSTERS'
+            ? '#posters'
+            : majorCategory === 'FURNITURE'
+            ? '#furniture'
+            : '#web')
+      );
     }
   }, [majorCategory]);
 
@@ -374,7 +418,7 @@ export default function ArchiveApp({
 
   const filteredReferences = useMemo(() => {
     let list = currentDataset;
-    if (majorCategory === 'POSTERS' && selectedGroup !== 'All') {
+    if ((majorCategory === 'POSTERS' || majorCategory === 'FURNITURE') && selectedGroup !== 'All') {
       list = list.filter((ref) => ref.group === selectedGroup);
     }
     if (selectedTag !== '전체') {
@@ -444,7 +488,7 @@ export default function ArchiveApp({
               ref-archive
             </h1>
 
-            {/* Major Category Switcher: WEB / POSTERS (Typographic switcher, no boxes/borders) */}
+            {/* Major Category Switcher: WEB / POSTERS / FURNITURE (Typographic switcher, no boxes/borders) */}
             <div className="flex items-baseline gap-2 text-[14px]">
               <button
                 type="button"
@@ -468,6 +512,18 @@ export default function ArchiveApp({
                 }`}
               >
                 POSTERS <span className="text-[12px] opacity-60">[{posterList.length}]</span>
+              </button>
+              <span className="opacity-20 text-[12px] select-none">/</span>
+              <button
+                type="button"
+                onClick={() => handleSwitchMajorCategory('FURNITURE')}
+                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
+                  majorCategory === 'FURNITURE'
+                    ? 'font-medium underline underline-offset-4 text-black'
+                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                }`}
+              >
+                FURNITURE <span className="text-[12px] opacity-60">[{furnitureList.length}]</span>
               </button>
             </div>
 
@@ -551,6 +607,61 @@ export default function ArchiveApp({
               })}
             </ul>
           </nav>
+        ) : majorCategory === 'FURNITURE' ? (
+          /* Furniture Groups & Tags Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
+          <div className="space-y-2">
+            {/* Furniture Group Switcher */}
+            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-black/10 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+              {FURNITURE_GROUPS.map((grp) => {
+                const isSelected = selectedGroup === grp;
+                const count = grp === 'All' ? furnitureList.length : furnitureList.filter((f) => f.group === grp).length;
+                return (
+                  <button
+                    key={grp}
+                    type="button"
+                    onClick={() => {
+                      setSelectedGroup(grp);
+                      setSelectedTag('전체');
+                    }}
+                    className={`bg-transparent p-0 border-0 cursor-pointer shrink-0 transition-colors ${
+                      isSelected
+                        ? 'font-medium text-black underline underline-offset-4'
+                        : 'opacity-40 hover:opacity-100 no-underline'
+                    }`}
+                  >
+                    {grp} <span className="text-[11px] opacity-60">[{count}]</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Furniture Tags within Selected Group */}
+            <div className="flex items-center justify-between gap-2 pt-0.5">
+              <nav className="flex-1 overflow-x-auto md:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+                <ul className="flex items-center gap-x-3.5 md:gap-x-4 whitespace-nowrap md:whitespace-normal md:flex-wrap text-[13px]">
+                  {currentFurnitureTags.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </div>
+          </div>
         ) : (
           /* Posters Groups & Styles Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
           <div className="space-y-2">
@@ -627,11 +738,13 @@ export default function ArchiveApp({
       <section className="relative z-10">
         {viewMode === 'grid' && (
           <>
-            {/* Grid View with Responsive Columns (Web vs Poster) */}
+            {/* Grid View with Responsive Columns (Web vs Poster vs Furniture) */}
             <div
               className={
                 majorCategory === 'POSTERS'
                   ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-3.5 gap-y-7 sm:gap-x-6 sm:gap-y-10'
+                  : majorCategory === 'FURNITURE'
+                  ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8 sm:gap-x-7 sm:gap-y-10'
                   : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10'
               }
             >
@@ -657,12 +770,17 @@ export default function ArchiveApp({
               <thead>
                 <tr className="opacity-40 font-normal pb-4">
                   <th className="py-2 pr-4 font-normal w-12">#</th>
-                  <th className={`py-2 pr-6 font-normal ${majorCategory === 'POSTERS' ? 'w-1/2' : 'w-1/3'}`}>
-                    제목
+                  <th className={`py-2 pr-6 font-normal ${majorCategory === 'POSTERS' ? 'w-1/2' : majorCategory === 'FURNITURE' ? 'w-1/4' : 'w-1/3'}`}>
+                    {majorCategory === 'FURNITURE' ? '이름 / 브랜드' : '제목'}
                   </th>
-                  {majorCategory !== 'POSTERS' && (
+                  {majorCategory === 'FURNITURE' ? (
+                    <>
+                      <th className="py-2 pr-6 font-normal w-1/4">재료·매체</th>
+                      <th className="py-2 pr-6 font-normal w-1/3">참고 포인트</th>
+                    </>
+                  ) : majorCategory !== 'POSTERS' ? (
                     <th className="py-2 pr-6 font-normal w-1/3">설명</th>
-                  )}
+                  ) : null}
                   <th className="py-2 pr-6 font-normal">태그</th>
                 </tr>
               </thead>
@@ -674,6 +792,7 @@ export default function ArchiveApp({
                     idx={idx}
                     onSelect={handleSelectRef}
                     isPostersView={majorCategory === 'POSTERS'}
+                    isFurnitureView={majorCategory === 'FURNITURE'}
                   />
                 ))}
               </tbody>
@@ -728,9 +847,20 @@ export default function ArchiveApp({
 
             {/* Large Capture */}
             <div
-              style={{ aspectRatio: activeRef.majorCategory === 'POSTERS' ? '3 / 4' : '16 / 10' }}
+              style={{
+                aspectRatio:
+                  activeRef.majorCategory === 'POSTERS'
+                    ? '3 / 4'
+                    : activeRef.majorCategory === 'FURNITURE'
+                    ? '4 / 3'
+                    : '16 / 10',
+              }}
               className={`relative w-full ${
-                activeRef.majorCategory === 'POSTERS' ? 'max-w-xl aspect-[3/4]' : 'max-w-5xl aspect-[16/10]'
+                activeRef.majorCategory === 'POSTERS'
+                  ? 'max-w-xl aspect-[3/4]'
+                  : activeRef.majorCategory === 'FURNITURE'
+                  ? 'max-w-4xl aspect-[4/3]'
+                  : 'max-w-5xl aspect-[16/10]'
               } mb-8 bg-white overflow-hidden border border-black/5`}
             >
               <SafeImage
@@ -738,6 +868,8 @@ export default function ArchiveApp({
                 alt={activeRef.title}
                 fallbackSvg={
                   activeRef.majorCategory === 'POSTERS' || activeRef.imageUrl.includes('/posters/')
+                    ? activeRef.imageUrl.replace('.jpg', '.svg')
+                    : activeRef.majorCategory === 'FURNITURE' || activeRef.imageUrl.includes('/furniture/')
                     ? activeRef.imageUrl.replace('.jpg', '.svg')
                     : `/captures/${activeRef.id}.svg`
                 }
@@ -747,7 +879,22 @@ export default function ArchiveApp({
 
             {/* Detail Details: Summary, Reference, Link */}
             <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
-              {activeRef.majorCategory !== 'POSTERS' && (
+              {activeRef.majorCategory === 'FURNITURE' ? (
+                <>
+                  <p>
+                    <span className="opacity-60">재료·매체: </span>
+                    {activeRef.shortDesc}
+                  </p>
+                  <p>
+                    <span className="opacity-60">참고 포인트: </span>
+                    {activeRef.anatomy}
+                  </p>
+                  <p>
+                    <span className="opacity-60">정보: </span>
+                    {activeRef.principle}
+                  </p>
+                </>
+              ) : activeRef.majorCategory !== 'POSTERS' ? (
                 <>
                   <p>
                     <span className="opacity-60">요약: </span>
@@ -758,7 +905,7 @@ export default function ArchiveApp({
                     {activeRef.principle}
                   </p>
                 </>
-              )}
+              ) : null}
               <p>
                 <span className="opacity-60">링크: </span>
                 <a
@@ -769,6 +916,8 @@ export default function ArchiveApp({
                 >
                   {activeRef.majorCategory === 'POSTERS'
                     ? '핀터레스트 레퍼런스 탐색 ↗'
+                    : activeRef.majorCategory === 'FURNITURE'
+                    ? `${activeRef.title} 공식 웹페이지 / 정보 바로가기 ↗`
                     : activeRef.url}
                 </a>
               </p>

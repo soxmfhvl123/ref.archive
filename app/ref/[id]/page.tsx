@@ -71,9 +71,25 @@ export default async function ReferenceDetailPage({
         {/* Summary, Reference, Link */}
         {(() => {
           const isPoster = refItem.majorCategory === 'POSTERS' || refItem.aspectRatio === 'portrait';
+          const isFurniture = refItem.majorCategory === 'FURNITURE';
           return (
             <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
-              {!isPoster && (
+              {isFurniture ? (
+                <>
+                  <p>
+                    <span className="opacity-60">재료·매체: </span>
+                    {refItem.shortDesc}
+                  </p>
+                  <p>
+                    <span className="opacity-60">참고 포인트: </span>
+                    {refItem.anatomy}
+                  </p>
+                  <p>
+                    <span className="opacity-60">정보: </span>
+                    {refItem.principle}
+                  </p>
+                </>
+              ) : !isPoster ? (
                 <>
                   <p>
                     <span className="opacity-60">요약: </span>
@@ -84,7 +100,7 @@ export default async function ReferenceDetailPage({
                     {refItem.principle}
                   </p>
                 </>
-              )}
+              ) : null}
               <p>
                 <span className="opacity-60">링크: </span>
                 <a
@@ -93,7 +109,11 @@ export default async function ReferenceDetailPage({
                   rel="noopener noreferrer"
                   className="underline underline-offset-4"
                 >
-                  {isPoster ? '핀터레스트 레퍼런스 탐색 ↗' : refItem.url}
+                  {isPoster
+                    ? '핀터레스트 레퍼런스 탐색 ↗'
+                    : isFurniture
+                    ? `${refItem.title} 공식 웹페이지 / 정보 바로가기 ↗`
+                    : refItem.url}
                 </a>
               </p>
             </div>

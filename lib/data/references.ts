@@ -1,9 +1,10 @@
 import { Reference } from '../types';
 import { SEED_REFERENCES } from './seed';
 import { POSTER_REFERENCES, getAllPosterTags } from './posters';
+import { FURNITURE_REFERENCES, getAllFurnitureTags } from './furniture';
 import { supabase, isSupabaseConfigured } from '../supabase/client';
 
-export { getAllPosterTags };
+export { getAllPosterTags, getAllFurnitureTags };
 
 export async function getWebReferences(): Promise<Reference[]> {
   if (isSupabaseConfigured && supabase) {
@@ -44,9 +45,17 @@ export async function getPosterReferences(): Promise<Reference[]> {
   return POSTER_REFERENCES;
 }
 
+export async function getFurnitureReferences(): Promise<Reference[]> {
+  return FURNITURE_REFERENCES;
+}
+
 export async function getReferences(): Promise<Reference[]> {
-  const [web, posters] = await Promise.all([getWebReferences(), getPosterReferences()]);
-  return [...web, ...posters];
+  const [web, posters, furniture] = await Promise.all([
+    getWebReferences(),
+    getPosterReferences(),
+    getFurnitureReferences(),
+  ]);
+  return [...web, ...posters, ...furniture];
 }
 
 export async function getReferenceById(id: string): Promise<Reference | null> {
