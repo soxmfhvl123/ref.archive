@@ -294,7 +294,32 @@ export default function ArchiveApp({
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isCategoryDrawerOpen, setIsCategoryDrawerOpen] = useState<boolean>(false);
   const [categorySearchQuery, setCategorySearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
   const activeTagRef = useRef<HTMLButtonElement | null>(null);
+
+  // Keyboard shortcut: '/' or 'Cmd+K' to focus search, 'Escape' to clear and close
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const isInput = ['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName);
+      if (isInput) {
+        if (e.key === 'Escape') {
+          setSearchQuery('');
+          (e.target as HTMLElement).blur();
+          setIsSearchOpen(false);
+        }
+        return;
+      }
+      if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+        e.preventDefault();
+        setIsSearchOpen(true);
+        setTimeout(() => searchInputRef.current?.focus(), 50);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Auto-scroll selected tag into view horizontally on mobile
   useEffect(() => {
@@ -424,8 +449,23 @@ export default function ArchiveApp({
     if (selectedTag !== '전체') {
       list = list.filter((ref) => ref.tags.includes(selectedTag));
     }
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      list = list.filter((ref) => {
+        return (
+          ref.title.toLowerCase().includes(q) ||
+          (ref.shortDesc && ref.shortDesc.toLowerCase().includes(q)) ||
+          (ref.anatomy && ref.anatomy.toLowerCase().includes(q)) ||
+          (ref.principle && ref.principle.toLowerCase().includes(q)) ||
+          (ref.url && ref.url.toLowerCase().includes(q)) ||
+          ref.tags.some((t) => t.toLowerCase().includes(q)) ||
+          (ref.group && ref.group.toLowerCase().includes(q)) ||
+          (ref.category && ref.category.toLowerCase().includes(q))
+        );
+      });
+    }
     return list;
-  }, [currentDataset, majorCategory, selectedGroup, selectedTag]);
+  }, [currentDataset, majorCategory, selectedGroup, selectedTag, searchQuery]);
 
   // 'newest' is the default sorting for WEB (latest added first). For POSTERS, preserve curated series order.
   const sortedReferences = useMemo(() => {
@@ -436,10 +476,10 @@ export default function ArchiveApp({
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  // Reset visible count when switching category or filtering
+  // Reset visible count when switching category, filtering or searching
   useEffect(() => {
     setVisibleCount(BATCH_SIZE);
-  }, [majorCategory, selectedGroup, selectedTag]);
+  }, [majorCategory, selectedGroup, selectedTag, searchQuery]);
 
   const displayedReferences = useMemo(() => {
     return sortedReferences.slice(0, visibleCount);
@@ -537,8 +577,59 @@ export default function ArchiveApp({
             </a>
           </div>
 
-          {/* Controls: View Switcher only */}
-          <div className="flex items-center gap-3 text-[14px]">
+          {/* Controls: Search + View Switcher */}
+          <div className="flex items-center gap-2 sm:gap-3 text-[14px]">
+            {/* Search Input / Toggle */}
+            <div className="relative flex items-center">
+              {isSearchOpen || searchQuery ? (
+                <div className="flex items-center gap-1.5 bg-black/[0.04] px-2 py-0.5 rounded transition-all border border-black/10">
+                  <span className="text-[12px] opacity-40 select-none">🔍</span>
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="검색..."
+                    className="bg-transparent text-[13px] text-black placeholder:text-neutral-400 focus:outline-none w-20 sm:w-28 md:w-36 transition-all focus:w-24 sm:focus:w-36 md:focus:w-44"
+                  />
+                  {searchQuery ? (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery('')}
+                      className="text-[11px] opacity-40 hover:opacity-100 p-0.5 border-0 bg-transparent cursor-pointer leading-none"
+                      title="검색어 지우기"
+                    >
+                      ✕
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setIsSearchOpen(false)}
+                      className="text-[11px] opacity-40 hover:opacity-100 p-0.5 border-0 bg-transparent cursor-pointer leading-none"
+                      title="검색 닫기"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsSearchOpen(true);
+                    setTimeout(() => searchInputRef.current?.focus(), 50);
+                  }}
+                  className="bg-transparent p-0 border-0 cursor-pointer opacity-40 hover:opacity-100 transition-opacity flex items-center gap-1 text-[13px] md:text-[14px]"
+                  title="검색 (단축키: /)"
+                >
+                  <span>검색</span>
+                  <span className="hidden sm:inline text-[11px] opacity-40 font-mono">[/]</span>
+                </button>
+              )}
+            </div>
+
+            <span className="opacity-20 text-[12px] select-none">/</span>
+
             <button
               type="button"
               onClick={() => setViewMode('grid')}
@@ -736,6 +827,43 @@ export default function ArchiveApp({
 
       {/* Line 3: Content View (Grid, Index, or Canvas) */}
       <section className="relative z-10">
+        {/* Search Results Summary Header if searching */}
+        {searchQuery.trim() && (
+          <div className="mb-6 flex items-center justify-between text-[13px] border-b border-black/10 pb-2">
+            <span className="text-neutral-600">
+              &ldquo;<span className="font-medium text-black">{searchQuery}</span>&rdquo; 검색 결과: {filteredReferences.length}개
+            </span>
+            <button
+              type="button"
+              onClick={() => setSearchQuery('')}
+              className="text-black underline underline-offset-2 bg-transparent border-0 cursor-pointer text-[12px] opacity-60 hover:opacity-100"
+            >
+              검색어 초기화
+            </button>
+          </div>
+        )}
+
+        {/* Empty State when no items match search or filter */}
+        {filteredReferences.length === 0 && (
+          <div className="py-24 text-center">
+            <p className="text-[15px] text-black mb-1.5">
+              &ldquo;<span className="font-medium">{searchQuery}</span>&rdquo;에 대한 검색 결과가 없습니다.
+            </p>
+            <p className="text-[13px] text-neutral-500 mb-4">다른 검색어를 입력하시거나 필터를 초기화해 보세요.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedTag('전체');
+                setSelectedGroup('All');
+              }}
+              className="px-3 py-1.5 border border-black/20 hover:border-black text-[13px] bg-transparent cursor-pointer transition-colors"
+            >
+              필터 초기화
+            </button>
+          </div>
+        )}
+
         {viewMode === 'grid' && (
           <>
             {/* Grid View with Responsive Columns (Web vs Poster vs Furniture) */}
