@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600">
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#002B49"/>
+
+  <!-- Outer Swiss Margin Guide -->
+  <rect x="80" y="80" width="1040" height="1440" fill="none" stroke="#E0F2FE" stroke-width="1" opacity="0.15"/>
+
+  <!-- Top Metadata Bar -->
+  <g transform="translate(100, 140)">
+    <text class="font-mono" x="0" y="0" font-size="16" fill="#E0F2FE" opacity="0.5" letter-spacing="3">REF.ARCHIVE / POSTER SERIE</text>
+    <text class="font-mono" x="1000" y="0" font-size="16" fill="#38BDF8" text-anchor="end" font-weight="700" letter-spacing="2">NO. 070 / 070</text>
+    <line x1="0" y1="24" x2="1000" y2="24" stroke="#E0F2FE" stroke-width="1" opacity="0.2"/>
+  </g>
+
+  <!-- Group Badge &amp; Subcategory -->
+  <g transform="translate(100, 220)">
+    <rect x="0" y="0" width="160" height="32" fill="#38BDF8" rx="2"/>
+    <text class="font-sans" x="80" y="21" font-size="13" font-weight="700" fill="#002B49" text-anchor="middle" letter-spacing="1.5">MOOD &amp; SUBCULTURE</text>
+    <text class="font-mono" x="180" y="21" font-size="14" fill="#E0F2FE" opacity="0.6" letter-spacing="1">CURATION · 2026 REF-ARCHIVE</text>
+  </g>
+
+  <!-- Main Hero Graphic Container -->
+  <g id="hero-graphic">
+    
+        <!-- Blueprint Grid -->
+        <defs>
+          <pattern id="bpGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#BAE6FD" stroke-width="1" opacity="0.3"/>
+          </pattern>
+        </defs>
+        <rect x="150" y="380" width="900" height="680" fill="url(#bpGrid)"/>
+        <rect x="250" y="480" width="700" height="480" fill="none" stroke="#38BDF8" stroke-width="2"/>
+        <polygon points="350,550 750,550 850,750 450,750" fill="none" stroke="#E0F2FE" stroke-width="2"/>
+        <line x1="350" y1="550" x2="350" y2="850" stroke="#E0F2FE" stroke-width="2" stroke-dasharray="6 4"/>
+        <line x1="750" y1="550" x2="750" y2="850" stroke="#E0F2FE" stroke-width="2" stroke-dasharray="6 4"/>
+        <line x1="850" y1="750" x2="850" y2="920" stroke="#E0F2FE" stroke-width="2"/>
+        <line x1="450" y1="750" x2="450" y2="920" stroke="#E0F2FE" stroke-width="2"/>
+        <text x="600" y="660" font-family="monospace" font-size="20" fill="#38BDF8" text-anchor="middle">AXONOMETRIC PROJECTION 1:50</text>
+      
+  </g>
+
+  <!-- Title &amp; Typographic Composition -->
+  <g transform="translate(100, 1180)">
+    <text class="font-sans" x="0" y="70" font-size="82" font-weight="800" fill="#E0F2FE" letter-spacing="-1.5">Blueprint / Wireframe</text>
+    <text class="font-sans" x="0" y="125" font-size="28" font-weight="400" fill="#38BDF8" opacity="0.95">설계도 청사진 &amp; 3D 와이어프레임</text>
+    <line x1="0" y1="160" x2="1000" y2="160" stroke="#E0F2FE" stroke-width="2" opacity="0.25"/>
+  </g>
+
+  <!-- Editorial Analysis / Principle Block -->
+  <g transform="translate(100, 1380)">
+    <!-- Column 1: Anatomy -->
+    <g transform="translate(0, 0)">
+      <text class="font-mono" x="0" y="0" font-size="13" fill="#E0F2FE" opacity="0.45" letter-spacing="2">01 / VISUAL ANATOMY</text>
+      <text class="font-sans" x="0" y="28" font-size="16" fill="#E0F2FE" opacity="0.85" width="460">
+        짙은 코발트 블루 배경 위의 정밀한 흰색/시안 격자선, 3D 구...
+      </text>
+    </g>
+
+    <!-- Column 2: Principle -->
+    <g transform="translate(520, 0)">
+      <text class="font-mono" x="0" y="0" font-size="13" fill="#38BDF8" letter-spacing="2">02 / CORE PRINCIPLE</text>
+      <text class="font-sans" x="0" y="28" font-size="16" fill="#E0F2FE" opacity="0.85">
+        완성된 결과물 이전의 순수한 아이디어 골조와 아키텍처적 청사진의...
+      </text>
+    </g>
+  </g>
+
+  <!-- Footer Technical Grid &amp; Barcode -->
+  <g transform="translate(100, 1490)">
+    <text class="font-mono" x="0" y="0" font-size="12" fill="#E0F2FE" opacity="0.35" letter-spacing="3">DIMENSION: 1200 x 1600 · RATIO: 3:4 · ARCHIVE.SITE</text>
+    
+    <!-- Minimalist Barcode Lines -->
+    <g transform="translate(860, -18)">
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#E0F2FE" stroke-width="2" opacity="0.5"/>
+      <line x1="5" y1="0" x2="5" y2="24" stroke="#E0F2FE" stroke-width="4" opacity="0.5"/>
+      <line x1="12" y1="0" x2="12" y2="24" stroke="#E0F2FE" stroke-width="1" opacity="0.5"/>
+      <line x1="18" y1="0" x2="18" y2="24" stroke="#E0F2FE" stroke-width="3" opacity="0.5"/>
+      <line x1="26" y1="0" x2="26" y2="24" stroke="#E0F2FE" stroke-width="1" opacity="0.5"/>
+      <line x1="32" y1="0" x2="32" y2="24" stroke="#E0F2FE" stroke-width="5" opacity="0.5"/>
+      <line x1="42" y1="0" x2="42" y2="24" stroke="#E0F2FE" stroke-width="2" opacity="0.5"/>
+      <line x1="48" y1="0" x2="48" y2="24" stroke="#E0F2FE" stroke-width="4" opacity="0.5"/>
+      <line x1="58" y1="0" x2="58" y2="24" stroke="#E0F2FE" stroke-width="1" opacity="0.5"/>
+      <line x1="64" y1="0" x2="64" y2="24" stroke="#E0F2FE" stroke-width="3" opacity="0.5"/>
+      <line x1="72" y1="0" x2="72" y2="24" stroke="#E0F2FE" stroke-width="2" opacity="0.5"/>
+      <line x1="80" y1="0" x2="80" y2="24" stroke="#E0F2FE" stroke-width="4" opacity="0.5"/>
+      <line x1="90" y1="0" x2="90" y2="24" stroke="#E0F2FE" stroke-width="2" opacity="0.5"/>
+      <line x1="100" y1="0" x2="100" y2="24" stroke="#E0F2FE" stroke-width="6" opacity="0.5"/>
+      <line x1="112" y1="0" x2="112" y2="24" stroke="#E0F2FE" stroke-width="1" opacity="0.5"/>
+      <line x1="120" y1="0" x2="120" y2="24" stroke="#E0F2FE" stroke-width="3" opacity="0.5"/>
+      <line x1="130" y1="0" x2="130" y2="24" stroke="#E0F2FE" stroke-width="2" opacity="0.5"/>
+      <line x1="140" y1="0" x2="140" y2="24" stroke="#E0F2FE" stroke-width="5" opacity="0.5"/>
+    </g>
+  </g>
+</svg>
