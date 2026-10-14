@@ -5086,5 +5086,82 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "단순 페이지 캡처를 넘어 사용자 여정(User Flow)과 UX 인터랙션 패턴을 체계적으로 분해해 실무 제품 설계에 최적화된 리서치 제공",
       "imageUrl": "/captures/refero-design.png",
       "videoUrl": "/videos/refero-design.webm"
+    },
+    {
+      "id": "effect-app",
+      "title": "Effect.app",
+      "url": "https://effect.app",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴",
+        "실험적 웹"
+      ],
+      "shortDesc": "브라우저 기반 실시간 4K 이미지 & 비디오 이펙트 툴",
+      "anatomy": "Dither, ASCII, CRT, VHS, Halftone 등 40개 이상의 전문가용 비주얼 이펙트를 브라우저에서 무설치로 실시간 렌더링 및 4K 출력하는 크리에이티브 툴",
+      "principle": "소프트웨어 설치 없이 웹 GPU/셰이더 가속을 통해 즉각적인 시각 효과 프리뷰와 직관적인 파라미터 조작을 결합",
+      "imageUrl": "/captures/effect-app.png",
+      "videoUrl": "/videos/effect-app.webm"
+    },
+    {
+      "id": "okgocorp",
+      "title": "STUDIO OKGO",
+      "url": "https://www.okgocorp.com/",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티",
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "글로벌 비주얼 브랜딩 & 인터랙티브 경험 에이전시",
+      "anatomy": "시각적 브랜딩을 기반으로 통합 브랜드 아이덴티티와 디지털 경험을 설계하는 글로벌 크리에이티브 디자인 에이전시",
+      "principle": "다크 테마 배경 위 중앙 3D 키 비주얼 인터랙션과 대담한 타이포그래피로 스튜디오 아이덴티티 극대화",
+      "imageUrl": "/captures/okgocorp.png",
+      "videoUrl": "/videos/okgocorp.webm"
+    },
+    {
+      "id": "antlii-work",
+      "title": "Antlii (Anatolii Babii)",
+      "url": "https://antlii.work/",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL",
+        "실험적 웹",
+        "인터랙티브 모션"
+      ],
+      "shortDesc": "우크라이나 키이우 기반 크리에이티브 코딩 & 셰이더 포트폴리오",
+      "anatomy": "독립 그래픽 디자이너이자 디지털 아티스트 Anatolii Babii의 실험적 3D WebGL, 셰이더 프로그래밍, 반응형 모션 아카이브",
+      "principle": "마우스 커서 궤적과 물리 시뮬레이션에 반응하는 실시간 셰이더 그래픽으로 프론트엔드 인터랙션 실험",
+      "imageUrl": "/captures/antlii-work.png",
+      "videoUrl": "/videos/antlii-work.webm"
+    },
+    {
+      "id": "threedscans",
+      "title": "Three D Scans (3D Scans)",
+      "url": "https://threedscans.com/",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브",
+        "리소스 & 툴"
+      ],
+      "shortDesc": "세계 유수 박물관 고전 조각상 오픈소스 3D 스캔 아카이브",
+      "anatomy": "아티스트 Oliver Laric이 구축한 세계 주요 박물관 고전 조각·조형물의 무료 오픈소스 3D 데이터(.obj/.stl) 라이브러리",
+      "principle": "미술관의 물리적 문화유산을 3D 디지털 데이터로 해방하여 현대 3D 그래픽 및 비주얼 디자인의 창작 소재로 개방",
+      "imageUrl": "/captures/threedscans.png",
+      "videoUrl": "/videos/threedscans.webm"
+    },
+    {
+      "id": "futurneue",
+      "title": "Futur Neue",
+      "url": "https://futurneue.cc/",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오",
+        "타이포그래피",
+        "에디토리얼 & 출판"
+      ],
+      "shortDesc": "스위스 제네바 기반 그래픽 디자인 & 타이포그래피 리서치 스튜디오",
+      "anatomy": "문화·상업 분야를 위한 에디토리얼 디자인, 브랜드 아이덴티티, 독자적 폰트 패밀리 개발 및 타이포그래피 연구 아카이브",
+      "principle": "스위스 타이포그래피 전통을 현대적 실험 타이포와 결합하여 독창적인 시각 언어 구축",
+      "imageUrl": "/captures/futurneue.png",
+      "videoUrl": "/videos/futurneue.webm"
     }
 ];
