@@ -21,7 +21,201 @@ export interface PosterStyleDefinition {
   group: string;
 }
 
-export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
+export const NEW_POSTER_STYLES: PosterStyleDefinition[] = [
+  // Trending (+3)
+  {
+    id: "poster-dark-academia",
+    title: "Dark Academia",
+    category: "Trending",
+    tags: ["Dark Academia"],
+    shortDesc: "고전 문학과 딥 브라운 에스테틱",
+    anatomy: "클래식 세리프 서체와 양장본 고서 표지 레이아웃, 세피아 톤과 딥 브라운 질감을 활용한 지적 에스테틱 포스터",
+    principle: "고전 인문학의 지적 유산과 박물관 아카이브 무드를 현대 그래픽으로 재구성",
+    group: "Trending"
+  },
+  {
+    id: "poster-cyber-y2k-chrome",
+    title: "Cyber Y2K Chrome",
+    category: "Trending",
+    tags: ["Cyber Y2K Chrome"],
+    shortDesc: "메탈릭 크롬 & 퓨처 테크 에스테틱",
+    anatomy: "고광택 크롬 메탈 엠블럼과 3D 사이버네틱 심볼, 네온 글로우가 결합된 2000년대 밀레니엄 퓨처리즘",
+    principle: "밀레니엄 전환기의 낙관적 사이버 스페이스 상상을 메탈릭 질감으로 시각화",
+    group: "Trending"
+  },
+  {
+    id: "poster-neo-deco",
+    title: "Neo-Deco Minimal",
+    category: "Trending",
+    tags: ["Neo-Deco Minimal"],
+    shortDesc: "현대적 아르데코 라인워크 & 골드 기하학",
+    anatomy: "아르데코 특유의 대칭적 선화 구조와 골드/블랙 대비를 극도로 정제된 미니멀리즘으로 재해석한 그래픽",
+    principle: "1920년대 재즈 에이지의 호화로운 기하학적 럭셔리를 현대 미니멀 에디토리얼로 전환",
+    group: "Trending"
+  },
+
+  // Typography (+3)
+  {
+    id: "poster-deconstructed-grid",
+    title: "Deconstructed Grid",
+    category: "Typography",
+    tags: ["Deconstructed Grid"],
+    shortDesc: "해체주의 모듈러 그리드 & 파편화 타이포",
+    anatomy: "전통 타이포그래피 그리드를 의도적으로 비틀고 절단하여 글자와 여백의 위계를 전복하는 실험적 레이아웃",
+    principle: "가독성의 엄격한 법칙을 해체하고 글자 자체를 건축적 조형 오브제로 확장",
+    group: "Typography"
+  },
+  {
+    id: "poster-variable-kinetic",
+    title: "Variable Kinetic Type",
+    category: "Typography",
+    tags: ["Variable Kinetic Type"],
+    shortDesc: "가변 폰트 축 왜곡 & 키네틱 잔상",
+    anatomy: "가변 폰트(Variable Font)의 웨이트·폭 축 변형과 연속적 모션 잔상을 평면 포스터에 시각화한 모션 그래픽",
+    principle: "시간 축의 움직임을 프레임 바이 프레임 잔상으로 정지된 캔버스에 응축",
+    group: "Typography"
+  },
+  {
+    id: "poster-ascii-wordmark",
+    title: "ASCII Wordmark",
+    category: "Typography",
+    tags: ["ASCII Wordmark"],
+    shortDesc: "모노스페이스 텍스트 기반 아스키 워드아트",
+    anatomy: "터미널 폰트와 특수 문자 부호의 밀도 대비만으로 거대한 로고타입과 그래픽 음영을 구축하는 텍스트 아트",
+    principle: "컴퓨팅 초기 텍스트 전송의 기술적 제약을 순수 타이포그래피 표현 수단으로 승화",
+    group: "Typography"
+  },
+
+  // Print & Analog (+3)
+  {
+    id: "poster-cyanotype-blueprint",
+    title: "Cyanotype Blueprint",
+    category: "Print & Analog",
+    tags: ["Cyanotype Blueprint"],
+    shortDesc: "프러시안 블루 감광 인쇄 & 설계도 미학",
+    anatomy: "자외선 감광을 통한 깊은 프러시안 블루 그러데이션과 공학적 설계도 화이트 라인워크의 결합",
+    principle: "19세기 초기 사진 인화 기술의 화학적 우연성과 엄밀한 테크니컬 드로잉의 융합",
+    group: "Print & Analog"
+  },
+  {
+    id: "poster-letterpress-woodcut",
+    title: "Letterpress Woodcut",
+    category: "Print & Analog",
+    tags: ["Letterpress Woodcut"],
+    shortDesc: "볼록판 활판 인쇄 & 우드컷 질감",
+    anatomy: "목판의 거친 결, 잉크의 묵직한 압력으로 눌린 종이 엠보싱 텍스처가 돋보이는 원초적 인쇄 미학",
+    principle: "물리적 판화 프레스의 촉각적 깊이감과 수공예적 잉크 뭉침을 시각화",
+    group: "Print & Analog"
+  },
+  {
+    id: "poster-thermal-receipt",
+    title: "Thermal Receipt Art",
+    category: "Print & Analog",
+    tags: ["Thermal Receipt Art"],
+    shortDesc: "감열지 영수증 프린트 & 로우파이 도트",
+    anatomy: "휴대용 감열식 포스 프린터 특유의 거친 1비트 블랙 도트, 영수증 롤 지류와 바코드 레이아웃 그래픽",
+    principle: "일상적 소비 영수증 매체를 현대 실험 그래픽의 로우파이 캔버스로 변용",
+    group: "Print & Analog"
+  },
+
+  // Movement & Era (+3)
+  {
+    id: "poster-art-deco-geometric",
+    title: "Art Deco Geometric",
+    category: "Movement & Era",
+    tags: ["Art Deco Geometric"],
+    shortDesc: "1920s 아르데코 기하학 & 선형 모더니즘",
+    anatomy: "지그재그 패턴, 방사형 선, 유선형 기하학 형태와 고전 산업 시대의 우아한 장식미를 결합한 포스터",
+    principle: "기계 시대의 속도감과 화려한 장식 예술의 조화를 엄격한 기하학적 대칭으로 구조화",
+    group: "Movement & Era"
+  },
+  {
+    id: "poster-de-stijl",
+    title: "De Stijl Neoplasticism",
+    category: "Movement & Era",
+    tags: ["De Stijl Neoplasticism"],
+    shortDesc: "몬드리안 3원색 & 수직수평 신조형주의",
+    anatomy: "굵은 검은색 수직·수평선과 빨강, 노랑, 파랑의 3원색 블록만으로 화면을 분할하는 네덜란드 데 스틸 양식",
+    principle: "자연의 구체적 형태를 배제하고 우주의 근원적 조화를 순수 추상 기하학으로 탐구",
+    group: "Movement & Era"
+  },
+  {
+    id: "poster-swiss-international",
+    title: "International Typographic Style",
+    category: "Movement & Era",
+    tags: ["International Typographic Style"],
+    shortDesc: "정통 스위스 스타일 & 비대칭 그리드",
+    anatomy: "악치덴츠 그로테스크 서체, 엄격한 수학적 모듈러 그리드, 흑백 콘트라스트와 여백 중심의 모더니즘",
+    principle: "장식을 배제하고 정보 전달의 객관성과 시각적 명료성을 극대화한 그래픽 디자인의 정점",
+    group: "Movement & Era"
+  },
+
+  // Digital & 3D (+3)
+  {
+    id: "poster-voxel-art-3d",
+    title: "Voxel Art 3D",
+    category: "Digital & 3D",
+    tags: ["Voxel Art 3D"],
+    shortDesc: "3차원 큐브 복셀 그래픽 & 블록 렌더링",
+    anatomy: "3차원 픽셀인 복셀(Voxel) 블록들이 정밀하게 쌓여 구축된 입체적 형태와 부드러운 섀도우 조명 연출",
+    principle: "픽셀 아트를 3차원 공간으로 확장하여 디지털 레고와 같은 구조적 조형미 제공",
+    group: "Digital & 3D"
+  },
+  {
+    id: "poster-point-cloud-lidar",
+    title: "Point Cloud Lidar",
+    category: "Digital & 3D",
+    tags: ["Point Cloud Lidar"],
+    shortDesc: "라이다 스캔 포인트 클라우드 & 입자 분산",
+    anatomy: "수백만 개의 3차원 좌표 점(Point) 데이터로 렌더링된 공간 및 인체의 반투명 유령 같은 시각화",
+    principle: "기계가 세상을 인식하는 컴퓨터 비전 센서 데이터를 예술적 점묘화로 승화",
+    group: "Digital & 3D"
+  },
+  {
+    id: "poster-raymarching-fractal",
+    title: "Raymarching Fractal",
+    category: "Digital & 3D",
+    tags: ["Raymarching Fractal"],
+    shortDesc: "수학적 프랙탈 & 레이마칭 셰이더 비주얼",
+    anatomy: "무한히 자기 복제되는 프랙탈 수학 공식(Mandelbulb 등)을 셰이더로 실시간 계산한 초차원적 3D 비주얼",
+    principle: "수학적 알고리즘이 생성하는 기하학적 무한성과 유기적 복잡성의 시각적 융합",
+    group: "Digital & 3D"
+  },
+
+  // Mood & Subculture (+3)
+  {
+    id: "poster-weirdcore",
+    title: "Weirdcore Nostalgia",
+    category: "Mood & Subculture",
+    tags: ["Weirdcore Nostalgia"],
+    shortDesc: "초기 인터넷 기묘한 향수 & 로우파이 초현실",
+    anatomy: "90년대 말 저화질 디지털 카메라 사진, 어설픈 텍스트 캡션, 낯설고 왜곡된 일상 풍경이 주는 기묘한 불안감",
+    principle: "잊혀진 유년기의 인터넷 기억과 데자뷔를 로우파이 디지털 노스탤지어로 표현",
+    group: "Mood & Subculture"
+  },
+  {
+    id: "poster-goblincore",
+    title: "Goblincore Botanical",
+    category: "Mood & Subculture",
+    tags: ["Goblincore Botanical"],
+    shortDesc: "습지 이끼와 버섯, 흙빛 보태니컬 일러스트",
+    anatomy: "버섯, 이끼, 낡은 뼈와 돌 등 자연의 어둡고 축축한 구석을 세밀한 보태니컬 드로잉과 흙색 톤으로 묘사",
+    principle: "완벽한 이상화된 전원 풍경 대신 자연의 불완전하고 야생적인 생명력을 긍정",
+    group: "Mood & Subculture"
+  },
+  {
+    id: "poster-post-apocalyptic",
+    title: "Post-Apocalyptic Grunge",
+    category: "Mood & Subculture",
+    tags: ["Post-Apocalyptic Grunge"],
+    shortDesc: "황폐화된 디스토피아 산업 잔해 & 부식 텍스처",
+    anatomy: "산화된 철판, 방사능 경고 표지, 거친 스텐실 타이포와 파괴된 도시의 잔해를 담은 디스토피아 그래픽",
+    principle: "인간 문명 이후의 생존과 붕괴의 미학을 텍스처와 인더스트리얼 심볼로 시각화",
+    group: "Mood & Subculture"
+  }
+];
+
+export const EXISTING_POSTER_BASE_STYLES: PosterStyleDefinition[] = [
   {
     "id": "poster-heat-map",
     "title": "Heat Map",
@@ -864,7 +1058,33 @@ export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
   }
 ];
 
+export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
+  ...NEW_POSTER_STYLES,
+  ...EXISTING_POSTER_BASE_STYLES
+];
+
 export const POSTER_STYLE_COUNTS: Record<string, number> = {
+  // New visual styles (3 posters each)
+  "poster-dark-academia": 3,
+  "poster-cyber-y2k-chrome": 3,
+  "poster-neo-deco": 3,
+  "poster-deconstructed-grid": 3,
+  "poster-variable-kinetic": 3,
+  "poster-ascii-wordmark": 3,
+  "poster-cyanotype-blueprint": 3,
+  "poster-letterpress-woodcut": 3,
+  "poster-thermal-receipt": 3,
+  "poster-art-deco-geometric": 3,
+  "poster-de-stijl": 3,
+  "poster-swiss-international": 3,
+  "poster-voxel-art-3d": 3,
+  "poster-point-cloud-lidar": 3,
+  "poster-raymarching-fractal": 3,
+  "poster-weirdcore": 3,
+  "poster-goblincore": 3,
+  "poster-post-apocalyptic": 3,
+
+  // Existing visual styles (50 posters each)
   "poster-heat-map": 50,
   "poster-biomorphism": 50,
   "poster-3d-surrealism": 50,
@@ -938,17 +1158,44 @@ export const POSTER_STYLE_COUNTS: Record<string, number> = {
 };
 
 export const POSTER_REFERENCES: Reference[] = (() => {
-  const list: Reference[] = [];
-  const maxRound = Math.max(...POSTER_BASE_STYLES.map((s) => POSTER_STYLE_COUNTS[s.id] || 0));
-  for (let round = 0; round < maxRound; round++) {
-    for (const style of POSTER_BASE_STYLES) {
+  const newPostersList: Reference[] = [];
+  const existingPostersList: Reference[] = [];
+
+  // 1. Newly added 18 styles (3 posters each, ordered newest first)
+  for (let round = 2; round >= 0; round--) {
+    for (const style of NEW_POSTER_STYLES) {
+      const num = round + 1;
+      const id = num === 1 ? style.id : `${style.id}-${num}`;
+      const imageUrl = num === 1 ? `/captures/posters/${style.id}.jpg` : `/captures/posters/${style.id}-${num}.jpg`;
+      const title = `${style.title} #${String(num).padStart(2, '0')}`;
+      newPostersList.push({
+        id,
+        title,
+        url: `https://www.pinterest.com/search/pins/?q=${encodeURIComponent(style.title + " graphic design poster")}`,
+        category: style.category,
+        tags: [style.title],
+        shortDesc: style.shortDesc,
+        anatomy: style.anatomy,
+        principle: style.principle,
+        imageUrl,
+        majorCategory: 'POSTERS',
+        group: style.group,
+        aspectRatio: 'portrait',
+      });
+    }
+  }
+
+  // 2. Existing styles ordered newest round (50 -> 1) first
+  const maxExistingRound = 50;
+  for (let round = maxExistingRound - 1; round >= 0; round--) {
+    for (const style of EXISTING_POSTER_BASE_STYLES) {
       const count = POSTER_STYLE_COUNTS[style.id] || 0;
       if (round < count) {
         const num = round + 1;
         const id = num === 1 ? style.id : `${style.id}-${num}`;
         const imageUrl = num === 1 ? `/captures/posters/${style.id}.jpg` : `/captures/posters/${style.id}-${num}.jpg`;
         const title = `${style.title} #${String(num).padStart(2, '0')}`;
-        list.push({
+        existingPostersList.push({
           id,
           title,
           url: `https://www.pinterest.com/search/pins/?q=${encodeURIComponent(style.title + " graphic design poster")}`,
@@ -965,7 +1212,8 @@ export const POSTER_REFERENCES: Reference[] = (() => {
       }
     }
   }
-  return list;
+
+  return [...newPostersList, ...existingPostersList];
 })();
 
 export function getAllPosterTags(posters: Reference[]): string[] {

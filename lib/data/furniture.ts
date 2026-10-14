@@ -562,6 +562,16 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     url: "https://rareraw.com/"
   },
   {
+    id: "furn-2nd-universe",
+    title: "세컨드유니버스 2nd Universe (2UC)",
+    country: "한국",
+    materials: "스틸, 스테인리스 스틸, 강화유리, 아크릴, 크롬",
+    referencePoint: "공간의 분위기를 채우는 모던 스틸 & 글래스 가구와 모듈 콘솔, 미드센추리 감성의 리빙 디자인",
+    namingType: "조어형 (브랜드)",
+    group: "한국 디자이너·작가·갤러리",
+    url: "https://www.2nd-universe.co.kr/index.html"
+  },
+  {
     id: "furn-byung-hoon-choi",
     title: "최병훈 Byung Hoon Choi",
     country: "한국",

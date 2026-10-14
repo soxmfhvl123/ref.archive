@@ -815,7 +815,7 @@ export default function ArchiveApp({
                   setIsCategoryDrawerOpen(true);
                 }}
                 className="shrink-0 text-[11px] tracking-tight px-2 py-0.5 border border-black/20 hover:border-black/50 transition-colors bg-transparent select-none flex items-center gap-1 md:hidden"
-                title="전체 70개 스타일 목록 보기"
+                title={`전체 ${POSTER_BASE_STYLES.length}개 스타일 목록 보기`}
               >
                 <span>전체 목록</span>
                 <span className="text-[9px] opacity-60">⊞</span>
@@ -1077,7 +1077,7 @@ export default function ArchiveApp({
             {/* Modal Header */}
             <div className="px-5 py-3.5 border-b border-black/10 flex items-center justify-between bg-white">
               <div className="flex items-baseline gap-2">
-                <span className="text-[14px] font-medium">스타일 카테고리 (70)</span>
+                <span className="text-[14px] font-medium">스타일 카테고리 ({POSTER_BASE_STYLES.length})</span>
                 <span className="text-[12px] opacity-40">총 {posterList.length}개</span>
               </div>
               <button

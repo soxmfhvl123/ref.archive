@@ -2,6 +2,7 @@ import { getReferenceById, getReferences } from '@/lib/data/references';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import EscKeyNavigation from '@/components/EscKeyNavigation';
 
 export async function generateStaticParams() {
   const references = await getReferences();
@@ -22,8 +23,16 @@ export default async function ReferenceDetailPage({
     notFound();
   }
 
+  const fallbackHref =
+    refItem.majorCategory === 'POSTERS'
+      ? '/#posters'
+      : refItem.majorCategory === 'FURNITURE'
+      ? '/#furniture'
+      : '/';
+
   return (
     <main className="min-h-screen bg-white text-black p-6 md:p-12 flex flex-col justify-between select-none">
+      <EscKeyNavigation fallbackHref={fallbackHref} />
       <div>
         {/* Header */}
         <div className="flex justify-between items-baseline mb-8">
@@ -40,7 +49,7 @@ export default async function ReferenceDetailPage({
               arranged by studiofluxus™
             </a>
           </div>
-          <Link href="/" className="text-[14px] no-underline">
+          <Link href={fallbackHref} className="text-[14px] no-underline">
             목록
           </Link>
         </div>
@@ -89,18 +98,22 @@ export default async function ReferenceDetailPage({
                     {refItem.principle}
                   </p>
                 </>
-              ) : !isPoster ? (
+              ) : (
                 <>
-                  <p>
-                    <span className="opacity-60">요약: </span>
-                    {refItem.anatomy}
-                  </p>
-                  <p>
-                    <span className="opacity-60">참고: </span>
-                    {refItem.principle}
-                  </p>
+                  {refItem.anatomy ? (
+                    <p>
+                      <span className="opacity-60">요약: </span>
+                      {refItem.anatomy}
+                    </p>
+                  ) : null}
+                  {refItem.principle ? (
+                    <p>
+                      <span className="opacity-60">참고: </span>
+                      {refItem.principle}
+                    </p>
+                  ) : null}
                 </>
-              ) : null}
+              )}
               <p>
                 <span className="opacity-60">링크: </span>
                 <a
@@ -122,8 +135,8 @@ export default async function ReferenceDetailPage({
       </div>
 
       <div className="mt-12 pt-6">
-        <Link href="/" className="text-[14px] underline underline-offset-4">
-          목록으로 돌아가기
+        <Link href={fallbackHref} className="text-[14px] underline underline-offset-4">
+          목록으로 돌아가기 (ESC)
         </Link>
       </div>
     </main>
