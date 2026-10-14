@@ -5163,5 +5163,20 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "스위스 타이포그래피 전통을 현대적 실험 타이포와 결합하여 독창적인 시각 언어 구축",
       "imageUrl": "/captures/futurneue.png",
       "videoUrl": "/videos/futurneue.webm"
+    },
+    {
+      "id": "borntostandout",
+      "title": "BORNTOSTANDOUT® (본투스탠드아웃)",
+      "url": "https://borntostandout.kr/shopinfo/brand.html",
+      "category": "Fashion & Culture",
+      "tags": [
+        "패션 & 컬처",
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "도발적 반항의 서울 니치 프래그런스 브랜드",
+      "anatomy": "조선 백자의 순백 실루엣과 파격적인 크림슨 레드 타이포그래피의 충돌을 통해 사회적 금기와 보수적 기준에 반항하는 서울 기반 니치 향수 & 라이프스타일 뷰티 브랜드",
+      "principle": "사회가 정한 틀과 규범을 뒤집는 'Rebel Against Standards' 슬로건을 아트 오브제 같은 도자기 보틀과 도발적인 에디토리얼 비주얼로 표현",
+      "imageUrl": "/captures/borntostandout.png",
+      "videoUrl": "/videos/borntostandout.webm"
     }
 ];
