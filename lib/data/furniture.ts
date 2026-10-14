@@ -83,7 +83,7 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     referencePoint: "Lehni 가구. Judd의 금속 가구에 영향",
     namingType: "작가 이름",
     group: "스틸 가구 디자이너",
-    url: "https://www.lehni.ch/en/designers/andreas-christen"
+    url: "https://lehni.ch/de/lehni/designer/portrait/1/andreas-christen"
   },
   {
     id: "furn-maarten-van-severen",
