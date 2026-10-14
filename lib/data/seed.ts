@@ -5025,5 +5025,66 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "미니멀한 직선 구조와 원목·스틸 소재의 대비를 통해 공간에 분위기를 불어넣는 조형성",
       "imageUrl": "/captures/2nd-universe-co-kr.png",
       "videoUrl": "/videos/2nd-universe-co-kr.webm"
+    },
+    {
+      "id": "codrops-webzibition",
+      "title": "Codrops Webzibition",
+      "url": "https://tympanus.net/codrops/webzibition/",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브",
+        "실험적 웹",
+        "3D WebGL"
+      ],
+      "shortDesc": "실험적 인터랙션 & 프론트엔드 크리에이티브 웹 전시",
+      "anatomy": "Codrops 팀이 큐레이션한 2,400개 이상의 실험적 인터랙션, WebGL, 셰이더 및 프론트엔드 크리에이티브 코딩 쇼케이스",
+      "principle": "웹 애니메이션과 마이크로 인터랙션의 기술적 한계를 탐구하는 글로벌 프론트엔드 레퍼런스",
+      "imageUrl": "/captures/codrops-webzibition.png",
+      "videoUrl": "/videos/codrops-webzibition.webm"
+    },
+    {
+      "id": "supahero",
+      "title": "Supahero",
+      "url": "https://supahero.io/",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브",
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "글로벌 웹 & SaaS 히어로 섹션 전문 아카이브",
+      "anatomy": "전 세계 트렌디한 SaaS, 테크 프로덕트 및 크리에이티브 웹의 첫인상을 결정하는 상단 히어로(Hero) 섹션 큐레이션",
+      "principle": "CTA 배치, 헤드라인 카피라이팅, 키 비주얼 3D/모션 등 전환율과 브랜드 아이덴티티를 좌우하는 히어로 컴포넌트 패턴 연구",
+      "imageUrl": "/captures/supahero.png",
+      "videoUrl": "/videos/supahero.webm"
+    },
+    {
+      "id": "gdweb",
+      "title": "GDWEB (지디웹)",
+      "url": "https://www.gdweb.co.kr/sub/list.asp",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브",
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "국내 우수 웹사이트 & UI/UX 디자인 어워드 아카이브",
+      "anatomy": "국내 주요 디지털 에이전시와 브랜드가 제작한 우수 웹·모바일 프로젝트 및 연도별·분야별 웹 어워드 수상작 데이터베이스",
+      "principle": "산업군(금융, 쇼핑, 문화, 공공 등) 및 디자인 콘셉트(미니멀, 타이포, 비주얼 등)별 정밀 벤치마킹을 지원하는 국내 대표 레퍼런스",
+      "imageUrl": "/captures/gdweb.png",
+      "videoUrl": "/videos/gdweb.webm"
+    },
+    {
+      "id": "refero-design",
+      "title": "Refero",
+      "url": "https://refero.design/",
+      "category": "Archive & Curation",
+      "tags": [
+        "디자인 아카이브",
+        "디지털 제품 & UI"
+      ],
+      "shortDesc": "실제 프로덕트 스크린과 유저 플로우 최대 규모 UI/UX 레퍼런스",
+      "anatomy": "수만 개 이상의 실제 웹 및 iOS 앱 스크린샷, 온보딩, 결제, 대시보드 플로우를 컴포넌트 단위로 검색할 수 있는 디자인 리서치 플랫폼",
+      "principle": "단순 페이지 캡처를 넘어 사용자 여정(User Flow)과 UX 인터랙션 패턴을 체계적으로 분해해 실무 제품 설계에 최적화된 리서치 제공",
+      "imageUrl": "/captures/refero-design.png",
+      "videoUrl": "/videos/refero-design.webm"
     }
 ];
