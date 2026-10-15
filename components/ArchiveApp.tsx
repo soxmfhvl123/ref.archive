@@ -3,7 +3,13 @@
 import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
 import { Reference, MajorCategory } from '@/lib/types';
 import { POSTER_GROUPS, POSTER_BASE_STYLES } from '@/lib/data/posters';
-import { FURNITURE_GROUPS } from '@/lib/data/furniture';
+import {
+  FURNITURE_GROUPS,
+  FURNITURE_TAG_ORDER,
+  FURNITURE_REGIONS,
+  FURNITURE_MATERIAL_TAGS,
+  FURNITURE_THEME_TAGS,
+} from '@/lib/data/furniture';
 import Image from 'next/image';
 import TiltCard from '@/components/TiltCard';
 import CanvasView from '@/components/CanvasView';
@@ -388,8 +394,21 @@ export default function ArchiveApp({
     }
     const tagsSet = new Set<string>();
     pool.forEach((f) => f.tags.forEach((t) => tagsSet.add(t)));
-    return ['전체', ...Array.from(tagsSet)];
+    const sorted = FURNITURE_TAG_ORDER.filter((t) => tagsSet.has(t));
+    return ['전체', ...sorted];
   }, [furnitureList, selectedGroup]);
+
+  const furnitureTagClusters = useMemo(() => {
+    const tagsWithoutAll = currentFurnitureTags.filter((t) => t !== '전체');
+    const regions = tagsWithoutAll.filter((t) => (FURNITURE_REGIONS as readonly string[]).includes(t));
+    const materials = tagsWithoutAll.filter((t) => (FURNITURE_MATERIAL_TAGS as readonly string[]).includes(t));
+    const themes = tagsWithoutAll.filter((t) => (FURNITURE_THEME_TAGS as readonly string[]).includes(t));
+
+    const showFirstDivider = regions.length > 0 && (materials.length > 0 || themes.length > 0);
+    const showSecondDivider = materials.length > 0 && themes.length > 0;
+
+    return { regions, materials, themes, showFirstDivider, showSecondDivider };
+  }, [currentFurnitureTags]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -730,7 +749,80 @@ export default function ArchiveApp({
             <div className="flex items-center justify-between gap-2 pt-0.5">
               <nav className="flex-1 overflow-x-auto md:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
                 <ul className="flex items-center gap-x-3.5 md:gap-x-4 whitespace-nowrap md:whitespace-normal md:flex-wrap text-[13px]">
-                  {currentFurnitureTags.map((tag) => {
+                  {/* 전체 */}
+                  <li key="전체" className="inline-block shrink-0">
+                    <button
+                      type="button"
+                      ref={selectedTag === '전체' ? activeTagRef : null}
+                      onClick={() => setSelectedTag('전체')}
+                      className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                        selectedTag === '전체'
+                          ? 'underline underline-offset-4 font-normal text-black'
+                          : 'no-underline opacity-60 hover:opacity-100'
+                      }`}
+                    >
+                      전체
+                    </button>
+                  </li>
+
+                  {/* 지역 (Regions) */}
+                  {furnitureTagClusters.regions.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+
+                  {/* 지역 - 재료/키워드 세로 구분선 */}
+                  {furnitureTagClusters.showFirstDivider && (
+                    <li className="inline-block shrink-0 opacity-20 select-none text-[12px] -mx-1" aria-hidden="true">
+                      |
+                    </li>
+                  )}
+
+                  {/* 재료 (Materials) */}
+                  {furnitureTagClusters.materials.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+
+                  {/* 재료 - 키워드 세로 구분선 */}
+                  {furnitureTagClusters.showSecondDivider && (
+                    <li className="inline-block shrink-0 opacity-20 select-none text-[12px] -mx-1" aria-hidden="true">
+                      |
+                    </li>
+                  )}
+
+                  {/* 키워드 (Themes) */}
+                  {furnitureTagClusters.themes.map((tag) => {
                     const isSelected = selectedTag === tag;
                     return (
                       <li key={tag} className="inline-block shrink-0">

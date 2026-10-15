@@ -2,15 +2,18 @@ import { Reference } from '../types';
 
 export const FURNITURE_GROUPS = [
   'All',
-  '스틸 가구 디자이너',
-  '스틸 가구 브랜드·제조사',
-  '일본·아시아 디자이너와 작가',
-  '한국 디자이너·작가·갤러리',
-  '빛과 재료',
-  '반응하는 공간·인터랙션',
-  '상자와 공간의 미술, 미니멀 건축',
-  '컬렉터블 디자인 갤러리·페어',
+  '디자이너·작가',
+  '듀오·그룹 스튜디오',
+  '브랜드·제조사',
+  '아티스트·설치',
+  '건축가',
+  '갤러리·페어',
 ] as const;
+
+export const FURNITURE_REGIONS = ['한국', '일본·아시아', '북유럽', '유럽', '북미'] as const;
+export const FURNITURE_MATERIAL_TAGS = ['스틸', '알루미늄', '황동·구리', '나무', '유리', '아크릴·레진', '돌·콘크리트', '패브릭·종이', '도자'] as const;
+export const FURNITURE_THEME_TAGS = ['조명', '빛', '인터랙션', '모듈·시스템', '미니멀', '재료 실험', '컬렉터블', '공간·인테리어'] as const;
+export const FURNITURE_TAG_ORDER = [...FURNITURE_REGIONS, ...FURNITURE_MATERIAL_TAGS, ...FURNITURE_THEME_TAGS];
 
 export interface RawFurnitureItem {
   id: string;
@@ -21,10 +24,12 @@ export interface RawFurnitureItem {
   namingType: string;
   group: typeof FURNITURE_GROUPS[number];
   url: string;
+  region: typeof FURNITURE_REGIONS[number];
+  tags: string[];   // 재료·키워드 어휘만
+  founders?: string;
 }
 
 export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
-  // 1. 스틸 가구 디자이너 (1~22)
   {
     id: "furn-donald-judd",
     title: "Donald Judd",
@@ -32,8 +37,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "코르텐 스틸, 알루미늄, 합판",
     referencePoint: "상자 하나로 작품·가구·건축을 잇는다. 손자국 없는 표면",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://juddfoundation.org/"
+    group: "디자이너·작가",
+    url: "https://juddfoundation.org/",
+    region: "북미",
+    tags: ["스틸", "알루미늄", "미니멀"]
   },
   {
     id: "furn-muller-van-severen",
@@ -42,8 +49,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "분체도장 스틸 + 색",
     referencePoint: "차가운 선 위에 색 하나. 행거 Colour Rack",
     namingType: "두 사람의 성",
-    group: "스틸 가구 디자이너",
-    url: "https://www.mullervanseveren.be/"
+    group: "듀오·그룹 스튜디오",
+    url: "https://www.mullervanseveren.be/",
+    region: "유럽",
+    tags: ["스틸", "미니멀"]
   },
   {
     id: "furn-superstudio",
@@ -52,8 +61,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "격자 라미네이트",
     referencePoint: "Quaderna 테이블. 사각 격자가 가구에서 공간 전체로 확장",
     namingType: "조어형",
-    group: "스틸 가구 디자이너",
-    url: "https://www.zanotta.com/en-us/products/tables/quaderna"
+    group: "듀오·그룹 스튜디오",
+    url: "https://www.zanotta.com/en-us/products/tables/quaderna",
+    region: "유럽",
+    tags: ["모듈·시스템"]
   },
   {
     id: "furn-jean-prouve",
@@ -62,8 +73,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "절곡 강판",
     referencePoint: "건축 구조 원리로 만든 스틸 가구",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.vitra.com/en-us/about-vitra/designer/details/jean-prouve"
+    group: "디자이너·작가",
+    url: "https://www.vitra.com/en-us/about-vitra/designer/details/jean-prouve",
+    region: "유럽",
+    tags: ["스틸"]
   },
   {
     id: "furn-eileen-gray",
@@ -72,8 +85,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "강관, 유리",
     referencePoint: "E-1027 테이블. 사람에 맞춰 높이가 바뀌는 가구",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.aram.co.uk/designers/eileen-gray.html"
+    group: "디자이너·작가",
+    url: "https://www.aram.co.uk/designers/eileen-gray.html",
+    region: "유럽",
+    tags: ["스틸", "유리"]
   },
   {
     id: "furn-andreas-christen",
@@ -82,8 +97,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄 판재",
     referencePoint: "Lehni 가구. Judd의 금속 가구에 영향",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://lehni.ch/de/lehni/designer/portrait/1/andreas-christen"
+    group: "디자이너·작가",
+    url: "https://lehni.ch/de/lehni/designer/portrait/1/andreas-christen",
+    region: "유럽",
+    tags: ["알루미늄", "미니멀"]
   },
   {
     id: "furn-maarten-van-severen",
@@ -92,8 +109,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄, 스틸",
     referencePoint: "극도로 얇은 선과 면, .03 의자",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://maartenvanseveren.be/"
+    group: "디자이너·작가",
+    url: "https://maartenvanseveren.be/",
+    region: "유럽",
+    tags: ["알루미늄", "스틸", "미니멀"]
   },
   {
     id: "furn-jonathan-nesci",
@@ -102,8 +121,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄, 금속 판재",
     referencePoint: "산업용 금속 판재를 그대로 쓴 미니멀 가구",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://jonathannesci.com/"
+    group: "디자이너·작가",
+    url: "https://jonathannesci.com/",
+    region: "북미",
+    tags: ["알루미늄", "미니멀"]
   },
   {
     id: "furn-fredrik-paulsen",
@@ -112,8 +133,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄, 스틸",
     referencePoint: "미니멀과 브루탈리즘을 섞은 금속 가구, Joy Objects",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://fredrikpaulsen.com/"
+    group: "디자이너·작가",
+    url: "https://fredrikpaulsen.com/",
+    region: "북유럽",
+    tags: ["알루미늄", "스틸"]
   },
   {
     id: "furn-martin-szekely",
@@ -122,8 +145,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속 외",
     referencePoint: "극도로 절제된 형태, Galerie kreo",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.martinszekely.com/"
+    group: "디자이너·작가",
+    url: "https://www.martinszekely.com/",
+    region: "유럽",
+    tags: ["스틸", "미니멀"]
   },
   {
     id: "furn-oskar-zieta",
@@ -132,8 +157,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "공기 주입 스틸",
     referencePoint: "Plopp 스툴. 차가운 스틸의 부드러운 변형",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://zieta.pl/"
+    group: "디자이너·작가",
+    url: "https://zieta.pl/",
+    region: "유럽",
+    tags: ["스틸", "재료 실험"]
   },
   {
     id: "furn-marcel-breuer",
@@ -142,8 +169,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "크롬 강관",
     referencePoint: "강관 의자의 출발점, Wassily",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.knoll.com/designer/Marcel-Breuer"
+    group: "디자이너·작가",
+    url: "https://www.knoll.com/designer/Marcel-Breuer",
+    region: "유럽",
+    tags: ["스틸"]
   },
   {
     id: "furn-mies-van-der-rohe",
@@ -152,8 +181,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "크롬 스틸",
     referencePoint: "건축가의 가구, Less is more",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.knoll.com/designer/Mies-van-der-Rohe"
+    group: "디자이너·작가",
+    url: "https://www.knoll.com/designer/Mies-van-der-Rohe",
+    region: "유럽",
+    tags: ["스틸", "미니멀"]
   },
   {
     id: "furn-charlotte-perriand",
@@ -162,8 +193,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "강관",
     referencePoint: "르 코르뷔지에와 함께한 LC 시리즈",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.cassina.com/it/en/designers/charlotte-perriand.html"
+    group: "디자이너·작가",
+    url: "https://www.cassina.com/it/en/designers/charlotte-perriand.html",
+    region: "유럽",
+    tags: ["스틸"]
   },
   {
     id: "furn-harry-bertoia",
@@ -172,8 +205,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "스틸 와이어",
     referencePoint: "와이어 체어. 금속을 가볍게",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.harrybertoia.org/"
+    group: "디자이너·작가",
+    url: "https://www.harrybertoia.org/",
+    region: "북미",
+    tags: ["스틸"]
   },
   {
     id: "furn-konstantin-grcic",
@@ -182,8 +217,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "주조 알루미늄, 판금 스틸",
     referencePoint: "Chair_One, 1mm 강판 의자 Bishop",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://konstantin-grcic.com/"
+    group: "디자이너·작가",
+    url: "https://konstantin-grcic.com/",
+    region: "유럽",
+    tags: ["알루미늄", "스틸"]
   },
   {
     id: "furn-jasper-morrison",
@@ -192,8 +229,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "다양",
     referencePoint: "Super Normal. 존재감을 낮추는 가구",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://jaspermorrison.com/"
+    group: "디자이너·작가",
+    url: "https://jaspermorrison.com/",
+    region: "유럽",
+    tags: ["미니멀"]
   },
   {
     id: "furn-ron-arad",
@@ -202,8 +241,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "판금, 스틸",
     referencePoint: "금속을 조각처럼 다룬다",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.ronarad.co.uk/"
+    group: "디자이너·작가",
+    url: "https://www.ronarad.co.uk/",
+    region: "유럽",
+    tags: ["스틸", "컬렉터블"]
   },
   {
     id: "furn-max-lamb",
@@ -212,8 +253,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속, 돌",
     referencePoint: "원재료의 날것을 살린 재료 실험",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://maxlamb.org/"
+    group: "디자이너·작가",
+    url: "https://maxlamb.org/",
+    region: "유럽",
+    tags: ["스틸", "돌·콘크리트", "재료 실험"]
   },
   {
     id: "furn-vincenzo-de-cotiis",
@@ -222,8 +265,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "재생 금속, 유리섬유",
     referencePoint: "표면에 흔적이 남는 갤러리형 금속 가구",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.decotiis.it/"
+    group: "디자이너·작가",
+    url: "https://www.decotiis.it/",
+    region: "유럽",
+    tags: ["황동·구리", "컬렉터블"]
   },
   {
     id: "furn-destroyers-builders",
@@ -232,8 +277,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속, 나무",
     referencePoint: "건축적 볼륨의 오브제",
     namingType: "조어형",
-    group: "스틸 가구 디자이너",
-    url: "https://destroyersbuilders.com/"
+    group: "디자이너·작가",
+    url: "https://destroyersbuilders.com/",
+    region: "유럽",
+    tags: ["스틸", "나무", "컬렉터블"]
   },
   {
     id: "furn-tom-dixon",
@@ -242,11 +289,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속, 조명",
     referencePoint: "금속 가구와 조명을 한 브랜드로 묶음",
     namingType: "작가 이름",
-    group: "스틸 가구 디자이너",
-    url: "https://www.tomdixon.net/"
+    group: "브랜드·제조사",
+    url: "https://www.tomdixon.net/",
+    region: "유럽",
+    tags: ["스틸", "조명"]
   },
-
-  // 2. 스틸 가구 브랜드·제조사 (23~35)
   {
     id: "furn-usm-haller",
     title: "USM Haller",
@@ -254,8 +301,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "크롬 강관 + 강판",
     referencePoint: "건축 모듈을 가구로 줄인 사각 그리드 시스템",
     namingType: "약자 + 건축가 이름",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.usm.com/"
+    group: "브랜드·제조사",
+    url: "https://www.usm.com/",
+    region: "유럽",
+    tags: ["스틸", "모듈·시스템"]
   },
   {
     id: "furn-objects-of-common-interest",
@@ -264,8 +313,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "아크릴, 레진",
     referencePoint: "반투명 재료와 색, 가구와 설치의 경계",
     namingType: "조어형(문장)",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://objectsofcommoninterest.com/"
+    group: "듀오·그룹 스튜디오",
+    url: "https://objectsofcommoninterest.com/",
+    region: "북미",
+    tags: ["아크릴·레진", "컬렉터블"]
   },
   {
     id: "furn-vitsoe",
@@ -274,8 +325,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄",
     referencePoint: "Dieter Rams 606 선반. 한 시스템을 평생 유지",
     namingType: "창업자 이름 변형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.vitsoe.com/"
+    group: "브랜드·제조사",
+    url: "https://www.vitsoe.com/",
+    region: "유럽",
+    tags: ["알루미늄", "모듈·시스템"]
   },
   {
     id: "furn-lehni",
@@ -284,8 +337,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄 판재",
     referencePoint: "Andreas Christen과 Judd의 금속 가구 제작사",
     namingType: "회사 이름",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.lehni.ch/"
+    group: "브랜드·제조사",
+    url: "https://www.lehni.ch/",
+    region: "유럽",
+    tags: ["알루미늄", "미니멀"]
   },
   {
     id: "furn-valerie-objects",
@@ -294,8 +349,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속 외",
     referencePoint: "작가 오브제를 내는 출판사형 브랜드",
     namingType: "사람 이름 + 단어",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.valerie-objects.com/"
+    group: "브랜드·제조사",
+    url: "https://www.valerie-objects.com/",
+    region: "유럽",
+    tags: ["컬렉터블"]
   },
   {
     id: "furn-frama",
@@ -304,8 +361,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "스틸, 나무",
     referencePoint: "산업 스틸 선반을 차분한 리빙으로",
     namingType: "조어형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://framacph.com/"
+    group: "브랜드·제조사",
+    url: "https://framacph.com/",
+    region: "북유럽",
+    tags: ["스틸", "나무"]
   },
   {
     id: "furn-snarkitecture",
@@ -314,8 +373,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "다양",
     referencePoint: "건축을 비틀어 경험으로 만드는 스튜디오",
     namingType: "조어형(합성어)",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.snarkitecture.com/"
+    group: "듀오·그룹 스튜디오",
+    url: "https://www.snarkitecture.com/",
+    region: "북미",
+    tags: ["공간·인테리어"]
   },
   {
     id: "furn-string-furniture",
@@ -324,8 +385,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속 사이드 패널",
     referencePoint: "얇은 선의 벽 선반 시스템",
     namingType: "단어형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://stringfurniture.com/"
+    group: "브랜드·제조사",
+    url: "https://stringfurniture.com/",
+    region: "북유럽",
+    tags: ["스틸", "모듈·시스템"]
   },
   {
     id: "furn-tecta",
@@ -334,8 +397,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "강관",
     referencePoint: "바우하우스 캔틸레버 의자 복각",
     namingType: "조어형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://tecta.de/"
+    group: "브랜드·제조사",
+    url: "https://tecta.de/",
+    region: "유럽",
+    tags: ["스틸"]
   },
   {
     id: "furn-thonet",
@@ -344,8 +409,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "강관",
     referencePoint: "강관 의자 대량생산의 역사",
     namingType: "창업자 이름",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.thonet.de/"
+    group: "브랜드·제조사",
+    url: "https://www.thonet.de/",
+    region: "유럽",
+    tags: ["스틸", "나무"]
   },
   {
     id: "furn-tolix",
@@ -354,8 +421,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "판금 스틸",
     referencePoint: "산업용 스틸 의자의 아이콘",
     namingType: "조어형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://tolix.com/"
+    group: "브랜드·제조사",
+    url: "https://tolix.com/",
+    region: "유럽",
+    tags: ["스틸"]
   },
   {
     id: "furn-emeco",
@@ -364,8 +433,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "알루미늄",
     referencePoint: "1006 Navy 의자. 오래 쓰는 금속 가구",
     namingType: "약자형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.emeco.net/"
+    group: "브랜드·제조사",
+    url: "https://www.emeco.net/",
+    region: "북미",
+    tags: ["알루미늄"]
   },
   {
     id: "furn-pastoe",
@@ -374,11 +445,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "박스형 수납장",
     referencePoint: "상자 단위의 모듈 수납",
     namingType: "조어형",
-    group: "스틸 가구 브랜드·제조사",
-    url: "https://www.pastoe.com/"
+    group: "브랜드·제조사",
+    url: "https://www.pastoe.com/",
+    region: "유럽",
+    tags: ["나무", "모듈·시스템"]
   },
-
-  // 3. 일본·아시아 디자이너와 작가 (36~48)
   {
     id: "furn-shiro-kuramata",
     title: "Shiro Kuramata",
@@ -386,8 +457,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "스틸 메쉬, 아크릴, 유리",
     referencePoint: "보이지 않는 가구. 영어 재즈 곡명을 붙인 How High the Moon",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.moma.org/artists/3297"
+    group: "디자이너·작가",
+    url: "https://www.moma.org/artists/3297",
+    region: "일본·아시아",
+    tags: ["스틸", "아크릴·레진"]
   },
   {
     id: "furn-tatsuo-miyajima",
@@ -396,8 +469,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "LED 숫자 카운터",
     referencePoint: "숫자가 세어지고 사라지며 시간과 삶을 말한다. YELLOW BOX 카운터와 직결",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://tatsuomiyajima.com/"
+    group: "아티스트·설치",
+    url: "https://tatsuomiyajima.com/",
+    region: "일본·아시아",
+    tags: ["빛"]
   },
   {
     id: "furn-tokujin-yoshioka",
@@ -406,8 +481,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "유리, 아크릴, 빛",
     referencePoint: "투명한 재료와 빛으로 만든 가구",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.tokujin.com/"
+    group: "디자이너·작가",
+    url: "https://www.tokujin.com/",
+    region: "일본·아시아",
+    tags: ["유리", "아크릴·레진", "빛"]
   },
   {
     id: "furn-junya-ishigami",
@@ -416,8 +493,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "얇은 스틸 판",
     referencePoint: "극한까지 얇게 만든 스틸 테이블. 건축과 가구의 경계",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "http://jysh.net/"
+    group: "건축가",
+    url: "http://jysh.net/",
+    region: "일본·아시아",
+    tags: ["스틸", "미니멀"]
   },
   {
     id: "furn-ryoji-ikeda",
@@ -426,8 +505,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "데이터, 빛, 소리",
     referencePoint: "데이터를 빛과 숫자로 보여준다",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.ryojiikeda.com/"
+    group: "아티스트·설치",
+    url: "https://www.ryojiikeda.com/",
+    region: "일본·아시아",
+    tags: ["빛"]
   },
   {
     id: "furn-nendo",
@@ -436,8 +517,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "다양",
     referencePoint: "작은 '!'의 순간을 만드는 스튜디오",
     namingType: "조어형(일본어 '점토')",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.nendo.jp/"
+    group: "디자이너·작가",
+    url: "https://www.nendo.jp/",
+    region: "일본·아시아",
+    tags: ["미니멀"]
   },
   {
     id: "furn-isamu-noguchi",
@@ -446,8 +529,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "종이 조명 Akari",
     referencePoint: "동양 전통 재료를 세계적 조명으로",
     namingType: "작가 이름 + 제품명 일본어",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.noguchi.org/"
+    group: "디자이너·작가",
+    url: "https://www.noguchi.org/",
+    region: "일본·아시아",
+    tags: ["패브릭·종이", "조명"]
   },
   {
     id: "furn-sanaa",
@@ -456,8 +541,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "얇은 스틸, 유리",
     referencePoint: "가볍고 투명한 공간과 가구",
     namingType: "약자형",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.pritzkerprize.com/laureates/2010"
+    group: "건축가",
+    url: "https://www.pritzkerprize.com/laureates/2010",
+    region: "일본·아시아",
+    tags: ["스틸", "유리"]
   },
   {
     id: "furn-naoto-fukasawa",
@@ -466,8 +553,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "다양",
     referencePoint: "행동에 맞춘 무의식의 디자인",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://naotofukasawa.com/"
+    group: "디자이너·작가",
+    url: "https://naotofukasawa.com/",
+    region: "일본·아시아",
+    tags: ["미니멀"]
   },
   {
     id: "furn-jo-nagasaka-schemata",
@@ -476,8 +565,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "레진, 나무",
     referencePoint: "건축가가 만든 재료 실험 가구",
     namingType: "작가 이름 + 사무소명",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://schemata.jp/"
+    group: "건축가",
+    url: "https://schemata.jp/",
+    region: "일본·아시아",
+    tags: ["아크릴·레진", "나무"]
   },
   {
     id: "furn-tadao-ando",
@@ -486,8 +577,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "콘크리트, 빛",
     referencePoint: "빛으로 완성되는 공간",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "http://www.tadao-ando.com/"
+    group: "건축가",
+    url: "http://www.tadao-ando.com/",
+    region: "일본·아시아",
+    tags: ["돌·콘크리트", "빛"]
   },
   {
     id: "furn-sou-fujimoto",
@@ -496,8 +589,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "격자, 스틸",
     referencePoint: "격자 구조로 안과 밖의 경계를 흐린다",
     namingType: "작가 이름",
-    group: "일본·아시아 디자이너와 작가",
-    url: "https://www.sou-fujimoto.net/"
+    group: "건축가",
+    url: "https://www.sou-fujimoto.net/",
+    region: "일본·아시아",
+    tags: ["스틸", "공간·인테리어"]
   },
   {
     id: "furn-neri-and-hu",
@@ -506,11 +601,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "건축, 가구",
     referencePoint: "아시아 기반 건축가의 가구 브랜드 확장",
     namingType: "두 사람의 성",
-    group: "일본·아시아 디자이너와 작가",
-    url: "http://www.neriandhu.com/"
+    group: "듀오·그룹 스튜디오",
+    url: "http://www.neriandhu.com/",
+    region: "일본·아시아",
+    tags: ["공간·인테리어"]
   },
-
-  // 4. 한국 디자이너·작가·갤러리 (49~58)
   {
     id: "furn-hyungshin-hwang",
     title: "황형신 Hyungshin Hwang",
@@ -518,8 +613,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "스테인리스 스틸",
     referencePoint: "스테인리스 판을 겹친 가구로 해외 갤러리에 진출",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.hyungshinhwang.com/"
+    group: "디자이너·작가",
+    url: "https://www.hyungshinhwang.com/",
+    region: "한국",
+    tags: ["스틸", "컬렉터블"]
   },
   {
     id: "furn-wonmin-park",
@@ -528,8 +625,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "반투명 레진",
     referencePoint: "빛이 스미는 색면 가구. 해외 컬렉터블 시장",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://wonminpark.com/"
+    group: "디자이너·작가",
+    url: "https://wonminpark.com/",
+    region: "한국",
+    tags: ["아크릴·레진", "컬렉터블"]
   },
   {
     id: "furn-kwangho-lee",
@@ -538,8 +637,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "구리 에나멜, 전선",
     referencePoint: "한국적 손작업을 세계 갤러리 언어로",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.kwangholee.com/"
+    group: "디자이너·작가",
+    url: "https://www.kwangholee.com/",
+    region: "한국",
+    tags: ["황동·구리", "재료 실험"]
   },
   {
     id: "furn-do-ho-suh",
@@ -548,8 +649,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "패브릭 집, 공간",
     referencePoint: "집과 방, 개인의 공간을 옮긴다. 방이라는 주제와 직결",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.lehmannmaupin.com/artists/do-ho-suh"
+    group: "아티스트·설치",
+    url: "https://www.lehmannmaupin.com/artists/do-ho-suh",
+    region: "한국",
+    tags: ["패브릭·종이", "공간·인테리어"]
   },
   {
     id: "furn-rareraw",
@@ -558,8 +661,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "철재",
     referencePoint: "rare + raw 영어 조어. 국내 철제 리빙 브랜드",
     namingType: "조어형",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://rareraw.com/"
+    group: "브랜드·제조사",
+    url: "https://rareraw.com/",
+    region: "한국",
+    tags: ["스틸"]
   },
   {
     id: "furn-2nd-universe",
@@ -568,8 +673,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "스틸, 스테인리스 스틸, 강화유리, 아크릴, 크롬",
     referencePoint: "공간의 분위기를 채우는 모던 스틸 & 글래스 가구와 모듈 콘솔, 미드센추리 감성의 리빙 디자인",
     namingType: "조어형 (브랜드)",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.2nd-universe.co.kr/index.html"
+    group: "브랜드·제조사",
+    url: "https://www.2nd-universe.co.kr/index.html",
+    region: "한국",
+    tags: ["스틸", "유리"]
   },
   {
     id: "furn-byung-hoon-choi",
@@ -578,8 +685,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "돌, 미니멀",
     referencePoint: "한국 원로 가구 작가의 해외 갤러리 경로",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.friedmanbenda.com/artists/byung-hoon-choi/"
+    group: "디자이너·작가",
+    url: "https://www.friedmanbenda.com/artists/byung-hoon-choi/",
+    region: "한국",
+    tags: ["돌·콘크리트", "컬렉터블"]
   },
   {
     id: "furn-lee-hun-chung",
@@ -588,8 +697,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "도자, 콘크리트",
     referencePoint: "재료 하나로 가구와 공간을 만든다",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.instagram.com/leehunchung/"
+    group: "디자이너·작가",
+    url: "https://www.instagram.com/leehunchung/",
+    region: "한국",
+    tags: ["도자", "돌·콘크리트"]
   },
   {
     id: "furn-ha-jihoon",
@@ -598,8 +709,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "나무, 금속",
     referencePoint: "한국 전통 가구 구조를 현대 가구로 재해석",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://jihoonha.com/"
+    group: "디자이너·작가",
+    url: "https://jihoonha.com/",
+    region: "한국",
+    tags: ["나무", "스틸"]
   },
   {
     id: "furn-lee-bul",
@@ -608,8 +721,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "거울, 금속, 빛",
     referencePoint: "건축적 유토피아와 빛의 설치",
     namingType: "작가 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.lehmannmaupin.com/artists/lee-bul"
+    group: "아티스트·설치",
+    url: "https://www.lehmannmaupin.com/artists/lee-bul",
+    region: "한국",
+    tags: ["빛"]
   },
   {
     id: "furn-gallery-seomi",
@@ -618,11 +733,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "한국 컬렉터블 디자인을 해외에 소개하는 갤러리",
     namingType: "갤러리 이름",
-    group: "한국 디자이너·작가·갤러리",
-    url: "https://www.galleryseomi.com/"
+    group: "갤러리·페어",
+    url: "https://www.galleryseomi.com/",
+    region: "한국",
+    tags: []
   },
-
-  // 5. 빛과 재료 (59~72)
   {
     id: "furn-sabine-marcelis",
     title: "Sabine Marcelis",
@@ -630,8 +745,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "레진, 유리, 네온",
     referencePoint: "재료 안에서 번지는 빛. 가구와 조명의 경계",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://sabinemarcelis.com/"
+    group: "디자이너·작가",
+    url: "https://sabinemarcelis.com/",
+    region: "유럽",
+    tags: ["아크릴·레진", "유리", "빛"]
   },
   {
     id: "furn-dan-flavin",
@@ -640,8 +757,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "형광등",
     referencePoint: "기성 조명 하나로 공간 전체를 바꾼다. Judd와 같은 계보",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://www.diaart.org/collection/collection/flavin-dan"
+    group: "아티스트·설치",
+    url: "https://www.diaart.org/collection/collection/flavin-dan",
+    region: "북미",
+    tags: ["빛", "미니멀"]
   },
   {
     id: "furn-james-turrell",
@@ -650,8 +769,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "빛, 공간",
     referencePoint: "빛 자체를 재료로 쓰는 공간",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://jamesturrell.com/"
+    group: "아티스트·설치",
+    url: "https://jamesturrell.com/",
+    region: "북미",
+    tags: ["빛"]
   },
   {
     id: "furn-olafur-eliasson",
@@ -660,8 +781,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "빛, 인지",
     referencePoint: "관객이 들어와야 완성되는 작품",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://olafureliasson.net/"
+    group: "아티스트·설치",
+    url: "https://olafureliasson.net/",
+    region: "북유럽",
+    tags: ["빛", "인터랙션"]
   },
   {
     id: "furn-studio-drift",
@@ -670,8 +793,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "움직이는 빛",
     referencePoint: "피고 지는 조명 Shylight. 빛의 움직임",
     namingType: "스튜디오명",
-    group: "빛과 재료",
-    url: "https://studiodrift.com/"
+    group: "듀오·그룹 스튜디오",
+    url: "https://studiodrift.com/",
+    region: "유럽",
+    tags: ["빛", "인터랙션"]
   },
   {
     id: "furn-robert-irwin",
@@ -680,8 +805,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "빛, 막",
     referencePoint: "지각과 공간의 관계",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://www.pacegallery.com/artists/robert-irwin/"
+    group: "아티스트·설치",
+    url: "https://www.pacegallery.com/artists/robert-irwin/",
+    region: "북미",
+    tags: ["빛"]
   },
   {
     id: "furn-ingo-maurer",
@@ -690,8 +817,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "조명",
     referencePoint: "조명에 시와 위트를 넣는다",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://www.ingo-maurer.com/"
+    group: "디자이너·작가",
+    url: "https://www.ingo-maurer.com/",
+    region: "유럽",
+    tags: ["조명"]
   },
   {
     id: "furn-michael-anastassiades",
@@ -700,8 +829,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "황동, 유리구",
     referencePoint: "극도로 단순한 기하 조명",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://michaelanastassiades.com/"
+    group: "디자이너·작가",
+    url: "https://michaelanastassiades.com/",
+    region: "유럽",
+    tags: ["황동·구리", "유리", "조명"]
   },
   {
     id: "furn-flos",
@@ -710,8 +841,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "조명",
     referencePoint: "디자이너 조명을 출판하는 브랜드 모델",
     namingType: "단어형(라틴어 '꽃')",
-    group: "빛과 재료",
-    url: "https://flos.com/"
+    group: "브랜드·제조사",
+    url: "https://flos.com/",
+    region: "유럽",
+    tags: ["조명"]
   },
   {
     id: "furn-artemide",
@@ -720,8 +853,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "조명",
     referencePoint: "빛과 사람의 관계를 말하는 조명 브랜드",
     namingType: "신화 이름",
-    group: "빛과 재료",
-    url: "https://www.artemide.com/"
+    group: "브랜드·제조사",
+    url: "https://www.artemide.com/",
+    region: "유럽",
+    tags: ["조명"]
   },
   {
     id: "furn-lambert-and-fils",
@@ -730,8 +865,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "금속, 유리 조명",
     referencePoint: "구조가 드러나는 조명",
     namingType: "이름 + 프랑스어",
-    group: "빛과 재료",
-    url: "https://lambertetfils.com/"
+    group: "브랜드·제조사",
+    url: "https://lambertetfils.com/",
+    region: "북미",
+    tags: ["스틸", "유리", "조명"]
   },
   {
     id: "furn-bocci",
@@ -740,8 +877,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "유리 조명",
     referencePoint: "공정에서 형태가 나오는 조명",
     namingType: "조어형",
-    group: "빛과 재료",
-    url: "https://bocci.com/"
+    group: "브랜드·제조사",
+    url: "https://bocci.com/",
+    region: "북미",
+    tags: ["유리", "조명"]
   },
   {
     id: "furn-formafantasma",
@@ -750,8 +889,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "재료 연구",
     referencePoint: "재료와 사회를 함께 묻는 리서치 디자인",
     namingType: "조어형(이탈리아어)",
-    group: "빛과 재료",
-    url: "https://formafantasma.com/"
+    group: "듀오·그룹 스튜디오",
+    url: "https://formafantasma.com/",
+    region: "유럽",
+    tags: ["재료 실험"]
   },
   {
     id: "furn-jenny-holzer",
@@ -760,11 +901,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "LED 텍스트",
     referencePoint: "빛으로 된 문장. 숫자·텍스트 표현의 참고",
     namingType: "작가 이름",
-    group: "빛과 재료",
-    url: "https://projects.jennyholzer.com/"
+    group: "아티스트·설치",
+    url: "https://projects.jennyholzer.com/",
+    region: "북미",
+    tags: ["빛"]
   },
-
-  // 6. 반응하는 공간·인터랙션 (73~80)
   {
     id: "furn-rafael-lozano-hemmer",
     title: "Rafael Lozano-Hemmer",
@@ -772,8 +913,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "전구, 센서",
     referencePoint: "Pulse Room. 관객의 심장박동이 전구 불빛이 되어 남는다",
     namingType: "작가 이름",
-    group: "반응하는 공간·인터랙션",
-    url: "https://www.lozano-hemmer.com/"
+    group: "아티스트·설치",
+    url: "https://www.lozano-hemmer.com/",
+    region: "북미",
+    tags: ["빛", "인터랙션"]
   },
   {
     id: "furn-random-international",
@@ -782,8 +925,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "센서, 물, 빛",
     referencePoint: "Rain Room. 사람이 있는 곳만 비가 멈춘다",
     namingType: "조어형",
-    group: "반응하는 공간·인터랙션",
-    url: "https://www.random-international.com/"
+    group: "듀오·그룹 스튜디오",
+    url: "https://www.random-international.com/",
+    region: "유럽",
+    tags: ["인터랙션"]
   },
   {
     id: "furn-philip-beesley",
@@ -792,8 +937,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "반응형 구조",
     referencePoint: "사람에게 반응하는 살아있는 건축",
     namingType: "작가 이름",
-    group: "반응하는 공간·인터랙션",
-    url: "https://www.philipbeesleyarchitect.com/"
+    group: "아티스트·설치",
+    url: "https://www.philipbeesleyarchitect.com/",
+    region: "북미",
+    tags: ["인터랙션"]
   },
   {
     id: "furn-tangible-media-group-mit",
@@ -802,8 +949,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "형태 디스플레이",
     referencePoint: "inFORM. 데이터가 물리적 형태로 바뀐다. 논문 선행연구",
     namingType: "연구실명",
-    group: "반응하는 공간·인터랙션",
-    url: "https://tangible.media.mit.edu/"
+    group: "아티스트·설치",
+    url: "https://tangible.media.mit.edu/",
+    region: "북미",
+    tags: ["인터랙션"]
   },
   {
     id: "furn-studio-roosegaarde",
@@ -812,8 +961,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "인터랙티브 빛",
     referencePoint: "지나가는 사람에게 반응해 빛나는 풍경",
     namingType: "작가 이름",
-    group: "반응하는 공간·인터랙션",
-    url: "https://studioroosegaarde.net/"
+    group: "아티스트·설치",
+    url: "https://studioroosegaarde.net/",
+    region: "유럽",
+    tags: ["빛", "인터랙션"]
   },
   {
     id: "furn-carlo-ratti-associati",
@@ -822,8 +973,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "반응형 건축",
     referencePoint: "데이터와 센서로 공간을 바꾼다",
     namingType: "작가 이름",
-    group: "반응하는 공간·인터랙션",
-    url: "https://carloratti.com/"
+    group: "건축가",
+    url: "https://carloratti.com/",
+    region: "유럽",
+    tags: ["인터랙션"]
   },
   {
     id: "furn-united-visual-artists",
@@ -832,8 +985,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "빛, 설치",
     referencePoint: "빛과 공간의 관계를 설치로",
     namingType: "단어형",
-    group: "반응하는 공간·인터랙션",
-    url: "https://www.uva.co.uk/"
+    group: "아티스트·설치",
+    url: "https://www.uva.co.uk/",
+    region: "유럽",
+    tags: ["빛"]
   },
   {
     id: "furn-teamlab",
@@ -842,11 +997,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "디지털 인터랙션",
     referencePoint: "사람이 움직이면 공간이 바뀐다",
     namingType: "조어형",
-    group: "반응하는 공간·인터랙션",
-    url: "https://www.teamlab.art/"
+    group: "아티스트·설치",
+    url: "https://www.teamlab.art/",
+    region: "일본·아시아",
+    tags: ["인터랙션"]
   },
-
-  // 7. 상자와 공간의 미술, 미니멀 건축 (81~89)
   {
     id: "furn-sol-lewitt",
     title: "Sol LeWitt",
@@ -854,8 +1009,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "열린 큐브, 격자",
     referencePoint: "사각 단위의 반복과 변주",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.moma.org/artists/3528"
+    group: "아티스트·설치",
+    url: "https://www.moma.org/artists/3528",
+    region: "북미",
+    tags: ["모듈·시스템", "미니멀"]
   },
   {
     id: "furn-carl-andre",
@@ -864,8 +1021,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "바닥에 놓인 금속판",
     referencePoint: "관객이 밟고 지나가는 스틸 작품",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.moma.org/artists/174"
+    group: "아티스트·설치",
+    url: "https://www.moma.org/artists/174",
+    region: "북미",
+    tags: ["스틸", "미니멀"]
   },
   {
     id: "furn-richard-serra",
@@ -874,8 +1033,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "내후성 강판",
     referencePoint: "거대한 스틸 판이 사람의 걸음과 공간을 바꾼다",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://gagosian.com/artists/richard-serra/"
+    group: "아티스트·설치",
+    url: "https://gagosian.com/artists/richard-serra/",
+    region: "북미",
+    tags: ["스틸"]
   },
   {
     id: "furn-john-pawson",
@@ -884,8 +1045,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "미니멀 건축, 가구",
     referencePoint: "비움으로 만드는 공간과 가구",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.johnpawson.com/"
+    group: "건축가",
+    url: "https://www.johnpawson.com/",
+    region: "유럽",
+    tags: ["미니멀"]
   },
   {
     id: "furn-fred-sandback",
@@ -894,8 +1057,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "실",
     referencePoint: "선 몇 개로 보이지 않는 면과 공간을 만든다",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.fredsandbackarchive.org/"
+    group: "아티스트·설치",
+    url: "https://www.fredsandbackarchive.org/",
+    region: "북미",
+    tags: ["미니멀"]
   },
   {
     id: "furn-john-mccracken",
@@ -904,8 +1069,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "광택 판",
     referencePoint: "단색 판 하나가 벽과 바닥 사이에 선다",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.davidzwirner.com/artists/john-mccracken"
+    group: "아티스트·설치",
+    url: "https://www.davidzwirner.com/artists/john-mccracken",
+    region: "북미",
+    tags: ["미니멀"]
   },
   {
     id: "furn-vincent-van-duysen",
@@ -914,8 +1081,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "건축, 가구",
     referencePoint: "건축가 언어를 리빙 브랜드로 확장",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://vincentvanduysen.com/"
+    group: "건축가",
+    url: "https://vincentvanduysen.com/",
+    region: "유럽",
+    tags: ["미니멀", "공간·인테리어"]
   },
   {
     id: "furn-peter-zumthor",
@@ -924,8 +1093,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "건축",
     referencePoint: "분위기(Atmosphere)로 말하는 공간",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.archdaily.com/tag/peter-zumthor"
+    group: "건축가",
+    url: "https://www.archdaily.com/tag/peter-zumthor",
+    region: "유럽",
+    tags: ["돌·콘크리트", "빛"]
   },
   {
     id: "furn-valerio-olgiati",
@@ -934,11 +1105,11 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "건축",
     referencePoint: "하나의 개념으로 밀어붙인 공간",
     namingType: "작가 이름",
-    group: "상자와 공간의 미술, 미니멀 건축",
-    url: "https://www.olgiati.net/"
+    group: "건축가",
+    url: "https://www.olgiati.net/",
+    region: "유럽",
+    tags: ["돌·콘크리트"]
   },
-
-  // 8. 컬렉터블 디자인 갤러리·페어 (90~100)
   {
     id: "furn-galerie-philia",
     title: "Galerie Philia",
@@ -946,8 +1117,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "황형신 등 신진 컬렉터블 디자인 발굴",
     namingType: "단어형(그리스어 '사랑')",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://www.galerie-philia.com/"
+    group: "갤러리·페어",
+    url: "https://www.galerie-philia.com/",
+    region: "유럽",
+    tags: []
   },
   {
     id: "furn-carpenters-workshop-gallery",
@@ -956,8 +1129,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "기능 조각과 디자인 아트의 대표 갤러리",
     namingType: "단어형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://carpentersworkshopgallery.com/"
+    group: "갤러리·페어",
+    url: "https://carpentersworkshopgallery.com/",
+    region: "유럽",
+    tags: []
   },
   {
     id: "furn-friedman-benda",
@@ -966,8 +1141,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "동시대 디자인 작가 중심 갤러리",
     namingType: "두 사람의 성",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://www.friedmanbenda.com/"
+    group: "갤러리·페어",
+    url: "https://www.friedmanbenda.com/",
+    region: "북미",
+    tags: []
   },
   {
     id: "furn-galerie-kreo",
@@ -976,8 +1153,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "디자이너와 함께 한정판을 제작",
     namingType: "조어형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://www.galeriekreo.com/"
+    group: "갤러리·페어",
+    url: "https://www.galeriekreo.com/",
+    region: "유럽",
+    tags: []
   },
   {
     id: "furn-side-gallery",
@@ -986,8 +1165,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "Sabine Marcelis 등 빛과 재료 작가",
     namingType: "단어형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://side-gallery.com/"
+    group: "갤러리·페어",
+    url: "https://side-gallery.com/",
+    region: "유럽",
+    tags: []
   },
   {
     id: "furn-etage-projects",
@@ -996,8 +1177,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "젊은 북유럽 컬렉터블 디자인",
     namingType: "단어형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://etageprojects.com/"
+    group: "갤러리·페어",
+    url: "https://etageprojects.com/",
+    region: "북유럽",
+    tags: []
   },
   {
     id: "furn-design-miami",
@@ -1006,8 +1189,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "페어",
     referencePoint: "컬렉터블 디자인 최대 페어",
     namingType: "행사명",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://designmiami.com/"
+    group: "갤러리·페어",
+    url: "https://designmiami.com/",
+    region: "북미",
+    tags: []
   },
   {
     id: "furn-collectible",
@@ -1016,8 +1201,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "페어",
     referencePoint: "신진 디자이너 중심 컬렉터블 페어",
     namingType: "단어형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://collectible.design/"
+    group: "갤러리·페어",
+    url: "https://collectible.design/",
+    region: "유럽",
+    tags: []
   },
   {
     id: "furn-nilufar",
@@ -1026,8 +1213,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "빈티지와 동시대 디자인의 혼합",
     namingType: "사람 이름",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://nilufar.com/"
+    group: "갤러리·페어",
+    url: "https://nilufar.com/",
+    region: "유럽",
+    tags: []
   },
   {
     id: "furn-the-future-perfect",
@@ -1036,8 +1225,10 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리·숍",
     referencePoint: "디자이너 가구를 생활 공간으로",
     namingType: "문장형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://www.thefutureperfect.com/"
+    group: "갤러리·페어",
+    url: "https://www.thefutureperfect.com/",
+    region: "북미",
+    tags: []
   },
   {
     id: "furn-salon-94-design",
@@ -1046,20 +1237,16 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     materials: "갤러리",
     referencePoint: "디자인과 미술을 같이 다룬다. Judd 가구의 북미 대리",
     namingType: "조어형",
-    group: "컬렉터블 디자인 갤러리·페어",
-    url: "https://salon94design.com/"
+    group: "갤러리·페어",
+    url: "https://salon94design.com/",
+    region: "북미",
+    tags: []
   }
 ];
 
 export const FURNITURE_REFERENCES: Reference[] = RAW_FURNITURE_DATA.map((item) => {
-  // Extract individual tags from country and materials
-  const materialTags = item.materials
-    .split(/[,·+]/)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 0 && !s.includes('외') && !s.includes('다양'));
-  const countryTags = item.country.split(/[·,]/).map((s) => s.trim());
-
-  const tags = Array.from(new Set([item.group, ...countryTags, ...materialTags]));
+  const tags = [item.region, ...item.tags];
+  const principle = `국가: ${item.country} · 명칭 유형: ${item.namingType}${item.founders ? ` · 창업: ${item.founders}` : ''}`;
 
   return {
     id: item.id,
@@ -1069,7 +1256,7 @@ export const FURNITURE_REFERENCES: Reference[] = RAW_FURNITURE_DATA.map((item) =
     tags,
     shortDesc: item.materials,
     anatomy: item.referencePoint,
-    principle: `국가: ${item.country} · 명칭 유형: ${item.namingType}`,
+    principle,
     imageUrl: `/captures/furniture/${item.id}.jpg`,
     majorCategory: 'FURNITURE',
     group: item.group,
@@ -1082,5 +1269,6 @@ export function getAllFurnitureTags(furniture: Reference[]): string[] {
   furniture.forEach((f) => {
     f.tags.forEach((t) => set.add(t));
   });
-  return ['전체', ...Array.from(set)];
+  const sorted = FURNITURE_TAG_ORDER.filter((t) => set.has(t));
+  return ['전체', ...sorted];
 }
