@@ -1,4 +1,4 @@
-export type MajorCategory = 'WEB' | 'POSTERS' | 'FURNITURE';
+export type MajorCategory = 'WEB' | 'POSTERS' | 'FURNITURE' | 'FASHION';
 
 export interface Reference {
   id: string;

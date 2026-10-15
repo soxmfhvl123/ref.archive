@@ -28,6 +28,8 @@ export default async function ReferenceDetailPage({
       ? '/#posters'
       : refItem.majorCategory === 'FURNITURE'
       ? '/#furniture'
+      : refItem.majorCategory === 'FASHION'
+      ? '/#fashion'
       : '/';
 
   return (

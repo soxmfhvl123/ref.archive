@@ -10,6 +10,13 @@ import {
   FURNITURE_MATERIAL_TAGS,
   FURNITURE_THEME_TAGS,
 } from '@/lib/data/furniture';
+import {
+  FASHION_GROUPS,
+  FASHION_TAG_ORDER,
+  FASHION_REGIONS,
+  FASHION_MATERIAL_TAGS,
+  FASHION_THEME_TAGS,
+} from '@/lib/data/fashion';
 import Image from 'next/image';
 import TiltCard from '@/components/TiltCard';
 import CanvasView from '@/components/CanvasView';
@@ -20,10 +27,12 @@ interface ArchiveAppProps {
   initialWebReferences?: Reference[];
   initialPosterReferences?: Reference[];
   initialFurnitureReferences?: Reference[];
+  initialFashionReferences?: Reference[];
   initialReferences?: Reference[];
   initialTags?: string[];
   initialPosterTags?: string[];
   initialFurnitureTags?: string[];
+  initialFashionTags?: string[];
 }
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -187,7 +196,8 @@ const GridReferenceCard = memo(function GridReferenceCard({
 }) {
   const isPoster = refItem.majorCategory === 'POSTERS';
   const isFurniture = refItem.majorCategory === 'FURNITURE';
-  const cardAspectRatio = isPoster ? 'aspect-[3/4]' : isFurniture ? 'aspect-[4/3]' : 'aspect-[16/10]';
+  const isFashion = refItem.majorCategory === 'FASHION';
+  const cardAspectRatio = isPoster || isFashion ? 'aspect-[3/4]' : isFurniture ? 'aspect-[4/3]' : 'aspect-[16/10]';
 
   return (
     <article className="block bg-transparent">
@@ -213,7 +223,7 @@ const GridReferenceCard = memo(function GridReferenceCard({
         <div className="text-[13px] sm:text-[14px] leading-tight space-y-0.5 sm:space-y-1">
           <div className="flex items-baseline justify-between gap-1.5 sm:gap-2">
             <span className="font-normal tracking-tight truncate">{refItem.title}</span>
-            {refItem.group && (isPoster || isFurniture) && (
+            {refItem.group && (isPoster || isFurniture || isFashion) && (
               <span className="hidden sm:inline-block text-[11px] opacity-40 uppercase tracking-wider shrink-0">{refItem.group}</span>
             )}
           </div>
@@ -232,12 +242,14 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
   onSelect,
   isPostersView,
   isFurnitureView,
+  isFashionView,
 }: {
   refItem: Reference;
   idx: number;
   onSelect: (ref: Reference) => void;
   isPostersView?: boolean;
   isFurnitureView?: boolean;
+  isFashionView?: boolean;
 }) {
   return (
     <tr
@@ -251,7 +263,7 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
       <td className="py-2.5 pr-4 opacity-40 font-normal">
         {String(idx + 1).padStart(3, '0')}
       </td>
-      <td className={`py-2.5 pr-6 font-normal ${isPostersView ? 'w-1/2' : isFurnitureView ? 'w-1/4' : 'w-1/3'}`}>
+      <td className={`py-2.5 pr-6 font-normal ${isPostersView ? 'w-1/2' : isFurnitureView || isFashionView ? 'w-1/4' : 'w-1/3'}`}>
         <a
           href={refItem.url}
           target="_blank"
@@ -262,7 +274,7 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
           {refItem.title}
         </a>
       </td>
-      {isFurnitureView ? (
+      {isFurnitureView || isFashionView ? (
         <>
           <td className="py-2.5 pr-6 opacity-60 font-normal w-1/4">
             {refItem.shortDesc}
@@ -287,10 +299,12 @@ export default function ArchiveApp({
   initialWebReferences = [],
   initialPosterReferences = [],
   initialFurnitureReferences = [],
+  initialFashionReferences = [],
   initialReferences = [],
   initialTags = [],
   initialPosterTags = [],
   initialFurnitureTags = [],
+  initialFashionTags = [],
 }: ArchiveAppProps) {
   const [majorCategory, setMajorCategory] = useState<MajorCategory>('WEB');
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
@@ -341,12 +355,15 @@ export default function ArchiveApp({
   const webList = initialWebReferences.length > 0 ? initialWebReferences : initialReferences;
   const posterList = initialPosterReferences;
   const furnitureList = initialFurnitureReferences;
+  const fashionList = initialFashionReferences;
   const currentDataset =
     majorCategory === 'WEB'
       ? webList
       : majorCategory === 'POSTERS'
       ? posterList
-      : furnitureList;
+      : majorCategory === 'FURNITURE'
+      ? furnitureList
+      : fashionList;
 
   const handleSwitchMajorCategory = useCallback(
     (cat: MajorCategory) => {
@@ -354,7 +371,14 @@ export default function ArchiveApp({
       setSelectedGroup('All');
       setSelectedTag('전체');
       if (typeof window !== 'undefined') {
-        const newHash = cat === 'POSTERS' ? '#posters' : cat === 'FURNITURE' ? '#furniture' : '#web';
+        const newHash =
+          cat === 'POSTERS'
+            ? '#posters'
+            : cat === 'FURNITURE'
+            ? '#furniture'
+            : cat === 'FASHION'
+            ? '#fashion'
+            : '#web';
         if (window.location.hash !== newHash) {
           window.history.replaceState(null, '', newHash);
         }
@@ -373,6 +397,8 @@ export default function ArchiveApp({
         setMajorCategory('POSTERS');
       } else if (hash === '#furniture' || hash === '#furn' || tab === 'furniture' || tab === 'furn') {
         setMajorCategory('FURNITURE');
+      } else if (hash === '#fashion' || hash === '#fash' || tab === 'fashion' || tab === 'fash') {
+        setMajorCategory('FASHION');
       }
     }
   }, []);
@@ -410,6 +436,29 @@ export default function ArchiveApp({
     return { regions, materials, themes, showFirstDivider, showSecondDivider };
   }, [currentFurnitureTags]);
 
+  const currentFashionTags = useMemo(() => {
+    let pool = fashionList;
+    if (selectedGroup !== 'All') {
+      pool = pool.filter((f) => f.group === selectedGroup);
+    }
+    const tagsSet = new Set<string>();
+    pool.forEach((f) => f.tags.forEach((t) => tagsSet.add(t)));
+    const sorted = FASHION_TAG_ORDER.filter((t) => tagsSet.has(t));
+    return ['전체', ...sorted];
+  }, [fashionList, selectedGroup]);
+
+  const fashionTagClusters = useMemo(() => {
+    const tagsWithoutAll = currentFashionTags.filter((t) => t !== '전체');
+    const regions = tagsWithoutAll.filter((t) => (FASHION_REGIONS as readonly string[]).includes(t));
+    const materials = tagsWithoutAll.filter((t) => (FASHION_MATERIAL_TAGS as readonly string[]).includes(t));
+    const themes = tagsWithoutAll.filter((t) => (FASHION_THEME_TAGS as readonly string[]).includes(t));
+
+    const showFirstDivider = regions.length > 0 && (materials.length > 0 || themes.length > 0);
+    const showSecondDivider = materials.length > 0 && themes.length > 0;
+
+    return { regions, materials, themes, showFirstDivider, showSecondDivider };
+  }, [currentFashionTags]);
+
   useEffect(() => {
     const checkMobile = () => {
       const mobile = typeof window !== 'undefined' && (window.innerWidth < 768 || window.matchMedia('(hover: none)').matches);
@@ -443,6 +492,8 @@ export default function ArchiveApp({
             ? '#posters'
             : majorCategory === 'FURNITURE'
             ? '#furniture'
+            : majorCategory === 'FASHION'
+            ? '#fashion'
             : '#web')
       );
     }
@@ -462,7 +513,12 @@ export default function ArchiveApp({
 
   const filteredReferences = useMemo(() => {
     let list = currentDataset;
-    if ((majorCategory === 'POSTERS' || majorCategory === 'FURNITURE') && selectedGroup !== 'All') {
+    if (
+      (majorCategory === 'POSTERS' ||
+        majorCategory === 'FURNITURE' ||
+        majorCategory === 'FASHION') &&
+      selectedGroup !== 'All'
+    ) {
       list = list.filter((ref) => ref.group === selectedGroup);
     }
     if (selectedTag !== '전체') {
@@ -583,6 +639,18 @@ export default function ArchiveApp({
                 }`}
               >
                 FURNITURE <span className="text-[12px] opacity-60">[{furnitureList.length}]</span>
+              </button>
+              <span className="opacity-20 text-[12px] select-none">/</span>
+              <button
+                type="button"
+                onClick={() => handleSwitchMajorCategory('FASHION')}
+                className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
+                  majorCategory === 'FASHION'
+                    ? 'font-medium underline underline-offset-4 text-black'
+                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                }`}
+              >
+                FASHION <span className="text-[12px] opacity-60">[{fashionList.length}]</span>
               </button>
             </div>
 
@@ -845,6 +913,134 @@ export default function ArchiveApp({
               </nav>
             </div>
           </div>
+        ) : majorCategory === 'FASHION' ? (
+          /* Fashion Groups & Tags Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
+          <div className="space-y-2">
+            {/* Fashion Group Switcher */}
+            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-black/10 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+              {FASHION_GROUPS.map((grp) => {
+                const isSelected = selectedGroup === grp;
+                const count = grp === 'All' ? fashionList.length : fashionList.filter((f) => f.group === grp).length;
+                return (
+                  <button
+                    key={grp}
+                    type="button"
+                    onClick={() => {
+                      setSelectedGroup(grp);
+                      setSelectedTag('전체');
+                    }}
+                    className={`bg-transparent p-0 border-0 cursor-pointer shrink-0 transition-colors ${
+                      isSelected
+                        ? 'font-medium text-black underline underline-offset-4'
+                        : 'opacity-40 hover:opacity-100 no-underline'
+                    }`}
+                  >
+                    {grp} <span className="text-[11px] opacity-60">[{count}]</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Fashion Tags within Selected Group */}
+            <div className="flex items-center justify-between gap-2 pt-0.5">
+              <nav className="flex-1 overflow-x-auto md:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+                <ul className="flex items-center gap-x-3.5 md:gap-x-4 whitespace-nowrap md:whitespace-normal md:flex-wrap text-[13px]">
+                  {/* 전체 */}
+                  <li key="전체" className="inline-block shrink-0">
+                    <button
+                      type="button"
+                      ref={selectedTag === '전체' ? activeTagRef : null}
+                      onClick={() => setSelectedTag('전체')}
+                      className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                        selectedTag === '전체'
+                          ? 'underline underline-offset-4 font-normal text-black'
+                          : 'no-underline opacity-60 hover:opacity-100'
+                      }`}
+                    >
+                      전체
+                    </button>
+                  </li>
+
+                  {/* 지역 (Regions) */}
+                  {fashionTagClusters.regions.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+
+                  {/* 지역 - 재료/키워드 세로 구분선 */}
+                  {fashionTagClusters.showFirstDivider && (
+                    <li className="inline-block shrink-0 opacity-20 select-none text-[12px] -mx-1" aria-hidden="true">
+                      |
+                    </li>
+                  )}
+
+                  {/* 재료 (Materials) */}
+                  {fashionTagClusters.materials.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+
+                  {/* 재료 - 키워드 세로 구분선 */}
+                  {fashionTagClusters.showSecondDivider && (
+                    <li className="inline-block shrink-0 opacity-20 select-none text-[12px] -mx-1" aria-hidden="true">
+                      |
+                    </li>
+                  )}
+
+                  {/* 키워드 (Themes) */}
+                  {fashionTagClusters.themes.map((tag) => {
+                    const isSelected = selectedTag === tag;
+                    return (
+                      <li key={tag} className="inline-block shrink-0">
+                        <button
+                          type="button"
+                          ref={isSelected ? activeTagRef : null}
+                          onClick={() => setSelectedTag(tag)}
+                          className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
+                            isSelected
+                              ? 'underline underline-offset-4 font-normal text-black'
+                              : 'no-underline opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </div>
+          </div>
         ) : (
           /* Posters Groups & Styles Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
           <div className="space-y-2">
@@ -965,6 +1161,8 @@ export default function ArchiveApp({
                   ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-3.5 gap-y-7 sm:gap-x-6 sm:gap-y-10'
                   : majorCategory === 'FURNITURE'
                   ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8 sm:gap-x-7 sm:gap-y-10'
+                  : majorCategory === 'FASHION'
+                  ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-x-5 gap-y-8 sm:gap-x-7 sm:gap-y-10'
                   : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10'
               }
             >
@@ -990,12 +1188,12 @@ export default function ArchiveApp({
               <thead>
                 <tr className="opacity-40 font-normal pb-4">
                   <th className="py-2 pr-4 font-normal w-12">#</th>
-                  <th className={`py-2 pr-6 font-normal ${majorCategory === 'POSTERS' ? 'w-1/2' : majorCategory === 'FURNITURE' ? 'w-1/4' : 'w-1/3'}`}>
-                    {majorCategory === 'FURNITURE' ? '이름 / 브랜드' : '제목'}
+                  <th className={`py-2 pr-6 font-normal ${majorCategory === 'POSTERS' ? 'w-1/2' : majorCategory === 'FURNITURE' || majorCategory === 'FASHION' ? 'w-1/4' : 'w-1/3'}`}>
+                    {majorCategory === 'FURNITURE' || majorCategory === 'FASHION' ? '이름 / 브랜드' : '제목'}
                   </th>
-                  {majorCategory === 'FURNITURE' ? (
+                  {majorCategory === 'FURNITURE' || majorCategory === 'FASHION' ? (
                     <>
-                      <th className="py-2 pr-6 font-normal w-1/4">재료·매체</th>
+                      <th className="py-2 pr-6 font-normal w-1/4">소재·매체</th>
                       <th className="py-2 pr-6 font-normal w-1/3">참고 포인트</th>
                     </>
                   ) : majorCategory !== 'POSTERS' ? (
@@ -1013,6 +1211,7 @@ export default function ArchiveApp({
                     onSelect={handleSelectRef}
                     isPostersView={majorCategory === 'POSTERS'}
                     isFurnitureView={majorCategory === 'FURNITURE'}
+                    isFashionView={majorCategory === 'FASHION'}
                   />
                 ))}
               </tbody>
@@ -1069,14 +1268,14 @@ export default function ArchiveApp({
             <div
               style={{
                 aspectRatio:
-                  activeRef.majorCategory === 'POSTERS'
+                  activeRef.majorCategory === 'POSTERS' || activeRef.majorCategory === 'FASHION'
                     ? '3 / 4'
                     : activeRef.majorCategory === 'FURNITURE'
                     ? '4 / 3'
                     : '16 / 10',
               }}
               className={`relative w-full ${
-                activeRef.majorCategory === 'POSTERS'
+                activeRef.majorCategory === 'POSTERS' || activeRef.majorCategory === 'FASHION'
                   ? 'max-w-xl aspect-[3/4]'
                   : activeRef.majorCategory === 'FURNITURE'
                   ? 'max-w-4xl aspect-[4/3]'
@@ -1091,6 +1290,8 @@ export default function ArchiveApp({
                     ? activeRef.imageUrl.replace('.jpg', '.svg')
                     : activeRef.majorCategory === 'FURNITURE' || activeRef.imageUrl.includes('/furniture/')
                     ? activeRef.imageUrl.replace('.jpg', '.svg')
+                    : activeRef.majorCategory === 'FASHION' || activeRef.imageUrl.includes('/fashion/')
+                    ? activeRef.imageUrl
                     : `/captures/${activeRef.id}.svg`
                 }
                 objectFit="object-contain"
@@ -1099,10 +1300,10 @@ export default function ArchiveApp({
 
             {/* Detail Details: Summary, Reference, Link */}
             <div className="space-y-4 max-w-3xl text-[14px] leading-relaxed">
-              {activeRef.majorCategory === 'FURNITURE' ? (
+              {activeRef.majorCategory === 'FURNITURE' || activeRef.majorCategory === 'FASHION' ? (
                 <>
                   <p>
-                    <span className="opacity-60">재료·매체: </span>
+                    <span className="opacity-60">{activeRef.majorCategory === 'FASHION' ? '소재: ' : '재료·매체: '}</span>
                     {activeRef.shortDesc}
                   </p>
                   <p>
@@ -1136,7 +1337,7 @@ export default function ArchiveApp({
                 >
                   {activeRef.majorCategory === 'POSTERS'
                     ? '핀터레스트 레퍼런스 탐색 ↗'
-                    : activeRef.majorCategory === 'FURNITURE'
+                    : activeRef.majorCategory === 'FURNITURE' || activeRef.majorCategory === 'FASHION'
                     ? `${activeRef.title} 공식 웹페이지 / 정보 바로가기 ↗`
                     : activeRef.url}
                 </a>

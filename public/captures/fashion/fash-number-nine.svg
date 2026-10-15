@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200">
+  <defs>
+    <radialGradient id="grad_fash-number-nine" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1c1c1c"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#grad_fash-number-nine)"/>
+  
+  <!-- Subtle frame -->
+  <rect x="40" y="40" width="820" height="1120" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.12"/>
+  <line x1="40" y1="120" x2="860" y2="120" stroke="#ffffff" stroke-width="1" opacity="0.08"/>
+  <line x1="40" y1="1060" x2="860" y2="1060" stroke="#ffffff" stroke-width="1" opacity="0.08"/>
+  
+  <!-- Header meta -->
+  <text x="70" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" font-weight="500" fill="#ffffff" opacity="0.4" letter-spacing="3">REF-ARCHIVE / FASHION</text>
+  <text x="830" y="90" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" font-weight="500" fill="#ffffff" opacity="0.4" letter-spacing="2">디자이너 레이블</text>
+  
+  <!-- Center Crosshair Marker -->
+  <circle cx="450" cy="460" r="160" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="2 4" opacity="0.08"/>
+  <line x1="450" y1="280" x2="450" y2="640" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+  <line x1="270" y1="460" x2="630" y2="460" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+  
+  <!-- Main Title -->
+  <text x="70" y="520" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="-1">NUMBER (N)INE</text>
+  <text x="70" y="570" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="400" fill="#ffffff" opacity="0.6">Takahiro Miyashita</text>
+  
+  <!-- Accent Line -->
+  <line x1="70" y1="620" x2="190" y2="620" stroke="#00ffff" stroke-width="2" opacity="0.9"/>
+  
+  <!-- Reference Details -->
+  <text x="70" y="680" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="16" font-weight="500" fill="#ffffff" opacity="0.85" letter-spacing="1">1996 TOKYO · GRUNGE ROCK ARCHIVE</text>
+  
+  <text x="70" y="730" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" font-weight="400" fill="#ffffff" opacity="0.5">MATERIAL: 데님 · 레더</text>
+  <text x="70" y="760" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="14" font-weight="400" fill="#ffffff" opacity="0.5">REGION: 일본·아시아 / 일본</text>
+  
+  <!-- Footer -->
+  <text x="70" y="1100" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="13" font-weight="500" fill="#ffffff" opacity="0.3" letter-spacing="2">AUTHENTIC FASHION ARCHIVE</text>
+  <text x="830" y="1100" text-anchor="end" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12" fill="#00ffff" opacity="0.7">[fash-number-nine]</text>
+</svg>
