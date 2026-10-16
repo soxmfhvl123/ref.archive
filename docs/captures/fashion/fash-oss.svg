@@ -23,7 +23,7 @@
   
   <!-- Main Title -->
   <text x="70" y="520" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="-1">OSS</text>
-  <text x="70" y="570" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="400" fill="#ffffff" opacity="0.6">Josefina & Pablo</text>
+  <text x="70" y="570" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="20" font-weight="400" fill="#ffffff" opacity="0.6">Josefina &amp; Pablo</text>
   
   <!-- Accent Line -->
   <line x1="70" y1="620" x2="190" y2="620" stroke="#00ffff" stroke-width="2" opacity="0.9"/>

@@ -499,6 +499,22 @@ export default function ArchiveApp({
     }
   }, [majorCategory]);
 
+  // ESC key support to close detail view
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (activeRef) {
+          e.preventDefault();
+          e.stopPropagation();
+          handleCloseRef();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
+  }, [activeRef, handleCloseRef]);
+
   // Mobile back gesture & browser back button support to close detail view
   useEffect(() => {
     const handlePopState = () => {

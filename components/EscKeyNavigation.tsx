@@ -14,17 +14,17 @@ export default function EscKeyNavigation({ fallbackHref = '/' }: EscKeyNavigatio
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault();
-        // If history exists, router.back() restores scroll position & filter state in the list
-        if (typeof window !== 'undefined' && window.history.length > 1) {
-          router.back();
+        e.stopPropagation();
+        if (typeof window !== 'undefined' && document.referrer && document.referrer.includes(window.location.host)) {
+          window.history.back();
         } else {
           router.push(fallbackHref);
         }
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
   }, [router, fallbackHref]);
 
   return null;
