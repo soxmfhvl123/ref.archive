@@ -235,7 +235,7 @@ export const FASHION_REFERENCES: Reference[] = RAW_FASHION_DATA.map((item) => {
     shortDesc: `${item.materials} · ${item.country}`,
     anatomy: item.referencePoint,
     principle: `국가: ${item.country} · 명칭/유형: ${item.group}` + (item.founders && item.founders !== '-' ? ` · 디렉터/창업: ${item.founders}` : ''),
-    imageUrl: `/captures/fashion/${item.id}.svg`,
+    imageUrl: `/captures/fashion/${item.id}.jpg`,
     videoUrl: `/videos/fashion/${item.id}.webm`,
     majorCategory: 'FASHION' as const,
     group: item.group,

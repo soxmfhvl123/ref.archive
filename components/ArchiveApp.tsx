@@ -151,7 +151,10 @@ const MediaPreviewCard = memo(function MediaPreviewCard({
 
   const fullVideoSrc = !isMobile && videoUrl ? getFullPath(videoUrl) : undefined;
   const shouldMountVideo = !isMobile && isHovered && fullVideoSrc && !hasVideoError;
-  const fallbackPath = isPoster || imageUrl.includes('/posters/') ? imageUrl.replace('.jpg', '.svg') : `/captures/${id}.svg`;
+  const fallbackPath =
+    isPoster || imageUrl.includes('/posters/') || imageUrl.includes('/fashion/')
+      ? imageUrl.replace('.jpg', '.svg')
+      : `/captures/${id}.svg`;
 
   return (
     <div
@@ -502,7 +505,7 @@ export default function ArchiveApp({
   // ESC key support to close detail view
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
         if (activeRef) {
           e.preventDefault();
           e.stopPropagation();
@@ -512,7 +515,11 @@ export default function ArchiveApp({
     };
 
     window.addEventListener('keydown', handleKeyDown, true);
-    return () => window.removeEventListener('keydown', handleKeyDown, true);
+    document.addEventListener('keydown', handleKeyDown, true);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, true);
+      document.removeEventListener('keydown', handleKeyDown, true);
+    };
   }, [activeRef, handleCloseRef]);
 
   // Mobile back gesture & browser back button support to close detail view
@@ -1307,7 +1314,7 @@ export default function ArchiveApp({
                     : activeRef.majorCategory === 'FURNITURE' || activeRef.imageUrl.includes('/furniture/')
                     ? activeRef.imageUrl.replace('.jpg', '.svg')
                     : activeRef.majorCategory === 'FASHION' || activeRef.imageUrl.includes('/fashion/')
-                    ? activeRef.imageUrl
+                    ? activeRef.imageUrl.replace('.jpg', '.svg')
                     : `/captures/${activeRef.id}.svg`
                 }
                 objectFit="object-contain"
