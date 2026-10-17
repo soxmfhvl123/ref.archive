@@ -5178,5 +5178,61 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "사회가 정한 틀과 규범을 뒤집는 'Rebel Against Standards' 슬로건을 아트 오브제 같은 도자기 보틀과 도발적인 에디토리얼 비주얼로 표현",
       "imageUrl": "/captures/borntostandout.png",
       "videoUrl": "/videos/borntostandout.webm"
+    },
+    {
+      "id": "aceternity-ui",
+      "title": "Aceternity UI",
+      "url": "https://ui.aceternity.com",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "애니메이션 UI 컴포넌트",
+      "anatomy": "복사해서 바로 쓰는 React 애니메이션 컴포넌트 모음 (기본 컴포넌트 무료, 템플릿·블록은 유료)",
+      "principle": "화려한 웹 애니메이션 효과를 빠르게 적용하는 방법",
+      "imageUrl": "/captures/aceternity-ui.png",
+      "videoUrl": "/videos/aceternity-ui.webm"
+    },
+    {
+      "id": "manus",
+      "title": "Manus",
+      "url": "https://manus.im",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "AI 작업 자동화 툴",
+      "anatomy": "말로 지시하면 웹사이트·슬라이드·영상 등을 만들어주는 AI 에이전트",
+      "principle": "코딩 없이 AI로 웹사이트를 만드는 흐름",
+      "imageUrl": "/captures/manus.png",
+      "videoUrl": "/videos/manus.webm"
+    },
+    {
+      "id": "motion",
+      "title": "Motion",
+      "url": "https://motion.dev",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "웹 모션 라이브러리",
+      "anatomy": "옛 Framer Motion. React·JavaScript·Vue용 무료 오픈소스 애니메이션 라이브러리 (유료 Motion+ 별도)",
+      "principle": "호버·드래그·스크롤·레이아웃 전환 모션 구현",
+      "imageUrl": "/captures/motion.png",
+      "videoUrl": "/videos/motion.webm"
+    },
+    {
+      "id": "coolors",
+      "title": "Coolors",
+      "url": "https://coolors.co",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "컬러 팔레트 생성기",
+      "anatomy": "색 조합을 자동으로 만들어주는 팔레트 생성 툴. 이미지 색 추출·명도 대비 검사 포함 (무료 + 유료 Pro)",
+      "principle": "예쁜 색 조합을 빠르게 찾고 저장하는 방법",
+      "imageUrl": "/captures/coolors.png",
+      "videoUrl": "/videos/coolors.webm"
     }
 ];
