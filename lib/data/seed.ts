@@ -5276,6 +5276,21 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "레트로하고 감각적인 도트 그리드 로딩 애니메이션 컴포넌트 구현",
       "imageUrl": "/captures/dotmatrix.png",
       "videoUrl": "/videos/dotmatrix.webm"
+    },
+    {
+      "id": "404-zero",
+      "title": "404.zero",
+      "url": "https://www.404zero.com",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "오디오비주얼·제너러티브 아트",
+      "anatomy": "수학과 코드, 모듈러 신시사이저로 빚어내는 오디오비주얼 아티스트 듀오 404.zero의 포트폴리오",
+      "principle": "사운드와 비주얼의 정밀한 동기화와 제너러티브 코드 기반 몰입형 미디어 아트",
+      "imageUrl": "/captures/404-zero.png",
+      "videoUrl": "/videos/404-zero.webm"
     }
 ];
+
 
