@@ -5234,5 +5234,48 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "예쁜 색 조합을 빠르게 찾고 저장하는 방법",
       "imageUrl": "/captures/coolors.png",
       "videoUrl": "/videos/coolors.webm"
+    },
+    {
+      "id": "shapes-gallery",
+      "title": "Shapes.Gallery",
+      "url": "https://www.shapes.gallery",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "무료 SVG 도형 모음",
+      "anatomy": "복사해서 바로 쓰는 기하학적·모던 SVG 도형 라이브러리 (Monika Michalczyk 제작, 무료)",
+      "principle": "웹 디자인과 그래픽 작업에 활용할 수 있는 다채로운 SVG 셰이프 복사·적용 방법",
+      "imageUrl": "/captures/shapes-gallery.png",
+      "videoUrl": "/videos/shapes-gallery.webm"
+    },
+    {
+      "id": "randoma11y",
+      "title": "Randoma11y",
+      "url": "https://randoma11y.com",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "접근성 컬러 조합 생성기",
+      "anatomy": "WCAG 명도 대비 기준을 만족하는 접근성 높은 색상 조합을 무한 생성해주는 툴 (무료)",
+      "principle": "웹 접근성(WCAG) 기준을 만족하는 직관적이고 감각적인 2색 대비 팔레트 탐색",
+      "imageUrl": "/captures/randoma11y.png",
+      "videoUrl": "/videos/randoma11y.webm"
+    },
+    {
+      "id": "dotmatrix",
+      "title": "Dot Matrix",
+      "url": "https://dotmatrix.zzzzshawn.cloud",
+      "category": "Resource & Tool",
+      "tags": [
+        "리소스 & 툴"
+      ],
+      "shortDesc": "도트 매트릭스 로딩 애니메이션",
+      "anatomy": "shadcn 레지스트리로 바로 설치해 로컬 코드로 소유하는 55개 이상의 React 도트 매트릭스 로더 컴포넌트 라이브러리 (무료 오픈소스)",
+      "principle": "레트로하고 감각적인 도트 그리드 로딩 애니메이션 컴포넌트 구현",
+      "imageUrl": "/captures/dotmatrix.png",
+      "videoUrl": "/videos/dotmatrix.webm"
     }
 ];
+
