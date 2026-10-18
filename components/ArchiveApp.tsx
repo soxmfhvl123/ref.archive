@@ -355,36 +355,6 @@ export default function ArchiveApp({
     }
   }, [selectedTag, selectedGroup]);
 
-  // "kinda Official" typewriter animation (runs once on mount) & scroll shrinking listener
-  const [kindaText, setKindaText] = useState<string>('');
-  const [isTypingKinda, setIsTypingKinda] = useState<boolean>(true);
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fullText = 'kinda Official';
-    let index = 0;
-    const interval = setInterval(() => {
-      index++;
-      setKindaText(fullText.slice(0, index));
-      if (index >= fullText.length) {
-        clearInterval(interval);
-        setTimeout(() => setIsTypingKinda(false), 700);
-      }
-    }, 70);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const scrolled = window.scrollY > 25;
-      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const webList = initialWebReferences.length > 0 ? initialWebReferences : initialReferences;
   const posterList = initialPosterReferences;
   const furnitureList = initialFurnitureReferences;
@@ -645,51 +615,9 @@ export default function ArchiveApp({
       />
 
       {/* Sticky Top Bar Container: Header + Category Nav (Transparent background with backdrop blur) */}
-      <div className="sticky top-0 z-40 bg-white/80 backdrop-blur-md transition-all duration-300 pb-2.5 md:pb-3.5 mb-3 md:mb-6">
-        {/* Full Bleed 'kinda Official' banner that shrinks on scroll */}
-        <div
-          onClick={() => {
-            handleCloseRef();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className={`w-full -mx-4 sm:-mx-6 md:-mx-10 px-4 sm:px-6 md:px-10 border-b border-black/10 transition-all duration-300 ease-out cursor-pointer select-none overflow-hidden flex items-center justify-between ${
-            isScrolled
-              ? 'py-1.5 md:py-2 mb-2 bg-transparent'
-              : 'py-6 sm:py-10 md:py-12 mb-3 md:mb-4 bg-transparent'
-          }`}
-          title="맨 위로 스크롤"
-        >
-          <div className="flex items-baseline gap-2 sm:gap-3">
-            <h1
-              className={`font-bold tracking-tighter leading-none transition-all duration-300 ease-out flex items-baseline ${
-                isScrolled
-                  ? 'text-sm sm:text-base md:text-lg'
-                  : 'text-[10vw] sm:text-[8vw] md:text-[6.5vw]'
-              }`}
-            >
-              <span>{kindaText || '\u00A0'}</span>
-              {isTypingKinda && (
-                <span className="inline-block w-[2px] md:w-[4px] h-[0.75em] bg-black ml-1 animate-pulse align-baseline" />
-              )}
-            </h1>
-            <span
-              className={`text-neutral-400 font-mono transition-all duration-300 ${
-                isScrolled ? 'text-[10px] sm:text-[11px]' : 'text-xs md:text-sm'
-              }`}
-            >
-              [ref.archive]
-            </span>
-          </div>
-
-          {!isScrolled && (
-            <span className="hidden md:inline-block text-[11px] font-mono text-neutral-400 uppercase tracking-widest">
-              Visual Reference Archive
-            </span>
-          )}
-        </div>
-
+      <div className="sticky top-0 z-40 bg-transparent backdrop-blur-md pt-3 md:pt-10 pb-2.5 md:pb-4 mb-3 md:mb-6">
         {/* Line 1: Header + Major Category Switcher + Controls */}
-        <header className="mb-2 md:mb-3 flex flex-wrap justify-between items-baseline gap-y-2">
+        <header className="mb-2.5 md:mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
           <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4 gap-y-1">
             <h1
               onClick={handleCloseRef}
