@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import * as fs from 'fs';
 import * as path from 'path';
 import { SEED_REFERENCES } from '../lib/data/seed';
+import { FURNITURE_REFERENCES } from '../lib/data/furniture';
 
 const VIDEO_DIR = path.join(process.cwd(), 'public', 'videos');
 const TEMP_DIR = path.join(process.cwd(), 'public', 'temp_rec');
@@ -15,6 +16,7 @@ export async function recordVideos() {
     fs.mkdirSync(TEMP_DIR, { recursive: true });
   }
 
+  const allItems = [...SEED_REFERENCES, ...FURNITURE_REFERENCES];
   console.log(`Starting Parallel Playwright Video Recording (${CONCURRENCY} workers, 5-second hover clips)...`);
 
   const browser = await chromium.launch({
@@ -22,7 +24,7 @@ export async function recordVideos() {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
-  const queue = [...SEED_REFERENCES];
+  const queue = [...allItems];
 
   async function worker(workerId: number) {
     const workerTemp = path.join(TEMP_DIR, `worker_${workerId}`);

@@ -1241,6 +1241,19 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     url: "https://salon94design.com/",
     region: "북미",
     tags: []
+  },
+  {
+    id: "furn-mario-tsai",
+    title: "Mario Tsai Studio",
+    country: "중국",
+    materials: "알루미늄, 스틸, LED",
+    referencePoint: "중국 항저우의 가구·조명 디자인 스튜디오. 리서치와 지속가능성에서 출발한 절제된 디자인 (Grid 벤치, Mazha 3.0 조명 시스템)",
+    namingType: "디자이너 이름",
+    group: "디자이너·작가",
+    url: "https://mariotsai.studio",
+    region: "일본·아시아",
+    tags: ["조명", "미니멀"],
+    founders: "Mario Tsai"
   }
 ];
 
@@ -1258,6 +1271,7 @@ export const FURNITURE_REFERENCES: Reference[] = RAW_FURNITURE_DATA.map((item) =
     anatomy: item.referencePoint,
     principle,
     imageUrl: `/captures/furniture/${item.id}.jpg`,
+    videoUrl: `/videos/${item.id}.webm`,
     majorCategory: 'FURNITURE',
     group: item.group,
     aspectRatio: 'landscape',

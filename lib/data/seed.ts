@@ -5290,7 +5290,64 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "사운드와 비주얼의 정밀한 동기화와 제너러티브 코드 기반 몰입형 미디어 아트",
       "imageUrl": "/captures/404-zero.png",
       "videoUrl": "/videos/404-zero.webm"
+    },
+    {
+      "id": "actual-source",
+      "title": "Actual Source",
+      "url": "https://actualsource.work",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "아이덴티티·출판 디자인 스튜디오",
+      "anatomy": "2015년 Davis Ngarupe와 JP Haynie가 세운 스튜디오. 아이덴티티·책·웹·패키지·의류·공간까지 (SATISFY, Atmos 매거진, A24 등)",
+      "principle": "브랜드 철학을 책과 아트북 형태로 풀어내는 방식",
+      "imageUrl": "/captures/actual-source.png",
+      "videoUrl": "/videos/actual-source.webm"
+    },
+    {
+      "id": "colle",
+      "title": "collé (コル)",
+      "url": "https://www.colle.co.jp",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "도쿄 패키지·브랜딩 스튜디오",
+      "anatomy": "아트디렉터 야마구치 아가타(山口崇多)가 2021년 세운 도쿄 디자인 회사. CI·브랜딩·패키지 디자인",
+      "principle": "일본식 절제와 재료감이 살아있는 패키지 디자인",
+      "imageUrl": "/captures/colle.png",
+      "videoUrl": "/videos/colle.webm"
+    },
+    {
+      "id": "studio-nari",
+      "title": "Studio Nari",
+      "url": "https://studionari.co.uk",
+      "category": "Brand Identity",
+      "tags": [
+        "브랜드 아이덴티티"
+      ],
+      "shortDesc": "런던 브랜딩 스튜디오",
+      "anatomy": "Caterina Bianchini가 이끄는 런던 브랜딩·디자인 스튜디오. Netflix, Nike Kids, Puma, Mulberry, Lululemon 등",
+      "principle": "실험적이고 감각적인 타이포그래피 중심 아이덴티티",
+      "imageUrl": "/captures/studio-nari.png",
+      "videoUrl": "/videos/studio-nari.webm"
+    },
+    {
+      "id": "casberry-particles",
+      "title": "Particles (Casberry)",
+      "url": "https://particles.casberry.in",
+      "category": "Interactive Web",
+      "tags": [
+        "3D WebGL"
+      ],
+      "shortDesc": "3D 파티클 시뮬레이터",
+      "anatomy": "인도 개발자 Eswar Prasaath(Casberry)가 만든 WebGL 파티클 시뮬레이터. 수많은 입자로 구·형태를 만들고 조작",
+      "principle": "빛나는 입자로 만드는 3D 형태와 실시간 인터랙션",
+      "imageUrl": "/captures/casberry-particles.png",
+      "videoUrl": "/videos/casberry-particles.webm"
     }
 ];
+
 
 

@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import * as fs from 'fs';
 import * as path from 'path';
 import { SEED_REFERENCES } from '../lib/data/seed';
+import { FURNITURE_REFERENCES } from '../lib/data/furniture';
 
 const CAPTURE_DIR = path.join(process.cwd(), 'public', 'captures');
 const CONCURRENCY = 6;
@@ -11,23 +12,31 @@ export async function fastCaptureAll() {
     fs.mkdirSync(CAPTURE_DIR, { recursive: true });
   }
 
-  console.log(`Starting Fast Parallel Screenshot Worker (${CONCURRENCY} workers, ${SEED_REFERENCES.length} items)...`);
+  const allItems = [...SEED_REFERENCES, ...FURNITURE_REFERENCES];
+  console.log(`Starting Fast Parallel Screenshot Worker (${CONCURRENCY} workers, ${allItems.length} items)...`);
   const browser = await chromium.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
-  const queue = [...SEED_REFERENCES];
+  const queue = [...allItems];
   
   async function worker(workerId: number) {
     while (queue.length > 0) {
       const item = queue.shift();
       if (!item) break;
 
-      const pngPath = path.join(CAPTURE_DIR, `${item.id}.png`);
+      const targetPath = item.imageUrl 
+        ? path.join(process.cwd(), 'public', item.imageUrl.replace(/^\//, ''))
+        : path.join(CAPTURE_DIR, `${item.id}.png`);
       
-      // Skip if PNG already exists and is valid
-      if (fs.existsSync(pngPath) && fs.statSync(pngPath).size > 15000) {
+      const targetDir = path.dirname(targetPath);
+      if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir, { recursive: true });
+      }
+
+      // Skip if file already exists and is valid
+      if (fs.existsSync(targetPath) && fs.statSync(targetPath).size > 15000) {
         continue;
       }
 
@@ -40,8 +49,12 @@ export async function fastCaptureAll() {
         page = await context.newPage();
         await page.goto(item.url, { waitUntil: 'domcontentloaded', timeout: 15000 }).catch(() => {});
         await page.waitForTimeout(5000);
-        await page.screenshot({ path: pngPath, fullPage: false });
-        console.log(`✓ [Worker ${workerId}] Saved: ${item.id}.png`);
+        if (targetPath.endsWith('.jpg') || targetPath.endsWith('.jpeg')) {
+          await page.screenshot({ path: targetPath, type: 'jpeg', quality: 80, fullPage: false });
+        } else {
+          await page.screenshot({ path: targetPath, fullPage: false });
+        }
+        console.log(`✓ [Worker ${workerId}] Saved: ${path.basename(targetPath)}`);
         await context.close();
       } catch (err) {
         console.error(`X [Worker ${workerId}] Error capturing ${item.url}:`, err);
