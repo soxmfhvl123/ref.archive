@@ -614,8 +614,8 @@ export default function ArchiveApp({
         majorCategory={majorCategory}
       />
 
-      {/* Sticky Top Bar Container: Header + Category Nav (Transparent background with backdrop blur) */}
-      <div className="sticky top-0 z-40 bg-transparent backdrop-blur-md pt-3 md:pt-10 pb-2.5 md:pb-4 mb-3 md:mb-6">
+      {/* Sticky Top Bar Container: Header + Category Nav (mix-blend-difference with text-white) */}
+      <div className="sticky top-0 z-40 mix-blend-difference text-white pt-3 md:pt-10 pb-2.5 md:pb-4 mb-3 md:mb-6 pointer-events-auto">
         {/* Line 1: Header + Major Category Switcher + Controls */}
         <header className="mb-2.5 md:mb-4 flex flex-wrap justify-between items-baseline gap-y-2">
           <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4 gap-y-1">
@@ -633,8 +633,8 @@ export default function ArchiveApp({
                 onClick={() => handleSwitchMajorCategory('WEB')}
                 className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
                   majorCategory === 'WEB'
-                    ? 'font-medium underline underline-offset-4 text-black'
-                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                    ? 'font-medium underline underline-offset-4'
+                    : 'opacity-50 hover:opacity-100 no-underline'
                 }`}
               >
                 WEB <span className="text-[12px] opacity-60">[{webList.length}]</span>
@@ -645,8 +645,8 @@ export default function ArchiveApp({
                 onClick={() => handleSwitchMajorCategory('POSTERS')}
                 className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
                   majorCategory === 'POSTERS'
-                    ? 'font-medium underline underline-offset-4 text-black'
-                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                    ? 'font-medium underline underline-offset-4'
+                    : 'opacity-50 hover:opacity-100 no-underline'
                 }`}
               >
                 POSTERS <span className="text-[12px] opacity-60">[{posterList.length}]</span>
@@ -657,8 +657,8 @@ export default function ArchiveApp({
                 onClick={() => handleSwitchMajorCategory('FURNITURE')}
                 className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
                   majorCategory === 'FURNITURE'
-                    ? 'font-medium underline underline-offset-4 text-black'
-                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                    ? 'font-medium underline underline-offset-4'
+                    : 'opacity-50 hover:opacity-100 no-underline'
                 }`}
               >
                 FURNITURE <span className="text-[12px] opacity-60">[{furnitureList.length}]</span>
@@ -669,8 +669,8 @@ export default function ArchiveApp({
                 onClick={() => handleSwitchMajorCategory('FASHION')}
                 className={`bg-transparent p-0 border-0 cursor-pointer text-[14px] transition-opacity ${
                   majorCategory === 'FASHION'
-                    ? 'font-medium underline underline-offset-4 text-black'
-                    : 'opacity-40 hover:opacity-100 no-underline text-black'
+                    ? 'font-medium underline underline-offset-4'
+                    : 'opacity-50 hover:opacity-100 no-underline'
                 }`}
               >
                 FASHION <span className="text-[12px] opacity-60">[{fashionList.length}]</span>
@@ -681,7 +681,7 @@ export default function ArchiveApp({
               href="https://cdj.kr"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block text-[14px] opacity-40 hover:opacity-100 transition-opacity no-underline text-black"
+              className="hidden sm:inline-block text-[14px] opacity-50 hover:opacity-100 transition-opacity no-underline"
             >
               arranged by studiofluxus™
             </a>
@@ -692,21 +692,21 @@ export default function ArchiveApp({
             {/* Search Input / Toggle */}
             <div className="relative flex items-center">
               {isSearchOpen || searchQuery ? (
-                <div className="flex items-center gap-1.5 bg-black/[0.04] px-2 py-0.5 rounded transition-all border border-black/10">
-                  <span className="text-[12px] opacity-40 select-none">🔍</span>
+                <div className="flex items-center gap-1.5 bg-white/[0.08] px-2 py-0.5 rounded transition-all border border-white/20">
+                  <span className="text-[12px] opacity-50 select-none">🔍</span>
                   <input
                     ref={searchInputRef}
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="검색..."
-                    className="bg-transparent text-[13px] text-black placeholder:text-neutral-400 focus:outline-none w-20 sm:w-28 md:w-36 transition-all focus:w-24 sm:focus:w-36 md:focus:w-44"
+                    className="bg-transparent text-[13px] text-white placeholder:text-white/40 focus:outline-none w-20 sm:w-28 md:w-36 transition-all focus:w-24 sm:focus:w-36 md:focus:w-44"
                   />
                   {searchQuery ? (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="text-[11px] opacity-40 hover:opacity-100 p-0.5 border-0 bg-transparent cursor-pointer leading-none"
+                      className="text-[11px] opacity-50 hover:opacity-100 p-0.5 border-0 bg-transparent cursor-pointer leading-none"
                       title="검색어 지우기"
                     >
                       ✕
@@ -715,7 +715,7 @@ export default function ArchiveApp({
                     <button
                       type="button"
                       onClick={() => setIsSearchOpen(false)}
-                      className="text-[11px] opacity-40 hover:opacity-100 p-0.5 border-0 bg-transparent cursor-pointer leading-none"
+                      className="text-[11px] opacity-50 hover:opacity-100 p-0.5 border-0 bg-transparent cursor-pointer leading-none"
                       title="검색 닫기"
                     >
                       ✕
@@ -729,7 +729,7 @@ export default function ArchiveApp({
                     setIsSearchOpen(true);
                     setTimeout(() => searchInputRef.current?.focus(), 50);
                   }}
-                  className="bg-transparent p-0 border-0 cursor-pointer opacity-40 hover:opacity-100 transition-opacity flex items-center gap-1 text-[13px] md:text-[14px]"
+                  className="bg-transparent p-0 border-0 cursor-pointer opacity-50 hover:opacity-100 transition-opacity flex items-center gap-1 text-[13px] md:text-[14px]"
                   title="검색 (단축키: /)"
                 >
                   <span>검색</span>
@@ -744,7 +744,7 @@ export default function ArchiveApp({
               type="button"
               onClick={() => setViewMode('grid')}
               className={`bg-transparent p-0 border-0 cursor-pointer ${
-                viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                viewMode === 'grid' ? 'underline underline-offset-4 font-normal' : 'opacity-50 no-underline'
               }`}
             >
               그리드
@@ -753,7 +753,7 @@ export default function ArchiveApp({
               type="button"
               onClick={() => setViewMode('index')}
               className={`bg-transparent p-0 border-0 cursor-pointer ${
-                viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                viewMode === 'index' ? 'underline underline-offset-4 font-normal' : 'opacity-50 no-underline'
               }`}
             >
               인덱스
@@ -763,7 +763,7 @@ export default function ArchiveApp({
                 type="button"
                 onClick={() => setViewMode('canvas')}
                 className={`bg-transparent p-0 border-0 cursor-pointer ${
-                  viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-40 no-underline'
+                  viewMode === 'canvas' ? 'underline underline-offset-4 font-normal' : 'opacity-50 no-underline'
                 }`}
               >
                 캔버스
@@ -774,7 +774,7 @@ export default function ArchiveApp({
                   onClick={() => {
                     window.dispatchEvent(new CustomEvent('refarchive-shuffle'));
                   }}
-                  className="bg-black text-white px-2 py-0.5 text-[12px] cursor-pointer hover:bg-neutral-800 transition-colors ml-1 border-0"
+                  className="border border-white/40 hover:border-white/80 bg-white/[0.1] hover:bg-white/[0.2] px-2 py-0.5 text-[12px] cursor-pointer transition-colors ml-1"
                   title="모든 카드를 사방으로 흩뿌리기"
                 >
                   셔플 ✦
@@ -812,7 +812,7 @@ export default function ArchiveApp({
           /* Furniture Groups & Tags Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
           <div className="space-y-2">
             {/* Furniture Group Switcher */}
-            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-black/10 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-white/20 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
               {FURNITURE_GROUPS.map((grp) => {
                 const isSelected = selectedGroup === grp;
                 const count = grp === 'All' ? furnitureList.length : furnitureList.filter((f) => f.group === grp).length;
@@ -826,8 +826,8 @@ export default function ArchiveApp({
                     }}
                     className={`bg-transparent p-0 border-0 cursor-pointer shrink-0 transition-colors ${
                       isSelected
-                        ? 'font-medium text-black underline underline-offset-4'
-                        : 'opacity-40 hover:opacity-100 no-underline'
+                        ? 'font-medium underline underline-offset-4'
+                        : 'opacity-50 hover:opacity-100 no-underline'
                     }`}
                   >
                     {grp} <span className="text-[11px] opacity-60">[{count}]</span>
@@ -848,7 +848,7 @@ export default function ArchiveApp({
                       onClick={() => setSelectedTag('전체')}
                       className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                         selectedTag === '전체'
-                          ? 'underline underline-offset-4 font-normal text-black'
+                          ? 'underline underline-offset-4 font-normal'
                           : 'no-underline opacity-60 hover:opacity-100'
                       }`}
                     >
@@ -867,7 +867,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -895,7 +895,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -923,7 +923,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -940,7 +940,7 @@ export default function ArchiveApp({
           /* Fashion Groups & Tags Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
           <div className="space-y-2">
             {/* Fashion Group Switcher */}
-            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-black/10 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-white/20 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
               {FASHION_GROUPS.map((grp) => {
                 const isSelected = selectedGroup === grp;
                 const count = grp === 'All' ? fashionList.length : fashionList.filter((f) => f.group === grp).length;
@@ -954,8 +954,8 @@ export default function ArchiveApp({
                     }}
                     className={`bg-transparent p-0 border-0 cursor-pointer shrink-0 transition-colors ${
                       isSelected
-                        ? 'font-medium text-black underline underline-offset-4'
-                        : 'opacity-40 hover:opacity-100 no-underline'
+                        ? 'font-medium underline underline-offset-4'
+                        : 'opacity-50 hover:opacity-100 no-underline'
                     }`}
                   >
                     {grp} <span className="text-[11px] opacity-60">[{count}]</span>
@@ -976,7 +976,7 @@ export default function ArchiveApp({
                       onClick={() => setSelectedTag('전체')}
                       className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                         selectedTag === '전체'
-                          ? 'underline underline-offset-4 font-normal text-black'
+                          ? 'underline underline-offset-4 font-normal'
                           : 'no-underline opacity-60 hover:opacity-100'
                       }`}
                     >
@@ -995,7 +995,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -1023,7 +1023,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -1051,7 +1051,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -1068,7 +1068,7 @@ export default function ArchiveApp({
           /* Posters Groups & Styles Navigation: Clean 2-row horizontal swipe on mobile, wrapped on desktop */
           <div className="space-y-2">
             {/* Style Group Switcher */}
-            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-black/10 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex items-center gap-x-3.5 md:gap-x-4 overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal md:flex-wrap no-scrollbar text-[13px] border-b border-white/20 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
               {POSTER_GROUPS.map((grp) => {
                 const isSelected = selectedGroup === grp;
                 const count = grp === 'All' ? posterList.length : posterList.filter((p) => p.group === grp).length;
@@ -1082,8 +1082,8 @@ export default function ArchiveApp({
                     }}
                     className={`bg-transparent p-0 border-0 cursor-pointer shrink-0 transition-colors ${
                       isSelected
-                        ? 'font-medium text-black underline underline-offset-4'
-                        : 'opacity-40 hover:opacity-100 no-underline'
+                        ? 'font-medium underline underline-offset-4'
+                        : 'opacity-50 hover:opacity-100 no-underline'
                     }`}
                   >
                     {grp} <span className="text-[11px] opacity-60">[{count}]</span>
@@ -1106,7 +1106,7 @@ export default function ArchiveApp({
                           onClick={() => setSelectedTag(tag)}
                           className={`bg-transparent p-0 border-0 cursor-pointer text-[13px] ${
                             isSelected
-                              ? 'underline underline-offset-4 font-normal text-black'
+                              ? 'underline underline-offset-4 font-normal'
                               : 'no-underline opacity-60 hover:opacity-100'
                           }`}
                         >
@@ -1125,7 +1125,7 @@ export default function ArchiveApp({
                   setCategorySearchQuery('');
                   setIsCategoryDrawerOpen(true);
                 }}
-                className="shrink-0 text-[11px] tracking-tight px-2 py-0.5 border border-black/20 hover:border-black/50 transition-colors bg-transparent select-none flex items-center gap-1 md:hidden"
+                className="shrink-0 text-[11px] tracking-tight px-2 py-0.5 border border-white/30 hover:border-white/70 transition-colors bg-transparent select-none flex items-center gap-1 md:hidden"
                 title={`전체 ${POSTER_BASE_STYLES.length}개 스타일 목록 보기`}
               >
                 <span>전체 목록</span>
