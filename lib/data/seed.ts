@@ -5346,6 +5346,48 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "빛나는 입자로 만드는 3D 형태와 실시간 인터랙션",
       "imageUrl": "/captures/casberry-particles.png",
       "videoUrl": "/videos/casberry-particles.webm"
+    },
+    {
+      "id": "above-studio",
+      "title": "ABOVE",
+      "url": "https://www.above.studio",
+      "category": "Graphic Design Studio",
+      "tags": [
+        "디자인 스튜디오"
+      ],
+      "shortDesc": "을지로 기반 다학제 디자인 스튜디오",
+      "anatomy": "서울 을지로 기반의 디자인 스튜디오. 브랜드 아이덴티티부터 제품·공간·전시·디지털까지 브랜드의 복합적인 니즈를 논리적이고 아름답게 구현 (COWAY, DDP, MOVIN 등)",
+      "principle": "브랜드의 맥락을 깊이 이해하고 제품과 전시 공간으로 입체화하는 디자인 프로세스",
+      "imageUrl": "/captures/above-studio.png",
+      "videoUrl": "/videos/above-studio.webm"
+    },
+    {
+      "id": "the-horang",
+      "title": "HORANG (호랑)",
+      "url": "https://www.thehorang.com",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "일상을 위한 조각·테이블웨어 브랜드",
+      "anatomy": "한국의 커트러리 & 테이블웨어 디자인 브랜드. 간결한 선과 금속 재료의 물성으로 식탁 위의 작은 조각(Sculpture)을 빚어내는 컬렉션 (KUO DUO 협업 SEON, Grand Hyatt Seoul 파트너)",
+      "principle": "식기류를 하나의 조각 오브제로 접근하는 절제된 조형미와 브랜드 톤앤매너",
+      "imageUrl": "/captures/the-horang.png",
+      "videoUrl": "/videos/the-horang.webm"
+    },
+    {
+      "id": "visteller",
+      "title": "비주얼스토리텔러 (권동현)",
+      "url": "https://visteller.com",
+      "category": "Illustration & Artist",
+      "tags": [
+        "일러스트 & 아티스트"
+      ],
+      "shortDesc": "역사·정보 인포그래픽 아트 스튜디오",
+      "anatomy": "디자이너 권동현의 비주얼스토리텔링 스튜디오. 방대한 역사와 복잡한 시스템 정보를 치밀한 리서치와 정교한 단 한 장의 인포그래픽 일러스트레이션으로 압축 (K-RIBBON 인증, 국립중앙박물관 뮷즈 선정)",
+      "principle": "방대한 텍스트와 역사적 데이터를 시각화하고 하나의 완결된 포스터·출판물로 풀어내는 정보 아카이빙",
+      "imageUrl": "/captures/visteller.png",
+      "videoUrl": "/videos/visteller.webm"
     }
 ];
 
