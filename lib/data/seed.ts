@@ -5388,6 +5388,34 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "방대한 텍스트와 역사적 데이터를 시각화하고 하나의 완결된 포스터·출판물로 풀어내는 정보 아카이빙",
       "imageUrl": "/captures/visteller.png",
       "videoUrl": "/videos/visteller.webm"
+    },
+    {
+      "id": "leeleenamus",
+      "title": "이이남 스튜디오 (Lee Lee Nam)",
+      "url": "https://leeleenamus.imweb.me",
+      "category": "Media Art & Gallery",
+      "tags": [
+        "미디어 아트 & 전시"
+      ],
+      "shortDesc": "고전 명화를 재해석하는 미디어 아트",
+      "anatomy": "미디어 아티스트 이이남의 공식 아카이브. 동서양 고전 명화(겸재 정선, 모네 등)와 현대 디지털 미디어 기술을 융합한 미디어 조각·설치 작품과 광주 이이남 스튜디오 갤러리 프로젝트",
+      "principle": "전통 회화와 현대 디지털 미디어의 경계를 허무는 시간성과 서사적 미디어 아트 연출",
+      "imageUrl": "/captures/leeleenamus.png",
+      "videoUrl": "/videos/leeleenamus.webm"
+    },
+    {
+      "id": "khj-studio",
+      "title": "KHJ STUDIO (김현주)",
+      "url": "https://www.khjstudio.com/about",
+      "category": "Object & Art Toy",
+      "tags": [
+        "오브제 & 아트토이"
+      ],
+      "shortDesc": "한지와 석재의 감각적 생태 오브제",
+      "anatomy": "아티스트·디자이너 김현주의 스튜디오. 한지(닥나무 종이)와 석재(대리석·자연석)라는 상반된 재료의 결합을 통해 자연과 인간의 감각이 순환하는 '감각적 생태(Sensory Ecology)' 조각·오브제·조명 아카이브",
+      "principle": "단단한 돌과 부드러운 종이의 물성 대비로 빚어내는 정제된 공예 미학과 오브제 조형",
+      "imageUrl": "/captures/khj-studio.png",
+      "videoUrl": "/videos/khj-studio.webm"
     }
 ];
 
