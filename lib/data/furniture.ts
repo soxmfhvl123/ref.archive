@@ -1254,6 +1254,40 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
     region: "일본·아시아",
     tags: ["조명", "미니멀"],
     founders: "Mario Tsai"
+  },
+  {
+    "id": "furn-seungjin-yang",
+    "title": "Seungjin Yang (양승진)",
+    "country": "한국",
+    "materials": "풍선, 에폭시 레진",
+    "referencePoint": "풍선에 에폭시 레진을 여러 겹 발라 굳히는 'Blowing Series'로 세계적인 주목을 받은 가구·조형 작가. 로에베 재단 크래프트 프라이즈 최종 후보",
+    "namingType": "작가 이름",
+    "group": "디자이너·작가",
+    "url": "https://seungjinyang.com",
+    "region": "한국",
+    "tags": [
+      "아크릴·레진",
+      "재료 실험",
+      "컬렉터블"
+    ],
+    "founders": "양승진 (Seungjin Yang)"
+  },
+  {
+    "id": "furn-faye-toogood",
+    "title": "Faye Toogood (스튜디오 투굿)",
+    "country": "영국",
+    "materials": "파이버글라스, 석재, 캐스트 알루미늄",
+    "referencePoint": "런던의 조형 예술가 겸 디자이너. 조각적인 Roly-Poly 체어부터 원시적 형태의 석재/파이버글라스 가구와 패션 컬렉션까지 제작",
+    "namingType": "작가 이름",
+    "group": "디자이너·작가",
+    "url": "https://fayetoogood.com",
+    "region": "유럽",
+    "tags": [
+      "알루미늄",
+      "돌·콘크리트",
+      "컬렉터블"
+    ],
+    "founders": "Faye Toogood"
   }
 ];
 

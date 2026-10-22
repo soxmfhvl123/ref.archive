@@ -5416,8 +5416,308 @@ export const SEED_REFERENCES: Reference[] = [
       "principle": "단단한 돌과 부드러운 종이의 물성 대비로 빚어내는 정제된 공예 미학과 오브제 조형",
       "imageUrl": "/captures/khj-studio.png",
       "videoUrl": "/videos/khj-studio.webm"
-    }
+    },
+  {
+    "id": "tha-ltd",
+    "title": "tha ltd. (나카무라 유고)",
+    "url": "https://tha.jp",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브 웹",
+      "인터페이스 실험",
+      "도쿄 스튜디오",
+      "나카무라 유고"
+    ],
+    "shortDesc": "웹 인터랙션 디자인의 전설적 스튜디오",
+    "anatomy": "나카무라 유고(Yugo Nakamura)가 이끄는 도쿄 인터랙티브 디자인 스튜디오 tha ltd.의 공식 웹사이트. 유니클로 웹 프로젝트, 21_21 DESIGN SIGHT 전시 웹, 인터페이스 모션과 타이포그래피 인터랙션 명작 아카이브",
+    "principle": "군더더기 없는 미니멀리즘과 독보적인 인터랙션 물리학, 인터페이스 타이포그래피의 표준",
+    "imageUrl": "/captures/tha-ltd.png",
+    "videoUrl": "/videos/tha-ltd.webm"
+  },
+  {
+    "id": "field-io",
+    "title": "FIELD.io",
+    "url": "https://field.io",
+    "category": "Interactive Web",
+    "tags": [
+      "제너레이티브 아트",
+      "키네틱 브랜드",
+      "3D 모션",
+      "런던 스튜디오"
+    ],
+    "shortDesc": "제너레이티브 디자인 & 키네틱 브랜드 스튜디오",
+    "anatomy": "런던 기반의 제너레이티브 디자인 & 인터랙티브 스튜디오. Nike, IBM, Audi, Diesel 등과 함께 코드 기반 알고리즘 비주얼과 동적 키네틱 브랜딩을 창조",
+    "principle": "코드와 수학적 규칙으로 구축한 브랜드 비주얼 시스템 및 부드러운 웹 애니메이션",
+    "imageUrl": "/captures/field-io.png",
+    "videoUrl": "/videos/field-io.webm"
+  },
+  {
+    "id": "onformative",
+    "title": "onformative",
+    "url": "https://onformative.com",
+    "category": "Interactive Web",
+    "tags": [
+      "데이터 아트",
+      "미디어 인스톨레이션",
+      "베를린 스튜디오",
+      "제너레이티브"
+    ],
+    "shortDesc": "베를린의 데이터 아트 & 제너레이티브 디자인",
+    "anatomy": "베를린의 데이터 아트 및 제너레이티브 디자인 스튜디오. 자연과 기술, 인간의 인터랙션을 데이터 기반 알고리즘 비주얼과 대형 스크린 인스톨레이션으로 시각화",
+    "principle": "데이터 시각화의 예술적 승화 및 실험적인 레이아웃",
+    "imageUrl": "/captures/onformative.png",
+    "videoUrl": "/videos/onformative.webm"
+  },
+  {
+    "id": "toyfight",
+    "title": "ToyFight",
+    "url": "https://toyfight.co",
+    "category": "Interactive Web",
+    "tags": [
+      "3D WebGL",
+      "유머러스 UI",
+      "어워즈 수상",
+      "영국 스튜디오"
+    ],
+    "shortDesc": "3D 피규어와 유쾌한 인터랙션 스튜디오",
+    "anatomy": "맨체스터 기반의 크리에이티브 듀오 스튜디오. Awwwards/FWA 올해의 에이전시 다수 수상. 3D 피규어 모델링과 인터랙티브 스크롤을 위트 있게 결합",
+    "principle": "키치한 장난감 컨셉과 정교한 3D WebGL 물리의 균형감",
+    "imageUrl": "/captures/toyfight.png",
+    "videoUrl": "/videos/toyfight.webm"
+  },
+  {
+    "id": "oddcommon",
+    "title": "OddCommon",
+    "url": "https://oddcommon.com",
+    "category": "Interactive Web",
+    "tags": [
+      "디지털 프로덕션",
+      "마이크로 인터랙션",
+      "브루클린",
+      "인터랙티브"
+    ],
+    "shortDesc": "브루클린의 디지털 프로덕션 & 모션 스튜디오",
+    "anatomy": "브루클린 기반의 디지털 프로덕션 & 모션 스튜디오. 감각적인 타이포그래피 모션과 스크롤 트랜지션, 반응형 레이아웃의 완성도가 높은 포트폴리오",
+    "principle": "유려한 마이크로 인터랙션과 트렌디한 타이포 모션",
+    "imageUrl": "/captures/oddcommon.png",
+    "videoUrl": "/videos/oddcommon.webm"
+  },
+  {
+    "id": "shin-shin",
+    "title": "신신 (Shin Shin)",
+    "url": "https://shin-shin.kr",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "그래픽 디자인",
+      "전시·도록",
+      "타이포그래피",
+      "신신"
+    ],
+    "shortDesc": "한국 대표 실험적 전시·도서 그래픽 디자인 듀오",
+    "anatomy": "신해옥과 신동혁이 2014년 결성한 그래픽 디자인 듀오. 국립현대미술관, 서울시립미술관 등 국내 유수 미술관 전시 그래픽과 아티스트 북 디자인을 주도",
+    "principle": "글자와 여백, 종이의 물성을 웹 아카이브 인터페이스로 담아내는 방식",
+    "imageUrl": "/captures/shin-shin.png",
+    "videoUrl": "/videos/shin-shin.webm"
+  },
+  {
+    "id": "bowyer",
+    "title": "보이어 (Bowyer)",
+    "url": "https://bowyer.kr",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "브랜딩",
+      "아이덴티티",
+      "전시 디자인",
+      "보이어"
+    ],
+    "shortDesc": "감각적인 타이포그래피와 현대적 브랜딩 스튜디오",
+    "anatomy": "이화영과 황상준이 이끄는 서울의 그래픽 디자인 스튜디오. 문화·예술 기관의 전시 아이덴티티부터 아모레퍼시픽, 탬버린즈 등 감각적인 상업 브랜딩까지 아우름",
+    "principle": "구조적이면서도 유연한 타이포그래피 시스템과 미니멀한 웹 쇼케이스",
+    "imageUrl": "/captures/bowyer.png",
+    "videoUrl": "/videos/bowyer.webm"
+  },
+  {
+  "id": "paperpress",
+  "title": "페이퍼프레스 (Paper Press / 박신우)",
+  "url": "https://paperpress.kr",
+  "category": "Graphic Design Studio",
+  "tags": [
+    "그래픽 디자인",
+    "포스터",
+    "타이포그래피",
+    "박신우"
+  ],
+  "shortDesc": "박신우 디자이너의 강렬한 포스터 & 그래픽 스튜디오",
+  "anatomy": "디자이너 박신우(Shinwoo Park)가 이끄는 그래픽 디자인 스튜디오 페이퍼프레스(Paper Press)의 공식 웹사이트. 앨범 커버, 패션 브랜드(코오롱 스포츠 등), 포스터 및 출판물까지 과감한 색감과 타이포그래피 실험을 집약한 아카이브",
+  "principle": "파격적인 타이포그래피 드로잉과 강렬한 색채 대비, 동시대적 시각 언어의 포스터 구성",
+  "imageUrl": "/captures/paperpress.png",
+  "videoUrl": "/videos/paperpress.webm"
+},
+  {
+    "id": "corners",
+    "title": "코너스 (Corners)",
+    "url": "https://corners.kr",
+    "category": "Editorial & Print",
+    "tags": [
+      "리소그라프",
+      "독립출판",
+      "인쇄 스튜디오",
+      "을지로"
+    ],
+    "shortDesc": "리소그라프 인쇄 문화와 그래픽 디자인 스튜디오",
+    "anatomy": "서울 을지로를 거점으로 리소그라프(Risograph) 인쇄 문화와 현대 그래픽 디자인을 결합해온 스튜디오 겸 출판사",
+    "principle": "아날로그 인쇄 기법의 재료적 매력을 디지털 웹 아카이브로 표현하는 방식",
+    "imageUrl": "/captures/corners.png",
+    "videoUrl": "/videos/corners.webm"
+  },
+  {
+    "id": "heck",
+    "title": "헤크 (Heck)",
+    "url": "https://heck.kr",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "타이포그래피",
+      "공간 그래픽",
+      "전시 디자인"
+    ],
+    "shortDesc": "공간과 전시 그래픽에 특화된 디자인 스튜디오",
+    "anatomy": "타이포그래피와 그래픽 언어를 3차원 공간, 사이니지, 전시 아이덴티티로 확장하는 서울의 비주얼 디자인 스튜디오",
+    "principle": "그리드 기반의 볼드한 서체 운용과 정제된 웹 레이아웃",
+    "imageUrl": "/captures/heck.png",
+    "videoUrl": "/videos/heck.webm"
+  },
+  {
+    "id": "apfel",
+    "title": "A Practice for Everyday Life (APFEL)",
+    "url": "https://apfel.co.uk",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "런던 스튜디오",
+      "미술관 아이덴티티",
+      "에디토리얼",
+      "APFEL"
+    ],
+    "shortDesc": "런던의 문화·미술관 전문 그래픽 스튜디오",
+    "anatomy": "런던에 위치한 순수 예술·문화 전문 그래픽 스튜디오. 테이트(Tate), 빅토리아 앤 앨버트 뮤지엄, 베니스 비엔날레 등 세계적 예술 기관의 도록과 전시 브랜딩을 전담",
+    "principle": "우아하고 지적인 타이포그래피와 책의 물성을 존중하는 에디토리얼 레이아웃",
+    "imageUrl": "/captures/apfel.png",
+    "videoUrl": "/videos/apfel.webm"
+  },
+  {
+    "id": "hort",
+    "title": "Hort",
+    "url": "https://hort.org.uk",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "베를린 스튜디오",
+      "해체주의",
+      "실험 타이포",
+      "Eike König"
+    ],
+    "shortDesc": "아이케 쾨니히의 베를린 전설적 디자인 스튜디오",
+    "anatomy": "아이케 쾨니히(Eike König)가 1994년 설립한 베를린의 전설적 디자인 스튜디오. Nike, Bauhaus Dessau 등과 함께 정형화된 틀을 깨는 반골적 비주얼 아트 전개",
+    "principle": "예측 불가능한 레이아웃, 날것의 드로잉과 강렬한 타이포그래피 조합",
+    "imageUrl": "/captures/hort.png",
+    "videoUrl": "/videos/hort.webm"
+  },
+  {
+    "id": "kesselskramer",
+    "title": "KesselsKramer",
+    "url": "https://kesselskramer.com",
+    "category": "Brand Identity",
+    "tags": [
+      "암스테르담",
+      "비전통적 광고",
+      "도발적 브랜딩",
+      "출판"
+    ],
+    "shortDesc": "암스테르담의 도발적 브랜딩 & 창조적 에이전시",
+    "anatomy": "암스테르담과 런던을 기반으로 30년간 활동해온 독립 커뮤니케이션 에이전시 겸 출판사. 한스 브링커 호텔 캠페인 등 기발한 위트와 파괴적 화법으로 유명",
+    "principle": "유머와 풍자, 솔직함을 브랜딩의 무기로 만드는 스토리텔링",
+    "imageUrl": "/captures/kesselskramer.png",
+    "videoUrl": "/videos/kesselskramer.webm"
+  },
+  {
+    "id": "base-design",
+    "title": "Base Design",
+    "url": "https://base-design.com",
+    "category": "Brand Identity",
+    "tags": [
+      "글로벌 브랜딩",
+      "브뤼셀·파리·뉴욕",
+      "미니멀리즘"
+    ],
+    "shortDesc": "현대 문화와 럭셔리 브랜딩의 글로벌 네트워크",
+    "anatomy": "브뤼셀, 파리, 뉴욕, 제네바에 거점을 둔 인터내셔널 브랜딩 에이전시. 퐁피두 센터, Fondation Louis Vuitton 등 현대 문화·패션 브랜드의 핵심 아이덴티티 구축",
+    "principle": "미니멀하면서도 힘 있는 단어 선택(Copywriting)과 그리드 시스템",
+    "imageUrl": "/captures/base-design.png",
+    "videoUrl": "/videos/base-design.webm"
+  },
+  {
+    "id": "silasveta",
+    "title": "Sila Sveta",
+    "url": "https://silasveta.com",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "몰입형 미디어 아트",
+      "키네틱 라이팅",
+      "무대 연출",
+      "프로젝션 맵핑"
+    ],
+    "shortDesc": "세계 최대 규모의 몰입형 시각 쇼 & 무대 비주얼",
+    "anatomy": "세계 최대 규모의 몰입형 시각 쇼, 프로젝션 맵핑, 키네틱 라이팅 및 콘서트 무대 비주얼을 기획·제작하는 인터내셔널 크리에이티브 프로덕션",
+    "principle": "공간 전체를 압도하는 빛과 모션, 거대한 스케일의 인터랙티브 프로덕션",
+    "imageUrl": "/captures/silasveta.png",
+    "videoUrl": "/videos/silasveta.webm"
+  },
+  {
+    "id": "carsten-nicolai",
+    "title": "Carsten Nicolai (Alva Noto)",
+    "url": "https://carstennicolai.de",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "사운드 아트",
+      "미니멀리즘",
+      "주파수 시각화",
+      "알바 노토"
+    ],
+    "shortDesc": "사운드와 빛, 미니멀리즘 시각 예술의 거장",
+    "anatomy": "사운드 아티스트 Alva Noto이자 비주얼 아티스트인 카스텐 니콜라이의 공식 아카이브. 사운드 주파수, 그리드, 백색광, 전자기적 파형을 예술로 승화",
+    "principle": "극단적인 미니멀리즘과 과학적 규칙성을 예술적 인터페이스로 담아낸 사이트 구조",
+    "imageUrl": "/captures/carsten-nicolai.png",
+    "videoUrl": "/videos/carsten-nicolai.webm"
+  },
+  {
+    "id": "giantstep",
+    "title": "GIANTSTEP (자이언트스텝)",
+    "url": "https://giantstep.co.kr",
+    "category": "Motion & 3D Studio",
+    "tags": [
+      "버추얼 프로덕션",
+      "VFX",
+      "리얼타임 엔진",
+      "모션 그래픽"
+    ],
+    "shortDesc": "버추얼 프로덕션 & 크리에이티브 테크 스튜디오",
+    "anatomy": "서울 기반의 국내 최고 버추얼 프로덕션 & 크리에이티브 테크 기업. 언리얼 엔진 기반 실시간 렌더링, 디지털 휴먼, 초현실적 모션 비주얼을 제작",
+    "principle": "고화질 3D 렌더링 에셋과 모션 비디오를 쾌적하게 큐레이션한 웹 쇼룸",
+    "imageUrl": "/captures/giantstep.png",
+    "videoUrl": "/videos/giantstep.webm"
+  },
+  {
+    "id": "nicole-mclaughlin",
+    "title": "Nicole McLaughlin (니콜 맥러플린)",
+    "url": "https://nicolemclaughlin.com",
+    "category": "Object & Art Toy",
+    "tags": [
+      "업사이클링 오브제",
+      "지속가능 디자인",
+      "패션 조형"
+    ],
+    "shortDesc": "일상 사물을 유쾌하게 전복하는 업사이클링 오브제",
+    "anatomy": "버려진 카메라 가방, 셔틀콕, 배낭, 스포츠 용품을 슬리퍼와 가구로 재조합하는 뉴욕의 업사이클링 오브제 아티스트",
+    "principle": "일상 사물의 용도를 유쾌하게 전복시키는 상상력과 아카이빙 방식",
+    "imageUrl": "/captures/nicole-mclaughlin.png",
+    "videoUrl": "/videos/nicole-mclaughlin.webm"
+  }
 ];
-
-
-
