@@ -5719,5 +5719,243 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "일상 사물의 용도를 유쾌하게 전복시키는 상상력과 아카이빙 방식",
     "imageUrl": "/captures/nicole-mclaughlin.png",
     "videoUrl": "/videos/nicole-mclaughlin.webm"
+  },
+  {
+    "id": "moment-factory",
+    "title": "Moment Factory",
+    "url": "https://momentfactory.com",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "미디어 아트",
+      "멀티미디어 환경",
+      "몰입형 체험",
+      "몬트리올"
+    ],
+    "shortDesc": "세계 최대 규모의 멀티미디어 인터랙티브 엔터테인먼트",
+    "anatomy": "몬트리올 기반의 세계적 멀티미디어 엔터테인먼트 스튜디오. 몰입형 야간 산책 Lumina 시리즈, 대형 미디어 파사드 및 공간 인터랙티브 쇼케이스 아카이브",
+    "principle": "빛과 사운드, 인터랙티브 센서로 물리적 공간과 자연을 하나의 서사로 묶는 공간 디자인",
+    "imageUrl": "/captures/moment-factory.png",
+    "videoUrl": "/videos/moment-factory.webm"
+  },
+  {
+    "id": "zero-lab",
+    "title": "제로랩 (Zero Lab)",
+    "url": "https://zero-lab.kr",
+    "category": "Object & Art Toy",
+    "tags": [
+      "스틸 조형",
+      "공간 디자인",
+      "가구 오브제",
+      "제로랩"
+    ],
+    "shortDesc": "스틸과 인더스트리얼 조형의 서울 디자인 스튜디오",
+    "anatomy": "장태훈·김동훈 디자이너가 결성한 디자인 스튜디오 제로랩. 스틸 강판, 파이프, 알루미늄을 주재료로 공간 설치, 조형 가구, 전시 사이니지를 실험하는 아카이브",
+    "principle": "구조적 스틸 결합과 산업적 재료를 그래픽적으로 해석하는 조형 언어",
+    "imageUrl": "/captures/zero-lab.png",
+    "videoUrl": "/videos/zero-lab.webm"
+  },
+  {
+    "id": "post-poetics",
+    "title": "포스트 포에틱스 (Post Poetics)",
+    "url": "https://postpoetics.kr",
+    "category": "Archive & Curation",
+    "tags": [
+      "독립출판",
+      "아트북 큐레이션",
+      "그래픽 아카이브",
+      "포스트포에틱스"
+    ],
+    "shortDesc": "한국 독립출판·글로벌 아트북 셀렉트숍",
+    "anatomy": "2006년 설립되어 한국의 글로벌 아트북·디자인 출판 문화를 개척해온 셀렉트숍이자 출판사 포스트 포에틱스(Post Poetics)의 공식 아카이브 및 스토어",
+    "principle": "절제된 타이포그래피 그리드와 책 중심의 정갈한 e커머스 인터페이스",
+    "imageUrl": "/captures/post-poetics.png",
+    "videoUrl": "/videos/post-poetics.webm"
+  },
+  {
+    "id": "franklyn",
+    "title": "Franklyn",
+    "url": "https://franklyn.co",
+    "category": "Brand Identity",
+    "tags": [
+      "브루클린 스튜디오",
+      "위트 브랜딩",
+      "타이포그래피",
+      "Franklyn"
+    ],
+    "shortDesc": "브루클린의 위트 있고 볼드한 브랜딩 스튜디오",
+    "anatomy": "뉴욕 브루클린을 기반으로 패션, 테크, F&B 브랜드의 유쾌하고 대담한 비주얼 아이덴티티와 커스텀 타이포그래피를 제작하는 디자인 스튜디오",
+    "principle": "규칙을 비트는 타이포그래피와 강렬한 원색 대비를 통한 흡인력 있는 비주얼 시스템",
+    "imageUrl": "/captures/franklyn.png",
+    "videoUrl": "/videos/franklyn.webm"
+  },
+  {
+    "id": "foreign-policy",
+    "title": "Foreign Policy Design",
+    "url": "https://foreignpolicy.design",
+    "category": "Brand Identity",
+    "tags": [
+      "싱가포르 스튜디오",
+      "호스피탈리티",
+      "아이덴티티",
+      "에디토리얼"
+    ],
+    "shortDesc": "싱가포르의 대표적인 하이엔드 브랜딩 에이전시",
+    "anatomy": "싱가포르를 거점으로 호텔, 럭셔리 다이닝, 문화 기관의 통합 브랜드 경험을 디자인하는 아시아 대표 크리에이티브 에이전시",
+    "principle": "동서양의 미학이 융합된 우아한 레이아웃과 감도 높은 사진 및 텍스트 조합",
+    "imageUrl": "/captures/foreign-policy.png",
+    "videoUrl": "/videos/foreign-policy.webm"
+  },
+  {
+    "id": "hong-kim",
+    "title": "홍은주 김형재 (Hong & Kim)",
+    "url": "https://hongxkim.com",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "그래픽 디자인",
+      "구조적 타이포",
+      "출판·전시",
+      "홍은주김형재"
+    ],
+    "shortDesc": "한국 그래픽 디자인의 구조적·지성적 듀오 스튜디오",
+    "anatomy": "홍은주와 김형재가 결성한 그래픽 디자인 듀오. 미술 전시 도록, 웹 아카이브, 타이포그래피 학술 저술 등 시각 문화의 비평적이고 구조적인 작업을 집대성한 아카이브",
+    "principle": "극도의 정보 위계와 지적인 텍스트 구조화가 돋보이는 디지털 인덱스 시스템",
+    "imageUrl": "/captures/hong-kim.png",
+    "videoUrl": "/videos/hong-kim.webm"
+  },
+  {
+    "id": "your-mind",
+    "title": "유어마인드 (YOUR-MIND)",
+    "url": "https://your-mind.com",
+    "category": "Editorial & Print",
+    "tags": [
+      "독립출판",
+      "언리미티드 에디션",
+      "서점",
+      "유어마인드"
+    ],
+    "shortDesc": "서울 독립출판 서점 & 언리미티드 에디션 주최",
+    "anatomy": "서울 연희동의 독립출판 전문 서점이자 한국 최대 독립출판 페어 언리미티드 에디션(Unlimited Edition - UE)을 기획·운영하는 유어마인드의 공식 웹 플랫폼",
+    "principle": "독립 인쇄물의 다채로운 판형과 개성을 존중하는 담백한 쇼케이스 레이아웃",
+    "imageUrl": "/captures/your-mind.png",
+    "videoUrl": "/videos/your-mind.webm"
+  },
+  {
+    "id": "superblue",
+    "title": "Superblue",
+    "url": "https://superblue.com",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "몰입형 예술",
+      "teamLab",
+      "제임스 터렐",
+      "마이애미 전시"
+    ],
+    "shortDesc": "세계적 미디어 아티스트들의 대형 몰입형 예술 센터",
+    "anatomy": "마이애미에 위치한 초대형 몰입형 현대미술 복합 공간. teamLab, James Turrell, Es Devlin 등 공간 전체를 경험으로 전환하는 세계적 미디어 인스톨레이션 아카이브",
+    "principle": "관객의 참여와 신체적 몰입을 중심으로 설계된 다크 테마의 감각적인 웹 큐레이션",
+    "imageUrl": "/captures/superblue.png",
+    "videoUrl": "/videos/superblue.webm"
+  },
+  {
+    "id": "waaark",
+    "title": "Waaark",
+    "url": "https://waaark.com",
+    "category": "Interactive Web",
+    "tags": [
+      "일러스트 웹",
+      "부드러운 모션",
+      "프랑스 스튜디오",
+      "인터랙티브"
+    ],
+    "shortDesc": "프랑스의 감성적인 일러스트 & 인터랙티브 웹 스튜디오",
+    "anatomy": "프랑스 서부 기반의 크리에이티브 스튜디오. 따뜻한 일러스트레이션과 물 흐르듯 부드러운 페이지 트랜지션, 정교한 사운드 인터랙션의 웹 포트폴리오",
+    "principle": "일러스트와 웹 기술(WebGL, SVG 모션)의 감성적 조화",
+    "imageUrl": "/captures/waaark.png",
+    "videoUrl": "/videos/waaark.webm"
+  },
+  {
+    "id": "kueng-caputo",
+    "title": "Kueng Caputo (큉 카푸토)",
+    "url": "https://kueng-caputo.ch",
+    "category": "Object & Art Toy",
+    "tags": [
+      "취리히 스튜디오",
+      "재료 실험",
+      "가죽 염색",
+      "조형 오브제"
+    ],
+    "shortDesc": "스위스 취리히의 재료 실험 조형 듀오",
+    "anatomy": "사라 큉(Sarah Kueng)과 로비스 카푸토(Lovis Caputo)가 이끄는 취리히 디자인 스튜디오. 염색 가죽, 석재, 왁스, 콘크리트를 대담하게 조합한 컬렉터블 오브제 아카이브",
+    "principle": "서로 다른 물성의 물리적 충돌과 즉흥적인 색채 염색이 만들어내는 유일무이한 조형미",
+    "imageUrl": "/captures/kueng-caputo.png",
+    "videoUrl": "/videos/kueng-caputo.webm"
+  },
+  {
+    "id": "mucca",
+    "title": "Mucca Design",
+    "url": "https://mucca.com",
+    "category": "Brand Identity",
+    "tags": [
+      "뉴욕 스튜디오",
+      "타이포그래피",
+      "호스피탈리티",
+      "Mucca"
+    ],
+    "shortDesc": "뉴욕의 타이포그래피 기반 브랜딩 & 패키지 스튜디오",
+    "anatomy": "뉴욕 소호에 위치한 25년 역사의 브랜딩 에이전시. 서체 디자이너 마테오 볼로냐가 이끌며 독창적인 서체 디자인과 클래식한 그래픽 아이덴티티를 완성",
+    "principle": "커스텀 타이포그래피를 브랜드의 심장으로 삼아 구축하는 풍부한 헤리티지",
+    "imageUrl": "/captures/mucca.png",
+    "videoUrl": "/videos/mucca.webm"
+  },
+  {
+    "id": "colophon-foundry",
+    "title": "Colophon Foundry",
+    "url": "https://colophon-foundry.org",
+    "category": "Typography",
+    "tags": [
+      "타입 파운드리",
+      "영국·미국",
+      "디스플레이 서체",
+      "Colophon"
+    ],
+    "shortDesc": "런던과 LA의 글로벌 인디 타입 파운드리",
+    "anatomy": "2009년 David Bloor와 Edd Harrington이 설립한 독립 서체 스튜디오. Aperçu, Castledown 등 세계적 브랜드들이 사용하는 현대적인 서체 스페시먼과 타이포그래피 도구 아카이브",
+    "principle": "글자의 골격과 비례를 다각도로 테스트할 수 있는 대화형 서체 테스터 인터페이스",
+    "imageUrl": "/captures/colophon-foundry.png",
+    "videoUrl": "/videos/colophon-foundry.webm"
+  },
+  {
+    "id": "re-agency",
+    "title": "Re (M&C Saatchi)",
+    "url": "https://re-agency.com",
+    "category": "Brand Identity",
+    "tags": [
+      "시드니·런던",
+      "시스템 브랜딩",
+      "디지털 아이덴티티",
+      "Re"
+    ],
+    "shortDesc": "시드니와 런던을 기반으로 한 현대적 브랜드 디자인 에이전시",
+    "anatomy": "호주 시드니와 런던에 위치한 글로벌 브랜딩 전문 디자인 에이전시. 대규모 디지털 기업의 유연한 브랜드 디자인 시스템 구축",
+    "principle": "스크린 중심의 역동적인 디지털 브랜딩과 일관된 모듈형 그리드 디자인",
+    "imageUrl": "/captures/re-agency.png",
+    "videoUrl": "/videos/re-agency.webm"
+  },
+  {
+    "id": "flatform",
+    "title": "플랫포옴 (Flat Form)",
+    "url": "https://flatform.kr",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "서울 스튜디오",
+      "타이포그래피",
+      "출판 디자인",
+      "플랫포옴"
+    ],
+    "shortDesc": "서울의 감각적인 타이포그래피 & 출판 그래픽 스튜디오",
+    "anatomy": "서울을 기반으로 북 디자인, 아이덴티티, 전시 그래픽을 전개하는 디자인 스튜디오 플랫포옴의 미니멀 아카이브",
+    "principle": "정제된 그리드 시스템과 텍스트 행간, 여백의 미학을 극대화한 포트폴리오 레이아웃",
+    "imageUrl": "/captures/flatform.png",
+    "videoUrl": "/videos/flatform.webm"
   }
 ];

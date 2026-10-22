@@ -1288,6 +1288,24 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
       "컬렉터블"
     ],
     "founders": "Faye Toogood"
+  },
+  {
+    "id": "furn-lucas-munoz",
+    "title": "Lucas Muñoz (루카스 무뇨스)",
+    "country": "스페인",
+    "materials": "산업 폐자재, 구리 튜브, 콘크리트",
+    "referencePoint": "마드리드의 조형 디자이너. 파이프와 환풍구 덕트, 재생 플라스틱을 결합해 날것의 충격을 주는 인더스트리얼 가구 (Mo de Movimiento 레스토랑 조형)",
+    "namingType": "작가 이름",
+    "group": "디자이너·작가",
+    "url": "https://lucasmunoz.com",
+    "region": "유럽",
+    "tags": [
+      "스틸",
+      "돌·콘크리트",
+      "재료 실험",
+      "컬렉터블"
+    ],
+    "founders": "Lucas Muñoz"
   }
 ];
 
