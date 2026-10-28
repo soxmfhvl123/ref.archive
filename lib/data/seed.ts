@@ -2120,11 +2120,16 @@ export const SEED_REFERENCES: Reference[] = [
       "url": "https://workroom.kr",
       "category": "Graphic Design Studio",
       "tags": [
+        "그래픽 디자인",
+        "출판",
+        "워크룸프레스",
+        "북디자인",
+        "전시 그래픽",
         "디자인 스튜디오"
       ],
-      "shortDesc": "서울 디자인·출판 스튜디오",
-      "anatomy": "그래픽 디자인 스튜디오이자 출판사(워크룸 프레스)",
-      "principle": "책과 전시 그래픽을 하나의 태도로 묶는 방식",
+      "shortDesc": "서울 그래픽 디자인·출판 스튜디오 (워크룸 프레스)",
+      "anatomy": "미술관·박물관 전시 그래픽 및 출판사 워크룸 프레스 아카이브",
+      "principle": "책과 전시 그래픽, 시각문화 전반을 아우르는 체계적 아카이빙",
       "imageUrl": "/captures/workroom.png",
       "videoUrl": "/videos/workroom.webm"
     },
