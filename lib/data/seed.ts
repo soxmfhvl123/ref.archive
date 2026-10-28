@@ -5993,5 +5993,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "노코드·노로그인으로 즉시 조작 가능한 미니멀 제너레이티브 UI와 직관적인 파라미터 컨트롤러",
     "imageUrl": "/captures/playgrnd.png",
     "videoUrl": "/videos/playgrnd.webm"
+  },
+  {
+    "id": "protoform",
+    "title": "원형체 (Protoform / 슬기와 민)",
+    "url": "https://protoform-font.com",
+    "category": "Typography",
+    "tags": [
+      "타이포그래피",
+      "탈네모틀",
+      "슬기와민",
+      "한글 서체",
+      "실험 활자"
+    ],
+    "shortDesc": "슬기와 민이 디자인한 탈네모틀 한글의 기원을 탐구하는 실험적 활자체",
+    "anatomy": "그래픽 디자인 듀오 슬기와 민(Sulki and Min)이 디자인하고 작업실유령에서 발행한 서체 원형체(Protoform)의 공식 웹 스페시먼. 1976년 조영제의 한글 타자기 글자 구조 개혁 연구에서 영감받아, 탈네모틀 한글의 초성·중성·종성 삼단 격자 구조와 합리주의 조형 이념을 5단계 굵기와 밑줄 변형체로 구현한 인터랙티브 활자 아카이브",
+    "principle": "한글과 라틴 문자가 삼단 모듈러 격자 위에서 교차하는 파격적인 중첩 타이포그래피와 서체 인터랙션",
+    "imageUrl": "/captures/protoform.png",
+    "videoUrl": "/videos/protoform.webm"
   }
 ];
