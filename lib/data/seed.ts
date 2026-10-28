@@ -5957,5 +5957,41 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "정제된 그리드 시스템과 텍스트 행간, 여백의 미학을 극대화한 포트폴리오 레이아웃",
     "imageUrl": "/captures/flatform.png",
     "videoUrl": "/videos/flatform.webm"
+  },
+  {
+    "id": "korea-interior-map",
+    "title": "Korea Interior Map (코리아 인테리어 맵)",
+    "url": "https://koreainteriormap.com/links",
+    "category": "Resource & Tool",
+    "tags": [
+      "인테리어 자재",
+      "건축·가구",
+      "업체 디렉토리",
+      "데이터 아카이브",
+      "이아하랩"
+    ],
+    "shortDesc": "국내 건축·인테리어·가구 디자이너를 위한 자재 및 공급업체 아카이브",
+    "anatomy": "이아하랩(iiiahalab)이 구축한 국내 건축·인테리어 실무자를 위한 종합 데이터베이스. 가구철물, 금속, 마감재, 수입가구, 조명, 타일, 석재 등 480여 개 전문 업체의 링크와 지도, 자재 정보를 일목요연하게 큐레이션한 디렉토리",
+    "principle": "실무 공간 디자이너의 워크플로우에 최적화된 세분화된 카테고리 분류와 초고속 탐색 인터페이스",
+    "imageUrl": "/captures/korea-interior-map.png",
+    "videoUrl": "/videos/korea-interior-map.webm"
+  },
+  {
+    "id": "playgrnd",
+    "title": "playgrnd (플레이그라운드)",
+    "url": "https://www.playgrnd.tools",
+    "category": "Resource & Tool",
+    "tags": [
+      "제너레이티브 툴",
+      "디자인 도구",
+      "패턴 생성기",
+      "브라우저 도구",
+      "오픈소스"
+    ],
+    "shortDesc": "기괴하고 아름다운 그래픽을 만드는 52가지 제너레이티브 디자인 도구 모음",
+    "anatomy": "계정 생성이나 업로드 없이 브라우저에서 100% 동작하는 52개의 단일 목적 제너레이티브 그래픽 도구 컬렉션. 배경(Backgrounds), 뱃지(Badges), 패턴(Patterns), 포스터(Posters), 텍스처(Textures)를 실시간으로 생성하고 벡터/이미지로 즉시 추출할 수 있는 디자인 툴킷",
+    "principle": "노코드·노로그인으로 즉시 조작 가능한 미니멀 제너레이티브 UI와 직관적인 파라미터 컨트롤러",
+    "imageUrl": "/captures/playgrnd.png",
+    "videoUrl": "/videos/playgrnd.webm"
   }
 ];
