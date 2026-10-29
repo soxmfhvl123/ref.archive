@@ -6016,5 +6016,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "한글과 라틴 문자가 삼단 모듈러 격자 위에서 교차하는 파격적인 중첩 타이포그래피와 서체 인터랙션",
     "imageUrl": "/captures/protoform.png",
     "videoUrl": "/videos/protoform.webm"
+  },
+  {
+    "id": "choe-uram",
+    "title": "최우람 (Choe U-Ram)",
+    "url": "https://www.uram.net/kor_new/intro_kr/",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "키네틱 아트",
+      "기계 생명체",
+      "설치 미술",
+      "현대미술",
+      "미디어 아트 & 전시"
+    ],
+    "shortDesc": "기계 장치에 생명의 호흡과 신화적 서사를 불어넣는 한국의 대표 키네틱 아티스트",
+    "anatomy": "키네틱 조각가 최우람(Choe U-Ram)의 공식 온라인 아카이브. 1990년대 후반 초기 기계 생명체(Anima Machine) 연작부터 국립현대미술관 현대차 시리즈 《작은 방주(Little Ark)》, 《원탁(Round Table)》, 《두 마리의 검은뱀》에 이르기까지 연도별 조각·설치 작업, 다큐멘터리 영상, 평론 에세이를 체계적으로 망라한 작가 포트폴리오",
+    "principle": "어두운 전시장 공간 속에서 금속과 모터의 정교한 메커니즘으로 살아 숨 쉬는 기계 생명체의 조형미를 극대화한 인덱스형 아카이브 레이아웃",
+    "imageUrl": "/captures/choe-uram.png",
+    "videoUrl": "/videos/choe-uram.webm"
   }
 ];
