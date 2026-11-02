@@ -6034,5 +6034,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "어두운 전시장 공간 속에서 금속과 모터의 정교한 메커니즘으로 살아 숨 쉬는 기계 생명체의 조형미를 극대화한 인덱스형 아카이브 레이아웃",
     "imageUrl": "/captures/choe-uram.png",
     "videoUrl": "/videos/choe-uram.webm"
+  },
+  {
+    "id": "maarten-baas",
+    "title": "Maarten Baas (마르텐 바스)",
+    "url": "https://maartenbaas.com",
+    "category": "Object & Art Toy",
+    "tags": [
+      "컬렉터블 디자인",
+      "아트 퍼니처",
+      "컨셉추얼 아트",
+      "오브제 & 제품 디자인",
+      "미디어 설치"
+    ],
+    "shortDesc": "가구를 불태우고 시간을 재해석하는 네덜란드의 독창적 조형 디자이너·아티스트",
+    "anatomy": "네덜란드 아인트호벤 디자인 아카데미 출신 디자이너 마르텐 바스(Maarten Baas)의 공식 스튜디오 아카이브. 가구를 화염으로 그을려 에폭시로 보존한 《Smoke》 시리즈, 수작업 점토 조형 가구 《Clay》, 작업자가 시계 바늘을 12시간 동안 직접 그리는 비디오 아트 시계 《Real Time》(스키폴 공항 시계 등)까지 예술과 디자인의 경계를 허무는 대표작 총망라",
+    "principle": "연극적 유머와 반항적 조형 실험을 강렬한 풀스크린 비주얼과 직관적인 프로젝트 그리드로 풀어낸 아티스트 포트폴리오",
+    "imageUrl": "/captures/maarten-baas.png",
+    "videoUrl": "/videos/maarten-baas.webm"
   }
 ];

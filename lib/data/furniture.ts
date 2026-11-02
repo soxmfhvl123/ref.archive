@@ -1306,6 +1306,25 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
       "컬렉터블"
     ],
     "founders": "Lucas Muñoz"
+  },
+  {
+    "id": "furn-maarten-baas",
+    "title": "Maarten Baas (마르텐 바스)",
+    "country": "네덜란드",
+    "materials": "탄화 목재(Smoke), 산업용 점토(Clay), 황동·브론즈, 비디오",
+    "referencePoint": "기성 가구를 불에 태워 에폭시로 마감한 Smoke 연작, 손자국이 그대로 남은 Clay 가구, 12시간 동안 시계 바늘을 그리는 Real Time 시리즈로 디자인과 현대미술의 경계를 허무는 네덜란드 작가",
+    "namingType": "작가 이름",
+    "group": "디자이너·작가",
+    "url": "https://maartenbaas.com",
+    "region": "유럽",
+    "tags": [
+      "나무",
+      "황동·구리",
+      "인터랙션",
+      "재료 실험",
+      "컬렉터블"
+    ],
+    "founders": "Maarten Baas"
   }
 ];
 
