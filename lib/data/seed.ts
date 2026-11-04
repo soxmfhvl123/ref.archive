@@ -5975,41 +5975,6 @@ export const SEED_REFERENCES: Reference[] = [
     "videoUrl": "/videos/corners.webm"
   },
   {
-    "id": "heck",
-    "title": "헤크 (Heck)",
-    "url": "https://heck.kr",
-    "category": "Graphic Design Studio",
-    "tags": [
-      "스튜디오·브랜딩",
-      "타이포그래피",
-      "공간 그래픽",
-      "전시 디자인"
-    ],
-    "shortDesc": "공간과 전시 그래픽에 특화된 디자인 스튜디오",
-    "anatomy": "타이포그래피와 그래픽 언어를 3차원 공간, 사이니지, 전시 아이덴티티로 확장하는 서울의 비주얼 디자인 스튜디오",
-    "principle": "그리드 기반의 볼드한 서체 운용과 정제된 웹 레이아웃",
-    "imageUrl": "/captures/heck.png",
-    "videoUrl": "/videos/heck.webm"
-  },
-  {
-    "id": "apfel",
-    "title": "A Practice for Everyday Life (APFEL)",
-    "url": "https://apfel.co.uk",
-    "category": "Graphic Design Studio",
-    "tags": [
-      "스튜디오·브랜딩",
-      "런던 스튜디오",
-      "미술관 아이덴티티",
-      "에디토리얼",
-      "APFEL"
-    ],
-    "shortDesc": "런던의 문화·미술관 전문 그래픽 스튜디오",
-    "anatomy": "런던에 위치한 순수 예술·문화 전문 그래픽 스튜디오. 테이트(Tate), 빅토리아 앤 앨버트 뮤지엄, 베니스 비엔날레 등 세계적 예술 기관의 도록과 전시 브랜딩을 전담",
-    "principle": "우아하고 지적인 타이포그래피와 책의 물성을 존중하는 에디토리얼 레이아웃",
-    "imageUrl": "/captures/apfel.png",
-    "videoUrl": "/videos/apfel.webm"
-  },
-  {
     "id": "hort",
     "title": "Hort",
     "url": "https://hort.org.uk",
@@ -6044,23 +6009,6 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "유머와 풍자, 솔직함을 브랜딩의 무기로 만드는 스토리텔링",
     "imageUrl": "/captures/kesselskramer.png",
     "videoUrl": "/videos/kesselskramer.webm"
-  },
-  {
-    "id": "base-design",
-    "title": "Base Design",
-    "url": "https://base-design.com",
-    "category": "Brand Identity",
-    "tags": [
-      "스튜디오·브랜딩",
-      "글로벌 브랜딩",
-      "브뤼셀·파리·뉴욕",
-      "미니멀리즘"
-    ],
-    "shortDesc": "현대 문화와 럭셔리 브랜딩의 글로벌 네트워크",
-    "anatomy": "브뤼셀, 파리, 뉴욕, 제네바에 거점을 둔 인터내셔널 브랜딩 에이전시. 퐁피두 센터, Fondation Louis Vuitton 등 현대 문화·패션 브랜드의 핵심 아이덴티티 구축",
-    "principle": "미니멀하면서도 힘 있는 단어 선택(Copywriting)과 그리드 시스템",
-    "imageUrl": "/captures/base-design.png",
-    "videoUrl": "/videos/base-design.webm"
   },
   {
     "id": "silasveta",
@@ -6152,24 +6100,6 @@ export const SEED_REFERENCES: Reference[] = [
     "videoUrl": "/videos/moment-factory.webm"
   },
   {
-    "id": "zero-lab",
-    "title": "제로랩 (Zero Lab)",
-    "url": "https://zero-lab.kr",
-    "category": "Object & Art Toy",
-    "tags": [
-      "아트·오브제·공간",
-      "스틸 조형",
-      "공간 디자인",
-      "가구 오브제",
-      "제로랩"
-    ],
-    "shortDesc": "스틸과 인더스트리얼 조형의 서울 디자인 스튜디오",
-    "anatomy": "장태훈·김동훈 디자이너가 결성한 디자인 스튜디오 제로랩. 스틸 강판, 파이프, 알루미늄을 주재료로 공간 설치, 조형 가구, 전시 사이니지를 실험하는 아카이브",
-    "principle": "구조적 스틸 결합과 산업적 재료를 그래픽적으로 해석하는 조형 언어",
-    "imageUrl": "/captures/zero-lab.png",
-    "videoUrl": "/videos/zero-lab.webm"
-  },
-  {
     "id": "post-poetics",
     "title": "포스트 포에틱스 (Post Poetics)",
     "url": "https://postpoetics.kr",
@@ -6186,24 +6116,6 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "절제된 타이포그래피 그리드와 책 중심의 정갈한 e커머스 인터페이스",
     "imageUrl": "/captures/post-poetics.png",
     "videoUrl": "/videos/post-poetics.webm"
-  },
-  {
-    "id": "franklyn",
-    "title": "Franklyn",
-    "url": "https://franklyn.co",
-    "category": "Brand Identity",
-    "tags": [
-      "스튜디오·브랜딩",
-      "브루클린 스튜디오",
-      "위트 브랜딩",
-      "타이포그래피",
-      "Franklyn"
-    ],
-    "shortDesc": "브루클린의 위트 있고 볼드한 브랜딩 스튜디오",
-    "anatomy": "뉴욕 브루클린을 기반으로 패션, 테크, F&B 브랜드의 유쾌하고 대담한 비주얼 아이덴티티와 커스텀 타이포그래피를 제작하는 디자인 스튜디오",
-    "principle": "규칙을 비트는 타이포그래피와 강렬한 원색 대비를 통한 흡인력 있는 비주얼 시스템",
-    "imageUrl": "/captures/franklyn.png",
-    "videoUrl": "/videos/franklyn.webm"
   },
   {
     "id": "foreign-policy",
@@ -6332,24 +6244,6 @@ export const SEED_REFERENCES: Reference[] = [
     "videoUrl": "/videos/mucca.webm"
   },
   {
-    "id": "colophon-foundry",
-    "title": "Colophon Foundry",
-    "url": "https://colophon-foundry.org",
-    "category": "Typography",
-    "tags": [
-      "타이포·출판",
-      "타입 파운드리",
-      "영국·미국",
-      "디스플레이 서체",
-      "Colophon"
-    ],
-    "shortDesc": "런던과 LA의 글로벌 인디 타입 파운드리",
-    "anatomy": "2009년 David Bloor와 Edd Harrington이 설립한 독립 서체 스튜디오. Aperçu, Castledown 등 세계적 브랜드들이 사용하는 현대적인 서체 스페시먼과 타이포그래피 도구 아카이브",
-    "principle": "글자의 골격과 비례를 다각도로 테스트할 수 있는 대화형 서체 테스터 인터페이스",
-    "imageUrl": "/captures/colophon-foundry.png",
-    "videoUrl": "/videos/colophon-foundry.webm"
-  },
-  {
     "id": "re-agency",
     "title": "Re (M&C Saatchi)",
     "url": "https://re-agency.com",
@@ -6366,24 +6260,6 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "스크린 중심의 역동적인 디지털 브랜딩과 일관된 모듈형 그리드 디자인",
     "imageUrl": "/captures/re-agency.png",
     "videoUrl": "/videos/re-agency.webm"
-  },
-  {
-    "id": "flatform",
-    "title": "플랫포옴 (Flat Form)",
-    "url": "https://flatform.kr",
-    "category": "Graphic Design Studio",
-    "tags": [
-      "스튜디오·브랜딩",
-      "서울 스튜디오",
-      "타이포그래피",
-      "출판 디자인",
-      "플랫포옴"
-    ],
-    "shortDesc": "서울의 감각적인 타이포그래피 & 출판 그래픽 스튜디오",
-    "anatomy": "서울을 기반으로 북 디자인, 아이덴티티, 전시 그래픽을 전개하는 디자인 스튜디오 플랫포옴의 미니멀 아카이브",
-    "principle": "정제된 그리드 시스템과 텍스트 행간, 여백의 미학을 극대화한 포트폴리오 레이아웃",
-    "imageUrl": "/captures/flatform.png",
-    "videoUrl": "/videos/flatform.webm"
   },
   {
     "id": "korea-interior-map",
