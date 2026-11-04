@@ -40,6 +40,12 @@ const CURATED_BRAND_COLORS: Record<string, [string, string]> = {
 
 // Base hues for each category
 const CATEGORY_HUES: Record<string, [number, number]> = {
+  '인터랙티브·3D': [185, 225],
+  '스튜디오·브랜딩': [355, 25],
+  '타이포·출판': [230, 260],
+  '아트·오브제·공간': [165, 195],
+  '패션·매거진': [245, 285],
+  '아카이브·툴': [145, 175],
   '3D WebGL': [185, 215],
   '인터랙티브 모션': [195, 230],
   '실험적 웹': [275, 320],
