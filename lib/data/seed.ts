@@ -6373,5 +6373,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "알파벳 인덱스 탭과 타원형 셀 그리드를 결합해 각 서체의 조형적 차이를 직관적으로 대조하고 호버 인터랙션으로 체험하는 플레이풀한 웹 스페시먼",
     "imageUrl": "/captures/suva-type-foundry.png",
     "videoUrl": "/videos/suva-type-foundry.webm"
+  },
+  {
+    "id": "same-energy",
+    "title": "Same Energy (세임 에너지)",
+    "url": "https://same.energy",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "비주얼 검색 엔진",
+      "무드보드",
+      "딥러닝 큐레이션",
+      "레퍼런스 탐색"
+    ],
+    "shortDesc": "단어 대신 분위기와 조형적 감도(Vibe)로 탐색하는 AI 비주얼 검색 엔진",
+    "anatomy": "딥러닝 시각 이해 모델을 기반으로 색감, 구도, 질감, 시대적 무드가 유사한 예술·디자인·사진·건축 이미지를 직관적으로 연결해 주는 비주얼 검색 엔진. 이미지를 클릭하면 동일한 미학적 에너지를 지닌 수천만 장의 고감도 레퍼런스가 무한 메이슨리 그리드로 펼쳐지는 탐색 도구",
+    "principle": "복잡한 UI나 텍스트 설명을 배제하고 오직 시각적 유사성만으로 꼬리에 꼬리를 물며 영감을 확장하는 제로 텍스트 탐색 경험",
+    "imageUrl": "/captures/same-energy.png",
+    "videoUrl": "/videos/same-energy.webm"
   }
 ];
