@@ -6355,5 +6355,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "연극적 유머와 반항적 조형 실험을 강렬한 풀스크린 비주얼과 직관적인 프로젝트 그리드로 풀어낸 아티스트 포트폴리오",
     "imageUrl": "/captures/maarten-baas.png",
     "videoUrl": "/videos/maarten-baas.webm"
+  },
+  {
+    "id": "suva-type-foundry",
+    "title": "SUVA Type Foundry (수바 타입 파운드리)",
+    "url": "https://www.suvatypefoundry.ee",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "타이포그래피",
+      "타입 파운드리",
+      "실험 서체",
+      "에스토니아 예술대학"
+    ],
+    "shortDesc": "에스토니아 예술대학(EKA) 그래픽 디자인과의 실험적 오픈 타입 파운드리",
+    "anatomy": "에스토니아 예술대학(EKA GD) 학생들과 교수진이 워크숍과 수업 프로젝트에서 제작한 실험적 서체들을 아카이빙한 타입 파운드리. 알파벳 A부터 Y까지 글자 단위로 수십 종의 개성 넘치는 서체 글리프를 원형 모듈 그리드 위에서 한눈에 비교·탐색하고 서체 스페시먼을 다운로드할 수 있는 타이포그래피 플랫폼",
+    "principle": "알파벳 인덱스 탭과 타원형 셀 그리드를 결합해 각 서체의 조형적 차이를 직관적으로 대조하고 호버 인터랙션으로 체험하는 플레이풀한 웹 스페시먼",
+    "imageUrl": "/captures/suva-type-foundry.png",
+    "videoUrl": "/videos/suva-type-foundry.webm"
   }
 ];
