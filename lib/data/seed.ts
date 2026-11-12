@@ -6391,5 +6391,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "복잡한 UI나 텍스트 설명을 배제하고 오직 시각적 유사성만으로 꼬리에 꼬리를 물며 영감을 확장하는 제로 텍스트 탐색 경험",
     "imageUrl": "/captures/same-energy.png",
     "videoUrl": "/videos/same-energy.webm"
+  },
+  {
+    "id": "hyup-shin",
+    "title": "협신물산 (Hyup-Shin / 조형재료·몰드·레진)",
+    "url": "https://hyup-shin.co.kr/index.html",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "조형 재료",
+      "실리콘 몰드",
+      "레진 캐스팅",
+      "오브제·가구 제작",
+      "Smooth-On"
+    ],
+    "shortDesc": "실리콘 몰드·투명 레진·우레탄·클레이 등 국내 최다 특수 조형재료 전문 스토어",
+    "anatomy": "미국 Smooth-On(스무스온) 및 Chavant(샤방트)의 한국 공식 총판이자 국내 최대 특수 조형·캐스팅 재료 전문점. 아트토이, 컬렉터블 가구, 특수분장, 건축 모형 제작에 필수적인 실리콘(Ecoflex, Mold Star), 고투명 크리스탈 레진(Crystal Clear), 연질·경질 우레탄(VytaFlex), 유토 및 물성 데이터(MSDS)·제작 노하우 영상을 총망라한 실무 재료 리소스",
+    "principle": "경도·점도·투명도·경화시간 등 재료 물성 스펙과 실제 캐스팅 적용 사례(Know-How)를 결합한 조형 실무자 필수 데이터베이스",
+    "imageUrl": "/captures/hyup-shin.png",
+    "videoUrl": "/videos/hyup-shin.webm"
   }
 ];
