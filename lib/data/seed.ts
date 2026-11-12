@@ -6410,5 +6410,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "경도·점도·투명도·경화시간 등 재료 물성 스펙과 실제 캐스팅 적용 사례(Know-How)를 결합한 조형 실무자 필수 데이터베이스",
     "imageUrl": "/captures/hyup-shin.png",
     "videoUrl": "/videos/hyup-shin.webm"
+  },
+  {
+    "id": "vitra",
+    "title": "Vitra (비트라)",
+    "url": "https://www.vitra.com/en-as/home",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "가구 디자인",
+      "스위스 브랜드",
+      "비트라 캠퍼스",
+      "오브제 & 제품 디자인"
+    ],
+    "shortDesc": "임스 부부·장 프루베·베르너 판톤의 유산을 잇는 스위스 하이엔드 가구 브랜드",
+    "anatomy": "1950년 스위스에서 설립된 세계적인 디자인 가구 브랜드 비트라(Vitra)의 공식 디지털 플래그십. 찰스 & 레이 임스(Charles & Ray Eames), 장 프루베(Jean Prouvé), 베르너 판톤(Verner Panton), 부홀렉 형제(Ronan & Erwan Bouroullec) 등 20~21세기 디자인 거장들의 오리지널 가구·조명 컬렉션과 세계적 건축가들이 설계한 비트라 캠퍼스(Vitra Campus)·비트라도 디자인 뮤지엄 아카이브를 집대성한 플랫폼",
+    "principle": "거장의 아카이브 스토리텔링과 현대 주거·오피스 공간 큐레이션을 결합한 정교한 에디토리얼 커머스 경험",
+    "imageUrl": "/captures/vitra.png",
+    "videoUrl": "/videos/vitra.webm"
   }
 ];

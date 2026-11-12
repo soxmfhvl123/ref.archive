@@ -1325,6 +1325,26 @@ export const RAW_FURNITURE_DATA: RawFurnitureItem[] = [
       "컬렉터블"
     ],
     "founders": "Maarten Baas"
+  },
+  {
+    "id": "furn-vitra",
+    "title": "Vitra (비트라)",
+    "country": "스위스",
+    "materials": "성형 합판, 파이버글래스·폴리프로필렌, 다이캐스트 알루미늄, 절곡 강판",
+    "referencePoint": "임스 라운지 체어(Eames Lounge Chair), 팬톤 체어(Panton Chair), 장 프루베의 스탠다드 체어 등 20세기 모던 가구사의 결정적 아이콘들을 생산하며 비트라 캠퍼스(Vitra Campus)로 건축·디자인 문화를 선도하는 스위스 대표 가구 브랜드",
+    "namingType": "브랜드명",
+    "group": "브랜드·제조사",
+    "url": "https://www.vitra.com/en-as/home",
+    "region": "유럽",
+    "tags": [
+      "스틸",
+      "알루미늄",
+      "나무",
+      "아크릴·레진",
+      "모듈·시스템",
+      "공간·인테리어"
+    ],
+    "founders": "Willi & Erika Fehlbaum"
   }
 ];
 
