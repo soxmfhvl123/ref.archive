@@ -6428,5 +6428,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "거장의 아카이브 스토리텔링과 현대 주거·오피스 공간 큐레이션을 결합한 정교한 에디토리얼 커머스 경험",
     "imageUrl": "/captures/vitra.png",
     "videoUrl": "/videos/vitra.webm"
+  },
+  {
+    "id": "fisk-projects",
+    "title": "FISK",
+    "url": "https://fiskprojects.com",
+    "category": "Design Studio",
+    "tags": [
+      "스튜디오·브랜딩",
+      "디자인 스튜디오",
+      "포틀랜드 & LA",
+      "브랜드 아이덴티티",
+      "타이포그래피",
+      "갤러리 & 출판"
+    ],
+    "shortDesc": "그래픽 디자인·웹·오브제·갤러리 공간을 아우르는 포틀랜드 & LA 기반 크리에이티브 프랙티스",
+    "anatomy": "미국 포틀랜드와 로스앤젤레스를 기반으로 디자이너 Bijan Berahimi가 이끄는 크리에이티브 프랙티스이자 갤러리. Clairo, Nike x Nigo, Google Snapseed, Aminé 등 음악·패션·테크·컬처 전반의 브랜드 아이덴티티와 패키징부터 독립 출판, 오브제, 전시 큐레이션까지 피지컬과 디지털을 넘나드는 시각 문화를 선보이는 아카이브",
+    "principle": "신문 지면처럼 명확한 보더 라인으로 구획된 모듈형 그리드와 위트 있는 일러스트·타이포그래피가 어우러진 스튜디오 쇼케이스",
+    "imageUrl": "/captures/fisk-projects.png",
+    "videoUrl": "/videos/fisk-projects.webm"
   }
 ];
