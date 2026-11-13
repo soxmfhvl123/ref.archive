@@ -6447,5 +6447,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "신문 지면처럼 명확한 보더 라인으로 구획된 모듈형 그리드와 위트 있는 일러스트·타이포그래피가 어우러진 스튜디오 쇼케이스",
     "imageUrl": "/captures/fisk-projects.png",
     "videoUrl": "/videos/fisk-projects.webm"
+  },
+  {
+    "id": "unbserved",
+    "title": "UNBSERVED",
+    "url": "https://unbserved.com/",
+    "category": "Design Archive",
+    "tags": [
+      "아카이브·툴",
+      "디자인 아카이브",
+      "비주얼 리퍼런스",
+      "브랜딩 & 타이포그래피",
+      "에디토리얼 큐레이션",
+      "이미지 검색"
+    ],
+    "shortDesc": "브랜딩·타이포그래피·에디토리얼·모션 등 에디터가 엄선한 3.4만 건 이상의 비주얼 레퍼런스 라이브러리",
+    "anatomy": "'양보다 기준(Criteria, not volume)'을 내세워 8명의 전문 에디터가 직접 선별한 34,000여 건의 고밀도 시각 디자인 아카이브. 타이포그래피, 브랜딩, 로고, 에디토리얼, 패키징, 모션 등 83개 세부 카테고리와 자연어·이미지 기반 검색, 데일리 큐레이션, 자체 라디오 플레이어까지 결합된 크리에이터용 영감 플랫폼",
+    "principle": "불필요한 광고 없이 정제된 그리드와 직관적인 시맨틱·비주얼 검색으로 원하는 레퍼런스를 즉각 탐색하는 큐레이션 경험",
+    "imageUrl": "/captures/unbserved.png",
+    "videoUrl": "/videos/unbserved.webm"
   }
 ];
