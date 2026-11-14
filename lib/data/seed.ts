@@ -6466,5 +6466,176 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "불필요한 광고 없이 정제된 그리드와 직관적인 시맨틱·비주얼 검색으로 원하는 레퍼런스를 즉각 탐색하는 큐레이션 경험",
     "imageUrl": "/captures/unbserved.png",
     "videoUrl": "/videos/unbserved.webm"
+  },
+  {
+    "id": "misumi-kr",
+    "title": "한국미스미 (MISUMI)",
+    "url": "https://kr.misumi-ec.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "기구설계·하드웨어",
+      "FA 표준부품",
+      "CAD 데이터",
+      "오브제·가구 제작",
+      "시제품 개발"
+    ],
+    "shortDesc": "FA 자동화·기구설계·메이커를 위한 3,000만 종 이상의 산업용 표준 부품 및 3D CAD 플랫폼",
+    "anatomy": "기구설계자와 하드웨어·키네틱 아트·가구 제작자가 가장 먼저 찾는 글로벌 산업용 부품 플랫폼 한국미스미 공식 스토어. 리니어 샤프트, 베어링, 알루미늄 프로파일, 볼트·너트, 액추에이터 등 수천만 종의 기계 요소 부품을 1mm 단위 치수 지정과 무료 2D/3D CAD 도면 다운로드, 3D 도면 자동 견적(meviy)까지 원스톱으로 지원",
+    "principle": "정밀한 치수 필터링과 즉시 다운로드 가능한 3D CAD 라이브러리를 결합해 설계부터 발주까지의 리드타임을 극적으로 단축한 엔지니어링 커머스 표준",
+    "imageUrl": "/captures/misumi-kr.png",
+    "videoUrl": "/videos/misumi-kr.webm"
+  },
+  {
+    "id": "spc-tech",
+    "title": "에스피씨테크놀로지 (SPC Technology)",
+    "url": "https://www.spctech.co.kr/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "기구설계·하드웨어",
+      "기계요소 부품",
+      "클램핑 & 방진",
+      "자동화 부품",
+      "CAD 도면"
+    ],
+    "shortDesc": "독일 Halder·Norelem 등 글로벌 정밀 기계요소·클램핑·방진 부품 및 CAD 자료 전문 플랫폼",
+    "anatomy": "독일 할더(Halder), 노렐렘(Norelem), unk(Schunk), 피코텍(Fikotech) 등 세계 유수의 기계요소·공작기계·자동화 부품을 국내에 공급하는 (주)에스피씨테크놀로지 공식 웹사이트. 인덱스 플런저, 토글 클램프, 볼 플런저, 레벨링 마운트, 방진 고무 등 정밀 기구설계에 필수적인 표준 규격집과 e-Book 카탈로그, CAD 데이터를 체계적으로 제공",
+    "principle": "방대한 해외 정밀 기계 부품 라인업을 직관적인 카테고리 트리구조와 기술 사양서 중심으로 정리한 하드웨어 설계 리소스",
+    "imageUrl": "/captures/spc-tech.png",
+    "videoUrl": "/videos/spc-tech.webm"
+  },
+  {
+    "id": "bupoom-damoa",
+    "title": "부품다모아 (HITC)",
+    "url": "https://hitc.kr/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "알루미늄 프로파일",
+      "기구설계·하드웨어",
+      "오브제·가구 제작",
+      "조립 부속",
+      "CAD 라이브러리"
+    ],
+    "shortDesc": "알루미늄 프로파일 규격별 절단·가공 및 브라켓·조인트 부속, 전용 CAD 프로그램까지 제공하는 전문몰",
+    "anatomy": "(주)한국산업기술능력개발원이 운영하는 알루미늄 프로파일 및 프레임 구조물 전문 플랫폼. 20·30·40 계열 표준 및 경량·컬러 프로파일의 정밀 절단·탭 가공 주문은 물론, 스마트 조립 부속, 캐스터, 조절좌, 그리고 오토캐드 기반 프로파일 설계 보조 플러그인(DamoaCAD)과 조립 가이드 영상을 함께 제공",
+    "principle": "복잡한 프로파일 프레임 설계를 규격화된 부속 매칭과 전용 CAD 툴 배포로 해결한 메이커·설계자 친화적 하드웨어 스토어",
+    "imageUrl": "/captures/bupoom-damoa.png",
+    "videoUrl": "/videos/bupoom-damoa.webm"
+  },
+  {
+    "id": "buyoung-metal",
+    "title": "부영금속공업 (Buyoung Metal)",
+    "url": "https://www.ebuyoung.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "산업용 하드웨어",
+      "기구설계·하드웨어",
+      "경첩 & 핸들",
+      "토글클램프",
+      "오브제·가구 제작"
+    ],
+    "shortDesc": "산업용 경첩·핸들·매미고리·토글클램프·캠록 등 기구 외장 하드웨어 제조 및 유통 전문점",
+    "anatomy": "기계 장비, 함체, 인클로저, 모듈형 금속 가구 및 케이스 제작에 쓰이는 산업용 하드웨어 전문 기업 (주)부영금속공업의 공식 플랫폼. 스테인리스 경첩, 토글 클램프, 매미고리(래치), 매립 핸들, 조절좌, 캠록 등 외장 체결·개폐 부속의 상세 치수 도면과 시방서를 한눈에 비교·탐색 가능",
+    "principle": "도어 개폐·잠금·운반 등 물리적 인터페이스 부품을 기능별 사진과 정밀 치수 도면 중심으로 일목요연하게 아카이빙한 하드웨어 카탈로그",
+    "imageUrl": "/captures/buyoung-metal.png",
+    "videoUrl": "/videos/buyoung-metal.webm"
+  },
+  {
+    "id": "myungga-hardware",
+    "title": "명가철물 (명가장식철물)",
+    "url": "http://www.mgjs.co.kr/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "산업용 철물",
+      "기구설계·하드웨어",
+      "쇼바 & 캐치",
+      "경첩 & 핸들",
+      "오브제·가구 제작"
+    ],
+    "shortDesc": "손잡이·경첩·매미고리·가스쇼바·고무발 등 기구 및 특장·가구용 특수 철물 종합 쇼핑몰",
+    "anatomy": "회원가입 없이도 소량 구매가 가능한 산업용·장식용 특수 철물 전문 스토어. 산업 장비와 워크스테이션, 하드케이스, 인더스트리얼 가구 제작에 필수적인 손잡이, 파이프 핸들, 밀폐 손잡이, 버터플라이 래치, 가스 스프링(쇼바), 마그네틱 캐치, 방진 고무발 등 20여 개 대분류의 철물 부속을 사진 그리드로 직관적 구성",
+    "principle": "메인 화면에 전 카테고리 부속의 실물 썸네일 그리드를 배치해 이름을 모르는 특수 철물도 시각적으로 즉시 찾아낼 수 있는 직관적 인덱스 구조",
+    "imageUrl": "/captures/myungga-hardware.png",
+    "videoUrl": "/videos/myungga-hardware.webm"
+  },
+  {
+    "id": "bearing-mall",
+    "title": "베어링몰 (유경베어링)",
+    "url": "https://www.ebearing.co.kr/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "베어링 & LM가이드",
+      "기구설계·하드웨어",
+      "키네틱 아트",
+      "동력전달 부품",
+      "치수 검색"
+    ],
+    "shortDesc": "내경·외경·폭 치수 검색을 지원하는 구름베어링·LM가이드·볼스크류 등 직선·회전운동 부품 전문몰",
+    "anatomy": "유경베어링이 운영하는 국내 대표 베어링 및 직선운동 부품 전문 쇼핑몰. NSK, SKF, FAG, THK, IKO 등 글로벌 메이커의 볼베어링, 니들베어링, 캠팔로워, LM가이드, 볼스크류, 커플링, 오일씰을 총망라하며, 정확한 형번을 몰라도 내경·외경·폭(mm) 치수만으로 호환 베어링을 즉시 조회할 수 있는 엔지니어링 검색 툴 제공",
+    "principle": "복잡한 베어링 규격 체계를 내경·외경·두께 파라미터 검색과 브랜드 매트릭스로 단순화한 기구·키네틱 설계 필수 데이터베이스",
+    "imageUrl": "/captures/bearing-mall.png",
+    "videoUrl": "/videos/bearing-mall.webm"
+  },
+  {
+    "id": "shemeks",
+    "title": "쉬멕스 (SHEMEKS)",
+    "url": "https://www.eshopshemeks.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "볼트 & 화스너",
+      "기구설계·하드웨어",
+      "특수 볼트",
+      "표준 부품",
+      "오브제·가구 제작"
+    ],
+    "shortDesc": "렌치볼트·자리파기볼트·세라믹·티타늄·수지 볼트까지 모든 규격의 화스너를 망라한 표준 부품 쇼핑몰",
+    "anatomy": "기구설계 및 정밀 하드웨어 제작에 사용되는 모든 종류의 볼트·너트·와셔·핀류를 취급하는 표준 부품 전문몰. 일반 육각 렌치볼트부터 초극저두 볼트, 단차 볼트(숄더 볼트), 낙하방지 볼트는 물론 SUS304/316, 티타늄, 황동, PEEK, 세라믹, 나일론 등 특수 소재 화스너의 규격표와 CAD 도면을 체계적으로 제공",
+    "principle": "머리 형상과 기능별 픽토그램 다이어그램을 통해 수천 종의 특수 체결 볼트 규격을 한눈에 비교·선택할 수 있는 시각적 화스너 카탈로그",
+    "imageUrl": "/captures/shemeks.png",
+    "videoUrl": "/videos/shemeks.webm"
+  },
+  {
+    "id": "tr-insert",
+    "title": "티알인서트 (TR Insert)",
+    "url": "https://www.tr-insert.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "인서트 너트",
+      "기구설계·하드웨어",
+      "3D 프린팅·사출",
+      "판금 클린칭",
+      "체결 부속"
+    ],
+    "shortDesc": "플라스틱 사출·3D 프린팅용 황동 탭 인서트 및 판금 클린칭 너트·스탠오프 전문 스토어",
+    "anatomy": "플라스틱, 3D 프린팅 출력물, 목재, 경합금, 얇은 판금 등 나사산 강도가 약한 모재에 정밀한 금속 나사산을 형성해 주는 인서트 부품 전문몰. 열압입·초음파 인서트(황동 너트), 셀프태핑 퀵서트, 리코일(헬리코일), 판금 압입용 셀프클린칭 너트·볼트·스탠오프(PEM 타입) 등 제품 개발과 시제품 제작에 필수적인 체결 솔루션을 총망라",
+    "principle": "모재(플라스틱·금속·목재)와 시공 방식(열압입·탭핑·클린칭)에 따라 최적의 인서트 규격을 즉시 찾을 수 있도록 특화된 전문 하드웨어 아카이브",
+    "imageUrl": "/captures/tr-insert.png",
+    "videoUrl": "/videos/tr-insert.webm"
+  },
+  {
+    "id": "engp",
+    "title": "이엔지피 (ENGP)",
+    "url": "https://www.engp.co.kr/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "엔지니어링 플라스틱",
+      "기구설계·하드웨어",
+      "아크릴·폴리카보네이트",
+      "자동 견적·재단",
+      "오브제·가구 제작"
+    ],
+    "shortDesc": "아크릴·폴리카보네이트·아세탈(POM)·MC나일론·PEEK 등 3,000여 종 산업용 플라스틱 실시간 자동 견적·재단 스토어",
+    "anatomy": "3,000개가 넘는 다양한 두께와 색상의 엔지니어링 플라스틱 및 산업용 판재·봉재를 1개 단위로 맞춤 재단·주문할 수 있는 온라인 스토어. 아크릴, 폴리카보네이트(렉산), PVC, 아세탈(POM), MC나일론, 테프론(PTFE), 베이클라이트, 우레탄, 실리콘, 알루미늄 판재까지 가로·세로(mm) 치수만 입력하면 실시간으로 재단 가격이 계산되는 자동 견적 시스템 탑재",
+    "principle": "번거로운 지류 견적 문의 없이 웹에서 소재·두께·치수를 입력해 실시간 가격 산출과 즉시 발주가 가능한 온디맨드 소재 가공 플랫폼",
+    "imageUrl": "/captures/engp.png",
+    "videoUrl": "/videos/engp.webm"
   }
 ];
