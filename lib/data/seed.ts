@@ -6637,5 +6637,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "번거로운 지류 견적 문의 없이 웹에서 소재·두께·치수를 입력해 실시간 가격 산출과 즉시 발주가 가능한 온디맨드 소재 가공 플랫폼",
     "imageUrl": "/captures/engp.png",
     "videoUrl": "/videos/engp.webm"
+  },
+  {
+    "id": "learn-arduino",
+    "title": "Learn Arduino",
+    "url": "https://learn-arduino-red.vercel.app",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브·3D",
+      "3D WebGL",
+      "아두이노·하드웨어",
+      "인터랙티브 튜토리얼",
+      "시뮬레이터",
+      "피지컬 컴퓨팅"
+    ],
+    "shortDesc": "인터랙티브 3D 아두이노 보드 위에서 회로를 배선하고 코드를 실행하며 배우는 16단계 입문 시뮬레이터",
+    "anatomy": "디자이너 겸 엔지니어 Dilum Sanjaya가 제작한 인터랙티브 3D 아두이노(Arduino Uno) 학습 웹 애플리케이션. 브레드보드, LED, 푸시버튼, 가변저항, 초음파·조도·온도 센서, 피에조 부저, DC 모터, 서보모터 등 실제 전자부품을 3D 공간에서 직접 와이어링하고 C++ 스케치 코드와 시리얼 모니터를 실시간 시뮬레이션하는 16개 인터랙티브 레슨으로 구성",
+    "principle": "정밀한 3D 하드웨어 모델링·핀아웃 시각화와 실시간 회로·코드 시뮬레이터를 결합해 물리적 보드 없이도 직관적으로 피지컬 컴퓨팅을 체득하게 하는 교육용 인터페이스",
+    "imageUrl": "/captures/learn-arduino.png",
+    "videoUrl": "/videos/learn-arduino.webm"
   }
 ];
