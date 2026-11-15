@@ -6678,5 +6678,23 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "수백 개의 아카이브 품목 텍스트 그리드와 거대한 스텐실·산세리프 타이포그래피를 레이어 오버프린트(Overprint) 방식으로 겹쳐 버질 아블로 특유의 해체주의 편집 미학을 웹에 구현",
     "imageUrl": "/captures/virgilabloh-codes.png",
     "videoUrl": "/videos/virgilabloh-codes.webm"
+  },
+  {
+    "id": "the-shed",
+    "title": "The Shed",
+    "url": "https://www.theshed.org",
+    "category": "Exhibition & Cultural",
+    "tags": [
+      "아트·오브제·공간",
+      "전시 & 문화 공간",
+      "뉴욕 아트센터",
+      "에디토리얼 스토리텔링",
+      "컨덴스드 타이포그래피"
+    ],
+    "shortDesc": "시각예술·공연·음악·대중문화를 아우르는 뉴욕 허드슨 야드의 복합 예술 문화 센터 The Shed",
+    "anatomy": "뉴욕 맨해튼 허드슨 야드(Hudson Yards)에 위치한 비영리 복합 예술 센터 The Shed의 공식 웹사이트. 아웃라인 형태의 건축적 로고마크, 풀폭 공연·전시 하이라이트 비디오 배너, 응축된 볼드 산세리프(Condensed Sans-serif) 내러티브 문장과 둥근 모서리 프로그램 카드가 유기적으로 이어지는 스크롤 피드 구조",
+    "principle": "날짜·장르 필터 중심의 딱딱한 기관 안내 대신, 한 편의 문장('This fall, join us for…') 속에 전시·공연 카드를 자연스럽게 삽입해 관람객을 초대하는 대화형 에디토리얼 레이아웃",
+    "imageUrl": "/captures/the-shed.png",
+    "videoUrl": "/videos/the-shed.webm"
   }
 ];
