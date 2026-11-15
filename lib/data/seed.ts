@@ -1361,11 +1361,14 @@ export const SEED_REFERENCES: Reference[] = [
     "category": "Archive & Curation",
     "tags": [
       "아카이브·툴",
-      "디자인 아카이브"
+      "디자인 아카이브",
+      "버질 아블로",
+      "블루프린트 그래픽",
+      "타이포그래피"
     ],
-    "shortDesc": "버질 아블로 아카이브",
-    "anatomy": "버질 아블로 아카이브(V.A.A.). 2만 점 이상의 작업물·컬렉션·라이브러리를 관리하는 공식 아카이브",
-    "principle": "아카이브를 문서·매뉴얼처럼 구성한 그래픽과 라벨링 타이포",
+    "shortDesc": "2만 점 이상의 작업물·프로토타입·컬렉션·라이브러리를 망라한 버질 아블로 공식 아카이브(V.A.A.)",
+    "anatomy": "버질 아블로 아카이브(The Virgil Abloh Archive™, V.A.A.)의 공식 웹 플랫폼. 패션, 디자인, 음악, 아트, 건축, 광고를 아우르는 20,000점 이상의 오리지널 작업물과 프로토타입, 스케치, 개인 라이브러리를 보존·연구하며, 청사진(Blueprint) 블루 톤의 기술 문서 양식과 아카이브 인덱스 카드 레이아웃으로 구성",
+    "principle": "공업용 청사진(Blueprint) 컬러와 타임스탬프·라벨링 메타데이터, 고밀도 아카이브 목록 카드를 중첩해 아카이브 자체를 하나의 살아있는 매뉴얼로 시각화한 시스템",
     "imageUrl": "/captures/virgilabloh-com.png",
     "videoUrl": "/videos/virgilabloh-com.webm"
   },
@@ -6656,5 +6659,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "정밀한 3D 하드웨어 모델링·핀아웃 시각화와 실시간 회로·코드 시뮬레이터를 결합해 물리적 보드 없이도 직관적으로 피지컬 컴퓨팅을 체득하게 하는 교육용 인터페이스",
     "imageUrl": "/captures/learn-arduino.png",
     "videoUrl": "/videos/learn-arduino.webm"
+  },
+  {
+    "id": "virgilabloh-codes",
+    "title": "Virgil Abloh: The Codes",
+    "url": "https://www.virgilabloh.com/codes",
+    "category": "Exhibition & Cultural",
+    "tags": [
+      "아트·오브제·공간",
+      "전시 & 문화 공간",
+      "버질 아블로",
+      "인덱스 타이포그래피",
+      "오버레이 레이아웃",
+      "아카이브 전시"
+    ],
+    "shortDesc": "버질 아블로의 20년 다학제적 작업과 1,000여 점의 아카이브 오브제를 조명하는 'Virgil Abloh: The Codes' 전시 웹사이트",
+    "anatomy": "The Virgil Abloh Archive™가 주관하는 대규모 회고전 'Virgil Abloh: The Codes' 공식 페이지. 의류, 풋웨어, 건축, 음악, 광고, 아트에 걸친 20년간의 창작 유산과 협업 아카이브 리스트를 다단 세리프 인덱스로 빽빽하게 깔고, 그 위에 초대형 코발트 블루 산세리프 타이포그래피와 회전하는 티켓 스티커 배지를 중첩 배치",
+    "principle": "수백 개의 아카이브 품목 텍스트 그리드와 거대한 스텐실·산세리프 타이포그래피를 레이어 오버프린트(Overprint) 방식으로 겹쳐 버질 아블로 특유의 해체주의 편집 미학을 웹에 구현",
+    "imageUrl": "/captures/virgilabloh-codes.png",
+    "videoUrl": "/videos/virgilabloh-codes.webm"
   }
 ];
