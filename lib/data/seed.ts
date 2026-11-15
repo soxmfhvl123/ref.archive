@@ -6696,5 +6696,258 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "날짜·장르 필터 중심의 딱딱한 기관 안내 대신, 한 편의 문장('This fall, join us for…') 속에 전시·공연 카드를 자연스럽게 삽입해 관람객을 초대하는 대화형 에디토리얼 레이아웃",
     "imageUrl": "/captures/the-shed.png",
     "videoUrl": "/videos/the-shed.webm"
+  },
+  {
+    "id": "cyberfeminism-index",
+    "title": "Cyberfeminism Index",
+    "url": "https://cyberfeminismindex.com",
+    "category": "Archive & Curation",
+    "tags": [
+      "아카이브·툴",
+      "디자인 아카이브",
+      "인덱스 타이포그래피",
+      "네오 브루탈리즘",
+      "드로어 UI",
+      "큐레이션"
+    ],
+    "shortDesc": "1990년대부터 이어진 테크놀로지·사이버페미니즘 행동주의와 넷 아트 기록 700여 건을 집대성한 인터랙티브 인덱스 아카이브",
+    "anatomy": "디자이너 겸 연구자 Mindy Seu가 기획하고 Laurel Schwulst가 웹 아키텍처를 설계(Cooper Hewitt 국립디자인박물관 커미션)한 디지털 인덱스 플랫폼. 연도·제목·저자·본문 발췌문이 고밀도 다단 테이블로 펼쳐지며, 항목을 클릭할 때마다 우측 영수증(Trail) 드로어에 선택한 레퍼런스 카드가 축적되어 맞춤형 PDF/목록으로 내려받을 수 있는 구조",
+    "principle": "형광 그린 하이라이트와 원초적인 하이퍼텍스트 테이블, 상호참조(Cross-reference) 각주 시스템을 결합해 방대한 학술·예술 아카이브를 살아있는 리서치 도구로 전환한 편집 디자인",
+    "imageUrl": "/captures/cyberfeminism-index.png",
+    "videoUrl": "/videos/cyberfeminism-index.webm"
+  },
+  {
+    "id": "cca-qc",
+    "title": "CCA (Canadian Centre for Architecture)",
+    "url": "https://www.cca.qc.ca/en/",
+    "category": "Exhibition & Cultural",
+    "tags": [
+      "아트·오브제·공간",
+      "전시 & 문화 공간",
+      "건축 아카이브",
+      "에디토리얼 그리드",
+      "스위스 타이포그래피"
+    ],
+    "shortDesc": "방대한 건축 도면·모형·사진 컬렉션과 비평 에세이를 카탈로그 넘버링 그리드로 엮어낸 몬트리올 국제 건축 연구 기관 CCA",
+    "anatomy": "캐나다 몬트리올에 설립된 세계적인 건축 박물관 겸 리서치 센터 CCA(Canadian Centre for Architecture)의 공식 플랫폼. 전시, 출판물, 아카이브 소장품, 롱폼 아티클을 엄격한 모듈러 그리드와 색인 번호, 절제된 산세리프·세리프 타이포그래피 위계로 구조화하여 연구자와 디자이너가 입체적으로 탐색할 수 있도록 설계",
+    "principle": "기관 홍보성 배너를 배제하고 소장 도면·아티클·전시 기록을 동일한 학술적 깊이로 병렬 배치해 웹사이트 자체를 하나의 연구 저널이자 열람실로 작동하게 하는 시스템",
+    "imageUrl": "/captures/cca-qc.png",
+    "videoUrl": "/videos/cca-qc.webm"
+  },
+  {
+    "id": "experimental-jetset",
+    "title": "Experimental Jetset",
+    "url": "http://www.experimentaljetset.nl",
+    "category": "Design Studio",
+    "tags": [
+      "스튜디오·에이전시",
+      "그래픽 디자인",
+      "암스테르담",
+      "모더니즘 인덱스",
+      "브루탈리즘"
+    ],
+    "shortDesc": "웹사이트를 순수한 텍스트 색인과 아카이브 문서로 다루는 현대 그래픽 디자인 문법의 원류, 암스테르담 스튜디오 Experimental Jetset",
+    "anatomy": "Marieke Stolk, Erwin Brinkers, Danny van den Dungen이 1997년 암스테르담에서 설립한 그래픽 디자인 스튜디오 Experimental Jetset의 공식 아카이브. 화려한 썸네일 그리드 대신 프로젝트 번호, 연도, 분류, 에세이 노트를 하이퍼텍스트 색인 구조로 나열하며 포스터·전시 아이덴티티·출판 작업의 사유 과정을 상세히 기록",
+    "principle": "Helvetica 중심의 네오 모더니즘 타이포그래피와 순수 HTML 문서 구조를 고수하여 그래픽 디자인 작업물과 그 이면의 이론적 텍스트가 동등한 무게를 갖도록 설계한 아카이브 문법",
+    "imageUrl": "/captures/experimental-jetset.png",
+    "videoUrl": "/videos/experimental-jetset.webm"
+  },
+  {
+    "id": "rhizome-net-art",
+    "title": "Net Art Anthology (Rhizome)",
+    "url": "https://anthology.rhizome.org",
+    "category": "Exhibition & Cultural",
+    "tags": [
+      "아트·오브제·공간",
+      "전시 & 문화 공간",
+      "넷 아트",
+      "디지털 보존",
+      "뉴뮤지엄"
+    ],
+    "shortDesc": "1980년대부터 현재까지의 초기 인터넷 예술·인터랙티브 웹 실험 100선을 당대 구동 환경과 함께 복원·큐레이션한 뉴뮤지엄 Rhizome 앤솔로지",
+    "anatomy": "뉴욕 뉴뮤지엄(New Museum) 산하 디지털 아트 기관 Rhizome이 구축한 온라인 전시 아카이브. 시대별 4개 챕터에 걸쳐 100점의 역사적 넷 아트 작품을 소개하며, 구형 브라우저 에뮬레이터(Webrecorder/BwFLA)와 비평 텍스트, 과감한 아웃라인·브루탈리즘 타이포그래피를 결합해 사라져가는 웹 예술을 온전히 체험하도록 구성",
+    "principle": "작품 캡처 이미지에 그치지 않고 역사적 웹 환경 자체를 브라우저 안에 재현하며, 강렬한 실험적 타이포그래피로 시대별 인터넷 문화의 미학적 변화를 시각화한 온라인 전시관",
+    "imageUrl": "/captures/rhizome-net-art.png",
+    "videoUrl": "/videos/rhizome-net-art.webm"
+  },
+  {
+    "id": "cwandt",
+    "title": "CW&T",
+    "url": "https://cwandt.com",
+    "category": "Industrial & Product",
+    "tags": [
+      "패션·제품·브랜드",
+      "인더스트리얼 & 제품",
+      "기구설계·하드웨어",
+      "CNC 정밀가공",
+      "엔지니어링 오브제"
+    ],
+    "shortDesc": "초정밀 CNC 티타늄 가공 펜(Pen Type-A/B)부터 전자 타이머·시계까지 직접 기구설계하고 소량 생산하는 브루클린 아트·엔지니어링 듀오 CW&T",
+    "anatomy": "디자이너 겸 엔지니어 Che-Wei Wang과 Taylor Levy가 운영하는 브루클린 하드웨어·아트 스튜디오 CW&T의 공식 사이트. 공차 0.01mm 단위로 가공된 스테인리스·티타늄 문구류, 노출 회로 기판과 황동·콘크리트로 만든 시간 측정 오브제, 실험적 하드웨어 프로토타입을 군더더기 없는 화이트 그리드와 스펙 시트 형식으로 아카이빙",
+    "principle": "과장된 마케팅 수식어 없이 소재 물성(Titanium, Brass, Concrete), 가공 공차, 작동 메커니즘 자체를 전면에 내세워 수백 년 동안 사용할 수 있는 엔지니어링 도구의 미학을 전달",
+    "imageUrl": "/captures/cwandt.png",
+    "videoUrl": "/videos/cwandt.webm"
+  },
+  {
+    "id": "new-tendency",
+    "title": "NEW TENDENCY",
+    "url": "https://newtendency.com",
+    "category": "Industrial & Product",
+    "tags": [
+      "패션·제품·브랜드",
+      "인더스트리얼 & 제품",
+      "판금·알루미늄 가구",
+      "기구설계·하드웨어",
+      "베를린 모더니즘"
+    ],
+    "shortDesc": "판금 절곡(Sheet Metal)·알루미늄 압출·볼트 체결 등 기구설계 공법을 하이엔드 모더니즘 가구와 오브제로 승화시키는 베를린 디자인 스튜디오",
+    "anatomy": "바우하우스의 산업 생산 철학을 현대적으로 계승한 베를린 기반 디자인 브랜드 NEW TENDENCY의 웹사이트. 레이저 커팅된 금속 판재의 절곡 구조, 아노다이징 알루미늄 프로파일, 분체도장 스틸로 제작된 테이블·선반·조명·오브제 컬렉션을 정교한 건축 사진과 도면 스펙 시트로 제시",
+    "principle": "산업용 금속 가공과 구조 역학을 숨기지 않고 조형 언어로 드러내며, 웹 인터페이스 역시 미니멀한 편집 그리드와 기술 사양표 중심으로 구성해 제품의 물성을 극대화",
+    "imageUrl": "/captures/new-tendency.png",
+    "videoUrl": "/videos/new-tendency.webm"
+  },
+  {
+    "id": "work-louder",
+    "title": "Work Louder",
+    "url": "https://worklouder.cc",
+    "category": "Industrial & Product",
+    "tags": [
+      "패션·제품·브랜드",
+      "인더스트리얼 & 제품",
+      "모듈형 하드웨어",
+      "메카니컬 키보드",
+      "테크니컬 라벨링"
+    ],
+    "shortDesc": "모듈형 다이얼 노브와 로우프로파일 메카니컬 키보드를 설계하는 크리에이터용 하드웨어 브랜드 Work Louder",
+    "anatomy": "디자이너와 메이커를 위한 모듈형 입력 하드웨어(Creator Board, Nomad, Figma Creator Micro)를 제작하는 Work Louder의 공식 스토어 겸 브랜드 사이트. 반투명 폴리카보네이트 하우징, 커스텀 키캡, 로터리 인코더 다이얼 등 물리적 컨트롤러의 디테일을 분해도 그래픽, 도면 치수선, 도트 매트릭스 배지와 함께 생동감 있게 배치",
+    "principle": "인더스트리얼 하드웨어의 택타일(Tactile)한 조작감과 설계 도면 콜아웃 그래픽을 웹 UI 컴포넌트에 일체화하여 제품을 만지는 듯한 즐거움을 주는 커머스 경험",
+    "imageUrl": "/captures/work-louder.png",
+    "videoUrl": "/videos/work-louder.webm"
+  },
+  {
+    "id": "norbauer",
+    "title": "Norbauer & Co.",
+    "url": "https://www.norbauer.com",
+    "category": "Industrial & Product",
+    "tags": [
+      "패션·제품·브랜드",
+      "인더스트리얼 & 제품",
+      "CNC 금속 하우징",
+      "기구설계·하드웨어",
+      "레트로 퓨처리즘"
+    ],
+    "shortDesc": "중량급 CNC 알루미늄·스테인리스 가공과 정밀 음향·기구 설계로 하이엔드 전자기기 하우징을 조각하는 Ryan Norbauer의 하드웨어 아틀리에",
+    "anatomy": "산업 디자이너 Ryan Norbauer가 이끄는 하드웨어 공방 Norbauer & Co.의 웹사이트. 1960~70년대 메인프레임 컴퓨터와 브루탈리즘 건축에서 영감을 받은 초중량 CNC 절삭 하우징(Seneca, Heavy Grail 등), 커스텀 스태빌라이저, 분체도장·패시베이션 표면처리 공정을 깊이 있는 장문의 엔지니어링 에세이와 스튜디오 사진으로 소개",
+    "principle": "단순한 주변기기를 넘어 금속 가공 공차, 내부 음향 챔버 설계, 표면 마감 물성에 대한 집요한 공학적 탐구를 클래식한 에디토리얼 타이포그래피로 풀어낸 브랜드 아카이브",
+    "imageUrl": "/captures/norbauer.png",
+    "videoUrl": "/videos/norbauer.webm"
+  },
+  {
+    "id": "industrial-facility",
+    "title": "Industrial Facility",
+    "url": "https://industrialfacility.co.uk",
+    "category": "Industrial & Product",
+    "tags": [
+      "패션·제품·브랜드",
+      "인더스트리얼 & 제품",
+      "산업디자인 스튜디오",
+      "샘 헥트 & 킴 콜린",
+      "런던"
+    ],
+    "shortDesc": "샘 헥트(Sam Hecht)와 킴 콜린(Kim Colin)이 이끄는 세계적인 런던 산업·제품 디자인 스튜디오 Industrial Facility",
+    "anatomy": "Muji, Herman Miller, Wästberg, Mattiazzi, Braun 등과 협업하며 현대 산업디자인의 기준을 만들어온 런던 스튜디오 Industrial Facility의 아카이브. 가구, 조명, 전자기기, 생활 도구, 전시 디자인 작업을 절제된 그리드와 명확한 카테고리 색인으로 정리하고 각 제품의 조형적·생산적 해법을 간결하게 서술",
+    "principle": "불필요한 시각적 장식을 걷어내고 사물의 비례, 제조 공정, 사용자 맥락이 드러나는 정직한 제품 사진과 담백한 타이포그래피로 산업디자인 아카이브의 정석을 구현",
+    "imageUrl": "/captures/industrial-facility.png",
+    "videoUrl": "/videos/industrial-facility.webm"
+  },
+  {
+    "id": "us-graphics",
+    "title": "U.S. Graphics Company",
+    "url": "https://usgraphics.com",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "타이포그래피 & 폰트",
+      "기술 매뉴얼 그래픽",
+      "블루프린트·데이터시트",
+      "모노스페이스"
+    ],
+    "shortDesc": "1950~70년대 미 공군·IBM·벨 연구소 기술 매뉴얼과 오실로스코프 도면 미학을 현대 웹과 서체(Berkeley Mono)로 복원한 U.S. Graphics Company",
+    "anatomy": "엔지니어링 다이어그램과 코딩 환경을 위한 모노스페이스 서체 'Berkeley Mono' 등을 제작하는 U.S. Graphics Company의 공식 웹사이트. 마이크로필름 스캔본, ASCII 박스 드로잉 차트, MIL-SPEC 군사 규격 표기법, 스탬프 인장, 밀도 높은 기술 데이터시트 레이아웃을 웹 전체에 완벽하게 구현",
+    "principle": "과거 아날로그 엔지니어링 매뉴얼과 청사진(Blueprint) 문서의 정보 밀도·기하학적 질서를 현대 CSS 그리드와 모노스페이스 타이포그래피로 재해석한 독보적인 그래픽 시스템",
+    "imageUrl": "/captures/us-graphics.png",
+    "videoUrl": "/videos/us-graphics.webm"
+  },
+  {
+    "id": "mcmaster-carr",
+    "title": "McMaster-Carr",
+    "url": "https://www.mcmaster.com",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "기구설계·하드웨어",
+      "기계요소·화스너",
+      "CAD 라이브러리",
+      "정보구조(IA) 바이블"
+    ],
+    "shortDesc": "70만 종의 기계 부품·화스너·원소재 단면 일러스트와 3D CAD를 0.1초 단위의 초고속 인터페이스로 제공하는 전설적인 엔지니어링 카탈로그",
+    "anatomy": "전 세계 기구 엔지니어, 하드웨어 스타트업, 산업 디자이너들이 표준 레퍼런스로 사용하는 미국의 기계·하드웨어 부품 공급 플랫폼 McMaster-Carr. 나사, 베어링, 힌지, 가스 스프링, 알루미늄 프로파일, 엔지니어링 플라스틱 등 70만 개 이상의 부품을 정밀한 세밀화 벡터 일러스트, 규격 필터, 즉시 다운로드 가능한 SolidWorks/STEP 3D CAD 도면과 함께 제공",
+    "principle": "마케팅 배너나 불필요한 페이지 전환 없이 한 화면 안에서 수십만 개의 공학 규격을 즉시 좁혀 들어가는 극한의 정보 설계(Information Architecture)와 속도로 UX 디자인계의 전설로 꼽히는 웹 애플리케이션",
+    "imageUrl": "/captures/mcmaster-carr.png",
+    "videoUrl": "/videos/mcmaster-carr.webm"
+  },
+  {
+    "id": "materiom",
+    "title": "Materiom",
+    "url": "https://materiom.org",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "소재 라이브러리",
+      "바이오 머티리얼",
+      "물성 데이터베이스",
+      "오픈소스 레시피"
+    ],
+    "shortDesc": "자연 유래 원료로 만드는 차세대 바이오 소재·복합재의 배합 레시피와 기계적 물성 데이터를 아카이빙한 오픈소스 머티리얼 플랫폼",
+    "anatomy": "디자이너, 소재 공학자, 메이커를 위한 재생 가능 소재 데이터베이스 Materiom. 해조류, 셀룰로오스, 키토산, 농업 부산물 등 자연에 풍부한 원료를 기반으로 플라스틱·가죽·폼을 대체하는 바이오 소재의 제조 레시피, 인장 강도·탄성 계수 등 공학적 물성 차트, 연구 논문을 체계적으로 색인화하여 제공",
+    "principle": "실험실 수준의 소재 공학 데이터를 요리 레시피처럼 직관적인 단계별 가이드와 시각적 물성 스펙 카드 형태로 구조화해 제품·오브제 디자이너의 소재 실험을 돕는 리소스 플랫폼",
+    "imageUrl": "/captures/materiom.png",
+    "videoUrl": "/videos/materiom.webm"
+  },
+  {
+    "id": "red-blob-games",
+    "title": "Red Blob Games",
+    "url": "https://www.redblobgames.com",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브·3D",
+      "인터랙티브 튜토리얼",
+      "알고리즘 시뮬레이션",
+      "기하학·그리드",
+      "비주얼 에세이"
+    ],
+    "shortDesc": "본문 속 모든 다이어그램과 그리드를 마우스로 직접 조작하며 길찾기·육각 그리드·노이즈·물리 알고리즘을 체득하는 인터랙티브 학습 웹의 바이블",
+    "anatomy": "스탠퍼드 출신 엔지니어 Amit Patel이 운영하는 인터랙티브 컴퓨터 과학·수학·기하학 튜토리얼 사이트. A* 경로 탐색, 육각형(Hexagonal) 그리드 좌표계, 보로노이 다이어그램, 절차적 지형 생성, 시야각 알고리즘 등을 정적인 수식 대신 실시간으로 드래그하고 변수를 조절할 수 있는 수백 개의 인터랙티브 캔버스 위젯으로 구현",
+    "principle": "텍스트 설명과 살아 움직이는 인터랙티브 시뮬레이터를 1:1로 결합해 추상적인 수학·알고리즘 원리를 손끝의 시각적 피드백으로 직관화한 익스플로러블 익스플러네이션(Explorable Explanations)의 정점",
+    "imageUrl": "/captures/red-blob-games.png",
+    "videoUrl": "/videos/red-blob-games.webm"
+  },
+  {
+    "id": "sam-who",
+    "title": "Sam Who",
+    "url": "https://samwho.dev",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브·3D",
+      "인터랙티브 아티클",
+      "시스템 시뮬레이션",
+      "데이터 시각화",
+      "에듀테크"
+    ],
+    "shortDesc": "복잡한 시스템 엔지니어링과 알고리즘 작동 원리를 미니멀한 실시간 파티클·물리 시뮬레이터로 직접 실험해보게 만든 비주얼 에세이 사이트",
+    "anatomy": "엔지니어 Sam Rose가 제작한 인터랙티브 기술 에세이 블로그(samwho.dev). 로드 밸런싱, 메모리 할당(malloc), 해시 테이블, 리저버 샘플링, 큐잉 이론 등 눈에 보이지 않는 컴퓨터 시스템의 내부 동작을 감각적인 컬러 도트 애니메이션과 사용자가 직접 제어할 수 있는 시뮬레이션 컨트롤러로 시각화",
+    "principle": "추상적이고 난해한 공학 개념을 정교한 마이크로 인터랙션과 게임 같은 시뮬레이션 샌드박스로 번역해 누구나 직관적으로 시스템의 동역학을 이해하게 만드는 스토리텔링",
+    "imageUrl": "/captures/sam-who.png",
+    "videoUrl": "/videos/sam-who.webm"
   }
 ];
