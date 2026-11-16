@@ -6720,7 +6720,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "cca-qc",
     "title": "CCA (Canadian Centre for Architecture)",
     "url": "https://www.cca.qc.ca/en/",
-    "category": "Exhibition & Cultural",
+    "category": "Spatial & Exhibition",
     "tags": [
       "아트·오브제·공간",
       "전시 & 문화 공간",
@@ -6738,7 +6738,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "experimental-jetset",
     "title": "Experimental Jetset",
     "url": "http://www.experimentaljetset.nl",
-    "category": "Design Studio",
+    "category": "Graphic Design Studio",
     "tags": [
       "스튜디오·에이전시",
       "그래픽 디자인",
@@ -6756,7 +6756,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "rhizome-net-art",
     "title": "Net Art Anthology (Rhizome)",
     "url": "https://anthology.rhizome.org",
-    "category": "Exhibition & Cultural",
+    "category": "Archive & Curation",
     "tags": [
       "아트·오브제·공간",
       "전시 & 문화 공간",
@@ -6774,7 +6774,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "cwandt",
     "title": "CW&T",
     "url": "https://cwandt.com",
-    "category": "Industrial & Product",
+    "category": "Object & Art Toy",
     "tags": [
       "패션·제품·브랜드",
       "인더스트리얼 & 제품",
@@ -6792,7 +6792,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "new-tendency",
     "title": "NEW TENDENCY",
     "url": "https://newtendency.com",
-    "category": "Industrial & Product",
+    "category": "Object & Art Toy",
     "tags": [
       "패션·제품·브랜드",
       "인더스트리얼 & 제품",
@@ -6810,7 +6810,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "work-louder",
     "title": "Work Louder",
     "url": "https://worklouder.cc",
-    "category": "Industrial & Product",
+    "category": "Object & Art Toy",
     "tags": [
       "패션·제품·브랜드",
       "인더스트리얼 & 제품",
@@ -6828,7 +6828,7 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "norbauer",
     "title": "Norbauer & Co.",
     "url": "https://www.norbauer.com",
-    "category": "Industrial & Product",
+    "category": "Object & Art Toy",
     "tags": [
       "패션·제품·브랜드",
       "인더스트리얼 & 제품",
@@ -6846,13 +6846,13 @@ export const SEED_REFERENCES: Reference[] = [
     "id": "industrial-facility",
     "title": "Industrial Facility",
     "url": "https://industrialfacility.co.uk",
-    "category": "Industrial & Product",
+    "category": "Object & Art Toy",
     "tags": [
-      "패션·제품·브랜드",
+      "아트·오브제·공간",
+      "사이 가구",
       "인더스트리얼 & 제품",
       "산업디자인 스튜디오",
-      "샘 헥트 & 킴 콜린",
-      "런던"
+      "샘 헥트 & 킴 콜린"
     ],
     "shortDesc": "샘 헥트(Sam Hecht)와 킴 콜린(Kim Colin)이 이끄는 세계적인 런던 산업·제품 디자인 스튜디오 Industrial Facility",
     "anatomy": "Muji, Herman Miller, Wästberg, Mattiazzi, Braun 등과 협업하며 현대 산업디자인의 기준을 만들어온 런던 스튜디오 Industrial Facility의 아카이브. 가구, 조명, 전자기기, 생활 도구, 전시 디자인 작업을 절제된 그리드와 명확한 카테고리 색인으로 정리하고 각 제품의 조형적·생산적 해법을 간결하게 서술",
@@ -6949,5 +6949,1085 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "추상적이고 난해한 공학 개념을 정교한 마이크로 인터랙션과 게임 같은 시뮬레이션 샌드박스로 번역해 누구나 직관적으로 시스템의 동역학을 이해하게 만드는 스토리텔링",
     "imageUrl": "/captures/sam-who.png",
     "videoUrl": "/videos/sam-who.webm"
+  },
+  {
+    "id": "mm-paris",
+    "title": "M/M (Paris)",
+    "url": "https://airdeparis.com/artists/mm",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "스튜디오·브랜딩",
+      "FAKE CHURCH",
+      "아트디렉션",
+      "타이포그래피",
+      "패션·예술 협업"
+    ],
+    "shortDesc": "패션·음악·현대미술의 경계를 허물며 글자를 조형적 그림과 공간 오브제처럼 다루는 파리 아트디렉션 듀오 M/M (Paris)",
+    "anatomy": "Michaël Amzalag과 Mathias Augustyniak이 1992년 파리에서 결성한 아트디렉션 듀오 M/M (Paris)의 소속 갤러리(Air de Paris) 아카이브 페이지. Björk, Balenciaga, Yohji Yamamoto, Loewe, Harper's Bazaar Italia 등과 협업한 커스텀 서체, 포스터, 무대·전시 설치 작업을 연대기적 이미지 인덱스로 조망",
+    "principle": "타이포그래피를 단순한 정보 전달 수단이 아니라 유기적인 드로잉이자 건축적 설치물로 확장하여, 그래픽 디자인이 예술·패션 디렉션 전체를 장악하는 방식을 보여주는 교과서적 사례",
+    "imageUrl": "/captures/mm-paris.png",
+    "videoUrl": "/videos/mm-paris.webm"
+  },
+  {
+    "id": "maximage",
+    "title": "Maximage",
+    "url": "https://maximage.biz/",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "스튜디오·브랜딩",
+      "포스터",
+      "인쇄",
+      "스위스 그래픽",
+      "별색·망점 연구"
+    ],
+    "shortDesc": "망점·별색(Spot Color)·모아레 등 오프셋 인쇄 공정 자체를 해체해 시각 언어로 전환하는 스위스 그래픽 디자인 스튜디오",
+    "anatomy": "Julien Tavelli와 David Keshavjee가 제네바·취리히·파리를 기반으로 운영하는 스튜디오 Maximage(2020 얀 치홀트 상 수상)의 웹사이트. 색상 분판 실험(Color Library), 포스터, 아트북, 전시 아이덴티티 작업들을 풀스크린 고해상도 슬라이드와 직관적인 인덱스 오버레이로 전개",
+    "principle": "디지털 화면 위에서 완성되는 그래픽이 아니라 잉크 농도, 하프톤 스크린, 종이 물성 등 인쇄 기계의 메커니즘 자체를 디자인 개념의 출발점으로 삼는 현대 스위스 인쇄 미학",
+    "imageUrl": "/captures/maximage.png",
+    "videoUrl": "/videos/maximage.webm"
+  },
+  {
+    "id": "julia-born",
+    "title": "Julia Born",
+    "url": "https://juliaborn.com/",
+    "category": "Editorial & Print",
+    "tags": [
+      "타이포·출판",
+      "Safari Park",
+      "DDP 전시",
+      "북 디자인",
+      "전시 도록"
+    ],
+    "shortDesc": "책의 페이지 시퀀스와 전시장의 물리적 공간을 하나의 호흡으로 교차 설계하는 스위스 디자인 그랑프리 수상 디자이너 Julia Born",
+    "anatomy": "취리히와 암스테르담을 오가며 활동하는 그래픽 디자이너 Julia Born(2021 스위스 디자인 그랑프리 수상)의 포트폴리오 사이트. 미술관 전시 도록, 아티스트 모노그래프, 전시 사이니지 및 공간 그래픽 작업을 실제 펼침면 사진과 설치 전경 시퀀스로 밀도 있게 아카이빙",
+    "principle": "출판물의 제본·넘김 구조와 전시 공간의 동선을 동일한 편집적 프레임으로 다루며, 절제된 타이포그래피만으로 도록과 전시 사이의 서사적 긴장감을 구축하는 디자인 문법",
+    "imageUrl": "/captures/julia-born.png",
+    "videoUrl": "/videos/julia-born.webm"
+  },
+  {
+    "id": "graphic-thought-facility",
+    "title": "Graphic Thought Facility",
+    "url": "https://graphicthoughtfacility.com/",
+    "category": "Graphic Design Studio",
+    "tags": [
+      "스튜디오·브랜딩",
+      "브랜딩",
+      "런던 스튜디오",
+      "물성·제작기법",
+      "전시 그래픽"
+    ],
+    "shortDesc": "장식적 유행 대신 재료의 물성과 산업 제작 방식에서 고유한 개념을 뽑아내는 런던 그래픽 디자인 스튜디오 GTF",
+    "anatomy": "Paul Neale, Andy Stevens, Huw Morgan이 이끄는 런던의 대표적 디자인 스튜디오 Graphic Thought Facility(GTF) 웹사이트. Vitra, Kvadrat, Frieze, Science Museum, M+ 등을 위해 제작한 브랜드 아이덴티티, 전시 환경 그래픽, 캠페인, 오브제 북 디자인을 명쾌한 그리드와 프로젝트 노트로 수록",
+    "principle": "스튜디오 고유의 시각 스타일을 반복하는 대신, 각 클라이언트의 산업적 맥락과 소재·가공법에서 유일무이한 조형 언어를 도출하는 개념 중심 브랜딩의 정석",
+    "imageUrl": "/captures/graphic-thought-facility.png",
+    "videoUrl": "/videos/graphic-thought-facility.webm"
+  },
+  {
+    "id": "made-thought",
+    "title": "Made Thought",
+    "url": "https://madethought.com/",
+    "category": "Brand Identity",
+    "tags": [
+      "스튜디오·브랜딩",
+      "GRAU",
+      "브랜딩",
+      "콰이어트 럭셔리",
+      "아트디렉션"
+    ],
+    "shortDesc": "크게 외치지 않는 절제된 물성과 침묵의 미학으로 하이엔드 다크·콰이어트 럭셔리 톤을 구축하는 런던·뉴욕 브랜딩 스튜디오",
+    "anatomy": "런던과 뉴욕을 기반으로 럭셔리·디자인·문화 브랜드의 크리에이티브 디렉션을 총괄하는 Made Thought의 웹사이트. 고요하고 무게감 있는 사진 연출, 세련된 세리프·산세리프 타이포그래피 대비, 여백 중심의 에디토리얼 레이아웃으로 케이스 스터디와 비평 에세이를 전개",
+    "principle": "과시적인 로고 플레이를 배제하고 질감, 조도, 패키징 촉감, 정제된 타이포그래피의 미세한 텐션만으로 압도적인 고급감을 형성하는 하이엔드 브랜딩 전략",
+    "imageUrl": "/captures/made-thought.png",
+    "videoUrl": "/videos/made-thought.webm"
+  },
+  {
+    "id": "baron-and-baron",
+    "title": "Baron & Baron",
+    "url": "https://baron-baron.com/",
+    "category": "Brand Identity",
+    "tags": [
+      "스튜디오·브랜딩",
+      "아트디렉션",
+      "파비앙 바론",
+      "패션·럭셔리",
+      "패키징·보틀"
+    ],
+    "shortDesc": "전설적인 아트디렉터 파비앙 바론(Fabien Baron)이 타이포그래피부터 향수 보틀 조형·캠페인 필름까지 한 호흡으로 통제하는 토탈 디렉션 에이전시",
+    "anatomy": "Interview 매거진과 Harper's Bazaar의 황금기를 이끈 Fabien Baron의 뉴욕 에이전시 Baron & Baron 공식 아카이브. Calvin Klein, Dior, Zara, Louis Vuitton, Frédéric Malle 등의 로고 타입, 입체 향수병 디자인, 글로벌 광고 캠페인, 아트북을 강렬한 모노톤 대비와 풀스크린 영상으로 제시",
+    "principle": "평면 그래픽에 머물지 않고 서체 비례, 3차원 용기(Bottle) 조각, 패션 필름 조명까지 단일한 미학적 시선으로 관통하는 마스터 아트디렉터의 작업 구조",
+    "imageUrl": "/captures/baron-and-baron.png",
+    "videoUrl": "/videos/baron-and-baron.webm"
+  },
+  {
+    "id": "lineto",
+    "title": "Lineto",
+    "url": "https://lineto.com/",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "타이포",
+      "타입 파운드리",
+      "스위스 그로테스크",
+      "인터랙티브 타입 테스터"
+    ],
+    "shortDesc": "Akkurat, Circular, LL Brown을 탄생시키며 현대 네오 그로테스크 산세리프의 절대 기준점이 된 스위스 디지털 타입 파운드리",
+    "anatomy": "Cornel Windlin과 Stephan Müller가 1993년 설립한 스위스 취리히 기반 파운드리 Lineto의 웹사이트. 파운드리의 방대한 서체 카탈로그를 실시간으로 조합·타이핑해 볼 수 있는 고도화된 인터랙티브 타입 테스터와 각 서체의 역사적·기술적 배경을 다룬 심층 리서치 노트로 구성",
+    "principle": "스위스 모더니즘 서체 전통을 디지털 시대의 스크린 환경과 실험적 인터페이스 위에서 재해석하며, 웹사이트 자체를 정밀한 조판 실험실로 작동하게 하는 설계",
+    "imageUrl": "/captures/lineto.png",
+    "videoUrl": "/videos/lineto.webm"
+  },
+  {
+    "id": "radim-pesko",
+    "title": "RP Digital Type Foundry",
+    "url": "https://radimpesko.com/",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "타이포",
+      "타입 파운드리",
+      "개념적 서체",
+      "에디토리얼"
+    ],
+    "shortDesc": "Fugue, Agipo 등 세계 유수의 현대미술관과 독립 출판물이 애용하는 개념적·서사적 서체들을 선보이는 라딤 페슈코의 파운드리",
+    "anatomy": "런던 기반 디자이너 Radim Peško가 운영하는 RP Digital Type Foundry 공식 사이트. 각 서체가 탄생하게 된 역사적 레퍼런스, 조형적 제약 조건, 실제 미술관·아트북 적용 사례(In-use)를 군더더기 없는 에디토리얼 레이아웃과 인터랙티브 글리프 뷰어로 명쾌하게 전달",
+    "principle": "단순한 기능성 폰트를 넘어 서체 하나하나에 뚜렷한 개념적 서사와 기하학적 위트를 부여하여, 텍스트가 놓이는 순간 작업 전체의 지적인 톤을 결정짓는 타이포그래피",
+    "imageUrl": "/captures/radim-pesko.png",
+    "videoUrl": "/videos/radim-pesko.webm"
+  },
+  {
+    "id": "optimo",
+    "title": "Optimo",
+    "url": "https://optimo.ch/",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "포스터",
+      "타이포",
+      "타입 파운드리",
+      "스위스 제네바"
+    ],
+    "shortDesc": "예리한 조형미의 디스플레이 서체부터 정교한 본문용 서체까지 포스터·편집 디자이너들의 무기가 되는 스위스 제네바 타입 파운드리",
+    "anatomy": "Gilles Gavillet가 이끄는 스위스 제네바 타입 파운드리 Optimo의 웹사이트. Apax, Stanley, Plain, NEXT 등 현대 그래픽 디자인 씬에서 강렬한 존재감을 발휘하는 서체 패밀리들을 실시간 타이핑 스페시멘, 글리프 인스펙터, PDF 스페시멘 북 아카이브로 제공",
+    "principle": "역사적 인쇄 활자의 조형적 긴장감을 현대 디지털 베지어 곡선으로 날카롭게 벼려내어, 포스터 타이틀 한 줄만으로도 화면을 압도하는 그래픽 힘을 만드는 파운드리",
+    "imageUrl": "/captures/optimo.png",
+    "videoUrl": "/videos/optimo.webm"
+  },
+  {
+    "id": "ohno-type",
+    "title": "OH no Type Co.",
+    "url": "https://ohnotype.co/",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "FAKE CHURCH",
+      "타이포",
+      "타입 파운드리",
+      "디스플레이·블랙레터"
+    ],
+    "shortDesc": "과장된 질량감과 파격적인 곡선·블랙레터 변주를 선보이며 서체 설계 과정을 위트 있는 기술 블로그로 공유하는 미국 독립 파운드리",
+    "anatomy": "James Edmondson이 운영하는 캘리포니아 기반 독립 파운드리 OH no Type Co.의 웹사이트. 무겁고 유기적인 디스플레이 서체, 현대적으로 비튼 블랙레터·스크립트 서체 테스터와 함께, 베지어 핸들 제어·공간 배분 등 서체 디자인의 핵심 원리를 직접 그린 다이어그램으로 풀어낸 교육 아티클을 수록",
+    "principle": "엄숙한 타이포그래피 규칙을 유쾌하게 전복하는 대담한 조형 실험과, 서체 제작 노하우를 투명하게 공개하는 커뮤니티 중심 아카이브의 결합",
+    "imageUrl": "/captures/ohno-type.png",
+    "videoUrl": "/videos/ohno-type.webm"
+  },
+  {
+    "id": "collletttivo",
+    "title": "Collletttivo",
+    "url": "https://collletttivo.it/",
+    "category": "Typography",
+    "tags": [
+      "타이포·출판",
+      "실험",
+      "타이포",
+      "오픈소스 파운드리",
+      "디스플레이 서체"
+    ],
+    "shortDesc": "실험적이고 날카로운 동시대 디스플레이 서체들을 상업 작업까지 완전 무료 오픈소스로 배포하는 이탈리아 타입 콜렉티브",
+    "anatomy": "이탈리아의 젊은 타입 디자이너들이 결성한 오픈소스 서체 그룹 Collletttivo의 공식 플랫폼. Mazius Display, Apfel Grotezk, Ribes 등 개성 강한 서체들을 브라우저 상에서 즉시 테스트하고 라이선스 제약 없이 다운로드할 수 있는 대담한 그리드 인터페이스로 구성",
+    "principle": "고가의 상업 파운드리 중심 생태계에 맞서 실험적 서체 디자인을 오픈소스로 공유하고, 디자이너들의 실제 활용 작업(In-use)을 통해 서체의 생명력을 확장하는 오픈 아카이브",
+    "imageUrl": "/captures/collletttivo.png",
+    "videoUrl": "/videos/collletttivo.webm"
+  },
+  {
+    "id": "threejs-journey",
+    "title": "Three.js Journey",
+    "url": "https://threejs-journey.com/",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브·3D",
+      "3D 사이트",
+      "WebGL·Three.js",
+      "브루노 사이먼",
+      "셰이더·블렌더"
+    ],
+    "shortDesc": "크리에이티브 개발자 브루노 사이먼(Bruno Simon)이 블렌더 모델링·베이킹부터 GLSL 셰이더·React Three Fiber까지 웹 3D의 전 과정을 집대성한 플랫폼",
+    "anatomy": "인터랙티브 3D 웹의 대명사 Bruno Simon이 제작한 Three.js 마스터클래스 웹사이트. 스크롤에 반응하는 정교한 3D 아이소메트릭 룸 애니메이션, 커리큘럼별 실시간 WebGL 데모 프리뷰, 수강생들의 우수 3D 웹 쇼케이스가 60fps의 매끄러운 인터랙션으로 구현된 구조",
+    "principle": "직접 제작한 3D 에셋의 라이팅 베이킹(Baking), 커스텀 셰이더 질감, 물리 엔진 결합까지 실무 WebGL 파이프라인 전체를 가장 직관적인 시각적 경험으로 증명하는 레퍼런스",
+    "imageUrl": "/captures/threejs-journey.png",
+    "videoUrl": "/videos/threejs-journey.webm"
+  },
+  {
+    "id": "the-book-of-shaders",
+    "title": "The Book of Shaders",
+    "url": "https://thebookofshaders.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "인터랙티브·3D",
+      "3D 사이트",
+      "GLSL 셰이더",
+      "제너러티브 아트",
+      "인터랙티브 코드"
+    ],
+    "shortDesc": "화면의 픽셀을 실시간 수학 함수로 제어하는 GLSL 프래그먼트 셰이더의 원리를 라이브 코드 에디터와 함께 배우는 입문서",
+    "anatomy": "미디어 아티스트 Patricio Gonzalez Vivo와 Jen Lowe가 집필한 인터랙티브 온라인 북. 유니폼(Uniforms), 거리 필드(SDF), 노이즈(Perlin/Simplex/Cellular), 프랙탈 브라운 운동(fBm) 등 셰이더 그래픽의 핵심 공식을 본문 안에서 즉시 숫자와 함수를 바꿔보며 결과를 확인할 수 있는 라이브 GLSL 캔버스로 구성",
+    "principle": "3D 웹사이트와 미디어 아트의 독보적인 표면 질감·유체·빛 굴절 효과를 만들어내는 GPU 병렬 연산의 원리를 단계별 시각 실험으로 체득하게 하는 교육 인터페이스",
+    "imageUrl": "/captures/the-book-of-shaders.png",
+    "videoUrl": "/videos/the-book-of-shaders.webm"
+  },
+  {
+    "id": "poimandres",
+    "title": "Poimandres (pmnd.rs)",
+    "url": "https://pmnd.rs/",
+    "category": "Resource & Tool",
+    "tags": [
+      "인터랙티브·3D",
+      "3D 사이트",
+      "ref-archive",
+      "React Three Fiber",
+      "오픈소스 콜렉티브"
+    ],
+    "shortDesc": "React와 Next.js 환경에서 선언적 컴포넌트로 하이엔드 3D WebGL 씬을 구축하게 해주는 오픈소스 개발자 콜렉티브 Poimandres",
+    "anatomy": "react-three-fiber(R3F), drei, postprocessing, zustand, leva 등 현대 인터랙티브 웹 생태계의 핵심 라이브러리를 만든 오픈소스 그룹 Poimandres의 공식 문서 및 쇼케이스 허브. 미니멀한 다크모드 개발자 문서 구조와 수백 개의 즉시 실행 가능한 샌드박스 예제를 결합",
+    "principle": "복잡한 명령형 Three.js 그래픽 코드를 React의 컴포넌트 상태 관리와 결합해, Next.js 기반 웹 애플리케이션에 3D 오브제와 포스트프로세싱 효과를 손쉽게 이식하도록 돕는 생태계",
+    "imageUrl": "/captures/poimandres.png",
+    "videoUrl": "/videos/poimandres.webm"
+  },
+  {
+    "id": "poly-haven",
+    "title": "Poly Haven",
+    "url": "https://polyhaven.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "3D 사이트",
+      "HDRI·PBR 텍스처",
+      "CC0 오픈에셋",
+      "3D 렌더링"
+    ],
+    "shortDesc": "실사 수준의 360° HDRI 환경광 맵, 8K PBR 재질 텍스처, 3D 모델을 조건 없는 CC0 퍼블릭 도메인으로 제공하는 필수 3D 에셋 아카이브",
+    "anatomy": "전 세계 3D 아티스트와 WebGL 개발자를 위한 오픈 에셋 플랫폼 Poly Haven. 수천 개의 고해상도 스튜디오·야외 HDRI 라이팅 맵과 콘크리트·금속·패브릭 PBR 텍스처, 3D 스캔 모델을 조도·대비·재질별로 즉시 필터링하고 구체(Sphere) 프리뷰로 비교한 뒤 내려받을 수 있는 UI",
+    "principle": "직접 모델링한 3D 오브제를 웹이나 렌더러에 올릴 때 사실적인 금속 반사와 공간 조명감을 결정짓는 고품질 환경 데이터를 누구나 자유롭게 쓰도록 개방한 공공 인프라",
+    "imageUrl": "/captures/poly-haven.png",
+    "videoUrl": "/videos/poly-haven.webm"
+  },
+  {
+    "id": "unicorn-studio",
+    "title": "Unicorn Studio",
+    "url": "https://unicorn.studio/",
+    "category": "Resource & Tool",
+    "tags": [
+      "인터랙티브·3D",
+      "3D 사이트",
+      "노코드 WebGL",
+      "셰이더 레이어",
+      "인터랙티브 디자인 툴"
+    ],
+    "shortDesc": "복잡한 GLSL 코드 작성 없이 피그마처럼 레이어를 쌓아 실시간 WebGL 빛 굴절·유체·마우스 반응 효과를 제작하고 웹에 임베드하는 디자인 툴",
+    "anatomy": "디자이너를 위한 브라우저 기반 실시간 WebGL/셰이더 저작 도구 Unicorn Studio의 공식 웹사이트. 다채로운 실시간 셰이더 히어로 그래픽, 레이어 기반 이펙트 스택 시연, 한 줄의 스크립트나 React 컴포넌트로 웹사이트에 즉시 이식하는 워크플로우를 세련된 다크 UI로 소개",
+    "principle": "기존에 그래픽스 엔지니어의 영역이었던 커스텀 셰이더와 인터랙티브 라이팅 연출을 시각 디자이너가 직관적인 슬라이더와 레이어 조합만으로 즉시 프로토타이핑할 수 있게 만든 도구",
+    "imageUrl": "/captures/unicorn-studio.png",
+    "videoUrl": "/videos/unicorn-studio.webm"
+  },
+  {
+    "id": "cavalry",
+    "title": "Cavalry",
+    "url": "https://cavalry.scenegroup.co/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "IDAS 릴스",
+      "모션 그래픽 툴",
+      "키네틱 타이포그래피",
+      "프로시저럴 2D"
+    ],
+    "shortDesc": "수동 키프레임 노가다 대신 규칙과 데이터 노드로 수백 개의 도형·키네틱 타이포그래피를 동시에 제어하는 프로시저럴 2D 모션 그래픽 툴",
+    "anatomy": "Scene Group이 개발한 차세대 2D 모션 디자인 소프트웨어 Cavalry의 공식 웹사이트. 듀플리케이터(Duplicator), 동작 제어기(Behaviours), 오디오·데이터 연동, 가변 폰트(Variable Font) 리깅을 활용한 역동적인 키네틱 타이포그래피와 제너러티브 모션릴이 페이지 전반에 걸쳐 재생되는 구조",
+    "principle": "3D 툴(Cinema 4D/Houdini)의 절차적(Procedural) 복제·필드 시스템을 2D 벡터와 타이포그래피 영역으로 가져와, 실험적인 그래픽 모션과 릴스 작업을 압도적인 속도로 구현하게 하는 패러다임",
+    "imageUrl": "/captures/cavalry.png",
+    "videoUrl": "/videos/cavalry.webm"
+  },
+  {
+    "id": "oryzo-ai",
+    "title": "Oryzo AI",
+    "url": "https://oryzo.ai/",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브·3D",
+      "3D 사이트",
+      "Lusion",
+      "Awwwards SOTM",
+      "제품 스토리텔링"
+    ],
+    "shortDesc": "크리에이티브 스튜디오 Lusion이 평범한 코르크 컵받침을 혁신적인 차세대 AI 하드웨어처럼 런칭해낸 초고밀도 3D 웹 패러디 마스터피스",
+    "anatomy": "2026년 4월 Awwwards Site of the Month를 수상한 Lusion의 프로젝트 사이트. 코르크 입자의 미세한 물리 시뮬레이션, 시네마틱 카메라 워킹, 과장된 실리콘밸리 키노트풍 타이포그래피와 사운드 디자인을 결합해 아날로그 코르크 코스터를 최첨단 테크 제품처럼 연출한 스크롤 경험",
+    "principle": "최고 수준의 실시간 WebGL 파티클·라이팅 기술력 위에 날카로운 브랜드 유머와 반전 서사를 얹어, 기술적 과시를 넘어선 강렬한 스토리텔링 쾌감을 선사하는 3D 쇼케이스",
+    "imageUrl": "/captures/oryzo-ai.png",
+    "videoUrl": "/videos/oryzo-ai.webm"
+  },
+  {
+    "id": "inconvergent",
+    "title": "Inconvergent",
+    "url": "https://inconvergent.net/",
+    "category": "Experimental Web",
+    "tags": [
+      "인터랙티브·3D",
+      "제너러티브",
+      "알고리즘 아트",
+      "펜 플로터",
+      "극미니멀 흑백"
+    ],
+    "shortDesc": "단순한 수학적 규칙과 미세한 노이즈의 축적으로 유기적인 선과 기하학적 군집을 자라나게 하는 Anders Hoff의 제너러티브 아트 아카이브",
+    "anatomy": "노르웨이 출신 아티스트 겸 컴퓨터 과학자 Anders Hoff의 제너러티브 아트 연구 사이트(inconvergent.net). 차동 성장(Differential Growth), 공간 분할, 군집 알고리즘으로 생성된 고밀도 흑백 드로잉, 펜 플로터 출력물, 그리고 각 알고리즘의 작동 메커니즘을 설명한 상세한 기술 에세이를 미니멀한 문서 형태로 정리",
+    "principle": "화려한 색채나 장식을 배제하고 오직 흑백의 선(Line)과 반복되는 국소 규칙(Local Rules)의 돌발적 변이만으로 생명체 같은 복잡한 조형 질서를 이끌어내는 알고리즘 미학",
+    "imageUrl": "/captures/inconvergent.png",
+    "videoUrl": "/videos/inconvergent.webm"
+  },
+  {
+    "id": "zach-lieberman",
+    "title": "Zach Lieberman (AGI Profile)",
+    "url": "https://a-g-i.org/user/zachlieberman",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "아트·오브제·공간",
+      "제너러티브",
+      "크리에이티브 코딩",
+      "openFrameworks",
+      "MIT 미디어랩"
+    ],
+    "shortDesc": "매일 코드로 하나의 시각적 스케치를 그리며 '코드도 드로잉이자 시(Poetry)'라는 감각을 증명해온 MIT 미디어랩 교수 Zach Lieberman",
+    "anatomy": "openFrameworks 공동 창시자이자 MIT Media Lab 교수인 미디어 아티스트 Zach Lieberman의 국제그래픽연맹(AGI) 아카이브 페이지. 일상의 코드 스케치(Daily Sketches), 인터랙티브 설치 미술, 빛과 움직임을 추적하는 컴퓨터 비전 기반 작업 세계와 디자인 철학을 집약적으로 소개",
+    "principle": "프로그래밍 언어를 차가운 공학 도구가 아닌 손끝의 연필처럼 다루며, 수학과 물리 시뮬레이션을 통해 가장 시적이고 유기적인 시각적 움직임을 탐구하는 크리에이티브 코딩의 원류",
+    "imageUrl": "/captures/zach-lieberman.png",
+    "videoUrl": "/videos/zach-lieberman.webm"
+  },
+  {
+    "id": "robert-henke",
+    "title": "Robert Henke",
+    "url": "https://roberthenke.com/",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "아트·오브제·공간",
+      "TD × Ableton",
+      "레이저·사운드 아트",
+      "Ableton 공동창립자",
+      "알고리즘 퍼포먼스"
+    ],
+    "shortDesc": "Ableton Live의 공동 창시자이자 고정밀 레이저·빈티지 컴퓨터·사운드를 결합한 대형 오디오비주얼 설치 작업을 선보이는 아티스트 Robert Henke",
+    "anatomy": "베를린 기반 사운드·미디어 아티스트 Robert Henke(Monolake)의 공식 연구 및 작품 아카이브. 고출력 레이저 빔으로 잔상 기하학을 그리는 'Lumière' 시리즈, 1980년대 CBM 8032 컴퓨터 수십 대를 연결한 오디오비주얼 설치, 공간 음향 프로젝트와 기술 노트가 순수하고 빠른 정적 HTML 구조로 방대하게 기록된 사이트",
+    "principle": "음악 제작 도구를 직접 설계한 엔지니어적 통찰을 바탕으로, 소리의 주파수와 레이저 빛의 궤적·기계 장치를 하나의 정밀한 실시간 알고리즘 시스템으로 통합하는 예술 세계",
+    "imageUrl": "/captures/robert-henke.png",
+    "videoUrl": "/videos/robert-henke.webm"
+  },
+  {
+    "id": "max-cooper",
+    "title": "Max Cooper",
+    "url": "https://maxcooper.net/",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "아트·오브제·공간",
+      "TD × Ableton",
+      "오디오비주얼 아카이브",
+      "제너러티브 비디오",
+      "과학×사운드"
+    ],
+    "shortDesc": "유전학 박사 출신 전자음악가 Max Cooper가 전 세계 수십 명의 비주얼·제너러티브 아티스트와 협업한 방대한 오디오비주얼 프로젝트 아카이브",
+    "anatomy": "런던 기반 일렉트로닉 뮤지션 겸 오디오비주얼 디렉터 Max Cooper의 공식 웹사이트. 세포 분열, 비유클리드 기하학, 무한 급수, 도시 데이터 등 과학적·철학적 주제를 바탕으로 매 트랙마다 각기 다른 미디어 아티스트·모션 디자이너와 협업해 완성한 수백 편의 뮤직비디오와 라이브 프로젝션 매핑 기록을 망라",
+    "principle": "전자음악 트랙 하나하나를 독립된 시각 예술 실험장으로 삼아, 사운드의 리듬·질감과 제너러티브 그래픽이 어떻게 공명할 수 있는지 보여주는 동시대 최고의 오디오비주얼 레퍼런스 뱅크",
+    "imageUrl": "/captures/max-cooper.png",
+    "videoUrl": "/videos/max-cooper.webm"
+  },
+  {
+    "id": "mutek",
+    "title": "MUTEK",
+    "url": "https://mutek.org/",
+    "category": "Spatial & Exhibition",
+    "tags": [
+      "아트·오브제·공간",
+      "TD × Ableton",
+      "오디오비주얼 페스티벌",
+      "디지털 아트",
+      "몬트리올·도쿄"
+    ],
+    "shortDesc": "몬트리올을 중심으로 도쿄·멕시코시티·바르셀로나를 잇는 세계적인 디지털 창의성·전자음악·실시간 오디오비주얼 페스티벌 네트워크 MUTEK",
+    "anatomy": "2000년 출범 이후 동시대 사운드 아트와 실시간 비주얼 퍼포먼스 씬을 이끌어온 MUTEK 페스티벌의 글로벌 허브 플랫폼. 연도별·도시별 페스티벌 아이덴티티 그래픽, 전 세계 최전선 오디오비주얼 아티스트 디렉토리, 라이브 퍼포먼스 영상 및 XR 전시 아카이브를 체계적인 그리드로 제공",
+    "principle": "라인업과 아티스트 데이터베이스 자체가 곧 현대 터치디자이너(TouchDesigner)·모듈러 신스·실시간 프로젝션 아트의 지형도가 되는 글로벌 큐레이션 플랫폼",
+    "imageUrl": "/captures/mutek.png",
+    "videoUrl": "/videos/mutek.webm"
+  },
+  {
+    "id": "berlin-atonal",
+    "title": "Berlin Atonal",
+    "url": "https://berlin-atonal.com/",
+    "category": "Spatial & Exhibition",
+    "tags": [
+      "아트·오브제·공간",
+      "GRAU",
+      "실험 음악·빛 설치",
+      "크라프트베르크 발전소",
+      "다크 브루탈리즘"
+    ],
+    "shortDesc": "베를린의 거대한 폐화력발전소(Kraftwerk) 콘크리트 공간에서 펼쳐지는 실험 전자음악·대형 빛 설치·아방가르드 아트 페스티벌 Berlin Atonal",
+    "anatomy": "1982년 시작되어 오늘날 베를린 크라프트베르크(Kraftwerk Berlin)의 압도적인 노출 콘크리트 공간에서 열리는 실험 예술 페스티벌 Berlin Atonal의 공식 사이트. 인더스트리얼 다크 미학, 해체적인 모노스페이스·고딕 타이포그래피, 거대한 암흑 공간을 가르는 조명·사운드 설치 기록이 고스란히 담긴 웹 아카이브",
+    "principle": "베르크하인(Berghain)·크라프트베르크로 대표되는 베를린의 거칠고 무거운 산업 건축 물성과 실험적 사운드·조명 연출이 결합된 다크 아방가르드 브랜딩의 정수",
+    "imageUrl": "/captures/berlin-atonal.png",
+    "videoUrl": "/videos/berlin-atonal.webm"
+  },
+  {
+    "id": "touch-music",
+    "title": "Touch",
+    "url": "https://touch33.net/",
+    "category": "Editorial & Print",
+    "tags": [
+      "타이포·출판",
+      "앰비언트",
+      "에디토리얼",
+      "존 워젠크로프트",
+      "미니멀 앨범 커버"
+    ],
+    "shortDesc": "그래픽 디자이너 존 워젠크로프트(Jon Wozencroft)가 40년 넘게 '사진 한 장과 최소한의 타이포그래피'로 시각 정체성을 구축해온 런던 앰비언트·사운드 레이블",
+    "anatomy": "1982년 런던에서 설립되어 Fennesz, Biosphere, Jóhann Jóhannsson, Chris Watson 등의 음반을 발표해온 시청각 레이블 Touch의 공식 아카이브. 로얄 칼리지 오브 아트(RCA) 교수이기도 한 Jon Wozencroft가 직접 촬영한 풍경·질감 사진과 절제된 산세리프 조판으로 완성한 수백 종의 음반 슬리브 및 에세이 카탈로그를 수록",
+    "principle": "트렌드에 흔들리지 않고 40여 년간 일관된 여백, 정적인 풍경 사진, 엄격한 타이포그래피 그리드만으로 보이지 않는 앰비언트 사운드의 공간감을 시각화한 에디토리얼 디자인의 전설",
+    "imageUrl": "/captures/touch-music.png",
+    "videoUrl": "/videos/touch-music.webm"
+  },
+  {
+    "id": "12k-music",
+    "title": "12k",
+    "url": "https://12k.com/",
+    "category": "Archive & Curation",
+    "tags": [
+      "아카이브·툴",
+      "앰비언트",
+      "테일러 듀프리",
+      "미니멀 포토그래피",
+      "사운드 아카이브"
+    ],
+    "shortDesc": "사운드 아티스트 테일러 듀프리(Taylor Deupree)가 운영하는 뉴욕 미니멀 일렉트로닉·앰비언트 레이블이자 여백과 침묵의 시각 아카이브",
+    "anatomy": "1997년 설립된 독립 사운드 레이블 12k의 공식 웹사이트. 안개 낀 자연 풍경, 흐릿한 필름 입자, 수공예 지류 패키징 사진과 극도로 절제된 서체 위계가 어우러진 카탈로그 그리드 및 아티스트 저널을 제공",
+    "principle": "미세한 필드 레코딩과 어쿠스틱 노이즈가 가진 고요한 울림을 넓은 화이트 스페이스와 시적인 사진 에디토리얼로 번역해낸 청각·시각 통합 브랜딩",
+    "imageUrl": "/captures/12k-music.png",
+    "videoUrl": "/videos/12k-music.webm"
+  },
+  {
+    "id": "ecm-records",
+    "title": "ECM Records",
+    "url": "https://ecmrecords.com/",
+    "category": "Brand Identity",
+    "tags": [
+      "스튜디오·브랜딩",
+      "브랜딩",
+      "음반 커버 아카이브",
+      "만프레드 아이허",
+      "모더니즘 타이포그래피"
+    ],
+    "shortDesc": "'침묵 다음으로 가장 아름다운 소리'라는 모토 아래 50년 넘게 고요한 흑백·색면 사진과 정교한 타이포그래피 커버의 일관성을 지켜온 레이블 ECM",
+    "anatomy": "1969년 만프레드 아이허(Manfred Eicher)가 뮌헨에서 설립한 재즈·현대음악 레이블 ECM(Edition of Contemporary Music)의 공식 아카이브. 바우하우스 정신을 계승한 디자이너 Barbara Wojirsch와 Dieter Rehm 등이 완성한 1,800장 이상의 전설적인 앨범 커버 그리드, 아티스트 인명록, 카탈로그 넘버링 검색 시스템을 완비",
+    "principle": "반세기 동안 단 한 번도 타협하지 않은 커버 아트 디렉션과 조판 규칙의 축적이 어떻게 하나의 레이블을 시대를 초월한 시각 문화의 아이콘으로 만드는지 증명하는 브랜드 바이블",
+    "imageUrl": "/captures/ecm-records.png",
+    "videoUrl": "/videos/ecm-records.webm"
+  },
+  {
+    "id": "raster-media",
+    "title": "raster",
+    "url": "https://raster-media.net/",
+    "category": "Editorial & Print",
+    "tags": [
+      "타이포·출판",
+      "에디토리얼",
+      "카르스텐 니콜라이",
+      "Alva Noto",
+      "데이터·그리드 미학"
+    ],
+    "shortDesc": "카르스텐 니콜라이(Alva Noto)가 이끄는 독일 오디오비주얼 플랫폼으로, 과학 데이터·주파수 그리드·모노스페이스 미학을 음반과 출판물로 구현하는 레이블",
+    "anatomy": "1996년 설립된 Raster-Noton의 전통을 잇는 예술·음악 플랫폼 raster(raster-media.net)의 공식 웹사이트. 정밀한 모노스페이스 카탈로그 넘버링, 무채색·은색 포일 스탬핑 패키징 디테일, 기하학적 파형 그래픽으로 디자인된 음반·서적·에디션 오브제들을 실험실 데이터베이스처럼 정돈된 레이아웃으로 제시",
+    "principle": "소리와 빛이라는 물리적 신호를 최소 단위의 격자(Raster)와 수치 데이터로 환원하여, 음반 패키징부터 웹 인터페이스까지 완벽한 공학적 미니멀리즘으로 통일한 시스템",
+    "imageUrl": "/captures/raster-media.png",
+    "videoUrl": "/videos/raster-media.webm"
+  },
+  {
+    "id": "monome",
+    "title": "monome",
+    "url": "https://monome.org/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "LED 매트릭스",
+      "TD × Ableton",
+      "그리드 컨트롤러",
+      "극미니멀 하드웨어"
+    ],
+    "shortDesc": "텍스트 라벨 하나 없이 빛나는 백라이트 버튼 격자(Grid)와 절삭 알루미늄·원목 인클로저만으로 무한한 사운드 시스템을 제어하는 하드웨어 아틀리에",
+    "anatomy": "Brian Crabtree와 Kelli Cain이 미국 뉴욕 업스테이트에서 운영하는 사운드 컴퓨터·컨트롤러 공방 monome의 공식 사이트. grid(16x8 LED 버튼 매트릭스), arc(LED 로터리 인코더), norns(사운드 컴퓨터), 미디·유로랙 모듈의 정갈한 하드웨어 사진과 시적인 흑백 타이포그래피 매뉴얼(Docs)로 구성",
+    "principle": "하드웨어 표면에서 모든 고정된 기능 인쇄를 지우고 단색 LED 매트릭스의 밝기 단계만으로 상태와 리듬을 표현하며, 웹사이트와 기술 문서까지 동일한 침묵의 미학으로 설계한 마스터피스",
+    "imageUrl": "/captures/monome.png",
+    "videoUrl": "/videos/monome.webm"
+  },
+  {
+    "id": "strudel-cc",
+    "title": "Strudel",
+    "url": "https://strudel.cc/",
+    "category": "Experimental Web",
+    "tags": [
+      "인터랙티브·3D",
+      "TD × Ableton",
+      "라이브 코딩",
+      "알고레이브",
+      "WebAudio 신디사이저"
+    ],
+    "shortDesc": "별도 설치 없이 브라우저에서 짧은 코드 패턴을 실시간으로 수정하며 알고리즘 리듬과 신스 사운드를 연주하는 라이브 코딩 플랫폼",
+    "anatomy": "TidalCycles의 알고리즘 패턴 문법을 JavaScript와 WebAudio API로 완벽히 이식한 브라우저 기반 라이브 코딩 환경 Strudel(strudel.cc). 코드 에디터 안의 텍스트 토큰들이 현재 재생 중인 박자에 맞춰 실시간 하이라이트되고 피아노롤·오실로스코프 시각화가 동시에 렌더링되는 인터랙티브 REPL 인터페이스",
+    "principle": "텍스트 코드 자체가 악보이자 실시간 비주얼 시퀀서가 되도록 설계하여, 알고리즘 작곡과 오디오비주얼 라이브 퍼포먼스의 진입 장벽을 혁신적으로 낮춘 웹 애플리케이션",
+    "imageUrl": "/captures/strudel-cc.png",
+    "videoUrl": "/videos/strudel-cc.webm"
+  },
+  {
+    "id": "learning-synths",
+    "title": "Learning Synths (Ableton)",
+    "url": "https://learningsynths.ableton.com/",
+    "category": "Interactive Web",
+    "tags": [
+      "인터랙티브·3D",
+      "3D 사이트",
+      "TD × Ableton",
+      "인터랙티브 사운드",
+      "교육 UX"
+    ],
+    "shortDesc": "오실레이터·필터·엔벨로프·LFO 등 신디사이저의 복잡한 음향 합성 원리를 마우스 드래그와 직관적인 기하학 위젯으로 만지며 깨우치는 Ableton의 명작 웹",
+    "anatomy": "Ableton이 제작한 브라우저 기반 인터랙티브 신디사이저 학습 플랫폼. 전문 용어나 복잡한 노브 대신 추상적인 2D XY 패드와 슬라이더를 직접 움직이며 소리의 밝기, 공간감, 피치 모듈레이션이 어떻게 변화하는지 실시간 WebAudio 사운드와 미니멀한 모션 그래픽으로 체득하는 단계별 커리큘럼",
+    "principle": "난해한 음향 공학 개념을 설명하기 전에 사용자에게 먼저 '만지고 듣는' 직관적 조작 경험을 제공함으로써, 인터랙션 디자인이 어떻게 학습 경험을 혁신할 수 있는지 보여주는 표준",
+    "imageUrl": "/captures/learning-synths.png",
+    "videoUrl": "/videos/learning-synths.webm"
+  },
+  {
+    "id": "jim-campbell",
+    "title": "Jim Campbell",
+    "url": "https://jimcampbell.tv/",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "아트·오브제·공간",
+      "LED 매트릭스",
+      "저해상도 LED 아트",
+      "빛 확산·디퓨전",
+      "미디어 아트"
+    ],
+    "shortDesc": "단 수백 개의 저해상도 LED 픽셀과 간유리 확산판(Diffusion)만으로 인간의 걸음걸이와 파도의 움직임을 시적으로 환기시키는 LED 아트의 거장",
+    "anatomy": "MIT에서 전기공학과 수학을 전공한 샌프란시스코 기반 미디어 아티스트 Jim Campbell의 공식 작품 아카이브. 16x24, 64x16 등 극도로 제한된 해상도의 LED 매트릭스 그리드, 비스듬히 기울인 아크릴 디퓨저, 3차원 보셀(Voxel) LED 샹들리에 등 지난 30년간의 빛 조각 및 공공 미술 설치 영상과 기술 노트를 집대성",
+    "principle": "고해상도 디스플레이의 정보 과잉을 거부하고, 픽셀 수를 극한으로 줄였을 때 오히려 관람자의 뇌가 움직임의 연속성과 아날로그적 잔상을 보완해내는 지각의 경계를 탐구한 LED 매트릭스 작업의 바이블",
+    "imageUrl": "/captures/jim-campbell.png",
+    "videoUrl": "/videos/jim-campbell.webm"
+  },
+  {
+    "id": "breakfast-studio",
+    "title": "BREAKFAST",
+    "url": "https://theartistbreakfast.com/",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "아트·오브제·공간",
+      "LED 매트릭스",
+      "키네틱 아트",
+      "플립디스크 매트릭스",
+      "인터랙티브 조각"
+    ],
+    "shortDesc": "아날로그 공항 표지판의 전자기 플립디스크(Flip-Disc) 수만 개를 컴퓨터 비전·실시간 데이터와 결합해 물리적 픽셀 파도를 일으키는 뉴욕 키네틱 스튜디오",
+    "anatomy": "아티스트 Andrew Zolty가 이끄는 뉴욕 브루클린 기반 키네틱 아트 스튜디오 BREAKFAST의 웹사이트. 초당 수십 번 뒤집히며 경쾌한 기계적 타격음과 반사광을 내는 커스텀 고속 플립디스크 매트릭스 조각들과 실시간 기상·해류 데이터 연동 메커니즘을 고해상도 영상으로 소개",
+    "principle": "발광하는 디지털 픽셀 대신 물리적 회전판이 빛을 반사하고 소리를 내는 메카트로닉스 픽셀 그리드를 통해, 디지털 정보에 촉각적 질량감과 건축적 존재감을 부여하는 키네틱 아트",
+    "imageUrl": "/captures/breakfast-studio.png",
+    "videoUrl": "/videos/breakfast-studio.webm"
+  },
+  {
+    "id": "leo-villareal",
+    "title": "Leo Villareal",
+    "url": "https://villareal.net/",
+    "category": "Media Art & Gallery",
+    "tags": [
+      "아트·오브제·공간",
+      "LED 매트릭스",
+      "대형 LED 설치",
+      "제너러티브 라이트",
+      "공공 미술"
+    ],
+    "shortDesc": "샌프란시스코 베이 브리지(25,000 LED)와 런던 템스강 교량 전체를 자체 제작한 생명 게임(Cellular Automata) 소프트웨어로 수놓는 라이트 아티스트",
+    "anatomy": "뉴욕 기반 라이트 조각가 Leo Villareal의 공식 포트폴리오 아카이브. 'The Bay Lights', 런던 'Illuminated River', 미술관 천장 전체를 덮는 LED 매트릭스 튜브 및 디퓨저 레이어 조형물 등 건축 스케일의 커스텀 LED 설치 프로젝트와 전시 도록을 정갈한 에디토리얼 그리드로 정리",
+    "principle": "절대 동일한 패턴을 반복하지 않는 비결정론적 알고리즘 코드와 수만 개의 단색·컬러 LED 어레이를 결합해, 거대한 도시 인프라와 건축 공간에 유기적인 생동감을 불어넣는 라이트 아트",
+    "imageUrl": "/captures/leo-villareal.png",
+    "videoUrl": "/videos/leo-villareal.webm"
+  },
+  {
+    "id": "daniel-rybakken",
+    "title": "Daniel Rybakken",
+    "url": "https://danielrybakken.com/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "DDP 라이트박스",
+      "조명 디자인",
+      "자연광 확산",
+      "스칸디나비아"
+    ],
+    "shortDesc": "조명 기구의 외형이 아니라 '창문으로 햇빛이 스며드는 착시와 빛의 확산(Diffusion) 공간감' 자체를 설계하는 노르웨이 조명 디자이너",
+    "anatomy": "오슬로 출신으로 예테보리에서 활동하며 Compasso d'Oro를 다수 수상한 디자이너 Daniel Rybakken의 공식 아카이브. 지하 공간에 자연광이 비치는 듯한 착시를 만드는 라이트박스(Daylight Comes Sideways, Surface Daylight), 반사판과 아크릴 레이어를 활용한 간접 조명( Luceplan, Artek 협업) 프로젝트를 정밀한 다이어그램과 사진으로 수록",
+    "principle": "LED 광원을 직접 노출하는 대신 다층 디퓨저, 경사 반사면, 미세한 그라데이션 제어를 통해 물리적 라이트박스 안에 깊이감 있는 '가상의 태양광과 대기'를 만들어내는 광학 디자인의 정점",
+    "imageUrl": "/captures/daniel-rybakken.png",
+    "videoUrl": "/videos/daniel-rybakken.webm"
+  },
+  {
+    "id": "wled",
+    "title": "WLED",
+    "url": "https://kno.wled.ge/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "LED 매트릭스",
+      "ESP32 펌웨어",
+      "WS2812B·아트넷",
+      "하드웨어 제어"
+    ],
+    "shortDesc": "ESP32 마이크로컨트롤러에 올리기만 하면 WS2812B LED 스트립과 2D 매트릭스 패널을 스마트폰·Art-Net·TouchDesigner로 즉시 제어하는 오픈소스 펌웨어",
+    "anatomy": "전 세계 라이트 아티스트와 메이커들이 표준으로 사용하는 오픈소스 LED 제어 프로젝트 WLED의 공식 지식베이스(kno.wled.ge). 2D 매트릭스 패널 다중 타일링(Serpentine/Panel layout) 설정법, 전력 계산, 세그먼트 분할, 실시간 오디오 리액티브 및 DMX/E1.31/Art-Net 연동 가이드를 체계적인 기술 문서로 제공",
+    "principle": "복잡한 C++ 임베디드 코딩 없이도 다수의 LED 매트릭스 패널을 하나의 캔버스로 묶고, 웹 UI나 외부 비주얼 소프트웨어와 무선 동기화할 수 있게 해주는 실전 하드웨어 툴킷",
+    "imageUrl": "/captures/wled.png",
+    "videoUrl": "/videos/wled.webm"
+  },
+  {
+    "id": "office-kgdvs",
+    "title": "OFFICE Kersten Geers David Van Severen",
+    "url": "https://officekgdvs.com/",
+    "category": "Spatial & Exhibition",
+    "tags": [
+      "아트·오브제·공간",
+      "공간",
+      "브뤼셀 건축",
+      "극미니멀 기하학",
+      "전시·파빌리온"
+    ],
+    "shortDesc": "원·정사각형·격자라는 가장 원초적인 기하학 형태 하나로 건축과 공간의 본질을 끝까지 밀어붙이는 브뤼셀 건축사무소 OFFICE KGDVS",
+    "anatomy": "Kersten Geers와 David Van Severen이 2002년 브뤼셀에서 설립한 건축사무소 OFFICE KGDVS의 공식 아카이브. 프로젝트 번호순으로 정렬된 수백 개의 건축물, 미술관 전시 공간, 파빌리온, 가구 작업과 함께 데이비드 호크니풍의 정교한 축측투영 콜라주 도면과 모형 사진을 인덱스 구조로 제공",
+    "principle": "장식적 수사를 철저히 배제하고 날카로운 비례, 기하학적 경계벽, 구조적 리듬만으로 강렬한 공간적 긴장감을 만들어내는 동시대 유럽 미니멀리즘 건축의 대표 주자",
+    "imageUrl": "/captures/office-kgdvs.png",
+    "videoUrl": "/videos/office-kgdvs.webm"
+  },
+  {
+    "id": "we-plus",
+    "title": "we+",
+    "url": "https://weplus.jp/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "DDP 라이트박스",
+      "도쿄 디자인 스튜디오",
+      "소재·빛 실험",
+      "컨템포러리 오브제"
+    ],
+    "shortDesc": "빛의 굴절, 안개, 산화, 도시 폐기물 등 자연 현상과 비일상적 재료를 리서치해 시적인 조명·가구·공간 설치로 전환하는 도쿄 디자인 스튜디오",
+    "anatomy": "Toshiya Hayashi와 Hokuto Ando가 2013년 도쿄에서 설립한 컨템포러리 디자인 스튜디오 we+의 공식 웹사이트. 자체 소재 R&D 프로젝트, 아크릴·유리·레진의 빛 산란 실험, 갤러리 설치 미술과 상업 공간 디렉션 작업을 고요하고 몰입감 높은 다크·모노톤 그리드로 아카이빙",
+    "principle": "결과물의 형태를 먼저 그리는 대신 재료가 빛·시간·중력과 만날 때 일어나는 물리적 현상 자체를 실험실 수준으로 파고들어 독창적인 오브제로 결정화하는 리서치 기반 디자인",
+    "imageUrl": "/captures/we-plus.png",
+    "videoUrl": "/videos/we-plus.webm"
+  },
+  {
+    "id": "takt-project",
+    "title": "TAKT PROJECT",
+    "url": "https://taktproject.com/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "DDP 라이트박스",
+      "투명 소재·빛 투과",
+      "도쿄 스튜디오",
+      "실험 오브제"
+    ],
+    "shortDesc": "투명 아크릴·광경화 레진·편광 필름 등 빛이 머물고 투과하는 재료의 물성을 탐구해 실험적 오브제와 인스톨레이션을 만드는 도쿄 스튜디오",
+    "anatomy": "디자이너 Satoshi Yoshiizumi가 이끄는 도쿄 디자인 스튜디오 TAKT PROJECT의 웹사이트. 빛 자체가 액체처럼 굳어지며 스탠드가 되는 'glow ↔ grow' 등 자체 실험 프로젝트(SELF INITIATED)와 글로벌 브랜드 협업 프로젝트(CLIENT WORK)를 명확히 이원화하여 미니멀한 화이트 캔버스 위에 배치",
+    "principle": "라이트박스나 조명 오브제 안에서 빛이 단순히 투과하는 것을 넘어 재료 내부에서 산란·간섭·응고되는 조형적 순간을 포착하는 섬세한 물성 엔지니어링",
+    "imageUrl": "/captures/takt-project.png",
+    "videoUrl": "/videos/takt-project.webm"
+  },
+  {
+    "id": "jonathan-muecke",
+    "title": "Jonathan Muecke",
+    "url": "https://jonathanmuecke.com/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "사이 가구",
+      "조각적 가구",
+      "미니멀 조형",
+      "개념 오브제"
+    ],
+    "shortDesc": "가구와 현대 조각 사이의 모호한 경계 위에서 두께·곡률·여백을 최소한으로 줄여 강렬한 공간적 존재감을 만드는 디자이너 Jonathan Muecke",
+    "anatomy": "크랜브룩 아카데미 오브 아트 출신으로 미니애폴리스와 유럽을 무대로 활동하는 디자이너 Jonathan Muecke의 공식 아카이브. 카본 파이버, 알루미늄, 성형 합판, 스틸 파이프 등 단일 소재로 제작된 의자·테이블·파빌리온 오브제들을 군더더기 없는 코드 번호(CS, TS, OAS 등)와 정직한 스튜디오 사진으로 나열",
+    "principle": "사물의 기능을 설명하는 친절한 디테일을 모두 덜어내고 순수한 기하학적 매스와 비례의 어긋남만으로 주변 공간의 공기를 바꾸는 개념적 가구 디자인의 정수",
+    "imageUrl": "/captures/jonathan-muecke.png",
+    "videoUrl": "/videos/jonathan-muecke.webm"
+  },
+  {
+    "id": "rick-owens-furniture",
+    "title": "Rick Owens (Objects & Furniture)",
+    "url": "https://rickowens.eu/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "GRAU",
+      "FAKE CHURCH",
+      "브루탈리즘 가구",
+      "콘크리트·알라바스터"
+    ],
+    "shortDesc": "거대한 노출 콘크리트, 알라바스터 원석, 브론즈, 합판 덩어리로 원시적 신전 같은 브루탈리즘 가구와 패션을 전개하는 Rick Owens 공식 플랫폼",
+    "anatomy": "패션 디자이너이자 가구 조각가인 Rick Owens와 Michèle Lamy의 공식 디지털 플래그십(rickowens.eu). 런웨이 컬렉션부터 대리석·콘크리트·사슴뿔·청동으로 제작된 중량급 모놀리식 가구(Furniture) 및 오브제, 전시 기록을 극도로 건조한 블랙·그레이 스펙트럼의 직교 그리드 인터페이스로 통합",
+    "principle": "고대 제단과 20세기 벙커 브루탈리즘 건축을 결합한 압도적인 덩어리감(Mass)과 거친 원석 표면 질감으로 다크 아방가르드 럭셔리의 정점을 보여주는 조형 세계",
+    "imageUrl": "/captures/rick-owens-furniture.png",
+    "videoUrl": "/videos/rick-owens-furniture.webm"
+  },
+  {
+    "id": "karimoku-case-study",
+    "title": "Karimoku Case",
+    "url": "https://www.karimoku-case.com/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "사이 가구",
+      "목가구·건축 협업",
+      "Norm Architects",
+      "케이지 아시자와"
+    ],
+    "shortDesc": "일본 최고 수준의 목가구 제조 공장 카리모쿠(Karimoku)와 세계적인 건축가들이 실제 건축 공간을 위해 설계한 하이엔드 가구 브랜드",
+    "anatomy": "덴마크 Norm Architects와 일본 건축가 Keiji Ashizawa가 크리에이티브 디렉션을 맡고 일본 카리모쿠 가구가 정밀 생산하는 라이프스타일 브랜드 Karimoku Case의 웹사이트. 각 가구가 처음 놓이기 위해 설계된 실제 건축 프로젝트(Case 01~12)의 공간 사진, 도면, 원목·석재 디테일을 차분한 에디토리얼 스토리텔링으로 풀어낸 구조",
+    "principle": "단품 가구를 먼저 디자인하는 대신 특정 건축 공간의 빛과 동선을 출발점으로 삼고, 숙련된 제조 공장의 정밀 가공 기술과 디자이너의 절제된 감각을 결합한 이상적인 가구 브랜딩 모델",
+    "imageUrl": "/captures/karimoku-case-study.png",
+    "videoUrl": "/videos/karimoku-case-study.webm"
+  },
+  {
+    "id": "apparatus-studio",
+    "title": "APPARATUS",
+    "url": "https://apparatusstudio.com/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "사이 가구",
+      "황동·유리 조명",
+      "뉴욕 아틀리에",
+      "콰이어트 럭셔리"
+    ],
+    "shortDesc": "에이징된 황동, 가죽, 말총, 포슬린, 불어 만든 유리를 수작업으로 조립해 침묵 속에서도 압도적인 밀도를 뿜어내는 뉴욕 조명·오브제 스튜디오",
+    "anatomy": "Gabriel Hendifar와 Jeremy Anderson이 뉴욕에서 설립한 하이엔드 조명·가구 아틀리에 APPARATUS의 공식 사이트. 음악 앨범처럼 'ACT I~V'의 막(Act) 단위로 발표되는 컬렉션 화보, 시네마틱 필름, 그리고 각 조명 기구의 치수·마감재를 세밀한 건축 도면과 함께 열람할 수 있는 카탈로그 시스템",
+    "principle": "완벽한 기계적 매끈함 대신 손길이 닿은 금속의 파티나(Patina)와 묵직한 산업적 결속 구조를 결합하여, 공간 전체의 중력을 장악하는 조형적 조명 디자인",
+    "imageUrl": "/captures/apparatus-studio.png",
+    "videoUrl": "/videos/apparatus-studio.webm"
+  },
+  {
+    "id": "hajime-sorayama",
+    "title": "Hajime Sorayama",
+    "url": "https://sorayama.net/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "Safari Park",
+      "크롬 조각·아트토이",
+      "레트로 퓨처리즘",
+      "메탈릭 조형"
+    ],
+    "shortDesc": "극한의 크롬 반사 표면과 유기적 신체를 결합한 'Sexy Robot'과 소니 AIBO 원형 디자인으로 현대 아트토이·조각 씬에 절대적 영향을 미친 거장",
+    "anatomy": "일본의 전설적인 일러스트레이터이자 조각가 Hajime Sorayama(소라야마 하지메)의 공식 아카이브 사이트. 1970년대부터 이어진 에어브러시 하이퍼리얼리즘 페인팅, 거대한 알루미늄·크롬 합금 조각, Dior·리미티드 아트토이 협업 에디션과 글로벌 전시 전경을 수록",
+    "principle": "차가운 액체 금속과 크롬 도금 표면 위에 주변 공간의 빛이 어떻게 왜곡·반사되는지를 집요하게 계산하여, 피규어와 파인아트 조각의 경계를 무너뜨린 표면 물성의 교과서",
+    "imageUrl": "/captures/hajime-sorayama.png",
+    "videoUrl": "/videos/hajime-sorayama.webm"
+  },
+  {
+    "id": "daniel-arsham",
+    "title": "Daniel Arsham",
+    "url": "https://www.danielarsham.com/collection#work",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "Safari Park",
+      "퓨처 렐릭(미래 유물)",
+      "결정화 조각",
+      "파인아트·피규어"
+    ],
+    "shortDesc": "현대 대중문화 아이콘과 피규어·오브제를 화산재·석영·청동으로 부식시키고 결정화하여 수천 년 뒤 발굴된 '미래의 유물(Future Relic)'로 전환하는 아티스트",
+    "anatomy": "뉴욕 기반 현대미술가 겸 건축가(Snarkitecture 공동 창립자) Daniel Arsham의 공식 웹사이트. 고전 조각상, 포켓몬, 포르쉐, 카메라 등을 침식된 석고·크리스탈 물성으로 재해석한 대형 조각 및 리미티드 아트 에디션, 건축 설치 작업을 극도로 정제된 화이트 그리드로 아카이빙",
+    "principle": "친숙한 캐릭터와 소비재 피규어에 '시간의 풍화와 고고학적 발굴'이라는 단일하고 강력한 개념적 필터를 씌워 하이엔드 미술관 조각으로 격상시키는 브랜딩·조형 전략",
+    "imageUrl": "/captures/daniel-arsham.png",
+    "videoUrl": "/videos/daniel-arsham.webm"
+  },
+  {
+    "id": "instinctoy",
+    "title": "INSTINCTOY",
+    "url": "https://instinctoy.net/",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "Safari Park",
+      "소프비·아트토이",
+      "수작업 도색·기믹",
+      "콜렉터블"
+    ],
+    "shortDesc": "정교한 다중 파츠 분할, 야광(GID)·플로킹·그라데이션 수작업 도색, 자석 기믹으로 작가주의 소프트비닐(Sofubi) 아트토이의 정점을 보여주는 일본 레이블",
+    "anatomy": "아티스트 Hiroto Ohkubo가 이끄는 일본 아트토이 브랜드 INSTINCTOY의 공식 글로벌 사이트. 자체 오리지널 캐릭터(Muckey, Erosion Monster 등)와 Kennyswork, James Groman 등 세계적 작가들과의 협업 피규어 제작 공정, 추첨(Lottery) 발매 아카이브 및 도색 디테일 클로즈업을 상세히 기록",
+    "principle": "대량 생산 플라스틱 완구와 차별화되는 복잡한 금형 분할, 내부 골격·입 벌림 기믹, 장인적 에어브러시 도색 마감을 통해 소량 생산 아트토이가 어떻게 하이엔드 수집품이 되는지 보여주는 사례",
+    "imageUrl": "/captures/instinctoy.png",
+    "videoUrl": "/videos/instinctoy.webm"
+  },
+  {
+    "id": "sticky-monster-lab",
+    "title": "Sticky Monster Lab (SML)",
+    "url": "https://29cm.co.kr/store/brand/3279",
+    "category": "Object & Art Toy",
+    "tags": [
+      "아트·오브제·공간",
+      "Safari Park",
+      "한국 아트토이 1세대",
+      "캐릭터·오브제",
+      "피규어 브랜딩"
+    ],
+    "shortDesc": "극도로 단순화된 땅콩형 실루엣과 무표정한 눈매 위에 현대인의 고독과 블랙코미디 서사를 담아 한국 아트토이·디자인 오브제 씬을 개척한 스튜디오",
+    "anatomy": "2007년 다학제 디자이너들이 결성한 한국 1세대 크리에이티브 스튜디오 Sticky Monster Lab(스티키몬스터랩)의 브랜드 쇼케이스. 초기 단편 애니메이션과 아티스트 피규어에서 출발해 조명 램프, 인센스 챔버, 글로벌 브랜드 협업 오브제로 확장된 제품군과 조형 언어를 한눈에 볼 수 있는 페이지",
+    "principle": "최소한의 기하학적 볼륨(실루엣)을 고정한 채 컬러 배색과 소품 변주만으로 무한한 페르소나와 생활 오브제 라인업을 파생시키는 캐릭터 IP 시스템의 국내 대표 레퍼런스",
+    "imageUrl": "/captures/sticky-monster-lab.png",
+    "videoUrl": "/videos/sticky-monster-lab.webm"
+  },
+  {
+    "id": "smooth-on",
+    "title": "Smooth-On",
+    "url": "https://smooth-on.com/",
+    "category": "Resource & Tool",
+    "tags": [
+      "아카이브·툴",
+      "조각상 몰드",
+      "Safari Park",
+      "실리콘 몰드·레진 캐스팅",
+      "물성·제작 가이드"
+    ],
+    "shortDesc": "조각상·아트토이 복제를 위한 실리콘 몰드 제작부터 폴리우레탄·투명 에폭시 레진 캐스팅, 금속 파우더 콜드캐스팅까지 전 세계 조형가들의 표준 재료 바이블",
+    "anatomy": "1895년 설립되어 할리우드 특수효과 스튜디오와 전 세계 조각가·피규어 메이커들이 사용하는 미국의 몰드·캐스팅 화학 소재 기업 Smooth-On의 공식 플랫폼. 수백 종의 백금·축합형 실리콘(OOMOO, Mold Star), 우레탄 레진(Smooth-Cast), 투명 수지, 이형제의 경도(Shore)·가사시간·점도 스펙 시트와 친절한 단계별 몰드 제작 영상 튜토리얼을 총망라",
+    "principle": "3D 프린팅 원형이나 점토 조각을 기포 없는 정밀한 실리콘 거푸집으로 떠내고 다양한 물성(반투명, 금속 질감, 연질 폼 등)으로 복제 생산하기 위해 반드시 거쳐야 하는 실전 재료 공학 아카이브",
+    "imageUrl": "/captures/smooth-on.png",
+    "videoUrl": "/videos/smooth-on.webm"
+  },
+  {
+    "id": "carol-christian-poell",
+    "title": "Carol Christian Poell (CCP)",
+    "url": "https://carolchristianpoell.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "FAKE CHURCH",
+      "다크 아방가르드",
+      "오브제 다이드 가죽",
+      "해체주의 테일러링"
+    ],
+    "shortDesc": "완성된 부츠와 가죽 재킷을 통째로 염료 통에 담그는 오브제 다잉(Object-dyed)과 금속 의수·티타늄 봉제 등 극단적 물성 실험을 감행하는 아방가르드의 정점",
+    "anatomy": "오스트리아 출신으로 밀라노의 은둔 아틀리에에서 활동하는 디자이너 Carol Christian Poell의 공식 아카이브 사이트. 상업적 이커머스 카트나 마케팅 문구를 완전히 배제한 채, 해부학적 패턴 연구와 가죽·금속·라텍스 소재 실험의 흔적을 미니멀하고 수수께끼 같은 인터페이스로 제시",
+    "principle": "패션을 유행 소비재가 아닌 신체와 재료(가죽, 뼈, 금속, 혈액 염료) 사이의 외과적·조각적 실험으로 다루며, 브랜드 웹사이트조차 성소(Sanctuary)처럼 침묵을 지키는 태도",
+    "imageUrl": "/captures/carol-christian-poell.png",
+    "videoUrl": "/videos/carol-christian-poell.webm"
+  },
+  {
+    "id": "boris-bidjan-saberi",
+    "title": "Boris Bidjan Saberi",
+    "url": "https://borisbidjansaberi.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "FAKE CHURCH",
+      "아방가르드 가죽·리넨",
+      "핸드 다잉",
+      "인더스트리얼 고딕"
+    ],
+    "shortDesc": "수작업 염색된 말가죽·리넨과 스털링 실버 하드웨어, 구조적 드레이핑으로 거칠고 어두운 노마드 아방가르드 미학을 구축한 바르셀로나 아틀리에",
+    "anatomy": "독일·페르시아 혈통의 디자이너 Boris Bidjan Saberi가 운영하는 공식 사이트. 작품 번호처럼 매겨진 의복 코드(J2, P13, BAMBA 등), 정교한 수공예 봉제선과 가죽 워싱 디테일이 살아있는 고대비 흑백·모노톤 룩북과 아틀리에 공정 필름으로 구성",
+    "principle": "원시적인 천연 소재(가죽, 해조류 코팅, 은)와 스트리트·스케이트 문화의 역동적 실루엣을 결합해 묵직하고 종교적인 긴장감을 자아내는 다크 아방가르드 디렉션",
+    "imageUrl": "/captures/boris-bidjan-saberi.png",
+    "videoUrl": "/videos/boris-bidjan-saberi.webm"
+  },
+  {
+    "id": "post-archive-faction",
+    "title": "POST ARCHIVE FACTION (PAF)",
+    "url": "https://postarchivefaction.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "FAKE CHURCH",
+      "서울 아방가르드",
+      "구조적 해체·테크웨어",
+      "아카이브 넘버링"
+    ],
+    "shortDesc": "비대칭 절개, 나선형 지퍼, 3차원 패널 해체로 스포츠·테크웨어를 조형 예술의 경지로 끌어올린 서울 기반 아방가르드 브랜드 PAF",
+    "anatomy": "임동준과 정수교가 서울에서 설립한 POST ARCHIVE FACTION(PAF)의 공식 디지털 아카이브 겸 스토어. 소프트웨어 버전처럼 명명된 컬렉션(1.0~8.0+)과 'LEFT / CENTER / RIGHT'라는 실험성 단계 분류 체계를 그대로 반영한 미니멀하고 구조적인 그리드 인터페이스로 설계",
+    "principle": "의복의 패턴을 건축 구조물이나 산업 디자인 프로토타입처럼 절개·재조립하고, 웹사이트 역시 엄격한 인덱스 코드와 무채색 스튜디오 컷으로 통일해 독보적인 미래지향적 정체성을 완성",
+    "imageUrl": "/captures/post-archive-faction.png",
+    "videoUrl": "/videos/post-archive-faction.webm"
+  },
+  {
+    "id": "heliot-emil",
+    "title": "HELIOT EMIL",
+    "url": "https://heliotemil.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "FAKE CHURCH",
+      "인더스트리얼 하드웨어",
+      "메탈 버클·카라비너",
+      "코펜하겐"
+    ],
+    "shortDesc": "커스텀 알루미늄 카라비너, 퀵릴리즈 금속 버클, 방열 원단 등 산업용 안전 장비와 하드웨어 디테일을 날카로운 모노톤 테일러링에 결합한 코펜하겐 브랜드",
+    "anatomy": "Julius Juul과 Victor Juul 형제가 이끄는 덴마크 패션 하우스 HELIOT EMIL의 공식 플래그십 사이트. 형태와 기능(Form and Function)의 교차점을 탐구하는 컬렉션 런웨이, 정교하게 주조된 금속 하드웨어 부속품 클로즈업, 차갑고 정밀한 모노스페이스 타이포그래피 UI로 구성",
+    "principle": "의복의 봉제선과 여밈 구조를 산업용 결속 하드웨어(버클, 와이어, 후크)로 치환하여, 패션과 인더스트리얼 기구 디자인이 만나는 차가운 텐션을 시각화한 레퍼런스",
+    "imageUrl": "/captures/heliot-emil.png",
+    "videoUrl": "/videos/heliot-emil.webm"
+  },
+  {
+    "id": "werkstatt-muenchen",
+    "title": "WERKSTATT:MÜNCHEN",
+    "url": "https://werkstatt-muenchen.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "주얼리",
+      "인더스트리얼 로맨티시즘",
+      "해머드 스털링 실버",
+      "수공예 주조"
+    ],
+    "shortDesc": "뮌헨의 옛 주조 공방에서 망치 자국과 스탬프 각인, 체인 결속 흔적을 그대로 살려 '인더스트리얼 로맨티시즘' 실버 주얼리를 단조하는 아틀리에",
+    "anatomy": "독일 금속공예 장인 Klaus Lohmeyer가 1998년 설립해 Ann Demeulemeester의 주얼리 라인을 제작하기도 한 WERKSTATT:MÜNCHEN의 공식 아카이브. 수백 종의 반지, 체인 브레이슬릿, 묵주 형태 네크리스, 가죽 벨트를 스탬프 코드 넘버와 고해상도 금속 표면 접사 사진으로 정갈하게 배열",
+    "principle": "매끈하게 폴리싱된 보석이 아니라 불에 달구고 망치로 두드린 은(Silver)의 거친 단조 물성과 산업용 나사·샤클 모티프를 통해 세월이 흐를수록 깊어지는 금속 조형미를 구현",
+    "imageUrl": "/captures/werkstatt-muenchen.png",
+    "videoUrl": "/videos/werkstatt-muenchen.webm"
+  },
+  {
+    "id": "parts-of-four",
+    "title": "Parts of Four",
+    "url": "https://partsof4.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "주얼리",
+      "아방가르드 주얼리",
+      "원석·산처리 실버",
+      "FAKE CHURCH"
+    ],
+    "shortDesc": "산(Acid) 처리된 스털링 실버, 쪼개진 수정 원석, 고대 뼈 화석, 기하학적 브루탈리즘 매스를 결합해 주술적 부적(Talisman) 같은 주얼리를 조각하는 브랜드",
+    "anatomy": "아티스트 겸 조각가 Evan Sugerman이 창립하고 Rick Owens와 오랜 협업을 이어온 아방가르드 주얼리 하우스 Parts of Four의 웹사이트. Sistem, Chakra, Talisman 등 건축적·제의적 분류 체계에 따라 정밀하게 가공된 금속 및 크리스탈 조각 주얼리를 어둡고 중량감 있는 에디토리얼 레이아웃으로 전개",
+    "principle": "주얼리를 단순한 장신구가 아니라 신체에 착용하는 초소형 브루탈리즘 건축물이자 제의적 유물(Relic)로 정의하여, 원석의 날것 그대로인 균열과 정밀한 기하학 절단면을 충돌시키는 조형 어법",
+    "imageUrl": "/captures/parts-of-four.png",
+    "videoUrl": "/videos/parts-of-four.webm"
+  },
+  {
+    "id": "ln-cc",
+    "title": "LN-CC (Late Night Chameleon Cafe)",
+    "url": "https://ln-cc.com/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "웹",
+      "하이엔드 편집숍",
+      "에디토리얼 이커머스",
+      "런던"
+    ],
+    "shortDesc": "아방가르드 패션·아트북·바이닐을 아우르는 런던 컨셉 스토어로, 상품 상세 페이지와 필터 UI 자체를 독립 매거진 화보처럼 설계한 커머스 레퍼런스",
+    "anatomy": "런던 달스턴의 터널형 설치 미술 매장으로 유명한 하이엔드 편집숍 LN-CC의 공식 온라인 플랫폼. 일반적인 쇼핑몰의 천편일률적 썸네일 대신 비대칭 에디토리얼 콜라주, 실험적인 타이포그래피 오버레이, 감각적인 스타일링 컷과 음반·서적 큐레이션이 유기적으로 결합된 인터페이스",
+    "principle": "온라인 커머스의 구매 전환 효율과 언더그라운드 아트 매거진의 시각적 긴장감을 동시에 달성하여, 패션·오브제 브랜드의 웹 스토어 설계 시 훌륭한 기준점이 되는 UI/UX",
+    "imageUrl": "/captures/ln-cc.png",
+    "videoUrl": "/videos/ln-cc.webm"
+  },
+  {
+    "id": "contemporary-art-daily",
+    "title": "Contemporary Art Daily",
+    "url": "https://contemporaryartdaily.com/",
+    "category": "Archive & Curation",
+    "tags": [
+      "아카이브·툴",
+      "DDP 전시",
+      "Safari Park",
+      "전시 설치 아카이브",
+      "큐레이션·공간"
+    ],
+    "shortDesc": "전 세계 주요 현대미술관과 갤러리의 전시 설치 전경(Installation View) 고해상도 사진을 매일 엄선해 기록하는 전시 공간 연출의 절대적 아카이브",
+    "anatomy": "아티스트 Forrest Nash가 2008년 설립한 현대미술 전시 기록 플랫폼 Contemporary Art Daily. 일체의 광고나 화려한 UI 장식 없이 백색 배경 위에 전시 제목, 작가, 갤러리, 날짜, 그리고 전시장 전체의 공간 비례·조명·작품 배치 간격을 보여주는 고해상도 설치 사진 시퀀스만을 정직하게 축적",
+    "principle": "작품 개별 이미지가 아니라 '화이트큐브나 특수 공간 안에 오브제와 조명을 어떤 높이와 밀도로 배치했는가'를 연구할 때 전 세계 큐레이터와 디자이너들이 가장 먼저 열어보는 바이블",
+    "imageUrl": "/captures/contemporary-art-daily.png",
+    "videoUrl": "/videos/contemporary-art-daily.webm"
+  },
+  {
+    "id": "pin-up-magazine",
+    "title": "PIN–UP Magazine",
+    "url": "https://pinupmagazine.org/",
+    "category": "Magazine & Blog",
+    "tags": [
+      "패션·매거진",
+      "사이 가구",
+      "건축·오브제 매거진",
+      "에디토리얼",
+      "뉴욕"
+    ],
+    "shortDesc": "자칭 '건축 엔터테인먼트 매거진'으로, 현대 건축·실험 가구·오브제 디자인을 하이패션 화보 같은 대담한 연출과 깊이 있는 인터뷰로 다루는 뉴욕 저널",
+    "anatomy": "건축가 겸 에디터 Felix Burrichter가 뉴욕에서 창간한 격년제 건축·디자인 매거진 PIN–UP의 디지털 플랫폼. 과감한 컬러 배색, 가변적인 그리드 타이포그래피, 그리고 차가운 가구와 건축 공간을 유머러스하고 관능적인 시선으로 포착한 포토 에세이와 롱폼 인터뷰로 구성",
+    "principle": "딱딱하고 학술적인 건축·가구 비평에서 벗어나, 오브제의 물성과 디자이너의 세계관을 가장 감각적인 시각 연출과 에디토리얼 위트로 풀어내는 현대 디자인 매체의 교본",
+    "imageUrl": "/captures/pin-up-magazine.png",
+    "videoUrl": "/videos/pin-up-magazine.webm"
+  },
+  {
+    "id": "graphic-magazine",
+    "title": "GRAPHIC (프로파간다)",
+    "url": "https://draw-down.com/products/graphic-51-art-book-fair-now",
+    "category": "Magazine & Blog",
+    "tags": [
+      "타이포·출판",
+      "타이포",
+      "그래픽 디자인 매거진",
+      "한 호 한 주제",
+      "독립 출판"
+    ],
+    "shortDesc": "서울의 출판사 프로파간다(김광철)가 2007년부터 발행하며 매 호 단 하나의 그래픽 디자인·타이포그래피 주제를 집요하게 파고드는 세계적인 디자인 저널",
+    "anatomy": "한국을 넘어 전 세계 그래픽 디자인 스튜디오와 예술 서점(Draw Down Books 등)에서 필독서로 꼽히는 매거진 GRAPHIC의 아카이브 쇼케이스. 매 이슈마다 주제에 맞춰 판형, 종이 물성, 제본 방식, 게스트 에디터와 타이포그래피 시스템을 전면 재설계하는 독립 출판의 정수를 보여줌",
+    "principle": "백화점식 디자인 트렌드 소개를 거부하고 '한 호 한 주제(One Issue, One Theme)' 원칙 아래 비주류 그래픽 문화, 타입 파운드리, 전시 도록, 인쇄 실험을 학술지 이상의 밀도로 기록하는 편집 철학",
+    "imageUrl": "/captures/graphic-magazine.png",
+    "videoUrl": "/videos/graphic-magazine.webm"
+  },
+  {
+    "id": "typojanchi",
+    "title": "타이포잔치 (Typojanchi)",
+    "url": "https://typojanchi.org/",
+    "category": "Spatial & Exhibition",
+    "tags": [
+      "타이포·출판",
+      "타이포",
+      "국제 타이포그래피 비엔날레",
+      "서울역 문화역서울284",
+      "전시 아카이브"
+    ],
+    "shortDesc": "세계 유일의 국제 타이포그래피 비엔날레로, 문자를 넘어 소리·도시·사물·몸과 교차하는 동시대 타이포그래피 실험을 집대성한 공식 아카이브",
+    "anatomy": "2001년 시작되어 격년으로 문화역서울284 등에서 개최되는 서울 국제 타이포그래피 비엔날레 '타이포잔치(Typojanchi)'의 통합 디지털 아카이브. 역대 회차별 총감독의 주제 선언문, 국내외 참여 작가 및 작품 목록, 포스터·공간 설치 사진, 웹진(더블유) 아티클을 연대기적 인덱스로 열람 가능",
+    "principle": "인쇄된 활자로서의 타이포그래피를 넘어 전시 공간, 사운드, 인터랙티브 미디어 속에서 문자가 어떻게 개념적 조형 언어로 확장되는지 보여주는 한국 그래픽 디자인계의 핵심 기록",
+    "imageUrl": "/captures/typojanchi.png",
+    "videoUrl": "/videos/typojanchi.webm"
+  },
+  {
+    "id": "ginza-graphic-gallery",
+    "title": "ggg (긴자 그래픽 갤러리)",
+    "url": "https://www.dnpfcp.jp/gallery/ggg/",
+    "category": "Spatial & Exhibition",
+    "tags": [
+      "아트·오브제·공간",
+      "포스터",
+      "그래픽 디자인 갤러리",
+      "도쿄 긴자",
+      "전시 아카이브"
+    ],
+    "shortDesc": "1986년 도쿄 긴자에 설립된 그래픽 디자인 전문 갤러리로, 세계적 거장들의 포스터·타이포그래피 개인전 400여 회의 기록을 보존한 아카이브",
+    "anatomy": "다이니혼인쇄(DNP) 문화재단이 운영하는 긴자 그래픽 갤러리(ggg)의 공식 웹사이트. 다나카 이코, 나가이 가즈마사, 얀 치홀트, 요제프 뮐러 브로크만, 스테판 사그마이스터, M/M (Paris) 등 지난 40년간 열린 수백 회의 전설적인 그래픽 디자인 전시 포스터와 설치 전경, ggg Books 총서 목록을 체계적으로 아카이빙",
+    "principle": "상업 인쇄물과 포스터를 미술관급 전시 공간 안에서 조명하고 기록함으로써 그래픽 디자인의 역사를 인류의 시각 문화유산으로 구축해온 아시아 최고의 디자인 갤러리 플랫폼",
+    "imageUrl": "/captures/ginza-graphic-gallery.png",
+    "videoUrl": "/videos/ginza-graphic-gallery.webm"
   }
 ];
