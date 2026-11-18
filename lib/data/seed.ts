@@ -8048,5 +8048,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "레이브 포스터와 인더스트리얼 스텐실 그래픽에서 영감을 받은 볼드한 타이포그래피 위계와 칠흑 같은 다크 UI를 통해, 날것의 클럽 현장감을 웹 아카이브와 패션 커머스 경험 전체로 일관되게 확장한 문화 플랫폼 디자인",
     "imageUrl": "/captures/boiler-room.png",
     "videoUrl": "/videos/boiler-room.webm"
+  },
+  {
+    "id": "wdc-2027-seoul",
+    "title": "World Design Congress 2027 Seoul",
+    "url": "https://worlddesigncongress2027seoul.com/",
+    "category": "Spatial & Exhibition",
+    "tags": [
+      "아트·오브제·공간",
+      "DDP 전시",
+      "제너러티브 아이덴티티",
+      "키네틱 타이포그래피",
+      "국제 디자인 총회",
+      "서울디자인재단·WDO"
+    ],
+    "shortDesc": "'Think, Make, Change' 슬로건 아래 기하학적 모듈 도형들이 해체·재조립되는 제너러티브 그래픽 시스템을 선보인 2027 서울 세계디자인총회(WDC) 공식 플랫폼",
+    "anatomy": "서울디자인재단과 세계디자인기구(WDO)가 공동 주최하는 제35회 2027 서울 세계디자인총회(World Design Congress 2027 Seoul)의 공식 웹사이트. 원·삼각형·사각형·슬래시 등 기본 기하학 도형 입자들이 한국 전통 건축과 도시 픽셀의 형상으로 끊임없이 변이하는 인터랙티브 캔버스, 슬라이스 커팅된 'Think Make Change' 디스플레이 타이포그래피, 실시간 카운트다운 및 글로벌 앰배서더 메시지 카드로 구성",
+    "principle": "고정된 행사 포스터 대신 웹 브라우저 위에서 실시간으로 흩어지고 결합하는 모듈형 제너러티브 아이덴티티(Generative Identity)와 대담한 원색 대비를 결합해, 디자인을 통한 역동적 변화를 시각적으로 체현한 캠페인 웹",
+    "imageUrl": "/captures/wdc-2027-seoul.png",
+    "videoUrl": "/videos/wdc-2027-seoul.webm"
   }
 ];
