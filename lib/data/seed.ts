@@ -8029,5 +8029,24 @@ export const SEED_REFERENCES: Reference[] = [
     "principle": "상업 인쇄물과 포스터를 미술관급 전시 공간 안에서 조명하고 기록함으로써 그래픽 디자인의 역사를 인류의 시각 문화유산으로 구축해온 아시아 최고의 디자인 갤러리 플랫폼",
     "imageUrl": "/captures/ginza-graphic-gallery.png",
     "videoUrl": "/videos/ginza-graphic-gallery.webm"
+  },
+  {
+    "id": "boiler-room",
+    "title": "Boiler Room",
+    "url": "https://boilerroom.tv/",
+    "category": "Fashion & Culture",
+    "tags": [
+      "패션·매거진",
+      "언더그라운드 클럽 컬처",
+      "뮤직 아카이브·스트리밍",
+      "다크 브루탈리즘",
+      "GRAU",
+      "어패럴·에디토리얼"
+    ],
+    "shortDesc": "전 세계 언더그라운드 클럽 씬과 DJ 셋 아카이브, 투어 티켓팅, 스트리트웨어 커머스를 강렬한 다크 인더스트리얼 타이포그래피로 통합한 글로벌 음악 플랫폼",
+    "anatomy": "2010년 런던의 보일러실 웹캠 스트리밍에서 출발해 세계 최대의 언더그라운드 전자음악·클럽 문화 네트워크로 성장한 Boiler Room의 공식 디지털 플랫폼. 풀스크린 루프 영상 위에 초광폭(Extended) 헤비 그로테스크 디스플레이 로고타입과 고대비 옐로우 액센트 CTA를 배치하고, 도시별 이벤트·수천 건의 비디오/오디오 셋 아카이브·어패럴 샵·다큐멘터리 에디토리얼을 촘촘한 다크 그리드로 엮어낸 구조",
+    "principle": "레이브 포스터와 인더스트리얼 스텐실 그래픽에서 영감을 받은 볼드한 타이포그래피 위계와 칠흑 같은 다크 UI를 통해, 날것의 클럽 현장감을 웹 아카이브와 패션 커머스 경험 전체로 일관되게 확장한 문화 플랫폼 디자인",
+    "imageUrl": "/captures/boiler-room.png",
+    "videoUrl": "/videos/boiler-room.webm"
   }
 ];
