@@ -1175,11 +1175,17 @@ export const POSTER_REFERENCES: Reference[] = (() => {
   const newPostersList: Reference[] = [];
   const existingPostersList: Reference[] = [];
 
-  // 0. Featured 200-poster style ("poster-contour-brutalism") ordered #01 -> #200 at the very top
+  // 0. Featured 200-poster style ("poster-contour-brutalism") ordered #200 -> #101 (newest 100 first), then #01 -> #100
   const featuredStyle = NEW_POSTER_STYLES.find((s) => s.id === 'poster-contour-brutalism');
   if (featuredStyle) {
     const count = POSTER_STYLE_COUNTS[featuredStyle.id] || 200;
-    for (let num = 1; num <= count; num++) {
+    const order: number[] = [];
+    // Put the newly added #101..#200 first so they appear immediately at the top of POSTERS
+    for (let num = 101; num <= count; num++) order.push(num);
+    // Followed by #1..#100
+    for (let num = 1; num <= Math.min(100, count); num++) order.push(num);
+
+    for (const num of order) {
       const id = num === 1 ? featuredStyle.id : `${featuredStyle.id}-${num}`;
       const imageUrl = num === 1 ? `/captures/posters/${featuredStyle.id}.jpg` : `/captures/posters/${featuredStyle.id}-${num}.jpg`;
       const title = `${featuredStyle.title} #${String(num).padStart(2, '0')}`;
