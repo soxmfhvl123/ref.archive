@@ -22,7 +22,17 @@ export interface PosterStyleDefinition {
 }
 
 export const NEW_POSTER_STYLES: PosterStyleDefinition[] = [
-  // Trending (+3)
+  // Trending (+4)
+  {
+    id: "poster-contour-brutalism",
+    title: "Contour Brutalism",
+    category: "Trending",
+    tags: ["Contour Brutalism"],
+    shortDesc: "유기적 등고선 아웃라인 & 1비트 디더링 안티디자인",
+    anatomy: "다중 오프셋 외곽선(Contour Stroke)으로 감싼 고대비 1비트 비트맵·하프톤 이미지, 픽셀화/스캔 노이즈 텍스처, 도면 넘버링 콜아웃과 해체적 타이포그래피가 결합된 포스트 디지털 그래픽 포스터",
+    principle: "인쇄 레지스트레이션 마크와 등고선 테두리를 조형적 프레임으로 삼아 파편화된 이미지와 텍스트를 하나의 유기적 군집으로 결속시키는 언더그라운드 브루탈리즘 문법",
+    group: "Trending"
+  },
   {
     id: "poster-dark-academia",
     title: "Dark Academia",
@@ -1064,6 +1074,9 @@ export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
 ];
 
 export const POSTER_STYLE_COUNTS: Record<string, number> = {
+  // Featured 100-poster collection
+  "poster-contour-brutalism": 100,
+
   // New visual styles (3 posters each)
   "poster-dark-academia": 3,
   "poster-cyber-y2k-chrome": 3,
@@ -1158,12 +1171,41 @@ export const POSTER_STYLE_COUNTS: Record<string, number> = {
 };
 
 export const POSTER_REFERENCES: Reference[] = (() => {
+  const featuredPostersList: Reference[] = [];
   const newPostersList: Reference[] = [];
   const existingPostersList: Reference[] = [];
+
+  // 0. Featured 100-poster style ("poster-contour-brutalism") ordered #01 -> #100 at the very top
+  const featuredStyle = NEW_POSTER_STYLES.find((s) => s.id === 'poster-contour-brutalism');
+  if (featuredStyle) {
+    const count = POSTER_STYLE_COUNTS[featuredStyle.id] || 100;
+    for (let num = 1; num <= count; num++) {
+      const id = num === 1 ? featuredStyle.id : `${featuredStyle.id}-${num}`;
+      const imageUrl = num === 1 ? `/captures/posters/${featuredStyle.id}.jpg` : `/captures/posters/${featuredStyle.id}-${num}.jpg`;
+      const title = `${featuredStyle.title} #${String(num).padStart(2, '0')}`;
+      featuredPostersList.push({
+        id,
+        title,
+        url: num === 1
+          ? 'https://ca.pinterest.com/pin/789467009698661935/'
+          : `https://www.pinterest.com/search/pins/?q=${encodeURIComponent('experimental contour brutalism graphic design poster')}`,
+        category: featuredStyle.category,
+        tags: [featuredStyle.title],
+        shortDesc: featuredStyle.shortDesc,
+        anatomy: featuredStyle.anatomy,
+        principle: featuredStyle.principle,
+        imageUrl,
+        majorCategory: 'POSTERS',
+        group: featuredStyle.group,
+        aspectRatio: 'portrait',
+      });
+    }
+  }
 
   // 1. Newly added 18 styles (3 posters each, ordered newest first)
   for (let round = 2; round >= 0; round--) {
     for (const style of NEW_POSTER_STYLES) {
+      if (style.id === 'poster-contour-brutalism') continue;
       const num = round + 1;
       const id = num === 1 ? style.id : `${style.id}-${num}`;
       const imageUrl = num === 1 ? `/captures/posters/${style.id}.jpg` : `/captures/posters/${style.id}-${num}.jpg`;
@@ -1213,7 +1255,7 @@ export const POSTER_REFERENCES: Reference[] = (() => {
     }
   }
 
-  return [...newPostersList, ...existingPostersList];
+  return [...featuredPostersList, ...newPostersList, ...existingPostersList];
 })();
 
 export function getAllPosterTags(posters: Reference[]): string[] {
