@@ -27,6 +27,7 @@ interface PhysicsCard {
 export default function CanvasView({ references, onSelectRef, onHoverRef, basePath = '' }: CanvasViewProps) {
   const [cards, setCards] = useState<PhysicsCard[]>([]);
   const cardsRef = useRef<PhysicsCard[]>([]);
+  const cardDomMapRef = useRef<Map<string, HTMLDivElement>>(new Map());
   const draggingIdRef = useRef<string | null>(null);
   const dragStartPosRef = useRef<{ mouseX: number; mouseY: number; cardX: number; cardY: number }>({
     mouseX: 0,
@@ -138,9 +139,13 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
           c.y = boundsHeight - c.height - padBottom;
           c.vy = -Math.abs(c.vy) * 0.75 - 0.3;
         }
+
+        const el = cardDomMapRef.current.get(c.refItem.id);
+        if (el) {
+          el.style.transform = `translate3d(${c.x.toFixed(1)}px, ${c.y.toFixed(1)}px, 0) rotate(${c.rot.toFixed(1)}deg)`;
+        }
       }
 
-      setCards([...currentCards]);
       animId = requestAnimationFrame(loop);
     };
 
@@ -179,6 +184,10 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
     e.preventDefault();
     topZIndexRef.current += 1;
     card.zIndex = topZIndexRef.current;
+    const el = cardDomMapRef.current.get(card.refItem.id);
+    if (el) {
+      el.style.zIndex = String(card.zIndex);
+    }
 
     draggingIdRef.current = card.refItem.id;
     dragDistRef.current = 0;
@@ -210,6 +219,11 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
 
       card.x = dragStartPosRef.current.cardX + dx;
       card.y = dragStartPosRef.current.cardY + dy;
+
+      const el = cardDomMapRef.current.get(card.refItem.id);
+      if (el) {
+        el.style.transform = `translate3d(${card.x.toFixed(1)}px, ${card.y.toFixed(1)}px, 0) rotate(${card.rot.toFixed(1)}deg)`;
+      }
 
       const now = performance.now();
       const dt = Math.max(now - lastMousePosRef.current.time, 1);
@@ -268,6 +282,13 @@ export default function CanvasView({ references, onSelectRef, onHoverRef, basePa
         return (
           <div
             key={card.refItem.id}
+            ref={(el) => {
+              if (el) {
+                cardDomMapRef.current.set(card.refItem.id, el);
+              } else {
+                cardDomMapRef.current.delete(card.refItem.id);
+              }
+            }}
             onMouseDown={(e) => handleCardMouseDown(e, card)}
             onMouseEnter={() => {
               setActiveHoverId(card.refItem.id);

@@ -23,38 +23,52 @@ const TiltCard = memo(function TiltCard({
   const glareRef = useRef<HTMLDivElement>(null);
   const chromaticRef = useRef<HTMLDivElement>(null);
   const isHoveredRef = useRef<boolean>(false);
+  const cachedRectRef = useRef<DOMRect | null>(null);
+  const rafIdRef = useRef<number | null>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
     const card = cardRef.current;
     if (!card) return;
 
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const normX = (x / rect.width - 0.5) * 2; // -1 to 1
-    const normY = (y / rect.height - 0.5) * 2; // -1 to 1
-
-    const rotX = -normY * maxTilt;
-    const rotY = normX * maxTilt;
-    const transX = normX * 3;
-    const transY = normY * 3;
-
-    // Direct DOM manipulation - ZERO React setState re-renders during mouse move!
-    card.style.transform = `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translate3d(${transX.toFixed(1)}px, ${transY.toFixed(1)}px, 8px) scale3d(1.015, 1.015, 1.015)`;
-
-    if (glareRef.current) {
-      const gx = ((x / rect.width) * 100).toFixed(1);
-      const gy = ((y / rect.height) * 100).toFixed(1);
-      glareRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0) 65%)`;
-      glareRef.current.style.opacity = '0.18';
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    if (!cachedRectRef.current) {
+      cachedRectRef.current = card.getBoundingClientRect();
     }
 
-    if (chromaticRef.current) {
-      chromaticRef.current.style.transform = `translate(${(normX * 1.5).toFixed(1)}px, ${(normY * 1.5).toFixed(1)}px)`;
-      chromaticRef.current.style.opacity = '0.35';
-    }
+    if (rafIdRef.current !== null) return;
+    rafIdRef.current = requestAnimationFrame(() => {
+      rafIdRef.current = null;
+      const rect = cachedRectRef.current;
+      if (!rect || !cardRef.current) return;
+
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+
+      const normX = (x / rect.width - 0.5) * 2; // -1 to 1
+      const normY = (y / rect.height - 0.5) * 2; // -1 to 1
+
+      const rotX = -normY * maxTilt;
+      const rotY = normX * maxTilt;
+      const transX = normX * 3;
+      const transY = normY * 3;
+
+      // Direct DOM manipulation batched in rAF with cached rect — ZERO layout thrashing
+      cardRef.current.style.transform = `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translate3d(${transX.toFixed(1)}px, ${transY.toFixed(1)}px, 8px) scale3d(1.015, 1.015, 1.015)`;
+
+      if (glareRef.current) {
+        const gx = ((x / rect.width) * 100).toFixed(1);
+        const gy = ((y / rect.height) * 100).toFixed(1);
+        glareRef.current.style.background = `radial-gradient(circle at ${gx}% ${gy}%, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0) 65%)`;
+        glareRef.current.style.opacity = '0.18';
+      }
+
+      if (chromaticRef.current) {
+        chromaticRef.current.style.transform = `translate(${(normX * 1.5).toFixed(1)}px, ${(normY * 1.5).toFixed(1)}px)`;
+        chromaticRef.current.style.opacity = '0.35';
+      }
+    });
   };
 
   const handleMouseEnter = () => {
@@ -62,6 +76,7 @@ const TiltCard = memo(function TiltCard({
     isHoveredRef.current = true;
     const card = cardRef.current;
     if (card) {
+      cachedRectRef.current = card.getBoundingClientRect();
       card.style.transition = 'transform 90ms ease-out';
     }
     onMouseEnter?.();
@@ -70,6 +85,11 @@ const TiltCard = memo(function TiltCard({
   const handleMouseLeave = () => {
     if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) return;
     isHoveredRef.current = false;
+    cachedRectRef.current = null;
+    if (rafIdRef.current !== null) {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = null;
+    }
     const card = cardRef.current;
     if (card) {
       card.style.transition = 'transform 400ms cubic-bezier(0.25, 1, 0.5, 1)';

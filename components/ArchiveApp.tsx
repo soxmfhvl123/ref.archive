@@ -2,13 +2,17 @@
 
 import { useState, useRef, useMemo, useEffect, memo, useCallback } from 'react';
 import { Reference, MajorCategory } from '@/lib/types';
-import { POSTER_GROUPS, POSTER_BASE_STYLES } from '@/lib/data/posters';
+import { SEED_REFERENCES } from '@/lib/data/seed';
+import { getAllTags, WEB_MACRO_CATEGORIES, WebMacroCategory } from '@/lib/data/references';
+import { POSTER_GROUPS, POSTER_BASE_STYLES, POSTER_REFERENCES, getAllPosterTags } from '@/lib/data/posters';
 import {
   FURNITURE_GROUPS,
   FURNITURE_TAG_ORDER,
   FURNITURE_REGIONS,
   FURNITURE_MATERIAL_TAGS,
   FURNITURE_THEME_TAGS,
+  FURNITURE_REFERENCES,
+  getAllFurnitureTags,
 } from '@/lib/data/furniture';
 import {
   FASHION_GROUPS,
@@ -16,6 +20,8 @@ import {
   FASHION_REGIONS,
   FASHION_MATERIAL_TAGS,
   FASHION_THEME_TAGS,
+  FASHION_REFERENCES,
+  getAllFashionTags,
 } from '@/lib/data/fashion';
 import Image from 'next/image';
 import TiltCard from '@/components/TiltCard';
@@ -298,16 +304,53 @@ const IndexReferenceRow = memo(function IndexReferenceRow({
   );
 });
 
+const CATEGORY_TO_MACRO: Record<string, WebMacroCategory> = {
+  'Interactive Web': '인터랙티브·3D',
+  'Experimental Web': '인터랙티브·3D',
+  'Motion & 3D Studio': '인터랙티브·3D',
+  'Graphic Design Studio': '스튜디오·브랜딩',
+  'Brand Identity': '스튜디오·브랜딩',
+  'Typography': '타이포·출판',
+  'Editorial & Print': '타이포·출판',
+  'Media Art & Gallery': '아트·오브제·공간',
+  'Object & Art Toy': '아트·오브제·공간',
+  'Spatial & Exhibition': '아트·오브제·공간',
+  'Illustration & Artist': '아트·오브제·공간',
+  'Fashion & Culture': '패션·매거진',
+  'Magazine & Blog': '패션·매거진',
+  'Archive & Curation': '아카이브·툴',
+  'Resource & Tool': '아카이브·툴',
+  'Product & Tech UI': '아카이브·툴',
+};
+
+const STATIC_WEB_REFERENCES: Reference[] = SEED_REFERENCES.map((ref) => {
+  const macro = CATEGORY_TO_MACRO[ref.category];
+  const baseTags = ref.tags || [];
+  const tags = macro && !baseTags.includes(macro) ? [macro, ...baseTags] : baseTags;
+  return {
+    ...ref,
+    tags,
+    majorCategory: 'WEB' as const,
+    aspectRatio: 'landscape' as const,
+    videoUrl: ref.videoUrl || `/videos/${ref.id}.webm`,
+  };
+});
+
+const STATIC_WEB_TAGS = getAllTags(STATIC_WEB_REFERENCES);
+const STATIC_POSTER_TAGS = getAllPosterTags(POSTER_REFERENCES);
+const STATIC_FURNITURE_TAGS = getAllFurnitureTags(FURNITURE_REFERENCES);
+const STATIC_FASHION_TAGS = getAllFashionTags(FASHION_REFERENCES);
+
 export default function ArchiveApp({
-  initialWebReferences = [],
-  initialPosterReferences = [],
-  initialFurnitureReferences = [],
-  initialFashionReferences = [],
+  initialWebReferences = STATIC_WEB_REFERENCES,
+  initialPosterReferences = POSTER_REFERENCES,
+  initialFurnitureReferences = FURNITURE_REFERENCES,
+  initialFashionReferences = FASHION_REFERENCES,
   initialReferences = [],
-  initialTags = [],
-  initialPosterTags = [],
-  initialFurnitureTags = [],
-  initialFashionTags = [],
+  initialTags = STATIC_WEB_TAGS,
+  initialPosterTags = STATIC_POSTER_TAGS,
+  initialFurnitureTags = STATIC_FURNITURE_TAGS,
+  initialFashionTags = STATIC_FASHION_TAGS,
 }: ArchiveAppProps) {
   const [majorCategory, setMajorCategory] = useState<MajorCategory>('WEB');
   const [selectedGroup, setSelectedGroup] = useState<string>('All');
@@ -570,7 +613,7 @@ export default function ArchiveApp({
     return majorCategory === 'WEB' ? [...filteredReferences].reverse() : [...filteredReferences];
   }, [filteredReferences, majorCategory]);
 
-  const BATCH_SIZE = 12;
+  const BATCH_SIZE = 24;
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
@@ -583,9 +626,9 @@ export default function ArchiveApp({
     return sortedReferences.slice(0, visibleCount);
   }, [sortedReferences, visibleCount]);
 
-  // Infinite scroll: smoothly load next batch 300px before reaching page bottom
+  // Infinite scroll: smoothly load next batch 300px before reaching page bottom (Grid & Index views)
   useEffect(() => {
-    if (viewMode !== 'grid') return;
+    if (viewMode === 'canvas') return;
     if (visibleCount >= sortedReferences.length) return;
 
     const observer = new IntersectionObserver(
@@ -594,7 +637,7 @@ export default function ArchiveApp({
           setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, sortedReferences.length));
         }
       },
-      { rootMargin: '300px' }
+      { rootMargin: '400px' }
     );
 
     const el = loadMoreRef.current;
@@ -1226,7 +1269,7 @@ export default function ArchiveApp({
                 </tr>
               </thead>
               <tbody>
-                {sortedReferences.map((refItem, idx) => (
+                {displayedReferences.map((refItem, idx) => (
                   <IndexReferenceRow
                     key={refItem.id}
                     refItem={refItem}
@@ -1239,6 +1282,9 @@ export default function ArchiveApp({
                 ))}
               </tbody>
             </table>
+            {visibleCount < sortedReferences.length && (
+              <div ref={loadMoreRef} className="w-full h-24 pointer-events-none" />
+            )}
           </div>
         )}
 

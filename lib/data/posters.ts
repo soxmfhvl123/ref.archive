@@ -1074,8 +1074,8 @@ export const POSTER_BASE_STYLES: PosterStyleDefinition[] = [
 ];
 
 export const POSTER_STYLE_COUNTS: Record<string, number> = {
-  // Featured 100-poster collection
-  "poster-contour-brutalism": 100,
+  // Featured 200-poster collection
+  "poster-contour-brutalism": 200,
 
   // New visual styles (3 posters each)
   "poster-dark-academia": 3,
@@ -1175,10 +1175,10 @@ export const POSTER_REFERENCES: Reference[] = (() => {
   const newPostersList: Reference[] = [];
   const existingPostersList: Reference[] = [];
 
-  // 0. Featured 100-poster style ("poster-contour-brutalism") ordered #01 -> #100 at the very top
+  // 0. Featured 200-poster style ("poster-contour-brutalism") ordered #01 -> #200 at the very top
   const featuredStyle = NEW_POSTER_STYLES.find((s) => s.id === 'poster-contour-brutalism');
   if (featuredStyle) {
-    const count = POSTER_STYLE_COUNTS[featuredStyle.id] || 100;
+    const count = POSTER_STYLE_COUNTS[featuredStyle.id] || 200;
     for (let num = 1; num <= count; num++) {
       const id = num === 1 ? featuredStyle.id : `${featuredStyle.id}-${num}`;
       const imageUrl = num === 1 ? `/captures/posters/${featuredStyle.id}.jpg` : `/captures/posters/${featuredStyle.id}-${num}.jpg`;
