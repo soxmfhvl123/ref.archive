@@ -456,7 +456,8 @@ export default function ArchiveApp({
     }
     const tagsSet = new Set<string>();
     pool.forEach((p) => p.tags.forEach((t) => tagsSet.add(t)));
-    return ['전체', ...Array.from(tagsSet)];
+    const ordered = POSTER_BASE_STYLES.map((s) => s.title).filter((t) => tagsSet.has(t));
+    return ['전체', ...ordered];
   }, [posterList, selectedGroup]);
 
   const currentFurnitureTags = useMemo(() => {
@@ -1405,7 +1406,9 @@ export default function ArchiveApp({
                   className="underline underline-offset-4"
                 >
                   {activeRef.majorCategory === 'POSTERS'
-                    ? '핀터레스트 레퍼런스 탐색 ↗'
+                    ? activeRef.url.includes('unbserved.com')
+                      ? 'Unbserved 레퍼런스 원본 보기 ↗'
+                      : '핀터레스트 레퍼런스 탐색 ↗'
                     : activeRef.majorCategory === 'FURNITURE' || activeRef.majorCategory === 'FASHION'
                     ? `${activeRef.title} 공식 웹페이지 / 정보 바로가기 ↗`
                     : activeRef.url}

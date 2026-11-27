@@ -125,7 +125,9 @@ export default async function ReferenceDetailPage({
                   className="underline underline-offset-4"
                 >
                   {isPoster
-                    ? '핀터레스트 레퍼런스 탐색 ↗'
+                    ? refItem.url.includes('unbserved.com')
+                      ? 'Unbserved 레퍼런스 원본 보기 ↗'
+                      : '핀터레스트 레퍼런스 탐색 ↗'
                     : isFurniture
                     ? `${refItem.title} 공식 웹페이지 / 정보 바로가기 ↗`
                     : refItem.url}
